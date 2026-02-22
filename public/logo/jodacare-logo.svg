@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e4d5c"/>
+      <stop offset="100%" style="stop-color:#2d6b7a"/>
+    </linearGradient>
+  </defs>
+  <!-- J symbol with heart -->
+  <path d="M15 8 L15 32 Q15 42 8 42 Q2 42 2 36" stroke="url(#logoGradient)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <circle cx="15" cy="5" r="3" fill="#d4847c"/>
+  <!-- Text: odaCare -->
+  <text x="28" y="35" font-family="Georgia, serif" font-size="28" font-weight="600" fill="#1e4d5c">
+    <tspan>oda</tspan>
+    <tspan fill="#d4847c">Care</tspan>
+  </text>
+</svg>

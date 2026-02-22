@@ -1,0 +1,9 @@
+export { Hero } from './Hero';
+export { HowItWorks } from './HowItWorks';
+export { Features } from './Features';
+export { Pricing } from './Pricing';
+export { Security } from './Security';
+export { Story } from './Story';
+export { ContactForm } from './ContactForm';
+export { WhoUsesIt } from './WhoUsesIt';
+export { CTA } from './CTA';

@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "siteName": "JodaCare",
+    "siteDescription": "Sikker kommunikasjon rundt sårbare personer"
+  },
+  "nav": {
+    "forKommuner": "For kommuner",
+    "forFamilier": "For familier",
+    "omOss": "Om oss",
+    "sikkerhet": "Sikkerhet",
+    "kontakt": "Kontakt",
+    "loggInn": "Logg inn",
+    "komIGang": "Kom i gang"
+  },
+  "hero": {
+    "home": {
+      "title": "Trygghet og verdighet for den du er glad i",
+      "subtitle": "JodaCare er en sikker digital plattform som skaper sammenheng i hverdagen for sårbare personer — gjennom kommunikasjon mellom pårørende, helsepersonell og den det handler om."
+    },
+    "kommune": {
+      "title": "Styrk samarbeidet med pårørende",
+      "subtitle": "JodaCare gir helsetjenesten et verktøy for sikker og effektiv kommunikasjon med pårørende — uten å øke arbeidsmengden."
+    },
+    "familie": {
+      "title": "Hold hele familien oppdatert",
+      "subtitle": "Én felles plass for all informasjon om den du er glad i. Uansett hvor i landet dere bor."
+    }
+  },
+  "howItWorks": {
+    "title": "Slik fungerer JodaCare",
+    "subtitle": "Fire enkle steg til bedre kommunikasjon og trygghet i hverdagen.",
+    "steps": {
+      "1": {
+        "title": "Opprett nettverk",
+        "description": "Start med å opprette et nettverk rundt den du er glad i. Det tar bare noen minutter."
+      },
+      "2": {
+        "title": "Inviter personer",
+        "description": "Inviter familie, venner og helsepersonell som skal være en del av nettverket."
+      },
+      "3": {
+        "title": "Del hverdagen",
+        "description": "Del bilder, oppdateringer og beskjeder. Alle holder seg oppdatert på hverdagen."
+      },
+      "4": {
+        "title": "Skap trygghet",
+        "description": "Gi sammenheng og trygghet til den sårbare personen gjennom felles kommunikasjon."
+      }
+    }
+  },
+  "features": {
+    "title": "Alt du trenger for trygg kommunikasjon",
+    "subtitle": "JodaCare gir deg verktøyene for å holde alle rundt en sårbar person oppdatert og involvert.",
+    "items": {
+      "tidslinje": {
+        "title": "Delt tidslinje",
+        "description": "Bilder, tekst og oppdateringer fra hverdagen delt mellom alle i nettverket."
+      },
+      "kalender": {
+        "title": "Felles kalender",
+        "description": "Oversikt over besøk, avtaler og rutiner som alle kan se og oppdatere."
+      },
+      "profiler": {
+        "title": "Personlige profiler",
+        "description": "Alle i nettverket har profil med bilde og info, så alle vet hvem alle er."
+      },
+      "livshistorie": {
+        "title": "Livshistorie",
+        "description": "En profil for hovedpersonen med det som er viktig nå og tidligere i livet."
+      },
+      "video": {
+        "title": "Video",
+        "description": "Nærkontakt når fysisk besøk er vanskelig, spesielt under sykdom."
+      },
+      "meldinger": {
+        "title": "Sikker meldingskanal",
+        "description": "Sensitiv informasjon om dagsform deles kun med autoriserte personer."
+      },
+      "sporbarhet": {
+        "title": "Full sporbarhet",
+        "description": "Alle aktiviteter logges automatisk for trygghet og dokumentasjon."
+      },
+      "ai": {
+        "title": "AI-assistert innsikt",
+        "description": "Intelligent oppsummering av daglige oppdateringer og mønstre i dagsform."
+      }
+    }
+  },
+  "security": {
+    "title": "Sikkerhet du kan stole på",
+    "subtitle": "JodaCare er bygget med sikkerhet i kjernen. Vi tar personvern på største alvor.",
+    "badges": {
+      "idporten": "ID-porten sikkerhet",
+      "gdpr": "GDPR-compliant",
+      "euData": "Data i Europa",
+      "sporbarhet": "Full sporbarhet"
+    }
+  },
+  "story": {
+    "quote": "Min glemsomme mamma ringer og sier at hun ikke har fått besøk i dag. «JODA!» sier jeg, og forteller det jeg har lest i JodaCare om dagen hennes. «Du har hatt besøk av Petter fra hjemmetjenesten. Han har laget kjøttkaker til middag for deg.» «Å ja», sier mamma, og husker at han var der.",
+    "author": "Kristil Erla Håland",
+    "role": "Gründer og daglig leder, JodaCare"
+  },
+  "cta": {
+    "home": {
+      "title": "Klar til å skape trygghet?",
+      "subtitle": "Kom i gang med JodaCare i dag. Vi hjelper deg hele veien.",
+      "primary": "Kontakt oss",
+      "secondary": "Se hvordan det fungerer"
+    }
+  },
+  "pricing": {
+    "kommune": {
+      "title": "Enkel og forutsigbar prising",
+      "subtitle": "Alt inkludert i én månedspris. Ingen skjulte kostnader.",
+      "price": "kr 2 990",
+      "period": "/mnd",
+      "footnote": "Oppstartsgebyr kr 28 000 per kommune (inkluderer introduksjon og databehandleravtaler). Superbrukerkurs: kr 7 500."
+    },
+    "familie": {
+      "title": "Enkel prising for familier",
+      "subtitle": "Start gratis og oppgrader når du er klar."
+    }
+  },
+  "contact": {
+    "title": "Ta kontakt",
+    "subtitle": "Vi hjelper deg gjerne i gang med JodaCare.",
+    "form": {
+      "name": "Navn",
+      "email": "E-post",
+      "phone": "Telefon",
+      "type": "Type henvendelse",
+      "message": "Melding",
+      "submit": "Send melding",
+      "sending": "Sender...",
+      "success": {
+        "title": "Takk for din henvendelse!",
+        "message": "Vi tar kontakt med deg så snart som mulig."
+      }
+    },
+    "types": {
+      "general": "Generell henvendelse",
+      "kommune": "Kommune / organisasjon",
+      "familie": "Privat familie",
+      "demo": "Ønsker demo",
+      "support": "Support"
+    },
+    "info": {
+      "email": "post@jodacare.com",
+      "phone": "+47 906 06 433",
+      "address": "Forskningsparken, Oslo"
+    }
+  },
+  "footer": {
+    "description": "En sikker plattform for kommunikasjon rundt sårbare personer. Trygghet og verdighet i hverdagen.",
+    "produkt": "Produkt",
+    "selskap": "Selskap",
+    "ressurser": "Ressurser",
+    "copyright": "Alle rettigheter reservert. JodaCare er et registrert varemerke."
+  },
+  "accessibility": {
+    "skipToContent": "Hopp til hovedinnhold",
+    "openMenu": "Åpne hovedmeny",
+    "closeMenu": "Lukk meny",
+    "footer": "Bunntekst"
+  }
+}
