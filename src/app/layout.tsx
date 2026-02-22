@@ -37,6 +37,10 @@ export const metadata: Metadata = {
   creator: 'Jodapro AS',
   publisher: 'Jodapro AS',
   metadataBase: new URL('https://www.jodacare.no'),
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'nb_NO',
@@ -47,7 +51,7 @@ export const metadata: Metadata = {
       'En sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon mellom pårørende, helsepersonell og den sårbare personen selv.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/logo/jodacare-logo.png',
         width: 1200,
         height: 630,
         alt: 'JodaCare - Trygghet og verdighet i hverdagen',
@@ -59,7 +63,7 @@ export const metadata: Metadata = {
     title: 'JodaCare - Sikker kommunikasjon rundt sårbare personer',
     description:
       'En sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon.',
-    images: ['/og-image.png'],
+    images: ['/logo/jodacare-logo.png'],
   },
   robots: {
     index: true,
