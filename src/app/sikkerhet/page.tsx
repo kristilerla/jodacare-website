@@ -15,9 +15,9 @@ import {
 
 export const metadata: Metadata = {
   title: 'Sikkerhet',
-  description: 'JodaCare tar sikkerhet på største alvor. Les om ID-porten, GDPR, databehandling og hvordan vi beskytter sensitive helseopplysninger.',
+  description: 'jodacare tar sikkerhet på største alvor. Les om ID-porten, GDPR, databehandling og hvordan vi beskytter sensitive helseopplysninger.',
   openGraph: {
-    title: 'Sikkerhet i JodaCare',
+    title: 'Sikkerhet i jodacare',
     description: 'Sikkerhetsnivå 4 med ID-porten, GDPR-compliant, data lagret i Europa. Les mer om hvordan vi beskytter dine data.',
   },
 };
@@ -25,19 +25,19 @@ export const metadata: Metadata = {
 const securityFeatures = [
   {
     title: 'ID-porten innlogging',
-    description: 'All tilgang til JodaCare skjer via sikker innlogging med ID-porten — BankID, Buypass eller Commfides. Dette gir sikkerhetsnivå 4, det høyeste nivået for digital identifikasjon i Norge.',
+    description: 'All tilgang til jodacare skjer via sikker innlogging med ID-porten — BankID, Buypass eller Commfides. Dette gir sikkerhetsnivå 4, det høyeste nivået for digital identifikasjon i Norge.',
     icon: FingerPrintIcon,
     badge: 'Sikkerhetsnivå 4',
   },
   {
     title: 'GDPR-compliant',
-    description: 'JodaCare følger alle krav i GDPR (personvernforordningen), helsepersonelloven og personopplysningsloven. Vi har rutiner for databehandling, innsyn og sletting.',
+    description: 'jodacare følger alle krav i GDPR (personvernforordningen), helsepersonelloven og personopplysningsloven. Vi har rutiner for databehandling, innsyn og sletting.',
     icon: ShieldCheckIcon,
     badge: 'EU-godkjent',
   },
   {
     title: 'Databehandleravtale',
-    description: 'Alle kommuner og organisasjoner som bruker JodaCare inngår databehandleravtale. Dette sikrer at personopplysninger behandles i tråd med lovverket.',
+    description: 'Alle kommuner og organisasjoner som bruker jodacare inngår databehandleravtale. Dette sikrer at personopplysninger behandles i tråd med lovverket.',
     icon: DocumentCheckIcon,
   },
   {
@@ -48,7 +48,7 @@ const securityFeatures = [
   },
   {
     title: 'Full sporbarhet',
-    description: 'Alle aktiviteter i JodaCare logges automatisk. Kommunen har full oversikt over hvem som har sett og delt informasjon, og når dette har skjedd.',
+    description: 'Alle aktiviteter i jodacare logges automatisk. Kommunen har full oversikt over hvem som har sett og delt informasjon, og når dette har skjedd.',
     icon: ClipboardDocumentCheckIcon,
   },
   {
@@ -61,7 +61,7 @@ const securityFeatures = [
 const additionalSecurity = [
   {
     title: 'Kryptert kommunikasjon',
-    description: 'All kommunikasjon mellom din enhet og JodaCare er kryptert med TLS 1.3.',
+    description: 'All kommunikasjon mellom din enhet og jodacare er kryptert med TLS 1.3.',
     icon: KeyIcon,
   },
   {
@@ -81,7 +81,7 @@ export default function SikkerhetPage() {
     <>
       <Hero
         title="Sikkerhet du kan stole på"
-        subtitle="JodaCare er bygget med sikkerhet i kjernen. Vi tar personvern og datasikkerhet på største alvor."
+        subtitle="jodacare er bygget med sikkerhet i kjernen. Vi tar personvern og datasikkerhet på største alvor."
         variant="page"
       />
 
@@ -95,7 +95,7 @@ export default function SikkerhetPage() {
                 Hvordan vi beskytter dine data
               </h2>
               <p className="mt-4 text-lg text-text-light">
-                JodaCare er utviklet spesielt for å ivareta sikkerheten og personvernet 
+                jodacare er utviklet spesielt for å ivareta sikkerheten og personvernet 
                 til pasienter, pårørende og ansatte.
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function SikkerhetPage() {
                 <div>
                   <h3 className="font-semibold text-text mb-2">Helsepersonelloven</h3>
                   <p>
-                    JodaCare er bygget for å støtte opp om lovpålagt samhandling mellom 
+                    jodacare er bygget for å støtte opp om lovpålagt samhandling mellom 
                     helsepersonell, pårørende og andre samarbeidspartnere. Systemet sørger 
                     for at deling av informasjon skjer i henhold til helsepersonellovens 
                     bestemmelser om taushetsplikt og informasjonsplikt.
@@ -182,7 +182,7 @@ export default function SikkerhetPage() {
                 <div>
                   <h3 className="font-semibold text-text mb-2">Pasient- og brukerrettighetsloven</h3>
                   <p>
-                    JodaCare respekterer pasientens rett til informasjon og medvirkning. 
+                    jodacare respekterer pasientens rett til informasjon og medvirkning. 
                     Systemet er designet for å styrke pasientens og pårørendes mulighet 
                     til å delta i beslutninger om egen helse og omsorg.
                   </p>
@@ -222,7 +222,7 @@ export default function SikkerhetPage() {
 
       <CTA
         title="Har du spørsmål om sikkerhet?"
-        subtitle="Vi stiller gjerne opp for å forklare nærmere hvordan JodaCare fungerer og beskytter dine data."
+        subtitle="Vi stiller gjerne opp for å forklare nærmere hvordan jodacare fungerer og beskytter dine data."
         primaryCta={{ text: 'Kontakt oss', href: '/kontakt' }}
       />
     </>

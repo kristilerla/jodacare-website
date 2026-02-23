@@ -1,6 +1,6 @@
 {
   "meta": {
-    "siteName": "JodaCare",
+    "siteName": "jodacare",
     "siteDescription": "Sikker kommunikasjon rundt sårbare personer"
   },
   "nav": {
@@ -15,11 +15,11 @@
   "hero": {
     "home": {
       "title": "Trygghet og verdighet for den du er glad i",
-      "subtitle": "JodaCare er en sikker digital plattform som skaper sammenheng i hverdagen for sårbare personer — gjennom kommunikasjon mellom pårørende, helsepersonell og den det handler om."
+      "subtitle": "jodacare er en sikker digital plattform som skaper sammenheng i hverdagen for sårbare personer — gjennom kommunikasjon mellom pårørende, helsepersonell og den det handler om."
     },
     "kommune": {
       "title": "Styrk samarbeidet med pårørende",
-      "subtitle": "JodaCare gir helsetjenesten et verktøy for sikker og effektiv kommunikasjon med pårørende — uten å øke arbeidsmengden."
+      "subtitle": "jodacare gir helsetjenesten et verktøy for sikker og effektiv kommunikasjon med pårørende — uten å øke arbeidsmengden."
     },
     "familie": {
       "title": "Hold hele familien oppdatert",
@@ -27,7 +27,7 @@
     }
   },
   "howItWorks": {
-    "title": "Slik fungerer JodaCare",
+    "title": "Slik fungerer jodacare",
     "subtitle": "Fire enkle steg til bedre kommunikasjon og trygghet i hverdagen.",
     "steps": {
       "1": {
@@ -50,7 +50,7 @@
   },
   "features": {
     "title": "Alt du trenger for trygg kommunikasjon",
-    "subtitle": "JodaCare gir deg verktøyene for å holde alle rundt en sårbar person oppdatert og involvert.",
+    "subtitle": "jodacare gir deg verktøyene for å holde alle rundt en sårbar person oppdatert og involvert.",
     "items": {
       "tidslinje": {
         "title": "Delt tidslinje",
@@ -88,7 +88,7 @@
   },
   "security": {
     "title": "Sikkerhet du kan stole på",
-    "subtitle": "JodaCare er bygget med sikkerhet i kjernen. Vi tar personvern på største alvor.",
+    "subtitle": "jodacare er bygget med sikkerhet i kjernen. Vi tar personvern på største alvor.",
     "badges": {
       "idporten": "ID-porten sikkerhet",
       "gdpr": "GDPR-compliant",
@@ -97,14 +97,14 @@
     }
   },
   "story": {
-    "quote": "Min glemsomme mamma ringer og sier at hun ikke har fått besøk i dag. «JODA!» sier jeg, og forteller det jeg har lest i JodaCare om dagen hennes. «Du har hatt besøk av Petter fra hjemmetjenesten. Han har laget kjøttkaker til middag for deg.» «Å ja», sier mamma, og husker at han var der.",
+    "quote": "Min glemsomme mamma ringer og sier at hun ikke har fått besøk i dag. «JODA!» sier jeg, og forteller det jeg har lest i jodacare om dagen hennes. «Du har hatt besøk av Petter fra hjemmetjenesten. Han har laget kjøttkaker til middag for deg.» «Å ja», sier mamma, og husker at han var der.",
     "author": "Kristil Erla Håland",
-    "role": "Gründer og daglig leder, JodaCare"
+    "role": "Gründer og daglig leder, jodacare"
   },
   "cta": {
     "home": {
       "title": "Klar til å skape trygghet?",
-      "subtitle": "Kom i gang med JodaCare i dag. Vi hjelper deg hele veien.",
+      "subtitle": "Kom i gang med jodacare i dag. Vi hjelper deg hele veien.",
       "primary": "Kontakt oss",
       "secondary": "Se hvordan det fungerer"
     }
@@ -124,7 +124,7 @@
   },
   "contact": {
     "title": "Ta kontakt",
-    "subtitle": "Vi hjelper deg gjerne i gang med JodaCare.",
+    "subtitle": "Vi hjelper deg gjerne i gang med jodacare.",
     "form": {
       "name": "Navn",
       "email": "E-post",
@@ -156,7 +156,7 @@
     "produkt": "Produkt",
     "selskap": "Selskap",
     "ressurser": "Ressurser",
-    "copyright": "Alle rettigheter reservert. JodaCare er et registrert varemerke."
+    "copyright": "Alle rettigheter reservert. jodacare er et registrert varemerke."
   },
   "accessibility": {
     "skipToContent": "Hopp til hovedinnhold",

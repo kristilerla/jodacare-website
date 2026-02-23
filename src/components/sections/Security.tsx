@@ -42,7 +42,7 @@ interface SecurityProps {
 export function Security({ 
   variant = 'compact',
   title = 'Sikkerhet du kan stole på',
-  subtitle = 'JodaCare er bygget med sikkerhet i kjernen. Vi tar personvern på største alvor.'
+  subtitle = 'jodacare er bygget med sikkerhet i kjernen. Vi tar personvern på største alvor.'
 }: SecurityProps) {
   if (variant === 'compact') {
     return (

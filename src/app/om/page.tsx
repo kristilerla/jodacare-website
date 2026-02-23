@@ -5,10 +5,10 @@ import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 
 export const metadata: Metadata = {
   title: 'Om oss',
-  description: 'JodaCare ble grunnlagt av Kristil Erla Håland basert på egne erfaringer med å koordinere omsorg for sin mor med demens. Les historien bak.',
+  description: 'jodacare ble grunnlagt av Kristil Erla Håland basert på egne erfaringer med å koordinere omsorg for sin mor med demens. Les historien bak.',
   openGraph: {
-    title: 'Om JodaCare',
-    description: 'Historien bak JodaCare — fra personlig erfaring til løsning for tusenvis av familier.',
+    title: 'Om jodacare',
+    description: 'Historien bak jodacare — fra personlig erfaring til løsning for tusenvis av familier.',
   },
 };
 
@@ -21,19 +21,19 @@ const partners = [
 ];
 
 const timeline = [
-  { year: '2016', event: 'JodaCare lanseres for første gang i norske kommuner' },
+  { year: '2016', event: 'jodacare lanseres for første gang i norske kommuner' },
   { year: '2018', event: 'Jodabook utvikles i samarbeid med SINTEF — en demensvennlig versjon' },
   { year: '2020', event: 'Videosamtaler lanseres under pandemien' },
-  { year: '2022', event: 'Jodapro AS overtar eierskapet av JodaCare' },
-  { year: '2026', event: 'JodaCare 2.0 lanseres med ny arkitektur og AI-støtte' },
+  { year: '2022', event: 'Jodapro AS overtar eierskapet av jodacare' },
+  { year: '2026', event: 'jodacare 2.0 lanseres med ny arkitektur og AI-støtte' },
 ];
 
 export default function OmPage() {
   return (
     <>
       <Hero
-        title="Historien bak JodaCare"
-        subtitle="JodaCare ble til fordi én datter ønsket å gi sin mor med demens verdighet og sammenheng i hverdagen."
+        title="Historien bak jodacare"
+        subtitle="jodacare ble til fordi én datter ønsket å gi sin mor med demens verdighet og sammenheng i hverdagen."
         variant="page"
       />
 
@@ -68,12 +68,12 @@ export default function OmPage() {
                     sammenhengen i sin egen hverdag.
                   </p>
                   <p>
-                    JodaCare ble til fordi jeg ønsket å gi mamma verdighet. Gjennom bilder og 
+                    jodacare ble til fordi jeg ønsket å gi mamma verdighet. Gjennom bilder og 
                     dialog kunne hun huske hvem som hadde vært på besøk, hva hun hadde gjort, 
                     og føle seg sett og ivaretatt.
                   </p>
                   <p>
-                    I dag brukes JodaCare av tusenvis av familier og kommuner over hele Norge. 
+                    I dag brukes jodacare av tusenvis av familier og kommuner over hele Norge. 
                     Men kjernen er den samme: å skape trygghet, verdighet og sammenheng for 
                     sårbare mennesker og de som bryr seg om dem.
                   </p>
@@ -132,7 +132,7 @@ export default function OmPage() {
               </h2>
               <p className="mt-4 text-lg text-text-light">
                 Vi samarbeider med ledende forsknings- og teknologimiljøer for å utvikle 
-                JodaCare videre.
+                jodacare videre.
               </p>
             </div>
           </FadeIn>
@@ -159,7 +159,7 @@ export default function OmPage() {
                 Jodapro AS
               </h2>
               <p className="text-text-light mb-6">
-                JodaCare eies og utvikles av Jodapro AS, et norsk selskap med hovedkontor 
+                jodacare eies og utvikles av Jodapro AS, et norsk selskap med hovedkontor 
                 i Forskningsparken i Oslo.
               </p>
               <div className="text-sm text-text-muted space-y-1">
@@ -178,7 +178,7 @@ export default function OmPage() {
 
       <CTA
         title="Vil du vite mer?"
-        subtitle="Ta kontakt for en uforpliktende prat om hvordan JodaCare kan hjelpe deg."
+        subtitle="Ta kontakt for en uforpliktende prat om hvordan jodacare kan hjelpe deg."
         primaryCta={{ text: 'Kontakt oss', href: '/kontakt' }}
       />
     </>

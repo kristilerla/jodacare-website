@@ -7,7 +7,7 @@ import { BuildingOffice2Icon, HomeIcon, HeartIcon } from '@heroicons/react/24/ou
 const audiences = [
   {
     title: 'Kommuner og helsetjenester',
-    description: 'Hjemmetjeneste, sykehjem og omsorgsboliger bruker JodaCare for å samarbeide bedre med pårørende og dokumentere samhandling.',
+    description: 'Hjemmetjeneste, sykehjem og omsorgsboliger bruker jodacare for å samarbeide bedre med pårørende og dokumentere samhandling.',
     icon: BuildingOffice2Icon,
     href: '/kommune',
     cta: 'Les mer',
@@ -38,10 +38,10 @@ export function WhoUsesIt() {
               id="who-uses-title"
               className="font-serif text-3xl sm:text-4xl font-bold text-text"
             >
-              Hvem bruker JodaCare?
+              Hvem bruker jodacare?
             </h2>
             <p className="mt-4 text-lg text-text-light">
-              JodaCare bygger bro mellom alle som bryr seg om én person.
+              jodacare bygger bro mellom alle som bryr seg om én person.
             </p>
           </div>
         </FadeIn>

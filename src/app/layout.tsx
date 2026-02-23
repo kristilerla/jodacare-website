@@ -18,11 +18,11 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: 'JodaCare - Sikker kommunikasjon rundt sårbare personer',
-    template: '%s | JodaCare',
+    default: 'jodacare - Sikker kommunikasjon rundt sårbare personer',
+    template: '%s | jodacare',
   },
   description:
-    'JodaCare er en sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon mellom pårørende, helsepersonell og den sårbare personen selv.',
+    'jodacare er en sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon mellom pårørende, helsepersonell og den sårbare personen selv.',
   keywords: [
     'demens',
     'pårørende',
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'nb_NO',
     url: 'https://www.jodacare.no',
-    siteName: 'JodaCare',
-    title: 'JodaCare - Sikker kommunikasjon rundt sårbare personer',
+    siteName: 'jodacare',
+    title: 'jodacare - Sikker kommunikasjon rundt sårbare personer',
     description:
       'En sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon mellom pårørende, helsepersonell og den sårbare personen selv.',
     images: [
@@ -54,13 +54,13 @@ export const metadata: Metadata = {
         url: '/logo/jodacare-logo.png',
         width: 1200,
         height: 630,
-        alt: 'JodaCare - Trygghet og verdighet i hverdagen',
+        alt: 'jodacare - Trygghet og verdighet i hverdagen',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JodaCare - Sikker kommunikasjon rundt sårbare personer',
+    title: 'jodacare - Sikker kommunikasjon rundt sårbare personer',
     description:
       'En sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon.',
     images: ['/logo/jodacare-logo.png'],

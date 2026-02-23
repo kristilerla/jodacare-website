@@ -14,7 +14,7 @@ interface ContactFormProps {
 export function ContactForm({ 
   showContactInfo = true,
   title = 'Ta kontakt',
-  subtitle = 'Vi hjelper deg gjerne i gang med JodaCare.'
+  subtitle = 'Vi hjelper deg gjerne i gang med jodacare.'
 }: ContactFormProps) {
   const [formState, setFormState] = useState({
     name: '',
@@ -72,7 +72,7 @@ export function ContactForm({
                     Kontaktinformasjon
                   </h3>
                   <p className="text-text-light">
-                    Ta gjerne kontakt om du har spørsmål om JodaCare, 
+                    Ta gjerne kontakt om du har spørsmål om jodacare, 
                     ønsker en demo, eller vil komme i gang.
                   </p>
                 </div>

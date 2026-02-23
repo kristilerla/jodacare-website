@@ -15,9 +15,9 @@ import {
 
 export const metadata: Metadata = {
   title: 'For familier',
-  description: 'JodaCare for private familier. Hold hele familien oppdatert på hverdagen til den dere er glad i, uansett hvor dere bor.',
+  description: 'jodacare for private familier. Hold hele familien oppdatert på hverdagen til den dere er glad i, uansett hvor dere bor.',
   openGraph: {
-    title: 'JodaCare for familier',
+    title: 'jodacare for familier',
     description: 'Én felles plass for all informasjon om den du er glad i. Trygg og privat.',
   },
 };
@@ -73,7 +73,7 @@ const familyPricing = [
     name: 'Gratis prøveperiode',
     price: 'kr 0',
     period: '/14 dager',
-    description: 'Prøv JodaCare helt gratis i 14 dager. Ingen kortopplysninger kreves.',
+    description: 'Prøv jodacare helt gratis i 14 dager. Ingen kortopplysninger kreves.',
     features: [
       'Fullt tilgang til alle funksjoner',
       'Inviter hele familien',
@@ -130,7 +130,7 @@ export default function FamiliePage() {
                   <em>Hvem var hos mamma i dag? Har hun tatt medisinene? Hvordan var dagen hennes?</em>
                 </p>
                 <p>
-                  Med JodaCare får hele familien én felles plass for informasjon om den dere er glad i. 
+                  Med jodacare får hele familien én felles plass for informasjon om den dere er glad i. 
                   Alle kan bidra. Alle holder seg oppdatert. Og mamma får sammenheng i hverdagen 
                   gjennom bilder og dialog.
                 </p>
@@ -183,7 +183,7 @@ export default function FamiliePage() {
                 Hvem er dette for?
               </h2>
               <p className="mt-4 text-lg text-text-light">
-                JodaCare passer for alle familier som koordinerer omsorg på tvers av avstand.
+                jodacare passer for alle familier som koordinerer omsorg på tvers av avstand.
               </p>
             </div>
           </FadeIn>

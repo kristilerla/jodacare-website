@@ -3,10 +3,10 @@ import { Hero, ContactForm } from '@/components/sections';
 
 export const metadata: Metadata = {
   title: 'Kontakt oss',
-  description: 'Ta kontakt med JodaCare. Vi hjelper deg gjerne i gang, enten du er en kommune, organisasjon eller privat familie.',
+  description: 'Ta kontakt med jodacare. Vi hjelper deg gjerne i gang, enten du er en kommune, organisasjon eller privat familie.',
   openGraph: {
-    title: 'Kontakt JodaCare',
-    description: 'Ta kontakt for en uforpliktende prat om hvordan JodaCare kan hjelpe deg.',
+    title: 'Kontakt jodacare',
+    description: 'Ta kontakt for en uforpliktende prat om hvordan jodacare kan hjelpe deg.',
   },
 };
 

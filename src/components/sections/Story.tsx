@@ -26,7 +26,7 @@ export function Story({
       <Container size="md">
         <FadeIn>
           <figure className="text-center">
-            <h2 id="story-title" className="sr-only">Historien bak JodaCare</h2>
+            <h2 id="story-title" className="sr-only">Historien bak jodacare</h2>
             <svg 
               className={`w-12 h-12 mx-auto mb-6 ${isFeatured ? 'text-accent-light' : 'text-accent'}`}
               fill="currentColor" 

@@ -13,6 +13,7 @@ const navigation = [
   { name: 'For familier', href: '/familie' },
   { name: 'Om oss', href: '/om' },
   { name: 'Sikkerhet', href: '/sikkerhet' },
+  { name: 'Teknologi', href: '/teknologi' },
   { name: 'Kontakt', href: '/kontakt' },
 ];
 
@@ -24,10 +25,10 @@ export function Header() {
       <Container>
         <nav className="flex items-center justify-between py-4" aria-label="Hovednavigasjon">
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5" aria-label="JodaCare - Gå til forsiden">
+            <Link href="/" className="-m-1.5 p-1.5" aria-label="jodacare - Gå til forsiden">
               <Image
                 src="/logo/jodacare-logo.png"
-                alt="JodaCare logo"
+                alt="jodacare logo"
                 width={180}
                 height={50}
                 className="h-10 w-auto"
@@ -99,7 +100,7 @@ export function Header() {
             <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
               <Image
                 src="/logo/jodacare-logo.png"
-                alt="JodaCare logo"
+                alt="jodacare logo"
                 width={150}
                 height={42}
                 className="h-9 w-auto"

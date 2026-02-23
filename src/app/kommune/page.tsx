@@ -16,9 +16,9 @@ import {
 
 export const metadata: Metadata = {
   title: 'For kommuner og organisasjoner',
-  description: 'JodaCare hjelper kommuner med å øke kapasiteten i helsetjenesten, redusere pårørendehenvendelser og oppfylle lovkrav om pårørendesamarbeid.',
+  description: 'jodacare hjelper kommuner med å øke kapasiteten i helsetjenesten, redusere pårørendehenvendelser og oppfylle lovkrav om pårørendesamarbeid.',
   openGraph: {
-    title: 'JodaCare for kommuner og organisasjoner',
+    title: 'jodacare for kommuner og organisasjoner',
     description: 'Øk kapasiteten i helsetjenesten uten å øke bemanningen. Sikker samhandling med pårørende.',
   },
 };
@@ -100,7 +100,7 @@ export default function KommunePage() {
     <>
       <Hero
         title="Styrk samarbeidet med pårørende"
-        subtitle="JodaCare gir helsetjenesten et verktøy for sikker og effektiv kommunikasjon med pårørende — uten å øke arbeidsmengden."
+        subtitle="jodacare gir helsetjenesten et verktøy for sikker og effektiv kommunikasjon med pårørende — uten å øke arbeidsmengden."
         primaryCta={{ text: 'Ta kontakt for demo', href: '/kontakt' }}
         secondaryCta={{ text: 'Se priser', href: '#priser' }}
         variant="page"
@@ -112,10 +112,10 @@ export default function KommunePage() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <h2 id="value-title" className="font-serif text-3xl sm:text-4xl font-bold text-text">
-                Hvorfor velge JodaCare?
+                Hvorfor velge jodacare?
               </h2>
               <p className="mt-4 text-lg text-text-light">
-                JodaCare er utviklet i tett samarbeid med norske kommuner siden 2016.
+                jodacare er utviklet i tett samarbeid med norske kommuner siden 2016.
               </p>
             </div>
           </FadeIn>
@@ -145,7 +145,7 @@ export default function KommunePage() {
                 Bruksområder
               </h2>
               <p className="mt-4 text-lg text-text-light">
-                JodaCare brukes på tvers av helsetjenesten for å styrke samarbeidet rundt sårbare personer.
+                jodacare brukes på tvers av helsetjenesten for å styrke samarbeidet rundt sårbare personer.
               </p>
             </div>
           </FadeIn>
@@ -183,7 +183,7 @@ export default function KommunePage() {
 
       <CTA
         title="Klar til å styrke pårørendesamarbeidet?"
-        subtitle="Book en uforpliktende demo og se hvordan JodaCare kan hjelpe din kommune."
+        subtitle="Book en uforpliktende demo og se hvordan jodacare kan hjelpe din kommune."
         primaryCta={{ text: 'Ta kontakt for demo', href: '/kontakt' }}
         secondaryCta={{ text: 'Les mer om sikkerhet', href: '/sikkerhet' }}
       />

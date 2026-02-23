@@ -8,6 +8,7 @@ const navigation = {
     { name: 'For kommuner', href: '/kommune' },
     { name: 'For familier', href: '/familie' },
     { name: 'Sikkerhet', href: '/sikkerhet' },
+    { name: 'Teknologi', href: '/teknologi' },
   ],
   selskap: [
     { name: 'Om oss', href: '/om' },
@@ -32,7 +33,7 @@ export function Footer() {
           <div className="space-y-6">
             <Image
               src="/logo/jodacare-logo.png"
-              alt="JodaCare logo"
+              alt="jodacare logo"
               width={180}
               height={50}
               className="h-10 w-auto brightness-0 invert"
@@ -118,7 +119,7 @@ export function Footer() {
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-xs text-white/60">
             &copy; {new Date().getFullYear()} Jodapro AS. Alle rettigheter reservert. 
-            JodaCare er et registrert varemerke.
+            jodacare er et registrert varemerke.
           </p>
         </div>
       </Container>

@@ -46,7 +46,7 @@ export function HowItWorks() {
               id="how-it-works-title"
               className="font-serif text-3xl sm:text-4xl font-bold text-text"
             >
-              Slik fungerer JodaCare
+              Slik fungerer jodacare
             </h2>
             <p className="mt-4 text-lg text-text-light">
               Fire enkle steg til bedre kommunikasjon og trygghet i hverdagen.
