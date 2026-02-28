@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Hero, Story, CTA } from '@/components/sections';
 import { Container, Card, CardTitle, CardContent } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
@@ -14,17 +15,18 @@ export const metadata: Metadata = {
 
 const partners = [
   { name: 'SINTEF', description: 'Forskningspartner for utvikling av demensvennlig grensesnitt' },
-  { name: 'Norsk Regnesentral', description: 'Samarbeid om AI og maskinlæring' },
   { name: 'Universitetet i Agder', description: 'Akademisk partner for forskning på digital omsorg' },
-  { name: 'NoIsolation', description: 'Samarbeid om teknologi for sosial inkludering' },
-  { name: 'Sopra Steria', description: 'Teknologipartner for skalering og integrasjon' },
+  { name: 'Innovasjon Norge', description: 'Virkemiddelpartner for jodacare' },
+  { name: 'Norway Healthtech', description: 'Norges ledende helseklynge' },
+  { name: 'Dynamisk Helse', description: 'SkillAid, AI-partner for jodacare' },
 ];
 
 const timeline = [
   { year: '2016', event: 'jodacare lanseres for første gang i norske kommuner' },
   { year: '2018', event: 'Jodabook utvikles i samarbeid med SINTEF — en demensvennlig versjon' },
   { year: '2020', event: 'Videosamtaler lanseres under pandemien' },
-  { year: '2022', event: 'Jodapro AS overtar eierskapet av jodacare' },
+  { year: '2022', event: 'Jodacare AS bytter navn til Jodatech AS' },
+  { year: '2025', event: 'Jodatech AS går konkurs og Jodacare AS overtar eierskapet av jodacare' },
   { year: '2026', event: 'jodacare 2.0 lanseres med ny arkitektur og AI-støtte' },
 ];
 
@@ -42,15 +44,14 @@ export default function OmPage() {
         <Container size="md">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="left">
-              <div className="aspect-[4/5] bg-secondary-light rounded-2xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-4xl font-serif text-primary">KH</span>
-                  </div>
-                  <p className="text-text-muted text-sm">
-                    [Bilde av Kristil Erla Håland]
-                  </p>
-                </div>
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/kristilomamma.jpg"
+                  alt="Kristil Erla Håland med sin mor"
+                  width={400}
+                  height={500}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </FadeIn>
 
@@ -73,7 +74,7 @@ export default function OmPage() {
                     og føle seg sett og ivaretatt.
                   </p>
                   <p>
-                    I dag brukes jodacare av tusenvis av familier og kommuner over hele Norge. 
+                    I dag brukes jodacare av familier og kommuner over hele Norge. 
                     Men kjernen er den samme: å skape trygghet, verdighet og sammenheng for 
                     sårbare mennesker og de som bryr seg om dem.
                   </p>
@@ -159,15 +160,15 @@ export default function OmPage() {
                 Jodapro AS
               </h2>
               <p className="text-text-light mb-6">
-                jodacare eies og utvikles av Jodapro AS, et norsk selskap med hovedkontor 
-                i Forskningsparken i Oslo.
+                jodacare eies og utvikles av Jodacare AS, et norsk selskap med hovedkontor 
+                i Asker.
               </p>
               <div className="text-sm text-text-muted space-y-1">
                 <p>Org.nr: 927 828 947</p>
-                <p>Forskningsparken, Gaustadalléen 21, 0349 Oslo</p>
+                <p>Jørgens vei 9, 1386 Asker</p>
                 <p>
-                  <a href="https://jodapro.no" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
-                    jodapro.no
+                  <a href="https://jodacare.no" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    jodacare.no
                   </a>
                 </p>
               </div>

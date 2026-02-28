@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Source_Sans_3, Source_Serif_4 } from 'next/font/google';
-import { Header } from '@/components/layout';
-import { Footer } from '@/components/layout';
+import { Header, Footer, AnnouncementBanner } from '@/components/layout';
 import './globals.css';
 
 const sourceSans = Source_Sans_3({
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
       'En sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon mellom pårørende, helsepersonell og den sårbare personen selv.',
     images: [
       {
-        url: '/logo/jodacare-logo.png',
+        url: '/brand/logo_liggende.png',
         width: 1200,
         height: 630,
         alt: 'jodacare - Trygghet og verdighet i hverdagen',
@@ -63,7 +62,7 @@ export const metadata: Metadata = {
     title: 'jodacare - Sikker kommunikasjon rundt sårbare personer',
     description:
       'En sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon.',
-    images: ['/logo/jodacare-logo.png'],
+    images: ['/brand/logo_liggende.png'],
   },
   robots: {
     index: true,
@@ -83,6 +82,7 @@ export default function RootLayout({
           Hopp til hovedinnhold
         </a>
         <Header />
+        <AnnouncementBanner />
         <main id="main-content" className="flex-1">
           {children}
         </main>

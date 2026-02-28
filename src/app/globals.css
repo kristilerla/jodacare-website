@@ -3,32 +3,32 @@
 /* jodacare 2.0 Design System */
 
 :root {
-  /* Primary - Dyp blågrønn for tillit */
-  --color-primary: #1e4d5c;
-  --color-primary-light: #2d6b7a;
-  --color-primary-dark: #153a47;
-  
+  /* Primary - Varm brun for tillit og varme */
+  --color-primary: #5b3728;
+  --color-primary-light: #7d5442;
+  --color-primary-dark: #3f251a;
+
   /* Secondary - Varm sand */
   --color-secondary: #e8d5c4;
   --color-secondary-light: #f5ebe2;
   --color-secondary-dark: #d4c0ad;
-  
-  /* Accent - Myk korall for varme */
-  --color-accent: #d4847c;
-  --color-accent-light: #f0b8b2;
-  --color-accent-dark: #b86b63;
-  
-  /* Bakgrunn - Varm hvit */
+
+  /* Accent - Myk terrakotta */
+  --color-accent: #c47a6e;
+  --color-accent-light: #e8a99e;
+  --color-accent-dark: #a85f54;
+
+  /* Bakgrunn - Varm kremhvit */
   --color-background: #faf8f5;
-  --color-background-alt: #f5f1eb;
-  
-  /* Tekst */
-  --color-text: #2c3e3e;
-  --color-text-light: #5a6b6b;
-  --color-text-muted: #7a8a8a;
-  
+  --color-background-alt: #f5f0ea;
+
+  /* Tekst - Varme toner */
+  --color-text: #3a2e28;
+  --color-text-light: #6a5a50;
+  --color-text-muted: #8a7c72;
+
   /* Semantiske farger */
-  --color-success: #4a9d7c;
+  --color-success: #5a9a72;
   --color-warning: #d4a84c;
   --color-error: #c75a5a;
   
@@ -109,6 +109,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   line-height: 1.6;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -118,7 +119,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: 600;
   line-height: 1.2;
-  color: var(--color-text);
 }
 
 /* Focus styles for accessibility */

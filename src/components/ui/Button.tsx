@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'white' | 'white-outline';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonBaseProps {
@@ -30,6 +30,8 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary: 'bg-secondary text-text hover:bg-secondary-dark focus-visible:ring-secondary',
   outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white focus-visible:ring-primary',
   ghost: 'text-primary hover:bg-secondary-light focus-visible:ring-primary',
+  white: 'bg-white text-primary hover:bg-white/90 focus-visible:ring-white',
+  'white-outline': 'border-2 border-white text-white hover:bg-white hover:text-primary focus-visible:ring-white',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

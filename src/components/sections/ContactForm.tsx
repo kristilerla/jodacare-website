@@ -110,7 +110,7 @@ export function ContactForm({
                     </div>
                     <div>
                       <div className="text-sm text-text-muted">Adresse</div>
-                      <div className="font-medium">Forskningsparken, Oslo</div>
+                      <div className="font-medium">Jørgens vei 9, 1386 Asker</div>
                     </div>
                   </div>
                 </div>

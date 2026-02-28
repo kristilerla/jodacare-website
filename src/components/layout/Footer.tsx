@@ -13,7 +13,7 @@ const navigation = {
   selskap: [
     { name: 'Om oss', href: '/om' },
     { name: 'Kontakt', href: '/kontakt' },
-    { name: 'Jodapro AS', href: 'https://jodapro.no' },
+    { name: 'Jodacare AS', href: 'https://jodacare.no' },
   ],
   ressurser: [
     { name: 'Hjelpesenter', href: 'https://jodacare.atlassian.net/servicedesk/customer/portals' },

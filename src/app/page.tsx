@@ -1,5 +1,14 @@
 import { Hero, HowItWorks, WhoUsesIt, Features, Security, Story, CTA } from '@/components/sections';
 
+const heroImages = [
+  { src: '/hero/hero-1.jpg', alt: 'Barnehånd holder en eldre persons hånd — nærhet mellom generasjoner' },
+  { src: '/hero/hero-2.jpg', alt: 'Eldre kvinne smiler mens hun bruker telefonen med ørepropper' },
+  { src: '/hero/hero-4.jpg', alt: 'Bestemor ser kjærlig på et spedbarn som ligger foran henne' },
+  { src: '/hero/hero-5.jpg', alt: 'To eldre kvinner som ler og støtter hverandre' },
+  { src: '/hero/hero-7.jpg', alt: 'Eldre og yngre ansikt side om side — generasjoner knyttet sammen' },
+  { src: '/hero/hero-8.jpg', alt: 'Nærbilde av et ansikt med livets linjer' },
+];
+
 export default function Home() {
   return (
     <>
@@ -9,6 +18,7 @@ export default function Home() {
         primaryCta={{ text: 'For kommuner', href: '/kommune' }}
         secondaryCta={{ text: 'For familier', href: '/familie' }}
         variant="home"
+        images={heroImages}
       />
 
       <HowItWorks />
