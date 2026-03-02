@@ -25,16 +25,31 @@ export function ContactForm({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setError(null);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Noe gikk galt.');
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Kunne ikke sende melding. Vennligst prøv igjen senere.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -229,6 +244,12 @@ export function ContactForm({
                       placeholder="Fortell oss hva vi kan hjelpe deg med..."
                     />
                   </div>
+
+                  {error && (
+                    <div className="p-3 rounded-lg bg-red-50 text-red-700 text-sm">
+                      {error}
+                    </div>
+                  )}
 
                   <Button type="submit" fullWidth disabled={isSubmitting}>
                     {isSubmitting ? 'Sender...' : 'Send melding'}

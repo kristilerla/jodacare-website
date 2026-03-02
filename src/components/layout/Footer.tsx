@@ -17,8 +17,7 @@ const navigation = {
   ],
   ressurser: [
     { name: 'Hjelpesenter', href: 'https://jodacare.atlassian.net/servicedesk/customer/portals' },
-    { name: 'API-dokumentasjon', href: 'https://docs.jodacare.com' },
-    { name: 'Logg inn', href: 'https://app.jodacare.no' },
+{ name: 'Logg inn', href: 'https://app.jodacare.no' },
   ],
 };
 
@@ -36,7 +35,7 @@ export function Footer() {
               alt="jodacare logo"
               width={180}
               height={50}
-              className="h-10 w-auto brightness-0 invert"
+              className="h-10 w-auto"
             />
             <p className="text-sm text-white/80 max-w-xs">
               En sikker plattform for kommunikasjon rundt sårbare personer. 
@@ -59,7 +58,7 @@ export function Footer() {
               </a>
               <div className="flex items-center gap-2 text-sm text-white/80">
                 <MapPinIcon className="h-5 w-5" aria-hidden="true" />
-                Forskningsparken, Oslo
+                Jørgens vei 9, Asker
               </div>
             </div>
           </div>

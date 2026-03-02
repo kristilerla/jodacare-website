@@ -177,7 +177,7 @@ export default function KommunePage() {
           title="Enkel og forutsigbar prising"
           subtitle="Alt inkludert i én månedspris. Ingen skjulte kostnader."
           tiers={kommunePricing}
-          footnote="Oppstartsgebyr kr 28 000 per kommune (inkluderer introduksjon og databehandleravtaler). Superbrukerkurs: kr 7 500."
+          footnote="Oppstartsgebyr kr 35 000 per kommune (inkluderer introduksjon og databehandleravtaler). Superbrukerkurs: kr 12 000."
         />
       </div>
 

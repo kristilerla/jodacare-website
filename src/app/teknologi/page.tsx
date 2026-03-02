@@ -47,7 +47,7 @@ const platformFeatures = [
   },
   {
     title: 'Fungerer som en app (PWA)',
-    description: 'jodacare kan installeres som en app på mobil og nettbrett uten å gå via app-butikker. Rask oppstart, push-varsler og hjemmeskjerm-ikon.',
+    description: 'jodacare kan installeres som en app på mobil og nettbrett, og kommer også i App Store og Google Play. Rask oppstart, push-varsler og hjemmeskjerm-ikon.',
     icon: DevicePhoneMobileIcon,
   },
   {

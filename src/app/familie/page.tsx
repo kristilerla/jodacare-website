@@ -84,7 +84,7 @@ const familyPricing = [
   },
   {
     name: 'Familie',
-    price: 'kr 149',
+    price: 'kr 299',
     period: '/mnd',
     description: 'For familier som vil holde kontakten og koordinere hverdagen.',
     features: [
