@@ -204,8 +204,8 @@ export default function SikkerhetPage() {
                 <div className="text-sm text-text-muted">I drift siden</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">100+</div>
-                <div className="text-sm text-text-muted">Kommuner</div>
+                <div className="text-3xl font-bold text-primary">Norge</div>
+                <div className="text-sm text-text-muted">Kunder over hele landet</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">Nivå 4</div>
