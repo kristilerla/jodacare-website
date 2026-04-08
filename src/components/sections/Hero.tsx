@@ -24,6 +24,7 @@ interface HeroProps {
   };
   variant?: 'home' | 'page';
   images?: HeroImage[];
+  badge?: string;
 }
 
 const SLIDE_DURATION = 6000;
@@ -35,6 +36,7 @@ export function Hero({
   secondaryCta,
   variant = 'home',
   images = [],
+  badge,
 }: HeroProps) {
   const isHome = variant === 'home';
   const hasImages = isHome && images.length > 0;
@@ -61,7 +63,14 @@ export function Hero({
       >
         <Container size="md">
           <div className="max-w-3xl">
-            <FadeIn>
+            {badge && (
+              <FadeIn>
+                <span className="inline-block px-4 py-1.5 bg-accent text-white text-sm font-medium rounded-full mb-6">
+                  {badge}
+                </span>
+              </FadeIn>
+            )}
+            <FadeIn delay={badge ? 0.1 : 0}>
               <h1
                 id="hero-title"
                 className="font-serif font-bold text-text text-3xl sm:text-4xl lg:text-5xl leading-tight"
@@ -69,13 +78,13 @@ export function Hero({
                 {title}
               </h1>
             </FadeIn>
-            <FadeIn delay={0.1}>
+            <FadeIn delay={badge ? 0.2 : 0.1}>
               <p className="mt-6 text-lg sm:text-xl text-text-light leading-relaxed">
                 {subtitle}
               </p>
             </FadeIn>
             {(primaryCta || secondaryCta) && (
-              <FadeIn delay={0.2}>
+              <FadeIn delay={badge ? 0.3 : 0.2}>
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
                   {primaryCta && (
                     <Button href={primaryCta.href} size="lg">

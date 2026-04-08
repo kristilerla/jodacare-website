@@ -24,24 +24,29 @@ export const metadata: Metadata = {
 
 const familyFeatures = [
   {
-    title: 'Del hverdagsøyeblikk',
-    description: 'Bilder, notater og beskjeder fra hverdagen — delt med hele familien.',
+    title: 'Del dagbok, bilder og meldinger',
+    description: 'Del dagbok, bilder og meldinger med hele familien.',
     icon: PhotoIcon,
   },
   {
     title: 'Felles kalender',
-    description: 'Oversikt over besøk og avtaler. Alle vet hvem som kommer når.',
+    description: 'Felles kalender for avtaler, besøk og aktiviteter.',
     icon: CalendarDaysIcon,
   },
   {
-    title: 'Trygg og privat',
-    description: 'Kun inviterte familiemedlemmer har tilgang. Sikker innlogging.',
-    icon: LockClosedIcon,
+    title: 'AI-generert livshistorie',
+    description: 'AI-generert livshistorie som bevarer minner.',
+    icon: SparklesIcon,
   },
   {
-    title: 'Alle kan bidra',
-    description: 'Søsken, barn, barnebarn — alle kan holde seg oppdatert og bidra.',
+    title: 'Inviter opptil 10 familiemedlemmer',
+    description: 'Inviter opptil 10 familiemedlemmer.',
     icon: UsersIcon,
+  },
+  {
+    title: 'Koble til kommunens helseteam',
+    description: 'Koble til kommunens helseteam når behovet oppstår.',
+    icon: HeartIcon,
   },
 ];
 
@@ -70,47 +75,37 @@ const scenarios = [
 
 const familyPricing = [
   {
-    name: 'Gratis prøveperiode',
-    price: 'kr 0',
-    period: '/14 dager',
-    description: 'Prøv jodacare helt gratis i 14 dager. Ingen kortopplysninger kreves.',
-    features: [
-      'Fullt tilgang til alle funksjoner',
-      'Inviter hele familien',
-      'Delt tidslinje og kalender',
-      'Sikker innlogging',
-    ],
-    cta: { text: 'Start gratis', href: '/kontakt' },
-  },
-  {
     name: 'Familie',
     price: 'kr 299',
     period: '/mnd',
     description: 'For familier som vil holde kontakten og koordinere hverdagen.',
     features: [
-      'Ubegrenset familiemedlemmer',
+      '14 dager gratis prøveperiode',
+      'Inviter opptil 10 familiemedlemmer',
       'Delt tidslinje med bilder og tekst',
       'Felles kalender',
-      'Livshistorie-profil',
+      'AI-generert livshistorie',
       'Sikker meldingskanal',
-      'Videosamtaler',
-      'Prioritert support',
+      'Koble til kommunens helseteam',
     ],
-    cta: { text: 'Kom i gang', href: '/kontakt' },
+    cta: { text: 'Opprett Familierom — gratis', href: 'https://app.jodaskills.com/register?flow=family' },
     highlighted: true,
-    badge: 'Anbefalt',
+    badge: 'Gratis i 14 dager',
   },
 ];
+
+const familyPricingFootnote = 'Ingen kredittkort. 14 dager gratis. 299 kr/mnd etterpå, ingen binding.';
 
 export default function FamiliePage() {
   return (
     <>
       <Hero
-        title="Hold hele familien oppdatert"
-        subtitle="Én felles plass for all informasjon om den du er glad i. Uansett hvor i landet dere bor."
-        primaryCta={{ text: 'Start gratis prøveperiode', href: '/kontakt' }}
+        title="Start et Familierom"
+        subtitle="Samle familien rundt den som trenger omsorg. Del hverdagen, koordiner besøk, og hold alle oppdatert — uansett hvor dere bor."
+        primaryCta={{ text: 'Opprett Familierom — gratis', href: 'https://app.jodaskills.com/register?flow=family' }}
         secondaryCta={{ text: 'Se hvordan det fungerer', href: '#hvordan' }}
         variant="page"
+        badge="Gratis i 14 dager"
       />
 
       {/* Scenario section */}
@@ -217,9 +212,10 @@ export default function FamiliePage() {
 
           <StaggerContainer className="space-y-6">
             {[
-              { step: '1', title: 'Registrer deg', description: 'Opprett en konto med sikker innlogging. Det tar bare et par minutter.' },
-              { step: '2', title: 'Inviter familien', description: 'Send invitasjoner til søsken, barn og andre som skal være med i nettverket.' },
-              { step: '3', title: 'Begynn å dele', description: 'Del bilder, oppdateringer og beskjeder. Hold alle oppdatert på hverdagen.' },
+              { step: '1', title: 'Opprett familierom', description: 'Registrer deg og fortell oss hvem som skal få omsorg.' },
+              { step: '2', title: 'Inviter familien', description: 'Legg til søsken, barn og andre som vil følge med.' },
+              { step: '3', title: 'Del hverdagen', description: 'Skriv i dagboken, del bilder og bruk kalenderen.' },
+              { step: '4', title: 'Koble til kommunen', description: 'Når behovet oppstår — inviter helsepersonell inn i teamet.' },
             ].map((item) => (
               <StaggerItem key={item.step}>
                 <div className="flex items-start gap-6">
@@ -241,12 +237,13 @@ export default function FamiliePage() {
         title="Enkel prising for familier"
         subtitle="Start gratis og oppgrader når du er klar."
         tiers={familyPricing}
+        footnote={familyPricingFootnote}
       />
 
       <CTA
         title="Gi familien din trygghet"
         subtitle="Start gratis i dag og se hvor enkelt det er å holde alle oppdatert."
-        primaryCta={{ text: 'Start gratis prøveperiode', href: '/kontakt' }}
+        primaryCta={{ text: 'Opprett Familierom — gratis', href: 'https://app.jodaskills.com/register?flow=family' }}
         variant="accent"
       />
     </>
