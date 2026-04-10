@@ -3,34 +3,34 @@
 /* jodacare 2.0 Design System */
 
 :root {
-  /* Primary - Varm brun for tillit og varme */
-  --color-primary: #5b3728;
-  --color-primary-light: #7d5442;
-  --color-primary-dark: #3f251a;
+  /* Primary - JodaCare teal */
+  --color-primary: #2c7a8c;
+  --color-primary-light: #3d9aad;
+  --color-primary-dark: #245f6d;
 
-  /* Secondary - Varm sand */
-  --color-secondary: #e8d5c4;
-  --color-secondary-light: #f5ebe2;
-  --color-secondary-dark: #d4c0ad;
+  /* Secondary - Nøytral grå */
+  --color-secondary: #E5E7EB;
+  --color-secondary-light: #F3F4F6;
+  --color-secondary-dark: #D1D5DB;
 
-  /* Accent - Myk terrakotta */
-  --color-accent: #c47a6e;
-  --color-accent-light: #e8a99e;
-  --color-accent-dark: #a85f54;
+  /* Accent - Teal-aksent */
+  --color-accent: #2c7a8c;
+  --color-accent-light: #F0FDFA;
+  --color-accent-dark: #245f6d;
 
-  /* Bakgrunn - Varm kremhvit */
-  --color-background: #faf8f5;
-  --color-background-alt: #f5f0ea;
+  /* Bakgrunn */
+  --color-background: #FFFFFF;
+  --color-background-alt: #F0F4F8;
 
-  /* Tekst - Varme toner */
-  --color-text: #3a2e28;
-  --color-text-light: #6a5a50;
-  --color-text-muted: #8a7c72;
+  /* Tekst */
+  --color-text: #2c5f6f;
+  --color-text-light: #6B7280;
+  --color-text-muted: #9CA3AF;
 
   /* Semantiske farger */
-  --color-success: #5a9a72;
-  --color-warning: #d4a84c;
-  --color-error: #c75a5a;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
   
   /* Spacing */
   --spacing-xs: 0.25rem;

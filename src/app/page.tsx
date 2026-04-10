@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
@@ -10,7 +13,7 @@ const pathCards = [
     description:
       'Hold deg oppdatert på hverdagen til den du er glad i — uansett avstand. Kom i gang med Vipps på fem minutter.',
     badge: 'Tilgjengelig nå',
-    badgeColor: 'bg-primary text-white',
+    badgeColor: 'bg-success/10 text-success',
     cta: 'Opprett Familierom',
     href: '/familie',
     highlighted: true,
@@ -21,7 +24,7 @@ const pathCards = [
     description:
       'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie — koordinert omsorg i én plattform.',
     badge: 'Beta 2026',
-    badgeColor: 'bg-text-light/20 text-text-light',
+    badgeColor: 'bg-warning/10 text-warning',
     cta: 'Se alle tjenester',
     href: '/kommune',
     highlighted: false,
@@ -32,7 +35,7 @@ const pathCards = [
     description:
       'Vår Implementeringsansvarlig veileder din kommune steg for steg — fra første oppsett til systemet sitter.',
     badge: 'Inkludert for kommuner',
-    badgeColor: 'bg-blue-100 text-blue-800',
+    badgeColor: 'bg-primary/10 text-primary',
     cta: 'Les mer',
     href: '/implementering',
     highlighted: false,
@@ -51,42 +54,42 @@ const services = [
     title: 'Familierom',
     subtitle: 'For pårørende og nær familie',
     badge: 'Tilgjengelig nå',
-    badgeColor: 'bg-primary/10 text-primary',
+    badgeColor: 'bg-success/10 text-success',
     href: '/familie',
   },
   {
     title: 'Omsorgsbolig / Hub',
     subtitle: 'Skjerm i leiligheten — for beboer, familie og ansatte',
     badge: 'Beta 2026',
-    badgeColor: 'bg-orange-100 text-orange-700',
+    badgeColor: 'bg-warning/10 text-warning',
     href: '/omsorgsbolig',
   },
   {
     title: 'BPA',
     subtitle: 'Brukerstyrt personlig assistanse',
     badge: 'Beta 2026',
-    badgeColor: 'bg-orange-100 text-orange-700',
+    badgeColor: 'bg-warning/10 text-warning',
     href: '/bpa',
   },
   {
     title: 'Avlastning',
     subtitle: 'For barn med utviklingshemming',
     badge: 'Kommer',
-    badgeColor: 'bg-gray-100 text-gray-500',
+    badgeColor: 'bg-secondary-light text-text-muted',
     href: '/avlastning',
   },
   {
     title: 'Barnevern',
     subtitle: 'Samvær og dokumentasjon',
     badge: 'Kommer',
-    badgeColor: 'bg-gray-100 text-gray-500',
+    badgeColor: 'bg-secondary-light text-text-muted',
     href: '/barnevern',
   },
   {
     title: 'JodaVisit',
     subtitle: 'Videobesøk for hjemmeboende',
     badge: 'Kommer',
-    badgeColor: 'bg-gray-100 text-gray-500',
+    badgeColor: 'bg-secondary-light text-text-muted',
     href: '/jodavisit',
   },
 ];
@@ -94,31 +97,47 @@ const services = [
 export default function Home() {
   return (
     <>
-      {/* SEKSJON 1 — Personlig hero */}
-      <section className="py-20 lg:py-28">
-        <Container size="md">
-          <FadeIn>
-            <div className="text-center max-w-2xl mx-auto">
+      {/* SEKSJON 1 — Personlig hero med bakgrunnsbilde */}
+      <section className="relative min-h-[480px] overflow-hidden">
+        <div className="absolute inset-0" aria-hidden="true">
+          <Image
+            src="/hero/hero-1.jpg"
+            alt="Barnehånd holder en eldre persons hånd — nærhet mellom generasjoner"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 768px, (max-width: 1200px) 1200px, 1920px"
+          />
+          <div className="absolute inset-0 bg-black/45" />
+        </div>
+
+        <Container size="md" className="relative z-10">
+          <div className="py-20 lg:py-28 text-center max-w-2xl mx-auto">
+            <FadeIn>
               <blockquote>
-                <p className="text-2xl sm:text-3xl leading-relaxed text-primary font-serif">
+                <p className="text-2xl sm:text-3xl leading-relaxed text-white font-serif drop-shadow-lg">
                   «Mamma, JODA! Du har hatt besøk av Petter fra hjemmetjenesten.
                   <br />
                   Han laget kjøttkaker til middag for deg.»
                 </p>
-                <p className="mt-6 text-2xl sm:text-3xl leading-relaxed text-primary font-serif">
+                <p className="mt-6 text-2xl sm:text-3xl leading-relaxed text-white font-serif drop-shadow-lg">
                   «Å ja», sa hun — og husker at han var der.
                 </p>
               </blockquote>
-              <p className="mt-6 text-sm text-text-light">
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="mt-6 text-sm text-white/80">
                 — Kristil Erla Haland, grunnlegger
               </p>
-              <p className="mt-10 text-base sm:text-lg text-text-light leading-relaxed max-w-[560px] mx-auto">
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="mt-10 text-base sm:text-lg text-white/90 leading-relaxed max-w-[560px] mx-auto drop-shadow-md">
                 Det var den samtalen som ble til JodaCare. En enkel måte å holde familien oppdatert
                 og gi den du er glad i sammenheng i hverdagen. Siden 2016 har vi bygget det videre —
                 for familier, for kommuner og for alle som trenger å vite at det går bra.
               </p>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </Container>
       </section>
 
@@ -142,7 +161,7 @@ export default function Home() {
                     className={`h-full rounded-2xl bg-white p-8 flex flex-col transition-all duration-200 ${
                       card.highlighted
                         ? 'border-2 border-primary shadow-lg'
-                        : 'border border-[#9FE1CB] hover:border-primary/60 hover:shadow-md'
+                        : 'border border-secondary hover:border-primary/40 hover:shadow-md'
                     }`}
                   >
                     <span className="text-3xl" aria-hidden="true">
@@ -225,7 +244,7 @@ export default function Home() {
                         {service.subtitle}
                       </p>
                     </div>
-                    <ArrowRightIcon className="w-5 h-5 text-text-light flex-shrink-0 ml-4 group-hover:text-primary transition-colors" />
+                    <ArrowRightIcon className="w-5 h-5 text-text-muted flex-shrink-0 ml-4 group-hover:text-primary transition-colors" />
                   </div>
                 </Link>
               </StaggerItem>

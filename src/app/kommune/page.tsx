@@ -22,7 +22,7 @@ const services = [
     description:
       'En skjerm i leiligheten som kobler beboer, familie og ansatte i én sammenhengende flyt. Familien er alltid nær.',
     badge: 'Beta 2026',
-    badgeColor: 'bg-orange-100 text-orange-700',
+    badgeColor: 'bg-warning/10 text-warning',
     href: '/omsorgsbolig',
   },
   {
@@ -30,7 +30,7 @@ const services = [
     description:
       'Samle omsorgsteamet rundt brukeren med Jodabook, sjekklister og full oversikt for koordinator og familie.',
     badge: 'Beta 2026',
-    badgeColor: 'bg-orange-100 text-orange-700',
+    badgeColor: 'bg-warning/10 text-warning',
     href: '/bpa',
   },
   {
@@ -38,7 +38,7 @@ const services = [
     description:
       'Kontinuitet for barnet — de samme rutinene og den samme tryggheten uansett om det er hjemme eller i avlastning.',
     badge: 'Kommer',
-    badgeColor: 'bg-gray-100 text-gray-500',
+    badgeColor: 'bg-secondary-light text-text-muted',
     href: '/avlastning',
   },
   {
@@ -46,7 +46,7 @@ const services = [
     description:
       'Samvær dokumentert trygt med informasjonsbarrierer som beskytter alle parter og full sporbarhet.',
     badge: 'Kommer',
-    badgeColor: 'bg-gray-100 text-gray-500',
+    badgeColor: 'bg-secondary-light text-text-muted',
     href: '/barnevern',
   },
   {
@@ -54,7 +54,7 @@ const services = [
     description:
       'Erstatt unødvendige fysiske besøk med trygge videobesøk. Eldre bor hjemme lenger, med familien nær.',
     badge: 'Kommer',
-    badgeColor: 'bg-gray-100 text-gray-500',
+    badgeColor: 'bg-secondary-light text-text-muted',
     href: '/jodavisit',
   },
   {
@@ -62,7 +62,7 @@ const services = [
     description:
       'Vår Implementeringsansvarlig veileder din kommune steg for steg — fra første oppsett til systemet sitter i ryggmargen.',
     badge: 'Inkludert',
-    badgeColor: 'bg-blue-100 text-blue-800',
+    badgeColor: 'bg-primary/10 text-primary',
     href: '/implementering',
   },
 ];
