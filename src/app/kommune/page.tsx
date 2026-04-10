@@ -1,192 +1,180 @@
 import type { Metadata } from 'next';
-import { Hero, Security, Pricing, CTA } from '@/components/sections';
-import { Container, Card, CardTitle, CardContent } from '@/components/ui';
+import Link from 'next/link';
+import { Hero } from '@/components/sections';
+import { Container, Button } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
-import {
-  ChartBarIcon,
-  UserGroupIcon,
-  DocumentCheckIcon,
-  ClockIcon,
-  HomeModernIcon,
-  BuildingOfficeIcon,
-  AcademicCapIcon,
-  HeartIcon,
-  SparklesIcon,
-} from '@heroicons/react/24/outline';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'For kommuner og organisasjoner',
-  description: 'jodacare hjelper kommuner med å øke kapasiteten i helsetjenesten, redusere pårørendehenvendelser og oppfylle lovkrav om pårørendesamarbeid.',
+  title: 'JodaCare for kommuner — alle tjenester',
+  description:
+    'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie — koordinert omsorg i én plattform. Se alle tjenester fra JodaCare.',
   openGraph: {
-    title: 'jodacare for kommuner og organisasjoner',
-    description: 'Øk kapasiteten i helsetjenesten uten å øke bemanningen. Sikker samhandling med pårørende.',
+    title: 'JodaCare for kommuner',
+    description:
+      'Koordinert omsorg i én plattform. Se alle tjenester fra JodaCare for norske kommuner.',
   },
 };
 
-const valuePropositions = [
+const services = [
   {
-    title: 'Øk kapasiteten',
-    description: 'Effektiviser samhandling med pårørende uten å øke bemanningen. Spar tid på telefonhenvendelser.',
-    icon: ChartBarIcon,
+    title: 'Omsorgsbolig / Hub',
+    description:
+      'En skjerm i leiligheten som kobler beboer, familie og ansatte i én sammenhengende flyt. Familien er alltid nær.',
+    badge: 'Beta 2026',
+    badgeColor: 'bg-orange-100 text-orange-700',
+    href: '/omsorgsbolig',
   },
   {
-    title: 'Reduser misnøye',
-    description: 'Pårørende føler seg inkludert og informert. Færre klager og bekymringshenvendelser.',
-    icon: UserGroupIcon,
+    title: 'BPA — brukerstyrt personlig assistanse',
+    description:
+      'Samle omsorgsteamet rundt brukeren med Jodabook, sjekklister og full oversikt for koordinator og familie.',
+    badge: 'Beta 2026',
+    badgeColor: 'bg-orange-100 text-orange-700',
+    href: '/bpa',
   },
   {
-    title: 'Oppfyll lovkrav',
-    description: 'Dokumentert samhandling med pårørende i tråd med helsepersonelloven.',
-    icon: DocumentCheckIcon,
+    title: 'Avlastning',
+    description:
+      'Kontinuitet for barnet — de samme rutinene og den samme tryggheten uansett om det er hjemme eller i avlastning.',
+    badge: 'Kommer',
+    badgeColor: 'bg-gray-100 text-gray-500',
+    href: '/avlastning',
   },
   {
-    title: 'Full sporbarhet',
-    description: 'Alle aktiviteter logges automatisk. Komplett dokumentasjon av all kommunikasjon.',
-    icon: ClockIcon,
+    title: 'Barnevern og samvær',
+    description:
+      'Samvær dokumentert trygt med informasjonsbarrierer som beskytter alle parter og full sporbarhet.',
+    badge: 'Kommer',
+    badgeColor: 'bg-gray-100 text-gray-500',
+    href: '/barnevern',
+  },
+  {
+    title: 'JodaVisit — videobesøk',
+    description:
+      'Erstatt unødvendige fysiske besøk med trygge videobesøk. Eldre bor hjemme lenger, med familien nær.',
+    badge: 'Kommer',
+    badgeColor: 'bg-gray-100 text-gray-500',
+    href: '/jodavisit',
+  },
+  {
+    title: 'Implementeringsstøtte',
+    description:
+      'Vår Implementeringsansvarlig veileder din kommune steg for steg — fra første oppsett til systemet sitter i ryggmargen.',
+    badge: 'Inkludert',
+    badgeColor: 'bg-blue-100 text-blue-800',
+    href: '/implementering',
   },
 ];
 
-const useCases = [
-  {
-    title: 'Hjemmetjeneste',
-    description: 'Gi pårørende innsyn i hverdagen og reduser bekymring for de som bor hjemme.',
-    icon: HomeModernIcon,
-  },
-  {
-    title: 'Sykehjem og omsorgsboliger',
-    description: 'Hold familier oppdatert på hverdagen til beboere, selv når de ikke kan besøke.',
-    icon: BuildingOfficeIcon,
-  },
-  {
-    title: 'Barn og unge',
-    description: 'Koordiner rundt barn og unge med funksjonsnedsettelser på tvers av tjenester.',
-    icon: AcademicCapIcon,
-  },
-  {
-    title: 'Palliativ omsorg',
-    description: 'Støtt familier i en vanskelig tid med tett kommunikasjon og nærkontakt via video.',
-    icon: HeartIcon,
-  },
-  {
-    title: 'Overgang til arbeidsliv',
-    description: 'Følg opp personer med lærevansker i overgangen fra skole til arbeidsliv.',
-    icon: SparklesIcon,
-  },
-];
-
-const kommunePricing = [
-  {
-    name: 'Kommune',
-    price: 'kr 2 990',
-    period: '/mnd',
-    description: 'For kommuner og helseorganisasjoner som vil styrke pårørendesamarbeidet.',
-    features: [
-      '10 tjenestemottakere inkludert',
-      'Ubegrenset ansatte',
-      'Ubegrenset pårørende',
-      'ID-porten innlogging',
-      'Full sporbarhet og logging',
-      'Databehandleravtale',
-      'Prioritert support',
-    ],
-    cta: { text: 'Ta kontakt', href: '/kontakt' },
-    highlighted: true,
-    badge: 'Mest populær',
-  },
+const trustItems = [
+  'Norske kommuner siden 2016',
+  'ID-porten og Vipps',
+  'GDPR · data i Europa',
+  'Europol Innovation Award 2024',
 ];
 
 export default function KommunePage() {
   return (
     <>
       <Hero
-        title="Styrk samarbeidet med pårørende"
-        subtitle="jodacare gir helsetjenesten et verktøy for sikker og effektiv kommunikasjon med pårørende — uten å øke arbeidsmengden."
-        primaryCta={{ text: 'Ta kontakt for demo', href: '/kontakt' }}
-        secondaryCta={{ text: 'Se priser', href: '#priser' }}
+        title="JodaCare for kommuner"
+        subtitle="Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie — koordinert omsorg i én plattform. Velg tjenesten som passer for deg."
+        primaryCta={{ text: 'Kontakt oss', href: '/kontakt' }}
         variant="page"
       />
 
-      {/* Value propositions */}
-      <section className="py-20 lg:py-28 bg-background-alt" aria-labelledby="value-title">
+      {/* Trust-bar */}
+      <section className="border-y border-secondary">
+        <Container>
+          <div className="py-5 flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {trustItems.map((item, i) => (
+              <span
+                key={item}
+                className="flex items-center gap-x-4 text-xs sm:text-sm text-text-light"
+              >
+                {i > 0 && (
+                  <span
+                    className="hidden sm:inline text-secondary-dark"
+                    aria-hidden="true"
+                  >
+                    ·
+                  </span>
+                )}
+                <span>✓ {item}</span>
+              </span>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Tjenesteoversikt */}
+      <section
+        className="py-20 lg:py-28"
+        aria-labelledby="services-title"
+      >
         <Container>
           <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 id="value-title" className="font-serif text-3xl sm:text-4xl font-bold text-text">
-                Hvorfor velge jodacare?
+            <div className="text-center mb-16">
+              <h2
+                id="services-title"
+                className="font-serif text-3xl sm:text-4xl font-bold text-text"
+              >
+                Alle tjenester
               </h2>
               <p className="mt-4 text-lg text-text-light">
-                jodacare er utviklet i tett samarbeid med norske kommuner siden 2016.
+                Klikk på en tjeneste for å lese mer.
               </p>
             </div>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {valuePropositions.map((item) => (
-              <StaggerItem key={item.title}>
-                <Card variant="elevated" padding="lg" className="h-full text-center">
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-7 h-7 text-primary" aria-hidden="true" />
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {services.map((service) => (
+              <StaggerItem key={service.title}>
+                <Link href={service.href} className="block h-full group">
+                  <div className="h-full rounded-2xl border border-secondary bg-white p-8 flex flex-col transition-all hover:border-primary/40 hover:shadow-md">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <h3 className="font-serif text-xl font-semibold text-text">
+                        {service.title}
+                      </h3>
+                      <span
+                        className={`inline-block px-2.5 py-0.5 text-xs font-medium rounded-full ${service.badgeColor}`}
+                      >
+                        {service.badge}
+                      </span>
+                    </div>
+                    <p className="mt-3 text-text-light text-sm leading-relaxed flex-1">
+                      {service.description}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all">
+                      Les mer <ArrowRightIcon className="w-4 h-4" />
+                    </span>
                   </div>
-                  <CardTitle className="text-lg">{item.title}</CardTitle>
-                  <CardContent className="mt-2">{item.description}</CardContent>
-                </Card>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>
         </Container>
       </section>
 
-      {/* Use cases */}
-      <section className="py-20 lg:py-28" aria-labelledby="use-cases-title">
-        <Container>
+      {/* CTA */}
+      <section className="py-20 lg:py-28 bg-background-alt">
+        <Container size="md">
           <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 id="use-cases-title" className="font-serif text-3xl sm:text-4xl font-bold text-text">
-                Bruksområder
+            <div className="text-center">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text mb-4">
+                Klar til å komme i gang?
               </h2>
-              <p className="mt-4 text-lg text-text-light">
-                jodacare brukes på tvers av helsetjenesten for å styrke samarbeidet rundt sårbare personer.
+              <p className="text-lg text-text-light mb-8">
+                Ta kontakt for en uforpliktende samtale om hvordan JodaCare kan passe i din kommune.
               </p>
+              <Button href="/kontakt" size="lg">
+                Kontakt oss
+              </Button>
             </div>
           </FadeIn>
-
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {useCases.map((useCase) => (
-              <StaggerItem key={useCase.title}>
-                <Card variant="bordered" className="h-full">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-accent-light/50 rounded-xl flex items-center justify-center">
-                      <useCase.icon className="w-6 h-6 text-accent-dark" aria-hidden="true" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-lg">{useCase.title}</CardTitle>
-                      <CardContent className="mt-1">{useCase.description}</CardContent>
-                    </div>
-                  </div>
-                </Card>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </Container>
       </section>
-
-      <Security variant="full" />
-
-      <div id="priser">
-        <Pricing
-          title="Enkel og forutsigbar prising"
-          subtitle="Alt inkludert i én månedspris. Ingen skjulte kostnader."
-          tiers={kommunePricing}
-          footnote="Oppstartsgebyr kr 35 000 per kommune (inkluderer introduksjon og databehandleravtaler). Superbrukerkurs: kr 12 000."
-        />
-      </div>
-
-      <CTA
-        title="Klar til å styrke pårørendesamarbeidet?"
-        subtitle="Book en uforpliktende demo og se hvordan jodacare kan hjelpe din kommune."
-        primaryCta={{ text: 'Ta kontakt for demo', href: '/kontakt' }}
-        secondaryCta={{ text: 'Les mer om sikkerhet', href: '/sikkerhet' }}
-      />
     </>
   );
 }

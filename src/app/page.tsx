@@ -23,7 +23,7 @@ const pathCards = [
     badge: 'Beta 2026',
     badgeColor: 'bg-text-light/20 text-text-light',
     cta: 'Se alle tjenester',
-    href: '/omsorgsbolig',
+    href: '/kommune',
     highlighted: false,
   },
   {
@@ -130,7 +130,7 @@ export default function Home() {
               id="path-title"
               className="text-center font-serif text-2xl sm:text-3xl font-bold text-text mb-16"
             >
-              Hvem er JodaCare for deg?
+              Hva er JodaCare for deg?
             </h2>
           </FadeIn>
 

@@ -36,10 +36,10 @@ export function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-6">
             <Image
-              src="/logo/jodacare-logo.png"
-              alt="jodacare logo"
-              width={180}
-              height={50}
+              src="/brand/jodacare-horisontal.svg"
+              alt="JodaCare logo"
+              width={252}
+              height={54}
               className="h-10 w-auto"
             />
             <p className="text-sm text-white/80 max-w-xs">

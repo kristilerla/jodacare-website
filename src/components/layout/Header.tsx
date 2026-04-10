@@ -46,10 +46,10 @@ export function Header() {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5" aria-label="jodacare - Gå til forsiden">
               <Image
-                src="/brand/logo_liggende.png"
-                alt="jodacare logo"
-                width={180}
-                height={50}
+                src="/brand/jodacare-horisontal.svg"
+                alt="JodaCare logo"
+                width={252}
+                height={54}
                 className="h-10 w-auto"
                 priority
               />
@@ -152,10 +152,10 @@ export function Header() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
               <Image
-                src="/brand/logo_liggende.png"
-                alt="jodacare logo"
-                width={150}
-                height={42}
+                src="/brand/jodacare-horisontal.svg"
+                alt="JodaCare logo"
+                width={252}
+                height={54}
                 className="h-9 w-auto"
               />
             </Link>
