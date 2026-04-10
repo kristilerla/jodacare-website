@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.jodacare.no'),
   icons: {
     icon: '/icon.png',
-    apple: '/icon.png',
+    apple: '/favicon_io/apple-touch-icon.png',
   },
   openGraph: {
     type: 'website',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       'En sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon mellom pårørende, helsepersonell og den sårbare personen selv.',
     images: [
       {
-        url: '/brand/logo_liggende.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'jodacare - Trygghet og verdighet i hverdagen',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: 'jodacare - Sikker kommunikasjon rundt sårbare personer',
     description:
       'En sikker digital plattform som skaper trygghet og verdighet gjennom kommunikasjon.',
-    images: ['/brand/logo_liggende.png'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
