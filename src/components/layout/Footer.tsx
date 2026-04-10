@@ -5,8 +5,13 @@ import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline
 
 const navigation = {
   produkt: [
-    { name: 'For kommuner', href: '/kommune' },
     { name: 'For familier', href: '/familie' },
+    { name: 'Omsorgsbolig / Hub', href: '/omsorgsbolig' },
+    { name: 'BPA', href: '/bpa' },
+    { name: 'Avlastning', href: '/avlastning' },
+    { name: 'Barnevern', href: '/barnevern' },
+    { name: 'JodaVisit', href: '/jodavisit' },
+    { name: 'Implementering', href: '/implementering' },
     { name: 'Sikkerhet', href: '/sikkerhet' },
     { name: 'Teknologi', href: '/teknologi' },
   ],
@@ -117,8 +122,8 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-xs text-white/60">
-            &copy; {new Date().getFullYear()} Jodapro AS. Alle rettigheter reservert. 
-            jodacare er et registrert varemerke.
+            &copy; {new Date().getFullYear()} JodaCare AS. Alle rettigheter reservert.
+            JodaCare er et registrert varemerke.
           </p>
         </div>
       </Container>

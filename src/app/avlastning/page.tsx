@@ -4,121 +4,87 @@ import { Hero } from '@/components/sections';
 import { Container, Card, CardTitle, CardContent, Button } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
-  HomeModernIcon,
   HeartIcon,
+  HomeIcon,
   ClipboardDocumentListIcon,
-  TvIcon,
-  PhotoIcon,
-  VideoCameraIcon,
   ChartBarIcon,
-  CalendarDaysIcon,
-  CpuChipIcon,
+  ArrowPathIcon,
+  DevicePhoneMobileIcon,
+  ShieldCheckIcon,
+  ExclamationTriangleIcon,
   ArrowRightIcon,
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'JodaCare Hub — omsorgsbolig og servicebolig',
+  title: 'JodaCare for avlastning — barn med utviklingshemming',
   description:
-    'JodaCare Hub kobler beboer, familie og ansatte gjennom en skjerm i leiligheten. For omsorgsboliger og servicebolig i norske kommuner.',
+    'JodaCare skaper kontinuitet for barnet — de samme rutinene og den samme tryggheten uansett om det er hjemme eller i avlastning.',
   openGraph: {
-    title: 'JodaCare Hub — omsorgsbolig og servicebolig',
+    title: 'JodaCare for avlastning — barn med utviklingshemming',
     description:
-      'JodaCare Hub kobler beboer, familie og ansatte gjennom en skjerm i leiligheten. For omsorgsboliger og servicebolig i norske kommuner.',
+      'JodaCare skaper kontinuitet for barnet — de samme rutinene og den samme tryggheten uansett om det er hjemme eller i avlastning.',
   },
 };
 
-const hubPerspectives = [
+const perspectives = [
   {
-    title: 'For beboeren',
+    title: 'For barnet',
     description:
-      'Bilder fra familien, kjente ansikter, kalender for dagen, musikk og enkle spill. Hverdagen får sammenheng.',
-    icon: HomeModernIcon,
+      'Jodabook med store knapper og kjente bilder. Det trygge grensesnittet barnet kjenner fra hjemmet, tilgjengelig i avlastningen også.',
+    icon: HeartIcon,
   },
   {
-    title: 'For familien',
+    title: 'For foreldrene',
     description:
-      'Send bilder og meldinger direkte til skjermen. Se hva som skjer. Videosamtale uten at noen trenger å hjelpe til.',
-    icon: HeartIcon,
+      'Følg med uten å måtte ringe. Se hva som skjer, send bilder og meldinger, og send bekymringsmelding hvis noe ikke stemmer.',
+    icon: HomeIcon,
   },
   {
     title: 'For ansatte',
     description:
-      'Hendelseslogg, sjekklister og bekymringsmeldinger der jobben skjer — ikke etterpå ved en PC.',
+      'Delte rutiner mellom hjem og avlastning. Alle vet hva som forventes. Hendelseslogg loggfører det som skjer.',
     icon: ClipboardDocumentListIcon,
+  },
+  {
+    title: 'For koordinator',
+    description:
+      'Full oversikt over alle barn, team og tjenestesteder. Delingskontroll bestemmer hva foreldrene ser.',
+    icon: ChartBarIcon,
   },
 ];
 
 const features = [
   {
-    title: 'Hub-skjerm per leilighet',
+    title: 'Delte rutiner mellom hjem og avlastning',
     description:
-      'Kjøres i nettleser på nettbrett, TV eller smart-display. Ingen ny hardware å kjøpe — fungerer på det dere allerede har.',
-    icon: TvIcon,
+      'Opprett rutiner én gang. Begge steder jobber etter dem.',
+    icon: ArrowPathIcon,
   },
   {
-    title: 'Familien sender direkte til skjermen',
+    title: 'Jodabook for barnet',
     description:
-      'Bilder og meldinger fra familien vises automatisk. Ingen passord. Ingen app å laste ned for beboeren.',
-    icon: PhotoIcon,
+      'Enkelt grensesnitt tilpasset kognitive utfordringer. QR-innlogging, PIN og biometri.',
+    icon: DevicePhoneMobileIcon,
   },
   {
-    title: 'Videosamtale med ett trykk',
+    title: 'Delingskontroll for hendelseslogg',
     description:
-      'Beboeren trykker på et kjent ansikt — videosamtalen starter. Familie på den andre siden svarer i nettleseren.',
-    icon: VideoCameraIcon,
+      'Admin velger hvilke hendelsestyper foreldrene ser. Sensitive notater forblir interne.',
+    icon: ShieldCheckIcon,
   },
   {
-    title: 'Velferdskoordinator-dashboard',
+    title: 'Bekymringsmelding',
     description:
-      'Koordiner aktiviteter, send meldinger til alle beboere samtidig, administrer fellesrom og arrangementer.',
-    icon: ChartBarIcon,
-  },
-  {
-    title: 'Fellesarrangementer med påmelding',
-    description:
-      'Beboere og familie kan melde seg på arrangementer og ta oppgaver. Bygger fellesskap i boligen.',
-    icon: CalendarDaysIcon,
-  },
-  {
-    title: 'IoT-sensorer valgfritt',
-    description:
-      'Dør, bevegelse og røyk kan kobles til via gateway. Varsler går til ansatte — ikke til familien.',
-    icon: CpuChipIcon,
-  },
-];
-
-const steps = [
-  {
-    step: '1',
-    title: 'Pilotavdeling',
-    description:
-      'Vi starter med én avdeling eller én etasje. Du trenger ikke rulle ut til alle på én gang.',
-  },
-  {
-    step: '2',
-    title: 'Oppsett',
-    description:
-      'JodaCares Implementeringsansvarlig hjelper med oppsett av kompleks, leiligheter og brukere.',
-  },
-  {
-    step: '3',
-    title: 'Onboarding av familier',
-    description:
-      'Familier inviteres enkelt via lenke. De trenger ingen opplæring.',
-  },
-  {
-    step: '4',
-    title: 'Drift',
-    description:
-      'Velferdskoordinator styrer hverdagen fra sitt dashboard. Vi er tilgjengelige hvis noe butter.',
+      'Foreldre kan sende bekymringsmelding direkte i appen. Status-flyt: Opprettet → Under behandling → Besvart → Lukket.',
+    icon: ExclamationTriangleIcon,
   },
 ];
 
 const relatedPages = [
   {
-    title: 'Familierom for pårørende',
-    description: 'Gi familien en felles plass for hverdagen til den de er glad i.',
-    href: '/familie',
+    title: 'BPA — brukerstyrt personlig assistanse',
+    description: 'JodaCare for BPA-ordninger med foresatte som arbeidsledere.',
+    href: '/bpa',
     icon: HeartIcon,
   },
   {
@@ -129,24 +95,23 @@ const relatedPages = [
     icon: ClipboardDocumentListIcon,
   },
   {
-    title: 'JodaVisit for hjemmeboende',
-    description: 'Videobesøk som erstatter unødvendige fysiske besøk. Kommer snart.',
-    href: '/jodavisit',
-    icon: VideoCameraIcon,
+    title: 'Omsorgsbolig og Hub',
+    description: 'JodaCare Hub kobler beboer, familie og ansatte gjennom en skjerm i leiligheten.',
+    href: '/omsorgsbolig',
+    icon: HomeIcon,
   },
 ];
 
-export default function OmsorgsboligPage() {
+export default function AvlastningPage() {
   return (
     <>
       {/* SEKSJON 1 — Hero */}
       <Hero
-        title="Beboeren er aldri alene. Familien er alltid nær."
-        subtitle="JodaCare Hub kobler beboer, familie og ansatte i én sammenhengende flyt — gjennom en skjerm i leiligheten som alltid er på."
-        primaryCta={{ text: 'Kontakt oss for pilotplass', href: '/kontakt' }}
-        secondaryCta={{ text: 'Se hvordan Hub fungerer', href: '#funksjoner' }}
+        title="De samme rutinene. Den samme tryggheten. Uansett hvor barnet er."
+        subtitle="JodaCare skaper kontinuitet mellom hjem og avlastning — slik at barnet møter de samme forventningene, de samme bildene og den samme forståelsen uansett hvem som er på jobb."
+        primaryCta={{ text: 'Kontakt oss', href: '/kontakt' }}
         variant="page"
-        badge="Omsorgsbolig og servicebolig"
+        badge="Avlastning og barn med utviklingshemming"
       />
 
       {/* SEKSJON 2 — Kjenner du deg igjen? */}
@@ -162,14 +127,10 @@ export default function OmsorgsboligPage() {
               </h2>
               <div className="prose prose-lg text-text-light">
                 <p>
-                  Beboerne dine har familier som vil følge med — men ikke vet hvordan.
-                  Pårørende ringer til avdelingen fordi de ikke har andre måter å holde
-                  kontakten på. Ansatte bruker tid på å koordinere og videreformidle heller
-                  enn å gi omsorg.
-                </p>
-                <p>
-                  Resultatet er at beboere kan føle seg isolerte, selv om det er folk rundt
-                  dem hele dagen.
+                  Barnet er vant til bestemte rutiner hjemme. I avlastningen er det andre ansatte,
+                  andre regler og et annet miljø. Foreldrene er bekymret og ringer for å sjekke.
+                  Ansatte i avlastningen kjenner ikke barnet godt nok og må gjette seg frem.
+                  Resultatet er uro — for barnet, for familien og for de ansatte.
                 </p>
               </div>
             </div>
@@ -177,22 +138,22 @@ export default function OmsorgsboligPage() {
         </Container>
       </section>
 
-      {/* SEKSJON 3 — Hva er JodaCare Hub? */}
-      <section className="py-20 lg:py-28" aria-labelledby="hub-title">
+      {/* SEKSJON 3 — Fire perspektiver */}
+      <section className="py-20 lg:py-28" aria-labelledby="perspectives-title">
         <Container>
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <h2
-                id="hub-title"
+                id="perspectives-title"
                 className="font-serif text-3xl sm:text-4xl font-bold text-text"
               >
-                En skjerm i leiligheten — alltid på
+                Én plattform for alle rundt barnet
               </h2>
             </div>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {hubPerspectives.map((item) => (
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {perspectives.map((item) => (
               <StaggerItem key={item.title}>
                 <Card variant="elevated" padding="lg" className="h-full text-center">
                   <div className="w-16 h-16 bg-accent-light/50 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -248,73 +209,34 @@ export default function OmsorgsboligPage() {
         </Container>
       </section>
 
-      {/* SEKSJON 5 — Slik innføres Hub */}
-      <section className="py-20 lg:py-28" aria-labelledby="steps-title">
-        <Container size="md">
-          <FadeIn>
-            <div className="text-center mb-12">
-              <h2
-                id="steps-title"
-                className="font-serif text-3xl sm:text-4xl font-bold text-text"
-              >
-                Enkelt å innføre. Vi hjelper hele veien.
-              </h2>
-            </div>
-          </FadeIn>
-
-          <StaggerContainer className="space-y-6">
-            {steps.map((item) => (
-              <StaggerItem key={item.step}>
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold text-lg">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-xl font-semibold text-text">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-text-light">{item.description}</p>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </Container>
-      </section>
-
-      {/* SEKSJON 6 — Pris/status */}
-      <section className="py-20 lg:py-28 bg-background-alt" aria-labelledby="status-title">
+      {/* SEKSJON 5 — Status og pris */}
+      <section className="py-20 lg:py-28" aria-labelledby="status-title">
         <Container size="md">
           <FadeIn>
             <div className="text-center">
               <span className="inline-block px-4 py-1.5 bg-accent text-white text-sm font-medium rounded-full mb-6">
-                Beta 2026
+                Kommer
               </span>
               <h2
                 id="status-title"
                 className="font-serif text-3xl sm:text-4xl font-bold text-text mb-6"
               >
-                Bli med som pilotkommune
+                Under utvikling — ta kontakt for mer informasjon
               </h2>
-              <p className="text-lg text-text-light max-w-xl mx-auto mb-8">
-                JodaCare Hub er i aktiv utvikling og tas i bruk av de første kommunene i
-                løpet av 2026. Pilotkommuner får tett oppfølging og er med på å forme det
-                endelige produktet.
-              </p>
-              <p className="text-text-light max-w-xl mx-auto mb-10">
-                Pris settes basert på antall leiligheter og tjenestenivå. Ta kontakt for en
-                uforpliktende samtale.
+              <p className="text-lg text-text-light max-w-xl mx-auto mb-10">
+                JodaCare for avlastning er under utvikling som del av JodaCare 2.0. Ta kontakt for
+                å høre mer eller melde interesse.
               </p>
               <Button href="/kontakt" size="lg">
-                Meld din kommune som pilotkommune
+                Meld interesse
               </Button>
             </div>
           </FadeIn>
         </Container>
       </section>
 
-      {/* SEKSJON 7 — Relatert */}
-      <section className="py-20 lg:py-28" aria-labelledby="related-title">
+      {/* SEKSJON 6 — Relatert */}
+      <section className="py-20 lg:py-28 bg-background-alt" aria-labelledby="related-title">
         <Container>
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-16">

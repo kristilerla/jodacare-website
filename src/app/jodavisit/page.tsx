@@ -4,117 +4,83 @@ import { Hero } from '@/components/sections';
 import { Container, Card, CardTitle, CardContent, Button } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
+  ComputerDesktopIcon,
   HomeModernIcon,
   HeartIcon,
-  ClipboardDocumentListIcon,
-  TvIcon,
-  PhotoIcon,
   VideoCameraIcon,
-  ChartBarIcon,
+  TvIcon,
   CalendarDaysIcon,
-  CpuChipIcon,
+  DocumentTextIcon,
+  ClipboardDocumentListIcon,
   ArrowRightIcon,
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'JodaCare Hub — omsorgsbolig og servicebolig',
+  title: 'JodaVisit — videobesøk for hjemmesykepleie',
   description:
-    'JodaCare Hub kobler beboer, familie og ansatte gjennom en skjerm i leiligheten. For omsorgsboliger og servicebolig i norske kommuner.',
+    'JodaVisit erstatter unødvendige fysiske besøk med trygge videobesøk. Eldre bor hjemme lenger, med familien nær.',
   openGraph: {
-    title: 'JodaCare Hub — omsorgsbolig og servicebolig',
+    title: 'JodaVisit — videobesøk for hjemmesykepleie',
     description:
-      'JodaCare Hub kobler beboer, familie og ansatte gjennom en skjerm i leiligheten. For omsorgsboliger og servicebolig i norske kommuner.',
+      'JodaVisit erstatter unødvendige fysiske besøk med trygge videobesøk. Eldre bor hjemme lenger, med familien nær.',
   },
 };
 
-const hubPerspectives = [
+const userGroups = [
   {
-    title: 'For beboeren',
+    title: 'For helsepersonell',
     description:
-      'Bilder fra familien, kjente ansikter, kalender for dagen, musikk og enkle spill. Hverdagen får sammenheng.',
+      'Videobesøk planlegges i kalenderen og gjennomføres fra PC eller telefon. Dokumentasjon skrives etterpå direkte i JodaCare.',
+    icon: ComputerDesktopIcon,
+  },
+  {
+    title: 'For den hjemmeboende',
+    description:
+      'Hub-skjerm hjemme viser familiebilder og gjør det enkelt å ta imot videosamtaler. Ingen app å lære seg.',
     icon: HomeModernIcon,
   },
   {
     title: 'For familien',
     description:
-      'Send bilder og meldinger direkte til skjermen. Se hva som skjer. Videosamtale uten at noen trenger å hjelpe til.',
+      'Familierom gir innsyn i hverdagen. Videosamtale med ett trykk. Alltid oppdatert — uten å måtte ringe hjemmetjenesten.',
     icon: HeartIcon,
-  },
-  {
-    title: 'For ansatte',
-    description:
-      'Hendelseslogg, sjekklister og bekymringsmeldinger der jobben skjer — ikke etterpå ved en PC.',
-    icon: ClipboardDocumentListIcon,
   },
 ];
 
 const features = [
   {
-    title: 'Hub-skjerm per leilighet',
+    title: 'Videobesøk via innebygd løsning',
     description:
-      'Kjøres i nettleser på nettbrett, TV eller smart-display. Ingen ny hardware å kjøpe — fungerer på det dere allerede har.',
-    icon: TvIcon,
-  },
-  {
-    title: 'Familien sender direkte til skjermen',
-    description:
-      'Bilder og meldinger fra familien vises automatisk. Ingen passord. Ingen app å laste ned for beboeren.',
-    icon: PhotoIcon,
-  },
-  {
-    title: 'Videosamtale med ett trykk',
-    description:
-      'Beboeren trykker på et kjent ansikt — videosamtalen starter. Familie på den andre siden svarer i nettleseren.',
+      'Planlagte og uplanlagte videobesøk. Ingen ekstra programvare for den hjemmeboende.',
     icon: VideoCameraIcon,
   },
   {
-    title: 'Velferdskoordinator-dashboard',
+    title: 'Hub-skjerm hjemme',
     description:
-      'Koordiner aktiviteter, send meldinger til alle beboere samtidig, administrer fellesrom og arrangementer.',
-    icon: ChartBarIcon,
+      'Kjøres på nettbrett eller TV. Familien er alltid nær via bilder, meldinger og video.',
+    icon: TvIcon,
   },
   {
-    title: 'Fellesarrangementer med påmelding',
+    title: 'Kalender og påminnelser',
     description:
-      'Beboere og familie kan melde seg på arrangementer og ta oppgaver. Bygger fellesskap i boligen.',
+      'Automatiske påminnelser til den hjemmeboende før planlagte besøk.',
     icon: CalendarDaysIcon,
   },
   {
-    title: 'IoT-sensorer valgfritt',
+    title: 'Dokumentasjon etter besøk',
     description:
-      'Dør, bevegelse og røyk kan kobles til via gateway. Varsler går til ansatte — ikke til familien.',
-    icon: CpuChipIcon,
-  },
-];
-
-const steps = [
-  {
-    step: '1',
-    title: 'Pilotavdeling',
-    description:
-      'Vi starter med én avdeling eller én etasje. Du trenger ikke rulle ut til alle på én gang.',
-  },
-  {
-    step: '2',
-    title: 'Oppsett',
-    description:
-      'JodaCares Implementeringsansvarlig hjelper med oppsett av kompleks, leiligheter og brukere.',
-  },
-  {
-    step: '3',
-    title: 'Onboarding av familier',
-    description:
-      'Familier inviteres enkelt via lenke. De trenger ingen opplæring.',
-  },
-  {
-    step: '4',
-    title: 'Drift',
-    description:
-      'Velferdskoordinator styrer hverdagen fra sitt dashboard. Vi er tilgjengelige hvis noe butter.',
+      'Helsepersonell dokumenterer direkte i JodaCare etter videobesøket.',
+    icon: DocumentTextIcon,
   },
 ];
 
 const relatedPages = [
+  {
+    title: 'Omsorgsbolig og Hub',
+    description: 'En skjerm i leiligheten som kobler beboer, familie og ansatte.',
+    href: '/omsorgsbolig',
+    icon: HomeModernIcon,
+  },
   {
     title: 'Familierom for pårørende',
     description: 'Gi familien en felles plass for hverdagen til den de er glad i.',
@@ -128,25 +94,18 @@ const relatedPages = [
     href: '/implementering',
     icon: ClipboardDocumentListIcon,
   },
-  {
-    title: 'JodaVisit for hjemmeboende',
-    description: 'Videobesøk som erstatter unødvendige fysiske besøk. Kommer snart.',
-    href: '/jodavisit',
-    icon: VideoCameraIcon,
-  },
 ];
 
-export default function OmsorgsboligPage() {
+export default function JodaVisitPage() {
   return (
     <>
       {/* SEKSJON 1 — Hero */}
       <Hero
-        title="Beboeren er aldri alene. Familien er alltid nær."
-        subtitle="JodaCare Hub kobler beboer, familie og ansatte i én sammenhengende flyt — gjennom en skjerm i leiligheten som alltid er på."
-        primaryCta={{ text: 'Kontakt oss for pilotplass', href: '/kontakt' }}
-        secondaryCta={{ text: 'Se hvordan Hub fungerer', href: '#funksjoner' }}
+        title="Eldre bor hjemme lenger. Med familien nær."
+        subtitle="JodaVisit erstatter unødvendige fysiske besøk med videobesøk som oppleves trygge og personlige. Helsepersonell bruker tid der det trengs mest — og den hjemmeboende er aldri alene."
+        primaryCta={{ text: 'Kontakt oss', href: '/kontakt' }}
         variant="page"
-        badge="Omsorgsbolig og servicebolig"
+        badge="Hjemmesykepleie og videobesøk"
       />
 
       {/* SEKSJON 2 — Kjenner du deg igjen? */}
@@ -162,14 +121,9 @@ export default function OmsorgsboligPage() {
               </h2>
               <div className="prose prose-lg text-text-light">
                 <p>
-                  Beboerne dine har familier som vil følge med — men ikke vet hvordan.
-                  Pårørende ringer til avdelingen fordi de ikke har andre måter å holde
-                  kontakten på. Ansatte bruker tid på å koordinere og videreformidle heller
-                  enn å gi omsorg.
-                </p>
-                <p>
-                  Resultatet er at beboere kan føle seg isolerte, selv om det er folk rundt
-                  dem hele dagen.
+                  Hjemmetjenesten har for lite tid og for mange besøk. Mange besøk handler om å
+                  sjekke at alt er greit — ikke om å gi pleie. Den hjemmeboende er ensom mellom
+                  besøkene. Familien vet ikke hvordan det egentlig går.
                 </p>
               </div>
             </div>
@@ -177,22 +131,22 @@ export default function OmsorgsboligPage() {
         </Container>
       </section>
 
-      {/* SEKSJON 3 — Hva er JodaCare Hub? */}
-      <section className="py-20 lg:py-28" aria-labelledby="hub-title">
+      {/* SEKSJON 3 — Én løsning for alle */}
+      <section className="py-20 lg:py-28" aria-labelledby="usergroups-title">
         <Container>
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <h2
-                id="hub-title"
+                id="usergroups-title"
                 className="font-serif text-3xl sm:text-4xl font-bold text-text"
               >
-                En skjerm i leiligheten — alltid på
+                Én løsning for alle
               </h2>
             </div>
           </FadeIn>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {hubPerspectives.map((item) => (
+            {userGroups.map((item) => (
               <StaggerItem key={item.title}>
                 <Card variant="elevated" padding="lg" className="h-full text-center">
                   <div className="w-16 h-16 bg-accent-light/50 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -248,73 +202,34 @@ export default function OmsorgsboligPage() {
         </Container>
       </section>
 
-      {/* SEKSJON 5 — Slik innføres Hub */}
-      <section className="py-20 lg:py-28" aria-labelledby="steps-title">
-        <Container size="md">
-          <FadeIn>
-            <div className="text-center mb-12">
-              <h2
-                id="steps-title"
-                className="font-serif text-3xl sm:text-4xl font-bold text-text"
-              >
-                Enkelt å innføre. Vi hjelper hele veien.
-              </h2>
-            </div>
-          </FadeIn>
-
-          <StaggerContainer className="space-y-6">
-            {steps.map((item) => (
-              <StaggerItem key={item.step}>
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold text-lg">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-xl font-semibold text-text">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-text-light">{item.description}</p>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </Container>
-      </section>
-
-      {/* SEKSJON 6 — Pris/status */}
-      <section className="py-20 lg:py-28 bg-background-alt" aria-labelledby="status-title">
+      {/* SEKSJON 5 — Status og pris */}
+      <section className="py-20 lg:py-28" aria-labelledby="status-title">
         <Container size="md">
           <FadeIn>
             <div className="text-center">
               <span className="inline-block px-4 py-1.5 bg-accent text-white text-sm font-medium rounded-full mb-6">
-                Beta 2026
+                Kommer
               </span>
               <h2
                 id="status-title"
                 className="font-serif text-3xl sm:text-4xl font-bold text-text mb-6"
               >
-                Bli med som pilotkommune
+                Under utvikling
               </h2>
-              <p className="text-lg text-text-light max-w-xl mx-auto mb-8">
-                JodaCare Hub er i aktiv utvikling og tas i bruk av de første kommunene i
-                løpet av 2026. Pilotkommuner får tett oppfølging og er med på å forme det
-                endelige produktet.
-              </p>
-              <p className="text-text-light max-w-xl mx-auto mb-10">
-                Pris settes basert på antall leiligheter og tjenestenivå. Ta kontakt for en
-                uforpliktende samtale.
+              <p className="text-lg text-text-light max-w-xl mx-auto mb-10">
+                JodaVisit er under utvikling som del av JodaCare 2.0. Ta kontakt for å melde
+                interesse.
               </p>
               <Button href="/kontakt" size="lg">
-                Meld din kommune som pilotkommune
+                Meld interesse
               </Button>
             </div>
           </FadeIn>
         </Container>
       </section>
 
-      {/* SEKSJON 7 — Relatert */}
-      <section className="py-20 lg:py-28" aria-labelledby="related-title">
+      {/* SEKSJON 6 — Relatert */}
+      <section className="py-20 lg:py-28 bg-background-alt" aria-labelledby="related-title">
         <Container>
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-16">
