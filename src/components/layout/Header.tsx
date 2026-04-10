@@ -45,14 +45,16 @@ export function Header() {
         <nav className="flex items-center justify-between py-4" aria-label="Hovednavigasjon">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5" aria-label="jodacare - Gå til forsiden">
-              <Image
-                src="/brand/jodacare-horisontal.svg"
-                alt="JodaCare logo"
-                width={252}
-                height={54}
-                className="h-10 w-auto"
-                priority
-              />
+              <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
+                <Image
+                  src="/brand/jodacare-horisontal.svg"
+                  alt="JodaCare logo"
+                  width={252}
+                  height={54}
+                  className="h-8 w-auto"
+                  priority
+                />
+              </div>
             </Link>
           </div>
 
@@ -151,13 +153,15 @@ export function Header() {
         >
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-              <Image
-                src="/brand/jodacare-horisontal.svg"
-                alt="JodaCare logo"
-                width={252}
-                height={54}
-                className="h-9 w-auto"
-              />
+              <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
+                <Image
+                  src="/brand/jodacare-horisontal.svg"
+                  alt="JodaCare logo"
+                  width={252}
+                  height={54}
+                  className="h-7 w-auto"
+                />
+              </div>
             </Link>
             <button
               type="button"

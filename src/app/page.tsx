@@ -4,11 +4,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Container } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowRightIcon,
+  HeartIcon,
+  BuildingOffice2Icon,
+  HandRaisedIcon,
+} from '@heroicons/react/24/outline';
 
 const pathCards = [
   {
-    emoji: '💚',
+    icon: HeartIcon,
     title: 'JodaCare for familien',
     description:
       'Hold deg oppdatert på hverdagen til den du er glad i — uansett avstand. Kom i gang med Vipps på fem minutter.',
@@ -19,7 +24,7 @@ const pathCards = [
     highlighted: true,
   },
   {
-    emoji: '🏛️',
+    icon: BuildingOffice2Icon,
     title: 'JodaCare for kommuner',
     description:
       'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie — koordinert omsorg i én plattform.',
@@ -30,7 +35,7 @@ const pathCards = [
     highlighted: false,
   },
   {
-    emoji: '🤲',
+    icon: HandRaisedIcon,
     title: 'Vi hjelper med implementeringen',
     description:
       'Vår Implementeringsansvarlig veileder din kommune steg for steg — fra første oppsett til systemet sitter.',
@@ -164,9 +169,9 @@ export default function Home() {
                         : 'border border-secondary hover:border-primary/40 hover:shadow-md'
                     }`}
                   >
-                    <span className="text-3xl" aria-hidden="true">
-                      {card.emoji}
-                    </span>
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <card.icon className="w-6 h-6 text-primary" aria-hidden="true" />
+                    </div>
                     <h3 className="mt-4 font-serif text-xl font-semibold text-text">
                       {card.title}
                     </h3>
