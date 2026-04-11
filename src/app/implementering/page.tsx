@@ -118,10 +118,10 @@ export default function ImplementeringPage() {
           <FadeIn>
             <div className="text-center">
               <p className="text-lg sm:text-xl font-semibold text-text">
-                Implementeringsstøtten er inkludert for alle kommunale kunder de første tre månedene — uten ekstra kostnad.
+                Alle kommunale kunder får dedikert implementeringsstøtte de første tre månedene.
               </p>
               <p className="mt-4 text-text-light">
-                Etter innkjøringsperioden tilbyr vi løpende rådgivning etter behov.
+                Pris avhenger av omfang og antall avdelinger. Ta kontakt for et tilbud tilpasset din kommune.
               </p>
             </div>
           </FadeIn>
