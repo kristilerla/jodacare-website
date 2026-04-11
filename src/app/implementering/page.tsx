@@ -90,7 +90,7 @@ export default function ImplementeringPage() {
               id="includes-title"
               className="font-serif text-2xl sm:text-3xl font-bold text-text mb-8"
             >
-              Det inngår alltid:
+              Dette dekker implementeringsstøtten:
             </h2>
             <ul className="space-y-4">
               {[
