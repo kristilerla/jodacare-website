@@ -119,34 +119,70 @@ export default function Home() {
         <Container size="md" className="relative z-10">
           <div className="py-20 lg:py-28 text-center max-w-2xl mx-auto">
             <FadeIn>
-              <blockquote>
-                <p className="text-2xl sm:text-3xl leading-relaxed text-white font-serif drop-shadow-lg">
-                  «Mamma, JODA! Du har hatt besøk av Petter fra hjemmetjenesten.
-                  <br />
-                  Han laget kjøttkaker til middag for deg.»
-                </p>
-                <p className="mt-6 text-2xl sm:text-3xl leading-relaxed text-white font-serif drop-shadow-lg">
-                  «Å ja», sa hun — og husker at han var der.
-                </p>
-              </blockquote>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl leading-tight text-white font-serif font-bold drop-shadow-lg">
+                Mellom 20 og 25 ulike pleiere var innom mamma i løpet av to uker.
+              </h1>
             </FadeIn>
-            <FadeIn delay={0.1}>
-              <p className="mt-6 text-sm text-white/80">
-                — Kristil Erla Haland, grunnlegger
+            <FadeIn delay={0.05}>
+              <p className="mt-5 text-xl sm:text-2xl leading-relaxed text-white font-serif drop-shadow-lg">
+                Alle ukjente for henne. Hun, ukjent for dem.
               </p>
             </FadeIn>
-            <FadeIn delay={0.2}>
-              <p className="mt-10 text-base sm:text-lg text-white/90 leading-relaxed max-w-[560px] mx-auto drop-shadow-md">
-                Det var den samtalen som ble til JodaCare. En enkel måte å holde familien oppdatert
-                og gi den du er glad i sammenheng i hverdagen. Siden 2016 har vi bygget det videre —
-                for familier, for kommuner og for alle som trenger å vite at det går bra.
+            <FadeIn delay={0.1}>
+              <p className="mt-8 text-base sm:text-lg text-white/90 leading-relaxed drop-shadow-md">
+                Det var da jeg forstod at vi alle trengte å vite mer om hverandre.
               </p>
             </FadeIn>
           </div>
         </Container>
       </section>
 
-      {/* SEKSJON 2 — Velg din vei */}
+      {/* Mellomseksjon — fortelling, hvit bakgrunn */}
+      <section className="bg-white py-16 lg:py-20" aria-label="Om erfaringen med omsorgsbolig">
+        <div className="mx-auto max-w-[700px] px-4 sm:px-6 text-center text-text">
+          <FadeIn>
+            <p className="text-base sm:text-lg leading-relaxed">
+              Da hun flyttet i omsorgsbolig ble hverdagen tryggere. Åtte beboere, fjorten ansatte. Men
+              for meg var hun på mange måter lenger unna enn noen gang — hun var dårligere, og
+              vanskeligere å nå.
+            </p>
+            <p className="mt-6 text-base sm:text-lg leading-relaxed">
+              Det var da JodaCare ble viktig. De som jobbet med henne visste hvem hun var da hun
+              flyttet inn. Og jeg fikk en virkelig kontakt med menneskene rundt henne.
+            </p>
+            <p className="mt-6 text-base sm:text-lg leading-relaxed italic">
+              Det er det JodaCare er laget for.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Sitat — samme typografi som tidligere hero-sitat */}
+      <section className="bg-primary-dark py-16 lg:py-20" aria-label="Eksempel fra hverdagen">
+        <Container size="md">
+          <div className="text-center max-w-2xl mx-auto">
+            <FadeIn>
+              <p className="text-sm text-white/70">Slik ser det ut når det fungerer:</p>
+              <blockquote className="mt-6">
+                <p className="text-2xl sm:text-3xl leading-relaxed text-white font-serif drop-shadow-lg">
+                  Min glemsomme mamma ringer og sier at hun ikke har fått besøk i dag. «JODA!» sier
+                  jeg, og forteller det jeg har lest i JodaCare om dagen hennes. «Du har hatt besøk av
+                  Petter fra hjemmetjenesten. Han har laget kjøttkaker til middag for deg.» «Å ja»,
+                  sier mamma, og husker at han var der.
+                </p>
+              </blockquote>
+              <p className="mt-6 text-sm text-white/80">
+                — Kristil Erla Haland, grunnlegger og daglig leder, JodaCare
+              </p>
+              <p className="mt-8 text-base sm:text-lg text-white/90 italic leading-relaxed">
+                Tre mennesker som aldri var i samme rom — likevel til stede for hverandre.
+              </p>
+            </FadeIn>
+          </div>
+        </Container>
+      </section>
+
+      {/* Velg din vei */}
       <section className="py-20 lg:py-28 bg-background-alt" aria-labelledby="path-title">
         <Container>
           <FadeIn>
