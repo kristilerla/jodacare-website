@@ -3,28 +3,27 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { Container } from '@/components/ui';
 import { Button } from '@/components/ui';
 import clsx from 'clsx';
-
-const kommuneLinks = [
-  { name: 'Omsorgsbolig / Hub', href: '/omsorgsbolig' },
-  { name: 'BPA', href: '/bpa' },
-  { name: 'Avlastning', href: '/avlastning' },
-  { name: 'Barnevern', href: '/barnevern' },
-  { name: 'JodaVisit', href: '/jodavisit' },
-  { name: 'Implementering', href: '/implementering' },
-];
-
-const navigation = [
-  { name: 'For familier', href: '/familie' },
-  { name: 'Om oss', href: '/om' },
-  { name: 'Sikkerhet', href: '/sikkerhet' },
-  { name: 'Kontakt', href: '/kontakt' },
-];
+import { withLocale } from '@/lib/i18n/paths';
+import { getSite } from '@/i18n/site';
+import type { Locale } from '@/lib/i18n/types';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Header() {
+  const pathname = usePathname() || '/';
+  const locale: Locale = pathname === '/en' || pathname.startsWith('/en/') ? 'en' : 'no';
+  const s = getSite(locale);
+  const kommuneLinks = s.kommuneLinks;
+  const navigation = [
+    { name: s.nav.familier, href: '/familie' },
+    { name: s.nav.om, href: '/om' },
+    { name: s.nav.sikkerhet, href: '/sikkerhet' },
+    { name: s.nav.kontakt, href: '/kontakt' },
+  ];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [kommuneOpen, setKommuneOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -42,9 +41,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-secondary">
       <Container>
-        <nav className="flex items-center justify-between py-4" aria-label="Hovednavigasjon">
+        <nav className="flex items-center justify-between py-4" aria-label={s.nav.mainNav}>
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5" aria-label="jodacare - Gå til forsiden">
+            <Link
+              href={withLocale('/', locale)}
+              className="-m-1.5 p-1.5"
+              aria-label={locale === 'no' ? 'jodacare - Gå til forsiden' : 'jodacare - Home'}
+            >
               <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
                 <Image
                   src="/brand/jodacare-horisontal.svg"
@@ -65,7 +68,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(true)}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
-              aria-label="Åpne hovedmeny"
+              aria-label={s.nav.openMenu}
             >
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
@@ -81,7 +84,7 @@ export function Header() {
                 aria-expanded={kommuneOpen}
                 aria-haspopup="true"
               >
-                For kommuner
+                {s.nav.kommune}
                 <ChevronDownIcon
                   className={clsx(
                     'h-4 w-4 transition-transform duration-200',
@@ -95,7 +98,7 @@ export function Header() {
                   {kommuneLinks.map((item) => (
                     <Link
                       key={item.name}
-                      href={item.href}
+                      href={withLocale(item.href, locale)}
                       className="block px-4 py-2 text-sm text-text-light hover:bg-secondary-light hover:text-primary transition-colors"
                       onClick={() => setKommuneOpen(false)}
                     >
@@ -109,7 +112,7 @@ export function Header() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={withLocale(item.href, locale)}
                 className="text-sm font-medium text-text-light hover:text-primary transition-colors"
               >
                 {item.name}
@@ -117,12 +120,13 @@ export function Header() {
             ))}
           </div>
 
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-4">
+            <LanguageSwitcher locale={locale} />
             <Button href="https://app.jodacare.no" variant="outline" size="sm">
-              Logg inn
+              {s.nav.login}
             </Button>
-            <Button href="/kontakt" size="sm">
-              Kom i gang
+            <Button href={withLocale('/kontakt', locale)} size="sm">
+              {s.nav.getStarted}
             </Button>
           </div>
         </nav>
@@ -137,7 +141,7 @@ export function Header() {
         )}
         role="dialog"
         aria-modal="true"
-        aria-label="Mobilmeny"
+        aria-label={s.nav.mobileMenu}
       >
         <div
           className="fixed inset-0 bg-text/20"
@@ -152,7 +156,11 @@ export function Header() {
           )}
         >
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href={withLocale('/', locale)}
+              className="-m-1.5 p-1.5"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
                 <Image
                   src="/brand/jodacare-horisontal.svg"
@@ -167,7 +175,7 @@ export function Header() {
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-text"
               onClick={() => setMobileMenuOpen(false)}
-              aria-label="Lukk meny"
+              aria-label={s.nav.closeMenu}
             >
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
@@ -177,12 +185,12 @@ export function Header() {
               <div className="space-y-2 py-6">
                 {/* For kommuner section in mobile */}
                 <p className="px-3 text-xs font-semibold text-text-light uppercase tracking-wider">
-                  For kommuner
+                  {s.nav.kommuneSection}
                 </p>
                 {kommuneLinks.map((item) => (
                   <Link
                     key={item.name}
-                    href={item.href}
+                    href={withLocale(item.href, locale)}
                     className="-mx-3 block rounded-lg px-3 py-2 pl-6 text-sm font-medium text-text hover:bg-secondary-light"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -193,7 +201,7 @@ export function Header() {
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
-                    href={item.href}
+                    href={withLocale(item.href, locale)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium text-text hover:bg-secondary-light"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -201,12 +209,15 @@ export function Header() {
                   </Link>
                 ))}
               </div>
-              <div className="py-6 space-y-3">
+              <div className="py-6 space-y-3 flex flex-col items-stretch">
+                <div className="flex justify-center pb-2">
+                  <LanguageSwitcher locale={locale} />
+                </div>
                 <Button href="https://app.jodacare.no" variant="outline" fullWidth>
-                  Logg inn
+                  {s.nav.login}
                 </Button>
-                <Button href="/kontakt" fullWidth>
-                  Kom i gang
+                <Button href={withLocale('/kontakt', locale)} fullWidth>
+                  {s.nav.getStarted}
                 </Button>
               </div>
             </div>

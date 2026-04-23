@@ -4,18 +4,23 @@ import { useState } from 'react';
 import { Container, Button, Card } from '@/components/ui';
 import { FadeIn } from '@/components/animations';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { getContactFormCopy } from '@/i18n/messages/contact-form';
+import type { Locale } from '@/lib/i18n/types';
 
 interface ContactFormProps {
   showContactInfo?: boolean;
   title?: string;
   subtitle?: string;
+  locale?: Locale;
 }
 
-export function ContactForm({ 
+export function ContactForm({
   showContactInfo = true,
   title = 'Ta kontakt',
-  subtitle = 'Vi hjelper deg gjerne i gang med jodacare.'
+  subtitle = 'Vi hjelper deg gjerne i gang med jodacare.',
+  locale = 'no',
 }: ContactFormProps) {
+  const c = getContactFormCopy(locale);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -41,12 +46,12 @@ export function ContactForm({
 
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || 'Noe gikk galt.');
+        throw new Error(data.error || c.errorGeneric);
       }
 
       setIsSubmitted(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Kunne ikke sende melding. Vennligst prøv igjen senere.');
+      setError(err instanceof Error ? err.message : c.errorSendFailed);
     } finally {
       setIsSubmitting(false);
     }
@@ -83,13 +88,8 @@ export function ContactForm({
             <FadeIn direction="left">
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-serif text-xl font-semibold text-text mb-4">
-                    Kontaktinformasjon
-                  </h3>
-                  <p className="text-text-light">
-                    Ta gjerne kontakt om du har spørsmål om jodacare, 
-                    ønsker en demo, eller vil komme i gang.
-                  </p>
+                  <h3 className="font-serif text-xl font-semibold text-text mb-4">{c.contactInfoTitle}</h3>
+                  <p className="text-text-light">{c.contactInfoBody}</p>
                 </div>
 
                 <div className="space-y-4">
@@ -101,7 +101,7 @@ export function ContactForm({
                       <EnvelopeIcon className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
                     <div>
-                      <div className="text-sm text-text-muted">E-post</div>
+                      <div className="text-sm text-text-muted">{c.emailLabel}</div>
                       <div className="font-medium">post@jodacare.com</div>
                     </div>
                   </a>
@@ -114,7 +114,7 @@ export function ContactForm({
                       <PhoneIcon className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
                     <div>
-                      <div className="text-sm text-text-muted">Telefon</div>
+                      <div className="text-sm text-text-muted">{c.phoneLabel}</div>
                       <div className="font-medium">+47 906 06 433</div>
                     </div>
                   </a>
@@ -124,7 +124,7 @@ export function ContactForm({
                       <MapPinIcon className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
                     <div>
-                      <div className="text-sm text-text-muted">Adresse</div>
+                      <div className="text-sm text-text-muted">{c.addressLabel}</div>
                       <div className="font-medium">Jørgens vei 9, 1386 Asker</div>
                     </div>
                   </div>
@@ -132,9 +132,9 @@ export function ContactForm({
 
                 <Card variant="bordered" padding="md" className="bg-secondary-light/50">
                   <p className="text-sm text-text-light">
-                    <strong className="text-text">Kristil Erla Håland</strong>
+                    <strong className="text-text">{c.cardName}</strong>
                     <br />
-                    Gründer og daglig leder
+                    {c.cardRole}
                     <br />
                     <a href="tel:+4790606433" className="text-primary hover:underline">
                       +47 906 06 433
@@ -154,18 +154,14 @@ export function ContactForm({
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="font-serif text-xl font-semibold text-text mb-2">
-                    Takk for din henvendelse!
-                  </h3>
-                  <p className="text-text-light">
-                    Vi tar kontakt med deg så snart som mulig.
-                  </p>
+                  <h3 className="font-serif text-xl font-semibold text-text mb-2">{c.thanksTitle}</h3>
+                  <p className="text-text-light">{c.thanksBody}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-text mb-2">
-                      Navn <span className="text-accent">*</span>
+                      {c.nameLabel} <span className="text-accent">*</span>
                     </label>
                     <input
                       type="text"
@@ -175,13 +171,13 @@ export function ContactForm({
                       value={formState.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-secondary-dark bg-white text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
-                      placeholder="Ditt navn"
+                      placeholder={c.namePlaceholder}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-text mb-2">
-                      E-post <span className="text-accent">*</span>
+                      {c.emailFieldLabel} <span className="text-accent">*</span>
                     </label>
                     <input
                       type="email"
@@ -191,13 +187,13 @@ export function ContactForm({
                       value={formState.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-secondary-dark bg-white text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
-                      placeholder="din@epost.no"
+                      placeholder={c.emailPlaceholder}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-text mb-2">
-                      Telefon
+                      {c.phoneFieldLabel}
                     </label>
                     <input
                       type="tel"
@@ -206,13 +202,13 @@ export function ContactForm({
                       value={formState.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-secondary-dark bg-white text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
-                      placeholder="+47 XXX XX XXX"
+                      placeholder={c.phonePlaceholder}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="type" className="block text-sm font-medium text-text mb-2">
-                      Type henvendelse
+                      {c.typeLabel}
                     </label>
                     <select
                       id="type"
@@ -221,17 +217,17 @@ export function ContactForm({
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-secondary-dark bg-white text-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
                     >
-                      <option value="general">Generell henvendelse</option>
-                      <option value="kommune">Kommune / organisasjon</option>
-                      <option value="familie">Privat familie</option>
-                      <option value="demo">Ønsker demo</option>
-                      <option value="support">Support</option>
+                      {c.types.map((t) => (
+                        <option key={t.value} value={t.value}>
+                          {t.label}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-text mb-2">
-                      Melding <span className="text-accent">*</span>
+                      {c.messageLabel} <span className="text-accent">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -241,7 +237,7 @@ export function ContactForm({
                       value={formState.message}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-secondary-dark bg-white text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow resize-none"
-                      placeholder="Fortell oss hva vi kan hjelpe deg med..."
+                      placeholder={c.messagePlaceholder}
                     />
                   </div>
 
@@ -252,13 +248,10 @@ export function ContactForm({
                   )}
 
                   <Button type="submit" fullWidth disabled={isSubmitting}>
-                    {isSubmitting ? 'Sender...' : 'Send melding'}
+                    {isSubmitting ? c.submitting : c.submit}
                   </Button>
 
-                  <p className="text-xs text-text-muted text-center">
-                    Ved å sende inn skjemaet godtar du at vi behandler dine personopplysninger 
-                    i henhold til vår personvernerklæring.
-                  </p>
+                  <p className="text-xs text-text-muted text-center">{c.privacyNote}</p>
                 </form>
               )}
             </Card>

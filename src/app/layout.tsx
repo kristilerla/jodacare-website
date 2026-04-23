@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Source_Sans_3, Source_Serif_4 } from 'next/font/google';
 import { Header, Footer, AnnouncementBanner } from '@/components/layout';
+import { getLocaleFromHeaders } from '@/lib/i18n/get-locale';
+import { getSite } from '@/i18n/site';
 import './globals.css';
 
 const sourceSans = Source_Sans_3({
@@ -73,16 +75,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocaleFromHeaders();
+  const lang = locale === 'en' ? 'en' : 'nb';
+  const site = getSite(locale);
+
   return (
-    <html lang="nb" className={`${sourceSans.variable} ${sourceSerif.variable}`}>
+    <html lang={lang} className={`${sourceSans.variable} ${sourceSerif.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
         <a href="#main-content" className="skip-to-content">
-          Hopp til hovedinnhold
+          {site.skipToContent}
         </a>
         <Header />
         <AnnouncementBanner />
