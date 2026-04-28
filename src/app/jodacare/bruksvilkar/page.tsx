@@ -27,7 +27,7 @@ const sections = [
   {
     title: '4. Personvern og databehandling',
     paragraphs: [
-      'JodaCare behandler personopplysninger i henhold til personvernforordningen (GDPR) og norsk personvernlovgivning. Se vår personvernerklæring på jodacare.no/sikkerhet for detaljer om hvordan vi behandler dine data.',
+      'JodaCare behandler personopplysninger i henhold til personvernforordningen (GDPR) og norsk personvernlovgivning. Se vår personvernerklæring på jodacare.no/jodacare/personvernerklaering for detaljer om hvordan vi behandler dine data.',
       'All data lagres kryptert i EU (Stockholm). Vi deler ikke dine data med tredjeparter uten ditt samtykke, med mindre det er påkrevd ved lov.',
     ],
   },

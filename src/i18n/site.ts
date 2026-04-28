@@ -97,6 +97,7 @@ export const site: Record<Locale, SiteCopy> = {
         ],
         selskap: [
           { name: 'Om oss', href: '/om' },
+          { name: 'Personvernerklæring', href: '/jodacare/personvernerklaering' },
           { name: 'Bruksvilkår', href: '/jodacare/bruksvilkar' },
           { name: 'Kontakt', href: '/kontakt' },
           { name: 'JodaCare AS', href: 'https://jodacare.no' },
@@ -173,6 +174,7 @@ export const site: Record<Locale, SiteCopy> = {
         ],
         selskap: [
           { name: 'About', href: '/om' },
+          { name: 'Privacy policy', href: '/jodacare/personvernerklaering' },
           { name: 'Terms', href: '/jodacare/bruksvilkar' },
           { name: 'Contact', href: '/kontakt' },
           { name: 'JodaCare AS', href: 'https://jodacare.no' },

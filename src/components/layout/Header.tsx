@@ -22,7 +22,6 @@ export function Header() {
     { name: s.nav.familier, href: '/familie' },
     { name: s.nav.om, href: '/om' },
     { name: s.nav.sikkerhet, href: '/sikkerhet' },
-    { name: s.nav.bruksvilkar, href: '/jodacare/bruksvilkar' },
     { name: s.nav.kontakt, href: '/kontakt' },
   ];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
