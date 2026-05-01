@@ -1,8 +1,8 @@
 import { BruksvilkarPageView } from '@/components/pages/BruksvilkarPageView';
 import { bruksvilkarMetadata } from '@/i18n/messages/bruksvilkar-page';
 
-export const metadata = bruksvilkarMetadata('no');
+export const metadata = bruksvilkarMetadata('en');
 
-export default function BruksvilkarPage() {
-  return <BruksvilkarPageView locale="no" />;
+export default function EnglishBruksvilkarPage() {
+  return <BruksvilkarPageView locale="en" />;
 }
