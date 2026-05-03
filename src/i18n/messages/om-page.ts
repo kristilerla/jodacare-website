@@ -53,7 +53,7 @@ const no: OmPageContent = {
   founderP2:
     'JodaCare ble til fordi jeg ønsket å gi mamma verdighet. Gjennom bilder og dialog kunne hun huske hvem som hadde vært på besøk, hva hun hadde gjort, og føle seg sett og ivaretatt.',
   founderP3:
-    'I dag brukes JodaCare av familier og kommuner over hele Norge. Men kjernen er den samme: å skape trygghet, verdighet og sammenheng for sårbare mennesker og de som bryr seg om dem.',
+    'I dag brukes JodaCare av familier og kommuner som Horten, Lier og Oslo. Kjernen er den samme: å skape trygghet, verdighet og sammenheng for sårbare mennesker og de som bryr seg om dem.',
   storyQuote:
     'Vår visjon er å styrke menneskeverd til personer med demens, utviklingshemminger og deres relasjon til helsepersonell og egen familie. Ved å gi denne sårbare gruppen mennesker en sammenheng i tilværelsen ser vi at det skaper ro for alle.',
   storyAuthor: 'Kristil Erla Håland',
@@ -96,7 +96,7 @@ const en: OmPageContent = {
   founderP2:
     'JodaCare was created because I wanted to give my mother dignity. Through photos and dialogue she could remember who had visited, what she had done, and feel seen and cared for.',
   founderP3:
-    'Today JodaCare is used by families and municipalities across Norway. The core is the same: to create safety, dignity and continuity for vulnerable people and those who care for them.',
+    'Today JodaCare is used by families and municipalities such as Horten, Lier and Oslo. The core is the same: to create safety, dignity and continuity for vulnerable people and those who care for them.',
   storyQuote:
     'Our vision is to strengthen human dignity for people with dementia and intellectual disabilities, and their relationships with health professionals and their own families. By giving this vulnerable group coherence in life, we see that it brings calm for everyone involved.',
   storyAuthor: 'Kristil Erla Håland',

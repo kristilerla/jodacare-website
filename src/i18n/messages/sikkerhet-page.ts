@@ -156,7 +156,7 @@ const no: SikkerhetContent = {
   trustSr: 'Tillitsindikatorer',
   trustStats: [
     { value: '2016', label: 'I drift siden' },
-    { value: 'Norge', label: 'Kunder over hele landet' },
+    { value: 'Horten, Lier, Oslo', label: 'Kommuner m.fl.' },
     { value: 'Nivå 4', label: 'Sikkerhetsnivå' },
     { value: 'EU', label: 'Datalagring' },
   ],
@@ -198,7 +198,7 @@ const en: SikkerhetContent = {
   trustSr: 'Trust indicators',
   trustStats: [
     { value: '2016', label: 'In operation since' },
-    { value: 'Norway', label: 'Customers nationwide' },
+    { value: 'Horten, Lier, Oslo', label: 'Municipalities etc.' },
     { value: 'Level 4', label: 'Security level' },
     { value: 'EU', label: 'Data storage' },
   ],

@@ -97,7 +97,7 @@ const no: TeknologiPageCopy = {
     {
       title: 'Skybasert infrastruktur',
       description:
-        'Hostet på enterprise-grade skytjenester med automatisk skalering og geografisk redundans i EU.',
+        'Hostet på Supabase og Vercel med automatisk skalering. All data lagret i EU.',
     },
     {
       title: 'Serverless arkitektur',
@@ -114,9 +114,9 @@ const no: TeknologiPageCopy = {
         'Nye versjoner rulles ut automatisk uten nedetid. Dere får alltid den nyeste versjonen uten å løfte en finger.',
     },
   ],
-  techTitle: 'Teknologier vi bruker',
+  techTitle: 'Teknologier JodaCare bruker',
   techIntro:
-    'Vi har valgt teknologier som er velprøvde, godt vedlikeholdte og brukt av noen av verdens største tjenester. Det betyr stabilitet, sikkerhet og et stort økosystem av utviklere.',
+    'Velprøvde, godt vedlikeholdte teknologier med store utviklerøkosystemer. Det betyr stabilitet, sikkerhet og enklere vedlikehold over tid.',
   securityBadge: 'Sikkerhet',
   securityTitle: 'Sikkerhet og tilgangskontroll',
   securityIntro:
@@ -130,7 +130,7 @@ const no: TeknologiPageCopy = {
     {
       title: 'Rollebasert tilgang (RBAC)',
       description:
-        '6 definerte rollenivåer sørger for at hver bruker kun ser og gjør det de har rett til — fra lesetilgang til full administrasjon.',
+        '10 definerte rollenivåer sørger for at hver bruker kun ser og gjør det de har rett til — fra pårørende til superadmin.',
     },
     {
       title: 'Flerfaktor-autentisering (MFA)',
@@ -156,22 +156,22 @@ const no: TeknologiPageCopy = {
   authIntro: 'Velg innloggingsmetoden som passer best for din organisasjon.',
   authMethods: [
     {
-      title: 'JodaCare Auth',
-      description: 'Innebygd autentisering med e-post og passord, magic link og flerfaktor-autentisering (MFA).',
+      title: 'ID-porten',
+      description: 'Innlogging med BankID, Buypass eller Commfides via ID-porten. Sikkerhetsnivå 4, godkjent av Digdir.',
       badge: 'Tilgjengelig',
       badgeVariant: 'success',
     },
     {
-      title: 'ID-porten',
-      description: 'Innlogging med BankID, Buypass eller Commfides via ID-porten for sikkerhetsnivå 4.',
-      badge: 'Kommer snart',
-      badgeVariant: 'warning',
+      title: 'JodaCare Auth',
+      description: 'Innebygd autentisering med flerfaktor-autentisering (MFA) via TOTP.',
+      badge: 'Tilgjengelig',
+      badgeVariant: 'success',
     },
     {
-      title: 'Azure AD',
-      description: 'Single sign-on (SSO) via organisasjonens Azure Active Directory for sømløs innlogging.',
-      badge: 'Kommer snart',
-      badgeVariant: 'warning',
+      title: 'Azure AD / Entra ID',
+      description: 'Single sign-on (SSO) via organisasjonens Microsoft Entra ID.',
+      badge: 'På veikartet',
+      badgeVariant: 'accent',
     },
   ],
   onboardingTitle: 'Kom i gang på minutter',
@@ -187,20 +187,20 @@ const no: TeknologiPageCopy = {
   integrationsIntro: 'JodaCare er designet for å spille sammen med resten av IT-landskapet i kommunen.',
   integrations: [
     {
-      title: 'Azure AD-synkronisering',
-      description: 'Automatisk synkronisering av brukere og grupper fra organisasjonens Azure Active Directory.',
-      badge: 'Kommer snart',
-      badgeVariant: 'warning',
-    },
-    {
       title: 'API for tredjeparter',
-      description: 'Åpent API som gjør det mulig å koble JodaCare sammen med andre systemer i organisasjonen.',
-      badge: 'Kommer snart',
-      badgeVariant: 'warning',
+      description: 'REST API som gjør det mulig å koble JodaCare sammen med andre systemer i organisasjonen.',
+      badge: 'Tilgjengelig',
+      badgeVariant: 'success',
     },
     {
       title: 'EPJ-integrasjon',
-      description: 'Integrasjon mot elektroniske pasientjournaler som DIPS og Profil for sømløs informasjonsflyt.',
+      description: 'Integrasjon mot elektroniske pasientjournaler for informasjonsflyt uten manuell overføring.',
+      badge: 'På veikartet',
+      badgeVariant: 'accent',
+    },
+    {
+      title: 'Azure AD / Entra ID-synkronisering',
+      description: 'Automatisk synkronisering av brukere og grupper fra organisasjonens Microsoft Entra ID.',
       badge: 'På veikartet',
       badgeVariant: 'accent',
     },
@@ -212,22 +212,18 @@ const no: TeknologiPageCopy = {
       badgeVariant: 'success',
     },
   ],
-  aiBadge: 'Kommer i fremtiden',
-  aiTitle: 'Fremtidens KI-muligheter',
+  aiBadge: 'KI i JodaCare',
+  aiTitle: 'Kunstig intelligens — norsk og personvernvennlig',
   aiIntro:
-    'Vi utforsker hvordan kunstig intelligens kan gjøre hverdagen enklere for helsepersonell — uten å gå på bekostning av personvern.',
+    'JodaCare bruker Mistral AI (Paris) for KI-funksjonalitet. Ingen data forlater Europa. KI-funksjonene er valgfrie og transparente.',
   aiFeatures: [
     {
-      title: 'KI-støttet dokumentasjon',
-      description: 'Intelligente forslag til dokumentasjon basert på kontekst og tidligere journalføringer.',
-    },
-    {
-      title: 'Norsk talegjenkjenning',
-      description: 'Diktér notater og rapporter på norsk — systemet transkriberer og strukturerer teksten automatisk.',
+      title: 'KAI — KI-assistent for helsepersonell',
+      description: 'KAI forklarer rutiner, svarer på spørsmål og veileder ansatte i JodaCare.',
     },
     {
       title: 'Intelligente sammendrag',
-      description: 'Automatisk oppsummering av lange journaler og møtenotater for raskere oversikt.',
+      description: 'Automatisk oppsummering av dagbokinnlegg og hendelseslogger for raskere oversikt.',
     },
     {
       title: 'Mønstergjenkjenning i dagsform',
@@ -235,16 +231,16 @@ const no: TeknologiPageCopy = {
     },
   ],
   aiFootnote:
-    'KI-funksjonene er under utvikling og vil bli rullet ut gradvis. All bruk av KI i JodaCare vil være transparent, personvernvennlig og i tråd med gjeldende regelverk.',
+    'All bruk av KI i JodaCare er transparent, personvernvennlig og i tråd med gjeldende regelverk. AI-motor: Mistral AI (Paris, Frankrike).',
   factsSr: 'Nøkkeltall',
   facts: [
     { value: '99.9%', label: 'Oppetid' },
     { value: 'TLS 1.3', label: 'Kryptering' },
     { value: 'EU', label: 'Datalagring' },
-    { value: '6', label: 'Rollenivå' },
+    { value: '10', label: 'Rollenivå' },
   ],
   ctaTitle: 'Vil du vite mer om teknologien?',
-  ctaSubtitle: 'Vi tar gjerne en gjennomgang av plattformen tilpasset din organisasjons IT-krav.',
+  ctaSubtitle: 'Ta kontakt for en gjennomgang tilpasset din organisasjons IT-krav.',
   ctaPrimary: 'Kontakt oss',
   ctaSecondary: 'Les om sikkerhet',
 };
@@ -285,7 +281,7 @@ const en: TeknologiPageCopy = {
   archPoints: [
     {
       title: 'Cloud infrastructure',
-      description: 'Hosted on enterprise-grade cloud with automatic scaling and geographic redundancy in the EU.',
+      description: 'Hosted on Supabase and Vercel with automatic scaling. All data stored in the EU.',
     },
     {
       title: 'Serverless architecture',
@@ -300,9 +296,9 @@ const en: TeknologiPageCopy = {
       description: 'New versions roll out automatically without downtime. You always run the latest release.',
     },
   ],
-  techTitle: 'Technologies we use',
+  techTitle: 'Technologies JodaCare uses',
   techIntro:
-    'We chose mature, well-maintained technologies used by some of the world’s largest services — for stability, security and a rich developer ecosystem.',
+    'Mature, well-maintained technologies with large developer ecosystems. That means stability, security and easier maintenance over time.',
   securityBadge: 'Security',
   securityTitle: 'Security and access control',
   securityIntro: 'Security is built into every layer — from the database to the user interface.',
@@ -315,7 +311,7 @@ const en: TeknologiPageCopy = {
     {
       title: 'Role-based access (RBAC)',
       description:
-        'Six defined role levels ensure each user only sees and does what they are allowed to — from read-only to full administration.',
+        'Ten defined role levels ensure each user only sees and does what they are allowed to — from relative to superadmin.',
     },
     {
       title: 'Multi-factor authentication (MFA)',
@@ -341,22 +337,22 @@ const en: TeknologiPageCopy = {
   authIntro: 'Choose the sign-in method that best fits your organisation.',
   authMethods: [
     {
-      title: 'JodaCare Auth',
-      description: 'Built-in authentication with email and password, magic link and MFA.',
+      title: 'ID-porten',
+      description: 'Sign in with BankID, Buypass or Commfides via ID-porten. Security level 4, approved by Digdir.',
       badge: 'Available',
       badgeVariant: 'success',
     },
     {
-      title: 'ID-porten',
-      description: 'Sign in with BankID, Buypass or Commfides via ID-porten for security level 4.',
-      badge: 'Coming soon',
-      badgeVariant: 'warning',
+      title: 'JodaCare Auth',
+      description: 'Built-in authentication with multi-factor authentication (MFA) via TOTP.',
+      badge: 'Available',
+      badgeVariant: 'success',
     },
     {
-      title: 'Azure AD',
-      description: 'Single sign-on (SSO) through your organisation’s Microsoft Entra ID (Azure AD).',
-      badge: 'Coming soon',
-      badgeVariant: 'warning',
+      title: 'Azure AD / Entra ID',
+      description: 'Single sign-on (SSO) through your organisation\'s Microsoft Entra ID.',
+      badge: 'On the roadmap',
+      badgeVariant: 'accent',
     },
   ],
   onboardingTitle: 'Get started in minutes',
@@ -369,23 +365,23 @@ const en: TeknologiPageCopy = {
   ],
   integrationsBadge: 'Integrations',
   integrationsTitle: 'Connect your systems',
-  integrationsIntro: 'JodaCare is designed to work alongside the rest of the municipality’s IT landscape.',
+  integrationsIntro: 'JodaCare is designed to work alongside the rest of the municipality\'s IT landscape.',
   integrations: [
     {
-      title: 'Azure AD sync',
-      description: 'Automatic synchronisation of users and groups from Microsoft Entra ID.',
-      badge: 'Coming soon',
-      badgeVariant: 'warning',
-    },
-    {
       title: 'Third-party API',
-      description: 'An open API so JodaCare can connect to other systems in your organisation.',
-      badge: 'Coming soon',
-      badgeVariant: 'warning',
+      description: 'REST API so JodaCare can connect to other systems in your organisation.',
+      badge: 'Available',
+      badgeVariant: 'success',
     },
     {
       title: 'EHR integration',
-      description: 'Integration with electronic patient records such as DIPS and Profil for smoother information flow.',
+      description: 'Integration with electronic patient records for information flow without manual transfer.',
+      badge: 'On the roadmap',
+      badgeVariant: 'accent',
+    },
+    {
+      title: 'Azure AD / Entra ID sync',
+      description: 'Automatic synchronisation of users and groups from Microsoft Entra ID.',
       badge: 'On the roadmap',
       badgeVariant: 'accent',
     },
@@ -396,22 +392,18 @@ const en: TeknologiPageCopy = {
       badgeVariant: 'success',
     },
   ],
-  aiBadge: 'Future direction',
-  aiTitle: 'Future AI capabilities',
+  aiBadge: 'AI in JodaCare',
+  aiTitle: 'Artificial intelligence — European and privacy-conscious',
   aiIntro:
-    'We are exploring how artificial intelligence can simplify everyday work for care staff — without compromising privacy.',
+    'JodaCare uses Mistral AI (Paris) for AI functionality. No data leaves Europe. AI features are optional and transparent.',
   aiFeatures: [
     {
-      title: 'AI-assisted documentation',
-      description: 'Smart documentation suggestions based on context and earlier notes.',
-    },
-    {
-      title: 'Norwegian speech recognition',
-      description: 'Dictate notes and reports in Norwegian — the system transcribes and structures the text.',
+      title: 'KAI — AI assistant for health staff',
+      description: 'KAI explains routines, answers questions and guides staff in JodaCare.',
     },
     {
       title: 'Intelligent summaries',
-      description: 'Automatic summaries of long records and meeting notes for faster overview.',
+      description: 'Automatic summaries of diary entries and event logs for faster overview.',
     },
     {
       title: 'Patterns in daily reports',
@@ -419,16 +411,16 @@ const en: TeknologiPageCopy = {
     },
   ],
   aiFootnote:
-    'AI features are under development and will roll out gradually. Any use of AI in JodaCare will be transparent, privacy-conscious and aligned with applicable regulation.',
+    'All use of AI in JodaCare is transparent, privacy-conscious and aligned with applicable regulation. AI engine: Mistral AI (Paris, France).',
   factsSr: 'Key figures',
   facts: [
     { value: '99.9%', label: 'Uptime' },
     { value: 'TLS 1.3', label: 'Encryption' },
     { value: 'EU', label: 'Data storage' },
-    { value: '6', label: 'Role levels' },
+    { value: '10', label: 'Role levels' },
   ],
   ctaTitle: 'Want to know more about the technology?',
-  ctaSubtitle: 'We are happy to walk through the platform tailored to your organisation’s IT requirements.',
+  ctaSubtitle: 'Get in touch for a walkthrough tailored to your organisation\'s IT requirements.',
   ctaPrimary: 'Contact us',
   ctaSecondary: 'Read about security',
 };
