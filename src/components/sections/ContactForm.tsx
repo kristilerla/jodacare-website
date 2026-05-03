@@ -17,7 +17,7 @@ interface ContactFormProps {
 export function ContactForm({
   showContactInfo = true,
   title = 'Ta kontakt',
-  subtitle = 'Vi hjelper deg gjerne i gang med jodacare.',
+  subtitle = 'Vi hjelper deg gjerne i gang med JodaCare.',
   locale = 'no',
 }: ContactFormProps) {
   const c = getContactFormCopy(locale);

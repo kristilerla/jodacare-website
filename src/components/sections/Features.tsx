@@ -64,7 +64,7 @@ interface FeaturesProps {
 
 export function Features({ 
   title = 'Alt du trenger for trygg kommunikasjon',
-  subtitle = 'jodacare gir deg verktøyene for å holde alle rundt en sårbar person oppdatert og involvert.',
+  subtitle = 'JodaCare gir deg verktøyene for å holde alle rundt en sårbar person oppdatert og involvert.',
   showAll = true 
 }: FeaturesProps) {
   const displayedFeatures = showAll ? features : features.slice(0, 4);

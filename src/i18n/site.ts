@@ -97,27 +97,27 @@ export const site: Record<Locale, SiteCopy> = {
         ],
         selskap: [
           { name: 'Om oss', href: '/om' },
-          { name: 'Personvernerklæring', href: '/jodacare/personvernerklaering' },
-          { name: 'Bruksvilkår', href: '/jodacare/bruksvilkar' },
+          { name: 'Personvernerklæring', href: '/JodaCare/personvernerklaering' },
+          { name: 'Bruksvilkår', href: '/JodaCare/bruksvilkar' },
           { name: 'Kontakt', href: '/kontakt' },
           { name: 'JodaCare AS', href: 'https://jodacare.no' },
         ],
         ressurser: [
           {
             name: 'Hjelpesenter',
-            href: 'https://jodacare.atlassian.net/servicedesk/customer/portals',
+            href: 'https://JodaCare.atlassian.net/servicedesk/customer/portals',
           },
           { name: 'Logg inn', href: 'https://app.jodacare.no' },
         ],
       },
     },
     banner: {
-      title: 'jodacare fra 2016 fungerer fortsatt!',
+      title: 'JodaCare fra 2016 fungerer fortsatt!',
       body:
-        'Den eksisterende appen som ble utviklet i 2016 og oppgradert i 2018 er fortsatt i drift og fungerer som normalt mens vi bygger nye jodacare 2.0.',
+        'Den eksisterende appen som ble utviklet i 2016 og oppgradert i 2018 er fortsatt i drift og fungerer som normalt mens vi bygger nye JodaCare 2.0.',
       cta: 'Gå til eksisterende app →',
       close: 'Lukk melding',
-      imageAlt: 'jodacare app',
+      imageAlt: 'JodaCare app',
     },
     lang: {
       switchToNorwegian: 'Bytt til norsk',
@@ -174,27 +174,27 @@ export const site: Record<Locale, SiteCopy> = {
         ],
         selskap: [
           { name: 'About', href: '/om' },
-          { name: 'Privacy policy', href: '/jodacare/personvernerklaering' },
-          { name: 'Terms', href: '/jodacare/bruksvilkar' },
+          { name: 'Privacy policy', href: '/JodaCare/personvernerklaering' },
+          { name: 'Terms', href: '/JodaCare/bruksvilkar' },
           { name: 'Contact', href: '/kontakt' },
           { name: 'JodaCare AS', href: 'https://jodacare.no' },
         ],
         ressurser: [
           {
             name: 'Help centre',
-            href: 'https://jodacare.atlassian.net/servicedesk/customer/portals',
+            href: 'https://JodaCare.atlassian.net/servicedesk/customer/portals',
           },
           { name: 'Log in', href: 'https://app.jodacare.no' },
         ],
       },
     },
     banner: {
-      title: 'The jodacare app from 2016 is still running!',
+      title: 'The JodaCare app from 2016 is still running!',
       body:
-        'The original app, first released in 2016 and upgraded in 2018, remains in full operation while we build the new jodacare 2.0.',
+        'The original app, first released in 2016 and upgraded in 2018, remains in full operation while we build the new JodaCare 2.0.',
       cta: 'Open the existing app →',
       close: 'Dismiss message',
-      imageAlt: 'jodacare app',
+      imageAlt: 'JodaCare app',
     },
     lang: {
       switchToNorwegian: 'Bytt til norsk',

@@ -63,23 +63,23 @@ const techBadges = [
 const no: TeknologiPageCopy = {
   heroTitle: 'Moderne teknologi bygget for omsorg',
   heroSubtitle:
-    'jodacare 2.0 er utviklet fra bunnen av med sikkerhet, brukervennlighet og skalerbarhet i kjernen.',
+    'JodaCare 2.0 er utviklet fra bunnen av med sikkerhet, brukervennlighet og skalerbarhet i kjernen.',
   contactCta: 'Kontakt oss',
   securityLinkCta: 'Les om sikkerhet',
   platformBadge: 'Plattformen',
   platformTitle: 'Én plattform — tilgjengelig overalt',
   platformIntro:
-    'jodacare er en moderne nettbasert plattform som fungerer like godt på mobil, nettbrett og PC — uten installasjon.',
+    'JodaCare er en moderne nettbasert plattform som fungerer like godt på mobil, nettbrett og PC — uten installasjon.',
   platformFeatures: [
     {
       title: 'Nettbasert plattform',
       description:
-        'Ingen installasjon nødvendig — jodacare kjører direkte i nettleseren. Alltid oppdatert, alltid tilgjengelig fra hvilken som helst enhet med internett.',
+        'Ingen installasjon nødvendig — JodaCare kjører direkte i nettleseren. Alltid oppdatert, alltid tilgjengelig fra hvilken som helst enhet med internett.',
     },
     {
       title: 'Fungerer som en app (PWA)',
       description:
-        'jodacare kan installeres som en app på mobil og nettbrett, og kommer også i App Store og Google Play. Rask oppstart, push-varsler og hjemmeskjerm-ikon.',
+        'JodaCare kan installeres som en app på mobil og nettbrett, og kommer også i App Store og Google Play. Rask oppstart, push-varsler og hjemmeskjerm-ikon.',
     },
     {
       title: 'Sanntidssamarbeid',
@@ -156,7 +156,7 @@ const no: TeknologiPageCopy = {
   authIntro: 'Velg innloggingsmetoden som passer best for din organisasjon.',
   authMethods: [
     {
-      title: 'jodacare Auth',
+      title: 'JodaCare Auth',
       description: 'Innebygd autentisering med e-post og passord, magic link og flerfaktor-autentisering (MFA).',
       badge: 'Tilgjengelig',
       badgeVariant: 'success',
@@ -184,7 +184,7 @@ const no: TeknologiPageCopy = {
   ],
   integrationsBadge: 'Integrasjoner',
   integrationsTitle: 'Koble sammen systemene dine',
-  integrationsIntro: 'jodacare er designet for å spille sammen med resten av IT-landskapet i kommunen.',
+  integrationsIntro: 'JodaCare er designet for å spille sammen med resten av IT-landskapet i kommunen.',
   integrations: [
     {
       title: 'Azure AD-synkronisering',
@@ -194,7 +194,7 @@ const no: TeknologiPageCopy = {
     },
     {
       title: 'API for tredjeparter',
-      description: 'Åpent API som gjør det mulig å koble jodacare sammen med andre systemer i organisasjonen.',
+      description: 'Åpent API som gjør det mulig å koble JodaCare sammen med andre systemer i organisasjonen.',
       badge: 'Kommer snart',
       badgeVariant: 'warning',
     },
@@ -235,7 +235,7 @@ const no: TeknologiPageCopy = {
     },
   ],
   aiFootnote:
-    'KI-funksjonene er under utvikling og vil bli rullet ut gradvis. All bruk av KI i jodacare vil være transparent, personvernvennlig og i tråd med gjeldende regelverk.',
+    'KI-funksjonene er under utvikling og vil bli rullet ut gradvis. All bruk av KI i JodaCare vil være transparent, personvernvennlig og i tråd med gjeldende regelverk.',
   factsSr: 'Nøkkeltall',
   facts: [
     { value: '99.9%', label: 'Oppetid' },
@@ -252,23 +252,23 @@ const no: TeknologiPageCopy = {
 const en: TeknologiPageCopy = {
   heroTitle: 'Modern technology built for care',
   heroSubtitle:
-    'jodacare 2.0 is built from the ground up with security, usability and scalability at the core.',
+    'JodaCare 2.0 is built from the ground up with security, usability and scalability at the core.',
   contactCta: 'Contact us',
   securityLinkCta: 'Read about security',
   platformBadge: 'Platform',
   platformTitle: 'One platform — everywhere you work',
   platformIntro:
-    'jodacare is a modern web platform that works equally well on phone, tablet and desktop — with nothing to install.',
+    'JodaCare is a modern web platform that works equally well on phone, tablet and desktop — with nothing to install.',
   platformFeatures: [
     {
       title: 'Web-based platform',
       description:
-        'No installation required — jodacare runs in the browser. Always up to date, always available from any device online.',
+        'No installation required — JodaCare runs in the browser. Always up to date, always available from any device online.',
     },
     {
       title: 'Works like an app (PWA)',
       description:
-        'jodacare can be installed as an app on phones and tablets and is also coming to the App Store and Google Play. Fast launch, push notifications and a home-screen icon.',
+        'JodaCare can be installed as an app on phones and tablets and is also coming to the App Store and Google Play. Fast launch, push notifications and a home-screen icon.',
     },
     {
       title: 'Real-time collaboration',
@@ -341,7 +341,7 @@ const en: TeknologiPageCopy = {
   authIntro: 'Choose the sign-in method that best fits your organisation.',
   authMethods: [
     {
-      title: 'jodacare Auth',
+      title: 'JodaCare Auth',
       description: 'Built-in authentication with email and password, magic link and MFA.',
       badge: 'Available',
       badgeVariant: 'success',
@@ -369,7 +369,7 @@ const en: TeknologiPageCopy = {
   ],
   integrationsBadge: 'Integrations',
   integrationsTitle: 'Connect your systems',
-  integrationsIntro: 'jodacare is designed to work alongside the rest of the municipality’s IT landscape.',
+  integrationsIntro: 'JodaCare is designed to work alongside the rest of the municipality’s IT landscape.',
   integrations: [
     {
       title: 'Azure AD sync',
@@ -379,7 +379,7 @@ const en: TeknologiPageCopy = {
     },
     {
       title: 'Third-party API',
-      description: 'An open API so jodacare can connect to other systems in your organisation.',
+      description: 'An open API so JodaCare can connect to other systems in your organisation.',
       badge: 'Coming soon',
       badgeVariant: 'warning',
     },
@@ -419,7 +419,7 @@ const en: TeknologiPageCopy = {
     },
   ],
   aiFootnote:
-    'AI features are under development and will roll out gradually. Any use of AI in jodacare will be transparent, privacy-conscious and aligned with applicable regulation.',
+    'AI features are under development and will roll out gradually. Any use of AI in JodaCare will be transparent, privacy-conscious and aligned with applicable regulation.',
   factsSr: 'Key figures',
   facts: [
     { value: '99.9%', label: 'Uptime' },

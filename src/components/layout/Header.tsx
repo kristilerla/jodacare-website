@@ -46,11 +46,11 @@ export function Header() {
             <Link
               href={withLocale('/', locale)}
               className="-m-1.5 p-1.5"
-              aria-label={locale === 'no' ? 'jodacare - Gå til forsiden' : 'jodacare - Home'}
+              aria-label={locale === 'no' ? 'JodaCare - Gå til forsiden' : 'JodaCare - Home'}
             >
               <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
                 <Image
-                  src="/brand/jodacare-horisontal.svg"
+                  src="/brand/JodaCare-horisontal.svg"
                   alt="JodaCare logo"
                   width={252}
                   height={54}
@@ -163,7 +163,7 @@ export function Header() {
             >
               <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
                 <Image
-                  src="/brand/jodacare-horisontal.svg"
+                  src="/brand/JodaCare-horisontal.svg"
                   alt="JodaCare logo"
                   width={252}
                   height={54}

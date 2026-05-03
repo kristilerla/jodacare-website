@@ -30,7 +30,7 @@ export type ContactFormCopy = {
 const no: ContactFormCopy = {
   contactInfoTitle: 'Kontaktinformasjon',
   contactInfoBody:
-    'Ta gjerne kontakt om du har spørsmål om jodacare, ønsker en demo, eller vil komme i gang.',
+    'Ta gjerne kontakt om du har spørsmål om JodaCare, ønsker en demo, eller vil komme i gang.',
   emailLabel: 'E-post',
   phoneLabel: 'Telefon',
   addressLabel: 'Adresse',
@@ -65,7 +65,7 @@ const no: ContactFormCopy = {
 const en: ContactFormCopy = {
   contactInfoTitle: 'Contact details',
   contactInfoBody:
-    'Reach out if you have questions about jodacare, want a demo, or are ready to get started.',
+    'Reach out if you have questions about JodaCare, want a demo, or are ready to get started.',
   emailLabel: 'Email',
   phoneLabel: 'Phone',
   addressLabel: 'Address',
