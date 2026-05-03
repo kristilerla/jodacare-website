@@ -50,7 +50,7 @@ export function Header() {
             >
               <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
                 <Image
-                  src="/brand/JodaCare-horisontal.svg"
+                  src="/brand/jodacare-horisontal.svg"
                   alt="JodaCare logo"
                   width={252}
                   height={54}
@@ -163,7 +163,7 @@ export function Header() {
             >
               <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
                 <Image
-                  src="/brand/JodaCare-horisontal.svg"
+                  src="/brand/jodacare-horisontal.svg"
                   alt="JodaCare logo"
                   width={252}
                   height={54}
