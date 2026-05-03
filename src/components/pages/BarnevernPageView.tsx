@@ -456,6 +456,7 @@ export function BarnevernPageView({ locale }: Props) {
               >
                 {d.statusTitle}
               </h2>
+              <p className="mt-4 text-lg text-text-light">{d.statusSubtitle}</p>
             </div>
           </FadeIn>
 
@@ -548,6 +549,7 @@ export function BarnevernPageView({ locale }: Props) {
               >
                 {d.relatedTitle}
               </h2>
+              <p className="mt-4 text-lg text-text-light">{d.relatedSubtitle}</p>
             </div>
           </FadeIn>
 
