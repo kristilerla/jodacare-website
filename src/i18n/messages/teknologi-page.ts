@@ -40,6 +40,8 @@ export type TeknologiPageCopy = {
   aiTitle: string;
   aiIntro: string;
   aiFeatures: TeknologiTextItem[];
+  aiUpcomingTitle: string;
+  aiUpcoming: TeknologiTextItem[];
   aiFootnote: string;
   factsSr: string;
   facts: TeknologiFact[];
@@ -219,15 +221,18 @@ const no: TeknologiPageCopy = {
   aiFeatures: [
     {
       title: 'KAI — KI-assistent for helsepersonell',
-      description: 'KAI forklarer rutiner, svarer på spørsmål og veileder ansatte i JodaCare.',
+      description: 'KAI forklarer rutiner, svarer på spørsmål og veileder ansatte i JodaCare. Tilpasser seg rollen din automatisk.',
     },
     {
       title: 'Intelligente sammendrag',
-      description: 'Automatisk oppsummering av dagbokinnlegg og hendelseslogger for raskere oversikt.',
+      description: 'Automatisk oppsummering av dagbokinnlegg fra den siste uken. Saksbehandler kan lese to ukers historikk på ett minutt.',
     },
+  ],
+  aiUpcomingTitle: 'Kommer snart',
+  aiUpcoming: [
     {
       title: 'Mønstergjenkjenning i dagsform',
-      description: 'Analyse av dagsform-registreringer over tid for å identifisere trender og endringer.',
+      description: 'Hendelsesloggen registrerer allerede søvn, humør og adferd daglig. Neste steg er at KI finner mønstrene — slik at saksbehandler ser at nettene ble verre etter samvær, eller at humøret stiger når én bestemt assistent er på jobb.',
     },
   ],
   aiFootnote:
@@ -399,15 +404,18 @@ const en: TeknologiPageCopy = {
   aiFeatures: [
     {
       title: 'KAI — AI assistant for health staff',
-      description: 'KAI explains routines, answers questions and guides staff in JodaCare.',
+      description: 'KAI explains routines, answers questions and guides staff in JodaCare. Adapts to your role automatically.',
     },
     {
       title: 'Intelligent summaries',
-      description: 'Automatic summaries of diary entries and event logs for faster overview.',
+      description: 'Automatic summaries of diary entries from the past week. A case worker can read two weeks of history in one minute.',
     },
+  ],
+  aiUpcomingTitle: 'Coming soon',
+  aiUpcoming: [
     {
-      title: 'Patterns in daily reports',
-      description: 'Analysis of daily wellbeing entries over time to spot trends and changes.',
+      title: 'Pattern detection in daily reports',
+      description: 'The event log already records sleep, mood and behaviour daily. The next step is for AI to find the patterns — so a case worker can see that nights got worse after contact visits, or that mood improves when one particular assistant is on shift.',
     },
   ],
   aiFootnote:

@@ -44,7 +44,7 @@ const securityIcons = [
 ] as const;
 const authIcons = [KeyIcon, IdentificationIcon, BuildingOfficeIcon] as const;
 const integrationIcons = [ArrowsRightLeftIcon, LinkIcon, CpuChipIcon, EnvelopeIcon] as const;
-const aiIcons = [SparklesIcon, MicrophoneIcon, DocumentTextIcon, ChartBarIcon] as const;
+const aiIcons = [SparklesIcon, DocumentTextIcon] as const;
 
 type Props = { locale: Locale };
 
@@ -317,6 +317,32 @@ export function TeknologiPageView({ locale }: Props) {
               );
             })}
           </StaggerContainer>
+
+          {d.aiUpcoming.length > 0 && (
+            <FadeIn>
+              <div className="mt-12 max-w-2xl mx-auto">
+                <div className="flex items-center gap-2 mb-4">
+                  <Badge variant="warning">{d.aiUpcomingTitle}</Badge>
+                </div>
+                {d.aiUpcoming.map((item) => (
+                  <div
+                    key={item.title}
+                    className="bg-white rounded-xl border border-warning/30 p-6"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-warning/10 rounded-xl flex items-center justify-center">
+                        <ChartBarIcon className="w-6 h-6 text-warning" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-lg font-semibold text-text">{item.title}</h3>
+                        <p className="mt-2 text-text-light">{item.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          )}
 
           <FadeIn delay={0.3}>
             <p className="mt-10 text-center text-sm text-text-muted max-w-2xl mx-auto">{d.aiFootnote}</p>
