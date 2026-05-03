@@ -335,6 +335,61 @@ export function BarnevernPageView({ locale }: Props) {
         </Container>
       </section>
 
+      {/* Seksjon 7.5 — For barnet — også som voksen */}
+      <section className="py-28 lg:py-36" aria-labelledby="memory-title">
+        <Container size="sm">
+          <FadeIn>
+            <span className="inline-block text-sm font-medium text-text-muted tracking-wide uppercase mb-6">
+              {d.memoryBadge}
+            </span>
+            <h2
+              id="memory-title"
+              className="font-serif text-3xl sm:text-4xl font-bold text-text"
+            >
+              {d.memoryTitle}
+            </h2>
+            <p className="mt-6 text-lg text-text-light" style={{ lineHeight: 1.7 }}>
+              {d.memorySubtitle}
+            </p>
+          </FadeIn>
+
+          <FadeIn>
+            <blockquote
+              className="mt-12 pl-6 italic text-xl sm:text-2xl font-serif"
+              style={{
+                borderLeft: '4px solid #1D9E75',
+                color: '#1D9E75',
+                lineHeight: 1.7,
+              }}
+            >
+              <p>&ldquo;{d.memoryQuote}&rdquo;</p>
+              <footer className="mt-4 text-base not-italic text-text-muted">
+                — {d.memoryQuoteSource}
+              </footer>
+            </blockquote>
+          </FadeIn>
+
+          <div className="mt-14 space-y-10">
+            {d.memoryParagraphs.map((p) => (
+              <FadeIn key={p.title}>
+                <h3 className="font-serif text-lg font-semibold text-text mb-2">
+                  {p.title}
+                </h3>
+                <p className="text-text-light text-lg" style={{ lineHeight: 1.7 }}>
+                  {p.body}
+                </p>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn>
+            <p className="mt-14 text-sm italic text-text-muted" style={{ lineHeight: 1.7 }}>
+              {d.memoryFootnote}
+            </p>
+          </FadeIn>
+        </Container>
+      </section>
+
       {/* Seksjon 8 — Trygghet og lovgrunnlag */}
       <section
         className="py-20 lg:py-28 bg-background-alt"

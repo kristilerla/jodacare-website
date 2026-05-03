@@ -41,6 +41,15 @@ export type BarnevernContent = {
   efficiencyItems: BvCard[];
   efficiencyDisclaimer: string;
 
+  // Seksjon 7.5 — For barnet — også som voksen
+  memoryBadge: string;
+  memoryTitle: string;
+  memorySubtitle: string;
+  memoryQuote: string;
+  memoryQuoteSource: string;
+  memoryParagraphs: { title: string; body: string }[];
+  memoryFootnote: string;
+
   // Seksjon 8 — Trygghet og lovgrunnlag
   trustTitle: string;
   trustItems: BvCard[];
@@ -227,6 +236,31 @@ const no: BarnevernContent = {
   ],
   efficiencyDisclaimer:
     'Vi har ikke målt disse effektene spesifikt for barnevern ennå. Tallene over er erfaring fra Horten kommune i BPA siden 2016, der strukturen er svært lik. Det er en av grunnene til at vi nå søker pilotkommuner i barnevern.',
+
+  // Seksjon 7.5 — For barnet — også som voksen
+  memoryBadge: 'For barnet — også som voksen',
+  memoryTitle: 'En barndom som kan huskes.',
+  memorySubtitle:
+    'Mange voksne som har vokst opp med tiltak fra barnevernet, forteller at minnene fra barndommen er uklare. Hvor var jeg når? Hvem var de voksne rundt meg? Hadde vi ferier det året? JodaCare følger barnet — og samler samtidig en historie barnet kan eie selv.',
+  memoryQuote:
+    'Skriftlighet er sentralt for å sikre den enkeltes rettssikkerhet, men også viktig for å sikre barnets mulighet til å bli kjent med egen historie.',
+  memoryQuoteSource: 'Helsetilsynet, veileder for landsomfattende tilsyn 2022–2023',
+  memoryParagraphs: [
+    {
+      title: 'Hverdagen, samlet ett sted',
+      body: 'Bilder fra fosterhjemmet. Notater fra avlastning. Samvær som ble gjennomført. Hverdagen til barnet samles ett sted og følger barnet videre — gjennom hver overgang, hvert nytt fosterhjem, hver ny saksbehandler.',
+    },
+    {
+      title: 'En livshistorie barnet kan eie',
+      body: 'KAI, JodaCares norske AI-veiviser, kan skrive sammen hverdagens innhold til en sammenhengende livshistorie. Når barnet er klart — som ungdom eller som voksen — finnes det noe å lese, noe å huske gjennom.',
+    },
+    {
+      title: 'Innsyn når barnet trenger det',
+      body: 'Barn over 15 år har egen rett til innsyn i sin sak. JodaCare gir barnet en strukturert vei inn i sin egen historie. Også som voksen, når spørsmålene kommer.',
+    },
+  ],
+  memoryFootnote:
+    'Forankret i barnevernsloven § 12-4 (journalplikt), medvirkningsforskriften §§ 4–6 og NOU 2023: 7 «Trygg barndom, sikker fremtid», kapittel 21 om barns behov for kontinuitet.',
 
   // Seksjon 8 — Trygghet og lovgrunnlag
   trustTitle: 'Bygget for norsk forvaltning',
@@ -481,6 +515,30 @@ const en: BarnevernContent = {
   ],
   efficiencyDisclaimer:
     'We have not measured these effects specifically for child welfare yet. The figures above are experience from Horten municipality in personal assistance since 2016, where the structure is very similar. That is one of the reasons we are now seeking pilot municipalities in child welfare.',
+
+  memoryBadge: 'For the child — also as an adult',
+  memoryTitle: 'A childhood that can be remembered.',
+  memorySubtitle:
+    'Many adults who grew up with child welfare interventions say their childhood memories are unclear. Where was I when? Who were the adults around me? Did we have holidays that year? JodaCare follows the child — and at the same time gathers a story the child can own.',
+  memoryQuote:
+    'Written documentation is central to safeguarding the individual\'s legal rights, but also important for ensuring the child\'s opportunity to become familiar with their own history.',
+  memoryQuoteSource: 'The Norwegian Board of Health Supervision, national audit guide 2022–2023',
+  memoryParagraphs: [
+    {
+      title: 'Daily life, gathered in one place',
+      body: 'Photos from the foster home. Notes from respite care. Contact visits that were carried out. The child\'s daily life is gathered in one place and follows the child onward — through each transition, each new foster home, each new case worker.',
+    },
+    {
+      title: 'A life story the child can own',
+      body: 'KAI, JodaCare\'s Norwegian AI guide, can weave daily content into a coherent life story. When the child is ready — as a teenager or as an adult — there is something to read, something to remember through.',
+    },
+    {
+      title: 'Access when the child needs it',
+      body: 'Children over 15 have their own right to access their case. JodaCare gives the child a structured way into their own history. Also as an adult, when the questions come.',
+    },
+  ],
+  memoryFootnote:
+    'Grounded in the Child Welfare Act § 12-4 (record-keeping obligation), the Participation Regulation §§ 4–6 and NOU 2023: 7 "Safe childhood, secure future", chapter 21 on children\'s need for continuity.',
 
   trustTitle: 'Built for Norwegian public administration',
   trustItems: [
