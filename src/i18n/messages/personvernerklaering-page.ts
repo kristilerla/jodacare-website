@@ -132,7 +132,7 @@ const en: PersonvernerklaeringBundle = {
     {
       title: '4. Legal basis',
       paragraphs: [
-        'Processing is based on GDPR Article 6 — typically contract, legal obligation or legitimate interests. Where necessary, we rely on consent.',
+        'Processing is based on GDPR Article 6, typically contract, legal obligation or legitimate interests. Where necessary, we rely on consent.',
         'Special categories of personal data are processed in accordance with GDPR Article 9 and applicable Norwegian law.',
       ],
     },

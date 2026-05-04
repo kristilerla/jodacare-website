@@ -41,13 +41,13 @@ export type HomeMessages = {
 };
 
 const no: HomeMessages = {
-  heroAlt: 'Barnehånd holder en eldre persons hånd — nærhet mellom generasjoner',
+  heroAlt: 'Barnehånd holder en eldre persons hånd, nærhet mellom generasjoner',
   heroHeadline: 'Mellom 20 og 25 ulike pleiere var innom mamma i løpet av to uker.',
   heroP1: 'Alle ukjente for henne. Hun, ukjent for dem.',
   heroP2: 'Det var da jeg forstod at vi alle trengte å vite mer om hverandre.',
   storyAria: 'Om erfaringen med omsorgsbolig',
   storyP1:
-    'Da hun flyttet i omsorgsbolig ble hverdagen tryggere. Åtte beboere, fjorten ansatte. Men for meg var hun på mange måter lenger unna enn noen gang — hun var dårligere, og vanskeligere å nå.',
+    'Da hun flyttet i omsorgsbolig ble hverdagen tryggere. Åtte beboere, fjorten ansatte. Men for meg var hun på mange måter lenger unna enn noen gang. Hun var dårligere, og det var vanskeligere å nå inn til henne.',
   storyP2:
     'Det var da JodaCare ble viktig. De som jobbet med henne visste hvem hun var da hun flyttet inn. Og jeg fikk en virkelig kontakt med menneskene rundt henne.',
   storyP3: 'Det er det JodaCare er laget for.',
@@ -56,13 +56,13 @@ const no: HomeMessages = {
   quoteBody:
     'Min glemsomme mamma ringer og sier at hun ikke har fått besøk i dag. «JODA!» sier jeg, og forteller det jeg har lest i JodaCare om dagen hennes. «Du har hatt besøk av Petter fra hjemmetjenesten. Han har laget kjøttkaker til middag for deg.» «Å ja», sier mamma, og husker at han var der.',
   quoteAttribution: '— Kristil Erla Haland, grunnlegger og daglig leder, JodaCare',
-  quoteClosing: 'Tre mennesker som aldri var i samme rom — likevel til stede for hverandre.',
+  quoteClosing: 'Tre mennesker som aldri var i samme rom, og som likevel var til stede for hverandre.',
   pathTitle: 'Hva er JodaCare for deg?',
   pathCards: [
     {
       title: 'JodaCare for familien',
       description:
-        'Hold deg oppdatert på hverdagen til den du er glad i — uansett avstand. Kom i gang med Vipps på fem minutter.',
+        'Hold deg oppdatert på hverdagen til den du er glad i, uansett avstand. Du kommer i gang med Vipps på fem minutter.',
       badge: 'Tilgjengelig nå',
       badgeColor: 'bg-success/10 text-success',
       cta: 'Opprett Familierom',
@@ -72,7 +72,7 @@ const no: HomeMessages = {
     {
       title: 'JodaCare for kommuner',
       description:
-        'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie — koordinert omsorg i én plattform.',
+        'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie møtes i én plattform med koordinert omsorg.',
       badge: 'Beta 2026',
       badgeColor: 'bg-warning/10 text-warning',
       cta: 'Se alle tjenester',
@@ -82,7 +82,7 @@ const no: HomeMessages = {
     {
       title: 'Vi hjelper med implementeringen',
       description:
-        'Vår Implementeringsansvarlig veileder din kommune steg for steg — fra første oppsett til systemet sitter.',
+        'Vår Implementeringsansvarlig veileder din kommune steg for steg, fra første oppsett til systemet sitter.',
       badge: 'Inkludert for kommuner',
       badgeColor: 'bg-primary/10 text-primary',
       cta: 'Les mer',
@@ -108,7 +108,7 @@ const no: HomeMessages = {
     },
     {
       title: 'Omsorgsbolig / Hub',
-      subtitle: 'Skjerm i leiligheten — for beboer, familie og ansatte',
+      subtitle: 'En skjerm i leiligheten for beboer, familie og ansatte',
       badge: 'Beta 2026',
       badgeColor: 'bg-warning/10 text-warning',
       href: '/omsorgsbolig',
@@ -145,28 +145,28 @@ const no: HomeMessages = {
 };
 
 const en: HomeMessages = {
-  heroAlt: "A child's hand holding an older person's hand — closeness across generations",
+  heroAlt: "A child's hand holding an older person's hand, closeness across generations",
   heroHeadline: 'Between 20 and 25 different carers visited my mum in two weeks.',
   heroP1: 'All of them strangers to her. She, a stranger to them.',
   heroP2: 'That was when I realised we all needed to know more about each other.',
   storyAria: 'Experience from residential care',
   storyP1:
-    'When she moved into sheltered housing, everyday life felt safer. Eight residents, fourteen staff. Yet in many ways she felt farther away than ever — more frail, and harder to reach.',
+    'When she moved into sheltered housing, everyday life felt safer. Eight residents, fourteen staff. Yet in many ways she felt farther away than ever. More frail, and harder to reach.',
   storyP2:
     'That was when JodaCare mattered. The people caring for her knew who she was when she moved in. And I gained a real connection with the people around her.',
   storyP3: 'That is what JodaCare is built for.',
   quoteAria: 'An example from everyday life',
   quoteCaption: 'What it can look like when it works:',
   quoteBody:
-    'My forgetful mum calls and says no one has visited today. “Actually, yes,” I say, and tell her what I have read in JodaCare about her day. “Petter from home care visited. He made meatballs for your dinner.” “Oh yes,” says mum — and remembers he was there.',
+    'My forgetful mum calls and says no one has visited today. “Actually, yes,” I say, and tell her what I have read in JodaCare about her day. “Petter from home care visited. He made meatballs for your dinner.” “Oh yes,” says mum, and remembers he was there.',
   quoteAttribution: '— Kristil Erla Haland, founder and CEO, JodaCare',
-  quoteClosing: 'Three people who were never in the same room — still present for one another.',
+  quoteClosing: 'Three people who were never in the same room, and yet present for one another.',
   pathTitle: 'What is JodaCare for you?',
   pathCards: [
     {
       title: 'JodaCare for families',
       description:
-        'Stay close to the everyday life of someone you love — wherever you live. Get started with Vipps in minutes.',
+        'Stay close to the everyday life of someone you love, wherever you live. Get started with Vipps in minutes.',
       badge: 'Available now',
       badgeColor: 'bg-success/10 text-success',
       cta: 'Create a family room',
@@ -176,7 +176,7 @@ const en: HomeMessages = {
     {
       title: 'JodaCare for municipalities',
       description:
-        'Residential care, personal assistance, child welfare, respite and home nursing — coordinated care in one platform.',
+        'Residential care, personal assistance, child welfare, respite and home nursing in one platform with coordinated care.',
       badge: 'Beta 2026',
       badgeColor: 'bg-warning/10 text-warning',
       cta: 'See all services',
@@ -186,7 +186,7 @@ const en: HomeMessages = {
     {
       title: 'Implementation support',
       description:
-        'A dedicated implementation lead guides your municipality step by step — from first setup until the system is second nature.',
+        'A dedicated implementation lead guides your municipality step by step, from first setup until the system is second nature.',
       badge: 'Included for municipalities',
       badgeColor: 'bg-primary/10 text-primary',
       cta: 'Read more',
@@ -212,7 +212,7 @@ const en: HomeMessages = {
     },
     {
       title: 'Care home / Hub',
-      subtitle: 'A screen in the flat — for resident, family and staff',
+      subtitle: 'A screen in the flat for resident, family and staff',
       badge: 'Beta 2026',
       badgeColor: 'bg-warning/10 text-warning',
       href: '/omsorgsbolig',

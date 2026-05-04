@@ -26,13 +26,13 @@ const servicesNo: KommuneService[] = [
   {
     title: 'Omsorgsbolig / Hub',
     description:
-      'En skjerm i leiligheten som kobler beboer, familie og ansatte i én sammenhengende flyt. Familien er alltid nær.',
+      'En skjerm i leiligheten kobler beboer, familie og ansatte i én sammenhengende flyt, slik at familien alltid er nær.',
     badge: 'Beta 2026',
     badgeColor: 'bg-warning/10 text-warning',
     href: '/omsorgsbolig',
   },
   {
-    title: 'BPA — brukerstyrt personlig assistanse',
+    title: 'BPA, brukerstyrt personlig assistanse',
     description:
       'Samle omsorgsteamet rundt brukeren med Jodabook, sjekklister og full oversikt for koordinator og familie.',
     badge: 'Beta 2026',
@@ -42,7 +42,7 @@ const servicesNo: KommuneService[] = [
   {
     title: 'Avlastning',
     description:
-      'Kontinuitet for barnet — de samme rutinene og den samme tryggheten uansett om det er hjemme eller i avlastning.',
+      'Kontinuitet for barnet, med de samme rutinene og den samme tryggheten enten det er hjemme eller i avlastningen.',
     badge: 'Kommer',
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/avlastning',
@@ -50,15 +50,15 @@ const servicesNo: KommuneService[] = [
   {
     title: 'Barnevern og samvær',
     description:
-      'Samvær dokumentert trygt med informasjonsbarrierer som beskytter alle parter og full sporbarhet.',
+      'JodaCare følger barnet gjennom hver overgang, med informasjonsbarrierer som beskytter hver enkelt rolle og full sporbarhet for kommunen.',
     badge: 'Kommer',
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/barnevern',
   },
   {
-    title: 'JodaVisit — videobesøk',
+    title: 'JodaVisit, videobesøk',
     description:
-      'Erstatt unødvendige fysiske besøk med trygge videobesøk. Eldre bor hjemme lenger, med familien nær.',
+      'Trygge videobesøk erstatter unødvendige fysiske besøk, slik at eldre kan bo hjemme lenger med familien nær.',
     badge: 'Kommer',
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/jodavisit',
@@ -66,7 +66,7 @@ const servicesNo: KommuneService[] = [
   {
     title: 'Implementeringsstøtte',
     description:
-      'Vår Implementeringsansvarlig veileder din kommune steg for steg — fra første oppsett til systemet sitter i ryggmargen.',
+      'Vår Implementeringsansvarlig veileder din kommune steg for steg, fra første oppsett til systemet sitter i ryggmargen.',
     badge: 'Inkludert',
     badgeColor: 'bg-primary/10 text-primary',
     href: '/implementering',
@@ -93,7 +93,7 @@ const servicesEn: KommuneService[] = [
   {
     title: 'Respite care',
     description:
-      'Continuity for the child — the same routines and the same sense of safety at home and in respite.',
+      'Continuity for the child, with the same routines and the same sense of safety whether at home or in respite.',
     badge: 'Coming',
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/avlastning',
@@ -107,7 +107,7 @@ const servicesEn: KommuneService[] = [
     href: '/barnevern',
   },
   {
-    title: 'JodaVisit — video visits',
+    title: 'JodaVisit, video visits',
     description:
       'Replace unnecessary physical visits with secure video visits. People stay at home longer with family near.',
     badge: 'Coming',
@@ -117,7 +117,7 @@ const servicesEn: KommuneService[] = [
   {
     title: 'Implementation support',
     description:
-      'A dedicated implementation lead guides your municipality step by step — from first setup until the system is second nature.',
+      'A dedicated implementation lead guides your municipality step by step, from first setup until the system is second nature.',
     badge: 'Included',
     badgeColor: 'bg-primary/10 text-primary',
     href: '/implementering',
@@ -127,7 +127,7 @@ const servicesEn: KommuneService[] = [
 const no: KommuneContent = {
   heroTitle: 'JodaCare for kommuner',
   heroSubtitle:
-    'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie — koordinert omsorg i én plattform. Velg tjenesten som passer for deg.',
+    'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie møtes i én plattform med koordinert omsorg. Velg tjenesten som passer for din kommune.',
   primaryCta: 'Kontakt oss',
   trustItems: [
     'Norske kommuner siden 2016',
@@ -148,7 +148,7 @@ const no: KommuneContent = {
 const en: KommuneContent = {
   heroTitle: 'JodaCare for municipalities',
   heroSubtitle:
-    'Residential care, personal assistance, child welfare, respite and home nursing — coordinated care in one platform. Choose the service that fits you.',
+    'Residential care, personal assistance, child welfare, respite and home nursing in one platform with coordinated care. Choose the service that fits your municipality.',
   primaryCta: 'Contact us',
   trustItems: [
     'Norwegian municipalities since 2016',

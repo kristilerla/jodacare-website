@@ -26,7 +26,7 @@ const securityNo: SikkerhetFeature[] = [
   {
     title: 'ID-porten innlogging',
     description:
-      'All tilgang til JodaCare skjer via sikker innlogging med ID-porten — BankID, Buypass eller Commfides. Dette gir sikkerhetsnivå 4, det høyeste nivået for digital identifikasjon i Norge.',
+      'All tilgang til JodaCare skjer via sikker innlogging med ID-porten, det vil si BankID, Buypass eller Commfides. Dette gir sikkerhetsnivå 4, det høyeste nivået for digital identifikasjon i Norge.',
     badge: 'Sikkerhetsnivå 4',
   },
   {
@@ -62,7 +62,7 @@ const securityEn: SikkerhetFeature[] = [
   {
     title: 'ID-porten sign-in',
     description:
-      'Access to JodaCare uses secure login with ID-porten — BankID, Buypass or Commfides. This provides security level 4, the highest level for digital identity in Norway.',
+      'Access to JodaCare uses secure login with ID-porten, meaning BankID, Buypass or Commfides. This provides security level 4, the highest level for digital identity in Norway.',
     badge: 'Security level 4',
   },
   {

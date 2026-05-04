@@ -26,55 +26,55 @@ export type BpaContent = {
 };
 
 const no: BpaContent = {
-  heroTitle: 'Brukeren beholder kontrollen. Assistentene vet hva som forventes.',
+  heroTitle: 'Brukeren beholder kontrollen, og assistentene vet hva som forventes.',
   heroSubtitle:
-    'JodaCare samler hele omsorgsteamet rundt brukeren — med et enkelt verktøy for brukeren selv, sjekklister for assistentene, og full oversikt for koordinator og familie.',
+    'JodaCare samler hele omsorgsteamet rundt brukeren, med et enkelt verktøy for brukeren selv, sjekklister for assistentene, og full oversikt for koordinator og familie.',
   heroBadge: 'Brukerstyrt personlig assistanse',
   primaryCta: 'Kontakt oss',
   secondaryCta: 'Se funksjoner',
   scenarioTitle: 'Kjenner du deg igjen?',
   scenarioBody:
-    'En BPA-bruker har gjerne et team på fem til ti assistenter. Rutiner og behov skal videreformidles presist til alle. I dag skjer det via SMS, muntlig overlapping og papirnotater. Noe går alltid tapt.',
+    'En BPA-bruker har gjerne et team på fem til ti assistenter, og rutiner og behov skal videreformidles presist til alle. I dag skjer det via SMS, muntlig overlapping og papirnotater, og noe går alltid tapt på veien.',
   userGroups: [
     {
       title: 'For brukeren',
       description:
-        'Jodabook: en enkel app med store knapper og bilder, tilpasset for den som trenger ekstra støtte. Ingen passord å huske — innlogging via QR-kode og PIN.',
+        'Jodabook er en enkel app med store knapper og bilder, tilpasset den som trenger ekstra støtte. Brukeren slipper å huske passord, og logger inn med QR-kode og PIN.',
     },
     {
       title: 'For assistentene',
       description:
-        'Rutiner og sjekklister som alle jobber etter. Dagbok (Boka) for kommunikasjon i teamet. Alltid oppdatert, alltid tilgjengelig.',
+        'Assistentene jobber etter felles rutiner og sjekklister, og bruker dagboken Boka til kommunikasjon i teamet. Informasjonen er alltid oppdatert og alltid tilgjengelig.',
     },
     {
       title: 'For koordinator og familie',
-      description: 'Full oversikt uten å måtte ringe. Se hva som skjer, hvem som var der og hvordan det gikk.',
+      description: 'Koordinator og familie har full oversikt uten å måtte ringe rundt, og kan se hva som skjer, hvem som var der og hvordan det gikk.',
     },
   ],
-  featuresTitle: 'Alt som trengs. Ingenting som ikke trengs.',
+  featuresTitle: 'Funksjoner som dekker hverdagen',
   features: [
     {
       title: 'Jodabook for brukeren',
       description:
-        'Enkel app med store knapper, bilder og lyd. Støtter kognitiv tilpasning for utviklingshemming, autisme og demens.',
+        'Jodabook er en enkel app med store knapper, bilder og lyd, og støtter kognitiv tilpasning for utviklingshemming, autisme og demens.',
     },
     {
       title: 'Rutiner og sjekklister',
       description:
-        'Opprett gjentakende eller engangsjekklister. Assistentene avhuker steg for steg. Alt er loggført.',
+        'Du oppretter gjentakende eller engangs sjekklister, og assistentene avhuker steg for steg mens alt loggføres automatisk.',
     },
     {
       title: 'Omsorgsteam-modell',
-      description: 'Kun de som hører til i teamet ser brukeren. Personvern og rollebasert tilgang innebygd.',
+      description: 'Kun de som hører til i teamet ser brukeren, og personvern og rollebasert tilgang er bygget inn fra grunnen av.',
     },
     {
       title: 'Hendelseslogg',
       description:
-        'Registrer avvik, atferd, medisin og mer. Koordinator og relevant helsepersonell varsles.',
+        'Hendelsesloggen registrerer avvik, atferd, medisin og mer, og varsler går automatisk til koordinator og relevant helsepersonell.',
     },
     {
       title: 'KAI-assistent',
-      description: 'AI-hjelper for helsepersonell som forklarer rutiner, svarer på spørsmål og veileder i plattformen.',
+      description: 'KAI er en AI-hjelper for helsepersonell, og forklarer rutiner, svarer på spørsmål og veileder i plattformen.',
     },
   ],
   referenceTitle: 'I bruk siden 2016',
@@ -85,7 +85,7 @@ const no: BpaContent = {
   statusBody:
     'JodaCare for BPA er i aktiv bruk og tas inn i JodaCare 2.0 i løpet av 2026. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet. Pris settes basert på antall brukere og tjenestenivå.',
   statusCta: 'Kontakt oss for pilotplass',
-  relatedTitle: 'Henger godt sammen med',
+  relatedTitle: 'Andre deler av JodaCare som styrker BPA-arbeidet',
   readMore: 'Les mer',
   related: [
     {
@@ -107,20 +107,20 @@ const no: BpaContent = {
 };
 
 const en: BpaContent = {
-  heroTitle: 'The user keeps control. Assistants know what is expected.',
+  heroTitle: 'The user keeps control, and assistants know what is expected.',
   heroSubtitle:
-    'JodaCare brings the whole care team around the user — with a simple tool for the user, checklists for assistants, and full overview for coordinator and family.',
+    'JodaCare brings the whole care team around the user, with a simple tool for the user, checklists for assistants, and full overview for coordinator and family.',
   heroBadge: 'User-controlled personal assistance',
   primaryCta: 'Contact us',
   secondaryCta: 'See features',
   scenarioTitle: 'Does this sound familiar?',
   scenarioBody:
-    'A personal-assistance user often has five to ten assistants. Routines and needs must be communicated precisely to everyone. Today that happens through SMS, verbal handovers and paper notes — something always gets lost.',
+    'A personal-assistance user often has five to ten assistants, and routines and needs must be communicated precisely to everyone. Today that happens through SMS, verbal handovers and paper notes, and something always gets lost along the way.',
   userGroups: [
     {
       title: 'For the user',
       description:
-        'Jodabook: a simple app with large buttons and images for people who need extra support. No passwords to remember — sign in with QR code and PIN.',
+        'Jodabook is a simple app with large buttons and images for people who need extra support. No passwords to remember, just sign in with QR code and PIN.',
     },
     {
       title: 'For assistants',
@@ -132,7 +132,7 @@ const en: BpaContent = {
       description: 'Full overview without calling around. See what happened, who was there and how it went.',
     },
   ],
-  featuresTitle: 'Everything you need. Nothing you do not.',
+  featuresTitle: 'Features for everyday life',
   features: [
     {
       title: 'Jodabook for the user',
@@ -165,7 +165,7 @@ const en: BpaContent = {
   statusBody:
     'JodaCare for BPA is in active use and is being brought into JodaCare 2.0 during 2026. Pilot municipalities receive close follow-up and help shape the final product. Pricing depends on number of users and service level.',
   statusCta: 'Contact us for a pilot place',
-  relatedTitle: 'Goes well together with',
+  relatedTitle: 'Other parts of JodaCare that strengthen personal assistance',
   readMore: 'Read more',
   related: [
     {

@@ -24,67 +24,67 @@ export type AvlastningContent = {
 };
 
 const no: AvlastningContent = {
-  heroTitle: 'De samme rutinene. Den samme tryggheten. Uansett hvor barnet er.',
+  heroTitle: 'De samme rutinene og den samme tryggheten, uansett hvor barnet er.',
   heroSubtitle:
-    'JodaCare skaper kontinuitet mellom hjem og avlastning — slik at barnet møter de samme forventningene, de samme bildene og den samme forståelsen uansett hvem som er på jobb.',
+    'JodaCare skaper kontinuitet mellom hjem og avlastning, slik at barnet møter de samme forventningene, de samme bildene og den samme forståelsen uansett hvem som er på jobb.',
   heroBadge: 'Avlastning og barn med utviklingshemming',
   primaryCta: 'Kontakt oss',
   scenarioTitle: 'Kjenner du deg igjen?',
   scenarioBody:
-    'Barnet er vant til bestemte rutiner hjemme. I avlastningen er det andre ansatte, andre regler og et annet miljø. Foreldrene er bekymret og ringer for å sjekke. Ansatte i avlastningen kjenner ikke barnet godt nok og må gjette seg frem. Resultatet er uro — for barnet, for familien og for de ansatte.',
+    'Barnet er vant til bestemte rutiner hjemme, men i avlastningen møter det andre ansatte, andre regler og et annet miljø. Foreldrene blir bekymret og ringer for å sjekke, og ansatte i avlastningen kjenner ikke barnet godt nok til å unngå å måtte gjette seg frem. Resultatet er uro for barnet, for familien og for de ansatte.',
   perspectivesTitle: 'Én plattform for alle rundt barnet',
   perspectives: [
     {
       title: 'For barnet',
       description:
-        'Jodabook med store knapper og kjente bilder. Det trygge grensesnittet barnet kjenner fra hjemmet, tilgjengelig i avlastningen også.',
+        'Jodabook har store knapper og kjente bilder, og barnet får det samme trygge grensesnittet i avlastningen som det kjenner fra hjemmet.',
     },
     {
       title: 'For foreldrene',
       description:
-        'Følg med uten å måtte ringe. Se hva som skjer, send bilder og meldinger, og send bekymringsmelding hvis noe ikke stemmer.',
+        'Foreldrene følger med uten å måtte ringe, ser hva som skjer i hverdagen, sender bilder og meldinger, og kan opprette bekymringsmelding hvis noe ikke stemmer.',
     },
     {
       title: 'For ansatte',
       description:
-        'Delte rutiner mellom hjem og avlastning. Alle vet hva som forventes. Hendelseslogg loggfører det som skjer.',
+        'Ansatte jobber etter delte rutiner mellom hjem og avlastning, vet hva som forventes, og hendelsesloggen dokumenterer det som skjer underveis.',
     },
     {
       title: 'For koordinator',
       description:
-        'Full oversikt over alle barn, team og tjenestesteder. Delingskontroll bestemmer hva foreldrene ser.',
+        'Koordinator har full oversikt over alle barn, team og tjenestesteder, og delingskontroll bestemmer hva foreldrene får se.',
     },
   ],
-  featuresTitle: 'Alt som trengs. Ingenting som ikke trengs.',
+  featuresTitle: 'Funksjoner som dekker hverdagen',
   features: [
     {
       title: 'Delte rutiner mellom hjem og avlastning',
-      description: 'Opprett rutiner én gang. Begge steder jobber etter dem.',
+      description: 'Du oppretter rutiner én gang, og begge steder jobber etter dem.',
     },
     {
       title: 'Jodabook for barnet',
-      description: 'Enkelt grensesnitt tilpasset kognitive utfordringer. QR-innlogging, PIN og biometri.',
+      description: 'Jodabook har et enkelt grensesnitt tilpasset kognitive utfordringer, med innlogging via QR-kode, PIN eller biometri.',
     },
     {
       title: 'Delingskontroll for hendelseslogg',
-      description: 'Admin velger hvilke hendelsestyper foreldrene ser. Sensitive notater forblir interne.',
+      description: 'Admin velger hvilke hendelsestyper foreldrene får se, og sensitive interne notater forblir innenfor avlastningens egne rammer.',
     },
     {
       title: 'Bekymringsmelding',
       description:
-        'Foreldre kan sende bekymringsmelding direkte i appen. Status-flyt: Opprettet → Under behandling → Besvart → Lukket.',
+        'Foreldre kan opprette bekymringsmelding direkte i appen, og meldingen følger en tydelig status-flyt fra opprettet til under behandling, besvart og lukket.',
     },
   ],
   statusBadge: 'Kommer',
-  statusTitle: 'Under utvikling — ta kontakt for mer informasjon',
+  statusTitle: 'Slik bygges JodaCare for avlastning',
   statusBody:
-    'JodaCare for avlastning er under utvikling som del av JodaCare 2.0. Ta kontakt for å høre mer eller melde interesse.',
+    'JodaCare for avlastning er under aktiv utvikling som del av JodaCare 2.0. Ta kontakt for å høre mer eller melde din kommune som pilot.',
   statusCta: 'Meld interesse',
-  relatedTitle: 'Henger godt sammen med',
+  relatedTitle: 'Andre deler av JodaCare som styrker avlastningen',
   readMore: 'Les mer',
   related: [
     {
-      title: 'BPA — brukerstyrt personlig assistanse',
+      title: 'BPA, brukerstyrt personlig assistanse',
       description: 'JodaCare for BPA-ordninger med foresatte som arbeidsledere.',
       href: '/bpa',
     },
@@ -102,14 +102,14 @@ const no: AvlastningContent = {
 };
 
 const en: AvlastningContent = {
-  heroTitle: 'The same routines. The same sense of safety. Wherever the child is.',
+  heroTitle: 'The same routines and the same sense of safety, wherever the child is.',
   heroSubtitle:
-    'JodaCare creates continuity between home and respite — so the child meets the same expectations, the same images and the same understanding no matter who is on shift.',
+    'JodaCare creates continuity between home and respite, so the child meets the same expectations, the same images and the same understanding no matter who is on shift.',
   heroBadge: 'Respite care and children with intellectual disabilities',
   primaryCta: 'Contact us',
   scenarioTitle: 'Does this sound familiar?',
   scenarioBody:
-    'The child is used to certain routines at home. In respite there are other staff, other rules and another environment. Parents worry and call to check. Respite staff do not know the child well enough and have to guess. The result is unease — for the child, the family and staff.',
+    'The child is used to certain routines at home, but in respite they meet other staff, other rules and another environment. Parents worry and call to check, and respite staff do not know the child well enough to avoid guessing. The result is unease for the child, the family and staff.',
   perspectivesTitle: 'One platform for everyone around the child',
   perspectives: [
     {
@@ -133,7 +133,7 @@ const en: AvlastningContent = {
         'Full overview of children, teams and locations. Sharing controls decide what parents can see.',
     },
   ],
-  featuresTitle: 'Everything you need. Nothing you do not.',
+  featuresTitle: 'Features for everyday life',
   features: [
     {
       title: 'Shared routines between home and respite',
@@ -154,11 +154,11 @@ const en: AvlastningContent = {
     },
   ],
   statusBadge: 'Coming',
-  statusTitle: 'In development — contact us for more information',
+  statusTitle: 'How JodaCare for respite is being built',
   statusBody:
     'JodaCare for respite is being developed as part of JodaCare 2.0. Get in touch to learn more or register interest.',
   statusCta: 'Register interest',
-  relatedTitle: 'Goes well together with',
+  relatedTitle: 'Other parts of JodaCare that strengthen respite care',
   readMore: 'Read more',
   related: [
     {

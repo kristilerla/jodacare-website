@@ -69,14 +69,14 @@ const no: TeknologiPageCopy = {
   contactCta: 'Kontakt oss',
   securityLinkCta: 'Les om sikkerhet',
   platformBadge: 'Plattformen',
-  platformTitle: 'Én plattform — tilgjengelig overalt',
+  platformTitle: 'Én plattform, tilgjengelig overalt',
   platformIntro:
-    'JodaCare er en moderne nettbasert plattform som fungerer like godt på mobil, nettbrett og PC — uten installasjon.',
+    'JodaCare er en moderne nettbasert plattform som fungerer like godt på mobil, nettbrett og PC uten installasjon.',
   platformFeatures: [
     {
       title: 'Nettbasert plattform',
       description:
-        'Ingen installasjon nødvendig — JodaCare kjører direkte i nettleseren. Alltid oppdatert, alltid tilgjengelig fra hvilken som helst enhet med internett.',
+        'Ingen installasjon er nødvendig, og JodaCare kjører direkte i nettleseren. Plattformen er alltid oppdatert og tilgjengelig fra hvilken som helst enhet med internett.',
     },
     {
       title: 'Fungerer som en app (PWA)',
@@ -86,12 +86,12 @@ const no: TeknologiPageCopy = {
     {
       title: 'Sanntidssamarbeid',
       description:
-        'Endringer synkroniseres umiddelbart mellom alle brukere. Når en kollega oppdaterer en plan, ser du det med en gang — uten å laste siden på nytt.',
+        'Endringer synkroniseres umiddelbart mellom alle brukere. Når en kollega oppdaterer en plan, ser du det med en gang uten å laste siden på nytt.',
     },
     {
       title: 'Mobiltilpasset design',
       description:
-        'Grensesnittet tilpasser seg automatisk til skjermstørrelsen. Like god opplevelse på mobil, nettbrett og PC — designet for travle hverdager.',
+        'Grensesnittet tilpasser seg automatisk til skjermstørrelsen og gir like god opplevelse på mobil, nettbrett og PC, designet for travle hverdager.',
     },
   ],
   archTitle: 'Bygget på moderne arkitektur',
@@ -104,7 +104,7 @@ const no: TeknologiPageCopy = {
     {
       title: 'Serverless arkitektur',
       description:
-        'Moderne serverless-modell som skalerer automatisk etter behov — fra én til tusenvis av samtidige brukere.',
+        'Moderne serverless-modell som skalerer automatisk etter behov, fra én til tusenvis av samtidige brukere.',
     },
     {
       title: 'Relasjonsdatabase',
@@ -122,7 +122,7 @@ const no: TeknologiPageCopy = {
   securityBadge: 'Sikkerhet',
   securityTitle: 'Sikkerhet og tilgangskontroll',
   securityIntro:
-    'Sikkerheten er bygget inn i alle lag av plattformen — fra database til brukergrensesnitt.',
+    'Sikkerheten er bygget inn i alle lag av plattformen, fra database til brukergrensesnitt.',
   securityFeatures: [
     {
       title: 'Databasenivå sikkerhet (RLS)',
@@ -132,7 +132,7 @@ const no: TeknologiPageCopy = {
     {
       title: 'Rollebasert tilgang (RBAC)',
       description:
-        '10 definerte rollenivåer sørger for at hver bruker kun ser og gjør det de har rett til — fra pårørende til superadmin.',
+        '10 definerte rollenivåer sørger for at hver bruker kun ser og gjør det de har rett til, fra pårørende til superadmin.',
     },
     {
       title: 'Flerfaktor-autentisering (MFA)',
@@ -177,12 +177,12 @@ const no: TeknologiPageCopy = {
     },
   ],
   onboardingTitle: 'Kom i gang på minutter',
-  onboardingIntro: 'Oppstarten er enkel — ingen komplisert installasjon eller oppsett.',
+  onboardingIntro: 'Oppstarten er enkel og krever ingen komplisert installasjon eller oppsett.',
   onboardingSteps: [
     { step: 1, title: 'Registrer organisasjonen', description: 'Opprett en konto for organisasjonen din på noen få minutter.' },
-    { step: 2, title: 'Inviter ansatte', description: 'Send invitasjoner via magic link — ingen passord å huske ved første innlogging.' },
+    { step: 2, title: 'Inviter ansatte', description: 'Send invitasjoner via magic link, og ansatte slipper å huske passord ved første innlogging.' },
     { step: 3, title: 'Sett opp tilganger', description: 'Tildel roller og tilgangsnivåer tilpasset hver ansatts behov.' },
-    { step: 4, title: 'Klar til bruk', description: 'Plattformen er klar — begynn å samarbeide trygt og effektivt.' },
+    { step: 4, title: 'Klar til bruk', description: 'Plattformen er klar, og dere kan begynne å samarbeide trygt og effektivt.' },
   ],
   integrationsBadge: 'Integrasjoner',
   integrationsTitle: 'Koble sammen systemene dine',
@@ -215,12 +215,12 @@ const no: TeknologiPageCopy = {
     },
   ],
   aiBadge: 'KI i JodaCare',
-  aiTitle: 'Kunstig intelligens — norsk og personvernvennlig',
+  aiTitle: 'Kunstig intelligens, norsk og personvernvennlig',
   aiIntro:
     'JodaCare bruker Mistral AI (Paris) for KI-funksjonalitet. Ingen data forlater Europa. KI-funksjonene er valgfrie og transparente.',
   aiFeatures: [
     {
-      title: 'KAI — KI-assistent for helsepersonell',
+      title: 'KAI, KI-assistent for helsepersonell',
       description: 'KAI forklarer rutiner, svarer på spørsmål og veileder ansatte i JodaCare. Tilpasser seg rollen din automatisk.',
     },
     {
@@ -232,7 +232,7 @@ const no: TeknologiPageCopy = {
   aiUpcoming: [
     {
       title: 'Mønstergjenkjenning i dagsform',
-      description: 'Hendelsesloggen registrerer allerede søvn, humør og adferd daglig. Neste steg er at KI finner mønstrene — slik at saksbehandler ser at nettene ble verre etter samvær, eller at humøret stiger når én bestemt assistent er på jobb.',
+      description: 'Hendelsesloggen registrerer allerede søvn, humør og adferd daglig. Neste steg er at KI finner mønstrene, slik at saksbehandler ser at nettene ble verre etter samvær, eller at humøret stiger når én bestemt assistent er på jobb.',
     },
   ],
   aiFootnote:
@@ -257,14 +257,14 @@ const en: TeknologiPageCopy = {
   contactCta: 'Contact us',
   securityLinkCta: 'Read about security',
   platformBadge: 'Platform',
-  platformTitle: 'One platform — everywhere you work',
+  platformTitle: 'One platform, everywhere you work',
   platformIntro:
-    'JodaCare is a modern web platform that works equally well on phone, tablet and desktop — with nothing to install.',
+    'JodaCare is a modern web platform that works equally well on phone, tablet and desktop with nothing to install.',
   platformFeatures: [
     {
       title: 'Web-based platform',
       description:
-        'No installation required — JodaCare runs in the browser. Always up to date, always available from any device online.',
+        'No installation is required, and JodaCare runs directly in the browser. The platform is always up to date and available from any device online.',
     },
     {
       title: 'Works like an app (PWA)',
@@ -274,12 +274,12 @@ const en: TeknologiPageCopy = {
     {
       title: 'Real-time collaboration',
       description:
-        'Changes sync instantly for everyone. When a colleague updates a plan, you see it immediately — without refreshing the page.',
+        'Changes sync instantly for everyone. When a colleague updates a plan, you see it immediately without refreshing the page.',
     },
     {
       title: 'Responsive design',
       description:
-        'The interface adapts to screen size. A consistent experience on mobile, tablet and desktop — designed for busy days.',
+        'The interface adapts to screen size and provides a consistent experience on mobile, tablet and desktop, designed for busy days.',
     },
   ],
   archTitle: 'Built on modern architecture',
@@ -290,7 +290,7 @@ const en: TeknologiPageCopy = {
     },
     {
       title: 'Serverless architecture',
-      description: 'A modern serverless model that scales automatically — from one to thousands of concurrent users.',
+      description: 'A modern serverless model that scales automatically, from one to thousands of concurrent users.',
     },
     {
       title: 'Relational database',
@@ -306,7 +306,7 @@ const en: TeknologiPageCopy = {
     'Mature, well-maintained technologies with large developer ecosystems. That means stability, security and easier maintenance over time.',
   securityBadge: 'Security',
   securityTitle: 'Security and access control',
-  securityIntro: 'Security is built into every layer — from the database to the user interface.',
+  securityIntro: 'Security is built into every layer, from the database to the user interface.',
   securityFeatures: [
     {
       title: 'Database-level security (RLS)',
@@ -316,7 +316,7 @@ const en: TeknologiPageCopy = {
     {
       title: 'Role-based access (RBAC)',
       description:
-        'Ten defined role levels ensure each user only sees and does what they are allowed to — from relative to superadmin.',
+        'Ten defined role levels ensure each user only sees and does what they are allowed to, from relative to superadmin.',
     },
     {
       title: 'Multi-factor authentication (MFA)',
@@ -335,7 +335,7 @@ const en: TeknologiPageCopy = {
     {
       title: 'Full traceability',
       description:
-        'Actions are written to an immutable audit log — a clear record of who did what, and when.',
+        'Actions are written to an immutable audit log, providing a clear record of who did what and when.',
     },
   ],
   authTitle: 'Flexible sign-in methods',
@@ -361,12 +361,12 @@ const en: TeknologiPageCopy = {
     },
   ],
   onboardingTitle: 'Get started in minutes',
-  onboardingIntro: 'Onboarding is straightforward — no complex installation or setup.',
+  onboardingIntro: 'Onboarding is straightforward and requires no complex installation or setup.',
   onboardingSteps: [
     { step: 1, title: 'Register your organisation', description: 'Create an account for your organisation in minutes.' },
-    { step: 2, title: 'Invite staff', description: 'Send invitations by magic link — no passwords to remember on first login.' },
+    { step: 2, title: 'Invite staff', description: 'Send invitations by magic link, and staff need no password to remember on first login.' },
     { step: 3, title: 'Configure access', description: 'Assign roles and access levels tailored to each colleague.' },
-    { step: 4, title: 'Ready to use', description: 'The platform is ready — start collaborating safely and efficiently.' },
+    { step: 4, title: 'Ready to use', description: 'The platform is ready, and you can start collaborating safely and efficiently.' },
   ],
   integrationsBadge: 'Integrations',
   integrationsTitle: 'Connect your systems',
@@ -398,12 +398,12 @@ const en: TeknologiPageCopy = {
     },
   ],
   aiBadge: 'AI in JodaCare',
-  aiTitle: 'Artificial intelligence — European and privacy-conscious',
+  aiTitle: 'Artificial intelligence, European and privacy-conscious',
   aiIntro:
     'JodaCare uses Mistral AI (Paris) for AI functionality. No data leaves Europe. AI features are optional and transparent.',
   aiFeatures: [
     {
-      title: 'KAI — AI assistant for health staff',
+      title: 'KAI, AI assistant for health staff',
       description: 'KAI explains routines, answers questions and guides staff in JodaCare. Adapts to your role automatically.',
     },
     {
@@ -415,7 +415,7 @@ const en: TeknologiPageCopy = {
   aiUpcoming: [
     {
       title: 'Pattern detection in daily reports',
-      description: 'The event log already records sleep, mood and behaviour daily. The next step is for AI to find the patterns — so a case worker can see that nights got worse after contact visits, or that mood improves when one particular assistant is on shift.',
+      description: 'The event log already records sleep, mood and behaviour daily. The next step is for AI to find the patterns, so a case worker can see that nights got worse after contact visits, or that mood improves when one particular assistant is on shift.',
     },
   ],
   aiFootnote:

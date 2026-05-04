@@ -32,62 +32,62 @@ export type OmsorgsboligContent = {
 const no: OmsorgsboligContent = {
   heroTitle: 'Beboeren er aldri alene. Familien er alltid nær.',
   heroSubtitle:
-    'JodaCare Hub kobler beboer, familie og ansatte i én sammenhengende flyt — gjennom en skjerm i leiligheten som alltid er på.',
+    'JodaCare Hub kobler beboer, familie og ansatte i én sammenhengende flyt gjennom en skjerm i leiligheten som alltid er på.',
   heroBadge: 'Omsorgsbolig og servicebolig',
   primaryCta: 'Kontakt oss for pilotplass',
   secondaryCta: 'Se hvordan Hub fungerer',
   scenarioTitle: 'Kjenner du deg igjen?',
   scenarioP1:
-    'Beboerne dine har familier som vil følge med — men ikke vet hvordan. Pårørende ringer til avdelingen fordi de ikke har andre måter å holde kontakten på. Ansatte bruker tid på å koordinere og videreformidle heller enn å gi omsorg.',
+    'Beboerne dine har familier som vil følge med, men som ikke vet hvordan. Pårørende ringer til avdelingen fordi det er den eneste måten de kan holde kontakten på. Ansatte bruker tid på å koordinere og videreformidle informasjon i stedet for å gi omsorg.',
   scenarioP2: 'Resultatet er at beboere kan føle seg isolerte, selv om det er folk rundt dem hele dagen.',
-  hubSectionTitle: 'En skjerm i leiligheten — alltid på',
+  hubSectionTitle: 'En skjerm i leiligheten, alltid på',
   hubPerspectives: [
     {
       title: 'For beboeren',
       description:
-        'Bilder fra familien, kjente ansikter, kalender for dagen, musikk og enkle spill. Hverdagen får sammenheng.',
+        'Bilder fra familien, kjente ansikter, kalender for dagen, musikk og enkle spill samles ett sted, slik at hverdagen får sammenheng.',
     },
     {
       title: 'For familien',
       description:
-        'Send bilder og meldinger direkte til skjermen. Se hva som skjer. Videosamtale uten at noen trenger å hjelpe til.',
+        'Familien sender bilder og meldinger direkte til skjermen, ser hva som skjer i hverdagen, og kan starte videosamtale uten at noen trenger å hjelpe beboeren med teknologien.',
     },
     {
       title: 'For ansatte',
       description:
-        'Hendelseslogg, sjekklister og bekymringsmeldinger der jobben skjer — ikke etterpå ved en PC.',
+        'Ansatte registrerer hendelseslogg, sjekklister og bekymringsmeldinger der jobben skjer, og slipper å huske og dokumentere etterpå ved en PC.',
     },
   ],
-  featuresTitle: 'Alt som trengs. Ingenting som ikke trengs.',
+  featuresTitle: 'Funksjoner som dekker hverdagen',
   features: [
     {
       title: 'Hub-skjerm per leilighet',
       description:
-        'Kjøres i nettleser på nettbrett, TV eller smart-display. Ingen ny hardware å kjøpe — fungerer på det dere allerede har.',
+        'Hub kjøres i nettleser på nettbrett, TV eller smart-display, slik at dere kan ta den i bruk på maskinvaren dere allerede har.',
     },
     {
       title: 'Familien sender direkte til skjermen',
       description:
-        'Bilder og meldinger fra familien vises automatisk. Ingen passord. Ingen app å laste ned for beboeren.',
+        'Bilder og meldinger fra familien vises automatisk på skjermen, og beboeren slipper både passord og å laste ned en app.',
     },
     {
       title: 'Videosamtale med ett trykk',
       description:
-        'Beboeren trykker på et kjent ansikt — videosamtalen starter. Familie på den andre siden svarer i nettleseren.',
+        'Beboeren trykker på et kjent ansikt, og videosamtalen starter automatisk. Familien på den andre siden svarer rett i nettleseren.',
     },
     {
       title: 'Velferdskoordinator-dashboard',
       description:
-        'Koordiner aktiviteter, send meldinger til alle beboere samtidig, administrer fellesrom og arrangementer.',
+        'Velferdskoordinator styrer aktiviteter, sender meldinger til alle beboere samtidig, og administrerer fellesrom og arrangementer fra ett sted.',
     },
     {
       title: 'Fellesarrangementer med påmelding',
       description:
-        'Beboere og familie kan melde seg på arrangementer og ta oppgaver. Bygger fellesskap i boligen.',
+        'Beboere og familie kan melde seg på arrangementer og ta oppgaver, slik at det bygges fellesskap i boligen.',
     },
     {
       title: 'IoT-sensorer valgfritt',
-      description: 'Dør, bevegelse og røyk kan kobles til via gateway. Varsler går til ansatte — ikke til familien.',
+      description: 'Sensorer for dør, bevegelse og røyk kan kobles til via gateway, og varslene går alltid til ansatte slik at familien skånes for unødig uro.',
     },
   ],
   stepsSectionTitle: 'Enkelt å innføre. Vi hjelper hele veien.',
@@ -111,7 +111,7 @@ const no: OmsorgsboligContent = {
     {
       step: '4',
       title: 'Drift',
-      description: 'Velferdskoordinator styrer hverdagen fra sitt dashboard. Vi er tilgjengelige hvis noe butter.',
+      description: 'Velferdskoordinator styrer hverdagen fra sitt dashboard, og vi er tilgjengelige hvis noe butter.',
     },
   ],
   statusBadge: 'Beta 2026',
@@ -120,7 +120,7 @@ const no: OmsorgsboligContent = {
     'JodaCare Hub er i aktiv utvikling og tas i bruk av de første kommunene i løpet av 2026. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet.',
   statusP2: 'Pris settes basert på antall leiligheter og tjenestenivå. Ta kontakt for en uforpliktende samtale.',
   statusCta: 'Meld din kommune som pilotkommune',
-  relatedTitle: 'Henger godt sammen med',
+  relatedTitle: 'Andre deler av JodaCare som styrker omsorgsboligen',
   readMore: 'Les mer',
   related: [
     {
@@ -144,15 +144,15 @@ const no: OmsorgsboligContent = {
 const en: OmsorgsboligContent = {
   heroTitle: 'Residents are never alone. Family is always close.',
   heroSubtitle:
-    'JodaCare Hub connects resident, family and staff in one continuous flow — through a screen in the flat that stays on.',
+    'JodaCare Hub connects resident, family and staff in one continuous flow through a screen in the flat that stays on.',
   heroBadge: 'Sheltered housing and supported living',
   primaryCta: 'Contact us for a pilot place',
   secondaryCta: 'See how Hub works',
   scenarioTitle: 'Does this sound familiar?',
   scenarioP1:
-    'Your residents have families who want to stay involved — but do not know how. Relatives call the ward because they have no other way to keep in touch. Staff spend time coordinating and relaying messages instead of providing care.',
+    'Your residents have families who want to stay involved, but who do not know how. Relatives call the ward because it is the only way they can stay in touch. Staff spend time coordinating and relaying information instead of providing care.',
   scenarioP2: 'The result can be that residents feel isolated even when people are around all day.',
-  hubSectionTitle: 'One screen in the flat — always on',
+  hubSectionTitle: 'One screen in the flat, always on',
   hubPerspectives: [
     {
       title: 'For the resident',
@@ -167,40 +167,40 @@ const en: OmsorgsboligContent = {
     {
       title: 'For staff',
       description:
-        'Event logs, checklists and concern notifications where the work happens — not afterwards at a PC.',
+        'Staff log events, checklists and concern notifications where the work happens, without having to remember and document afterwards at a PC.',
     },
   ],
-  featuresTitle: 'Everything you need. Nothing you do not.',
+  featuresTitle: 'Features for everyday life',
   features: [
     {
       title: 'Hub screen per flat',
       description:
-        'Runs in the browser on tablet, TV or smart display. No new hardware required — use what you already have.',
+        'Hub runs in the browser on tablet, TV or smart display, so you can use the hardware you already have.',
     },
     {
       title: 'Family sends straight to the screen',
       description:
-        'Photos and messages from family appear automatically. No passwords. No app download for the resident.',
+        'Photos and messages from family appear automatically on the screen, and the resident needs no password or app download.',
     },
     {
       title: 'Video call in one tap',
       description:
-        'The resident taps a familiar face — the video call starts. Family answers in the browser on the other side.',
+        'The resident taps a familiar face, and the video call starts automatically. Family answers in the browser on the other side.',
     },
     {
       title: 'Welfare coordinator dashboard',
       description:
-        'Coordinate activities, message all residents at once, manage common areas and events.',
+        'The welfare coordinator manages activities, messages all residents at once, and administers common areas and events from one place.',
     },
     {
       title: 'Shared events with sign-up',
       description:
-        'Residents and family can sign up for events and tasks. Builds community in the building.',
+        'Residents and family can sign up for events and take on tasks, helping to build community in the building.',
     },
     {
       title: 'Optional IoT sensors',
       description:
-        'Door, motion and smoke can connect via a gateway. Alerts go to staff — not to the family.',
+        'Sensors for door, motion and smoke can connect via a gateway, and alerts always go to staff so the family is spared unnecessary worry.',
     },
   ],
   stepsSectionTitle: 'Straightforward to roll out. We support you all the way.',
@@ -233,7 +233,7 @@ const en: OmsorgsboligContent = {
     'JodaCare Hub is in active development and will be adopted by the first municipalities during 2026. Pilot sites receive close follow-up and help shape the final product.',
   statusP2: 'Pricing depends on number of flats and service level. Contact us for an informal conversation.',
   statusCta: 'Register your municipality as a pilot',
-  relatedTitle: 'Goes well together with',
+  relatedTitle: 'Other parts of JodaCare that strengthen the care home',
   readMore: 'Read more',
   related: [
     {
