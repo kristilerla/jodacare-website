@@ -268,19 +268,19 @@ const no: BarnevernContent = {
   trustTitle: 'Bygget for norsk forvaltning',
   trustItems: [
     {
-      title: 'ID-porten og Maskinporten',
+      title: 'ID-porten',
       description:
-        'Norsk autentisering for norske brukere, godkjent av Digdir.',
+        'Innlogging med BankID, Buypass eller Commfides gjennom ID-porten, godkjent av Digdir.',
     },
     {
       title: 'All data i Europa',
       description:
-        'All hosting skjer i Europa, og AI-motoren kjører på Mistral i Paris uten avhengighet av amerikansk Big Tech.',
+        'Databasen og hostingen kjøres i Stockholm, og AI-tjenestene er europeiske gjennom Mistral i Paris.',
     },
     {
-      title: 'DPIA gjennomført',
+      title: 'GDPR-compliant',
       description:
-        'Personvernkonsekvensvurdering er på plass, og plattformen er GDPR-compliant fra første dag.',
+        'Plattformen er bygget med GDPR-prinsippene innebygd fra første dag, og en formell personvernkonsekvensvurdering ferdigstilles før første kommersielle barnevern-pilot.',
     },
     {
       title: 'Lovforankret',
@@ -547,19 +547,19 @@ const en: BarnevernContent = {
   trustTitle: 'Built for Norwegian public administration',
   trustItems: [
     {
-      title: 'ID-porten and Maskinporten',
+      title: 'ID-porten',
       description:
-        'Norwegian authentication for Norwegian users, approved by Digdir.',
+        'Sign-in with BankID, Buypass or Commfides through ID-porten, approved by Digdir.',
     },
     {
       title: 'All data in Europe',
       description:
-        'All hosting takes place in Europe, and the AI engine runs on Mistral in Paris with no dependency on American Big Tech.',
+        'The database and hosting run in Stockholm, and AI services are European through Mistral in Paris.',
     },
     {
-      title: 'DPIA completed',
+      title: 'GDPR compliant',
       description:
-        'Data Protection Impact Assessment is in place, and the platform is GDPR-compliant from the first day.',
+        'The platform is built with GDPR principles embedded from the first day, and a formal data protection impact assessment will be completed before the first commercial child welfare pilot.',
     },
     {
       title: 'Legally grounded',

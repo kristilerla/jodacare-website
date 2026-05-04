@@ -10,6 +10,8 @@ import {
   LockClosedIcon,
   KeyIcon,
   EyeSlashIcon,
+  SparklesIcon,
+  PhotoIcon,
 } from '@heroicons/react/24/outline';
 import { getSikkerhetContent } from '@/i18n/messages/sikkerhet-page';
 import { withLocale } from '@/lib/i18n/paths';
@@ -22,6 +24,8 @@ const mainIcons = [
   ServerStackIcon,
   ClipboardDocumentCheckIcon,
   LockClosedIcon,
+  SparklesIcon,
+  PhotoIcon,
 ] as const;
 
 const extraIcons = [KeyIcon, EyeSlashIcon, ShieldCheckIcon] as const;

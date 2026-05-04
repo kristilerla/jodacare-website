@@ -26,35 +26,45 @@ const securityNo: SikkerhetFeature[] = [
   {
     title: 'ID-porten innlogging',
     description:
-      'All tilgang til JodaCare skjer via sikker innlogging med ID-porten, det vil si BankID, Buypass eller Commfides. Dette gir sikkerhetsnivå 4, det høyeste nivået for digital identifikasjon i Norge.',
+      'JodaCare støtter innlogging med ID-porten på sikkerhetsnivå 4, i tillegg til Vipps og e-post med engangskode for roller som ikke krever høyeste sikkerhetsnivå.',
     badge: 'Sikkerhetsnivå 4',
   },
   {
     title: 'GDPR-compliant',
     description:
-      'JodaCare følger alle krav i GDPR (personvernforordningen), helsepersonelloven og personopplysningsloven. Vi har rutiner for databehandling, innsyn og sletting.',
-    badge: 'EU-godkjent',
+      'JodaCare er utviklet i tråd med GDPR og personopplysningsloven, med rutiner for databehandling, innsyn og sletting.',
+    badge: 'GDPR-compliant',
   },
   {
     title: 'Databehandleravtale',
     description:
-      'Alle kommuner og organisasjoner som bruker JodaCare inngår databehandleravtale. Dette sikrer at personopplysninger behandles i tråd med lovverket.',
+      'Databehandleravtaler er på plass eller under signering med alle tredjeparter som behandler personopplysninger, og alle kommunale kunder tilbys DPA ved oppstart.',
   },
   {
     title: 'Data lagret i Europa',
     description:
-      'Alle data lagres hos godkjente leverandører i Europa. Vi bruker moderne sikkerhetsteknologi og kryptering for å hindre uautorisert tilgang.',
+      'Databasen ligger i Stockholm (Supabase), hosting kjøres i Stockholm (Vercel), AI-tjenestene er europeiske gjennom Mistral i Paris, og e-post går gjennom europeisk leverandør (Brevo).',
     badge: 'EU-lagring',
   },
   {
     title: 'Full sporbarhet',
     description:
-      'Alle aktiviteter i JodaCare logges automatisk. Kommunen har full oversikt over hvem som har sett og delt informasjon, og når dette har skjedd.',
+      'Tilgang til pasientdata logges automatisk med tidsstempel og bruker-ID, og kommunen har full oversikt over hvem som har sett og delt informasjon.',
   },
   {
     title: 'Samtykkebasert deling',
     description:
       'Informasjon deles kun basert på samtykke fra tjenestemottaker eller verge. Systemet sørger for at deling skjer i henhold til pasientens rettigheter.',
+  },
+  {
+    title: 'Personvern i AI-behandling',
+    description:
+      'JodaCare fjerner automatisk navn, adresser, fødselsdatoer, diagnoser og stedsnavn fra all tekst før den sendes til AI-tjenester.',
+  },
+  {
+    title: 'Sikker fillagring',
+    description:
+      'Bilder og filer lagres i privat lagring og kan kun nås gjennom signerte URL-er som utløper etter 24 timer.',
   },
 ];
 
@@ -62,35 +72,45 @@ const securityEn: SikkerhetFeature[] = [
   {
     title: 'ID-porten sign-in',
     description:
-      'Access to JodaCare uses secure login with ID-porten, meaning BankID, Buypass or Commfides. This provides security level 4, the highest level for digital identity in Norway.',
+      'JodaCare supports sign-in with ID-porten at security level 4, along with Vipps and email with one-time code for roles that do not require the highest security level.',
     badge: 'Security level 4',
   },
   {
     title: 'GDPR compliant',
     description:
-      'JodaCare follows the GDPR, the Norwegian Health Personnel Act and the Personal Data Act. We have procedures for processing, access and deletion of data.',
-    badge: 'EU aligned',
+      'JodaCare is developed in line with the GDPR and the Norwegian Personal Data Act, with procedures for data processing, access and deletion.',
+    badge: 'GDPR compliant',
   },
   {
     title: 'Data processing agreement',
     description:
-      'Every municipality and organisation using JodaCare enters a data processing agreement so personal data is handled in line with the law.',
+      'Data processing agreements are in place or being signed with all third parties that process personal data, and every municipal customer is offered a DPA at onboarding.',
   },
   {
     title: 'Data stored in Europe',
     description:
-      'All data is stored with approved providers in Europe. We use modern security technology and encryption to prevent unauthorised access.',
+      'The database is located in Stockholm (Supabase), hosting runs in Stockholm (Vercel), AI services are European through Mistral in Paris, and email goes through a European provider (Brevo).',
     badge: 'EU storage',
   },
   {
     title: 'Full traceability',
     description:
-      'Activity in JodaCare is logged automatically. The municipality can see who viewed and shared information, and when.',
+      'Access to patient data is logged automatically with timestamp and user ID, and the municipality has full oversight of who viewed and shared information.',
   },
   {
     title: 'Consent-based sharing',
     description:
-      'Information is shared only with consent from the service user or guardian. The system supports sharing in line with the person’s rights.',
+      'Information is shared only with consent from the service user or guardian, and the system supports sharing in line with the person\'s rights.',
+  },
+  {
+    title: 'Privacy in AI processing',
+    description:
+      'JodaCare automatically removes names, addresses, dates of birth, diagnoses and place names from all text before it is sent to AI services.',
+  },
+  {
+    title: 'Secure file storage',
+    description:
+      'Images and files are stored in private storage and can only be accessed through signed URLs that expire after 24 hours.',
   },
 ];
 
@@ -105,7 +125,7 @@ const additionalNo: SikkerhetSmall[] = [
   },
   {
     title: 'Regelmessig sikkerhetstesting',
-    description: 'Vi gjennomfører jevnlig penetrasjonstesting og sikkerhetsrevisjoner.',
+    description: 'Vi gjennomfører jevnlige interne sikkerhetsrevisjoner og kodegjennomganger av plattformen.',
   },
 ];
 
@@ -120,7 +140,7 @@ const additionalEn: SikkerhetSmall[] = [
   },
   {
     title: 'Regular security testing',
-    description: 'We run penetration tests and security reviews on a regular basis.',
+    description: 'We carry out regular internal security reviews and code audits of the platform.',
   },
 ];
 
@@ -158,7 +178,7 @@ const no: SikkerhetContent = {
     { value: '2016', label: 'I drift siden' },
     { value: 'Horten, Lier, Oslo', label: 'Kommuner m.fl.' },
     { value: 'Nivå 4', label: 'Sikkerhetsnivå' },
-    { value: 'EU', label: 'Datalagring' },
+    { value: 'EU', label: 'Datalokasjon' },
   ],
   ctaTitle: 'Har du spørsmål om sikkerhet?',
   ctaSubtitle:
@@ -190,7 +210,7 @@ const en: SikkerhetContent = {
         'We process personal data in line with the Personal Data Act and the EU GDPR, including consent, access, rectification and deletion procedures.',
     },
     {
-      title: 'Patients’ and users’ rights',
+      title: "Patients' and users' rights",
       body:
         'JodaCare respects the right to information and participation. The design strengthens the ability of patients and relatives to take part in decisions about health and care.',
     },
@@ -200,7 +220,7 @@ const en: SikkerhetContent = {
     { value: '2016', label: 'In operation since' },
     { value: 'Horten, Lier, Oslo', label: 'Municipalities etc.' },
     { value: 'Level 4', label: 'Security level' },
-    { value: 'EU', label: 'Data storage' },
+    { value: 'EU', label: 'Data location' },
   ],
   ctaTitle: 'Questions about security?',
   ctaSubtitle: 'We are happy to explain in more detail how JodaCare works and how your data is protected.',

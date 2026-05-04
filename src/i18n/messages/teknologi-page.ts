@@ -239,7 +239,7 @@ const no: TeknologiPageCopy = {
     'All bruk av KI i JodaCare er transparent, personvernvennlig og i tråd med gjeldende regelverk. AI-motor: Mistral AI (Paris, Frankrike).',
   factsSr: 'Nøkkeltall',
   facts: [
-    { value: '99.9%', label: 'Oppetid' },
+    { value: 'Stockholm', label: 'Datalokasjon' },
     { value: 'TLS 1.3', label: 'Kryptering' },
     { value: 'EU', label: 'Datalagring' },
     { value: '10', label: 'Rollenivå' },
@@ -422,7 +422,7 @@ const en: TeknologiPageCopy = {
     'All use of AI in JodaCare is transparent, privacy-conscious and aligned with applicable regulation. AI engine: Mistral AI (Paris, France).',
   factsSr: 'Key figures',
   facts: [
-    { value: '99.9%', label: 'Uptime' },
+    { value: 'Stockholm', label: 'Data location' },
     { value: 'TLS 1.3', label: 'Encryption' },
     { value: 'EU', label: 'Data storage' },
     { value: '10', label: 'Role levels' },
