@@ -39,6 +39,7 @@ export function Header() {
   }, []);
 
   return (
+    <>
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-secondary">
       <Container>
         <nav className="flex items-center justify-between py-4" aria-label={s.nav.mainNav}>
@@ -131,12 +132,13 @@ export function Header() {
           </div>
         </nav>
       </Container>
+    </header>
 
       {/* Mobile menu */}
       <div
         id="mobile-menu"
         className={clsx(
-          'lg:hidden fixed inset-0 z-50 transition-opacity duration-300',
+          'lg:hidden fixed inset-0 z-[60] transition-opacity duration-300',
           mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
         role="dialog"
@@ -150,7 +152,7 @@ export function Header() {
         />
         <div
           className={clsx(
-            'fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-secondary',
+            'fixed inset-y-0 right-0 z-[60] w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-secondary',
             'transform transition-transform duration-300 ease-in-out',
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           )}
@@ -224,6 +226,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
