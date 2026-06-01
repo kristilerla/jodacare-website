@@ -101,7 +101,7 @@ export const site: Record<Locale, SiteCopy> = {
           { name: 'Bruksvilkår', href: '/JodaCare/bruksvilkar' },
           { name: 'Kontakt', href: '/kontakt' },
           { name: 'JodaCare AS', href: 'https://jodacare.no' },
-          { name: 'Company brief', href: 'https://jodacare-brief.vercel.app' },
+          { name: 'Company brief', href: '/brief' },
         ],
         ressurser: [
           {
@@ -179,7 +179,7 @@ export const site: Record<Locale, SiteCopy> = {
           { name: 'Terms', href: '/JodaCare/bruksvilkar' },
           { name: 'Contact', href: '/kontakt' },
           { name: 'JodaCare AS', href: 'https://jodacare.no' },
-          { name: 'Company brief', href: 'https://jodacare-brief.vercel.app' },
+          { name: 'Company brief', href: '/brief' },
         ],
         ressurser: [
           {
