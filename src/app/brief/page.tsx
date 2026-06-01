@@ -195,7 +195,7 @@ export default function BriefPage() {
             {
               year: 'Vår 2026',
               title: 'JodaCare 2.0',
-              body: 'Ny plattform bygd på Next.js 14, Supabase og Mistral AI (Paris). 100 % europeisk AI-stack. Familierom åpnes for B2C med Vipps-betaling.',
+              body: 'Ny plattform bygd på Next.js 14, Supabase og Mistral AI (Paris). 100 % europeisk AI-stack. Familierom åpnes for private med Vipps-betaling.',
             },
             {
               year: 'Vår 2026',
@@ -261,8 +261,8 @@ export default function BriefPage() {
           helsedata som forlater Europa.
         </p>
         <p>
-          2.0 åpner det vi tidligere ikke kunne levere: B2C familierom med
-          Vipps-betaling, barnevern-modul med informasjonsbarrierer,
+          2.0 åpner det vi tidligere ikke kunne levere: familierom som åpnes
+          for private med Vipps-betaling, barnevern-modul med informasjonsbarrierer,
           hendelseslogg med dynamiske felter, sjekklister med
           gjentakelsesmønstre, fellesarrangementer med «Den tar jeg»-knapp,
           og videosamtaler via Whereby.
@@ -270,8 +270,8 @@ export default function BriefPage() {
         <p>
           Eksisterende kunder migreres til 2.0 sommeren 2026, ledet av
           Kodemaker. Nye kunder kan ta plattformen i bruk umiddelbart —
-          kommunalt direktekjøp fra 1. juli, B2C familierom via Vipps fra
-          dag én.
+          kommunalt direktekjøp fra 1. juli, familierom åpnes for private
+          via Vipps fra dag én.
         </p>
       </Section>
 
@@ -513,10 +513,12 @@ export default function BriefPage() {
         title="Hvordan vi tjener penger."
         variant="default"
       >
-        <p>JodaCare er en SaaS-virksomhet med to ben.</p>
+        <p>
+          JodaCare er en SaaS-virksomhet (Software as a Service) med to ben.
+        </p>
 
         <h3 className="font-serif text-xl font-semibold text-text">
-          For familier (B2C)
+          For familier
         </h3>
         <p>
           14 dagers gratis prøveperiode, deretter 299 kr per måned per
@@ -526,7 +528,7 @@ export default function BriefPage() {
         </p>
 
         <h3 className="font-serif text-xl font-semibold text-text">
-          For kommuner og organisasjoner (B2B)
+          For kommuner og organisasjoner
         </h3>
         <p>Trapp-modell med tre nivåer:</p>
         <ul className="list-disc space-y-2 pl-6 marker:text-primary">
@@ -590,7 +592,7 @@ export default function BriefPage() {
             },
             {
               number: 3,
-              lead: 'B2C familierom.',
+              lead: 'Familierom for private.',
               body: 'Pårørende som ikke kan vente på at kommunen tar i bruk JodaCare, kan opprette eget familierom via Vipps. Det er det første produktet i Norge der en datter kan ta initiativ til koordinert omsorg — uten å være avhengig av kommunens innkjøpsprosess.',
             },
             {
@@ -621,9 +623,10 @@ export default function BriefPage() {
         <h3 className="font-serif text-xl font-semibold text-text">Partnere</h3>
         <p>
           Vi samarbeider med Dynamisk Helse om å integrere Drops-pedagogikken
-          inn i JodaCares kunnskapsarkitektur. Vi er i dialog med ABEL om en
-          felles vinkel mot caregiver-belastning i arbeidslivet. Vi støtter
-          JAG Assistanse-nettverket i BPA-segmentet med pilotløsninger.
+          inn i JodaCares kunnskapsarkitektur. Vi har inngått en
+          integrasjonsavtale med Aidn som gir oss distribusjonsvei inn i
+          deres kommunale kundebase. Vi støtter JAG Assistanse-nettverket i
+          BPA-segmentet med pilotløsninger.
         </p>
       </Section>
 
@@ -698,8 +701,8 @@ export default function BriefPage() {
           ikke med dem alle — vi dekker det de ikke dekker.
         </p>
         <p>
-          <strong>Journalsystemer</strong> som Visma, DIPS og Lifecare er
-          bygd for helsepersonell. De er sterke på fagdokumentasjon, men de
+          <strong>Journalsystemer</strong> som Visma, Tieto Evry og
+          Helseplattformen er bygd for helsepersonell. De er sterke på fagdokumentasjon, men de
           er ikke bygd for å snakke med pårørende eller mottakeren selv.
           JodaCare integrerer med journalsystemer der det gir mening — vi
           erstatter dem ikke.
