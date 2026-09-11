@@ -14,6 +14,7 @@ export type ImplementeringContent = {
   includes: string[];
   bannerTitle: string;
   bannerBody: string;
+  priceLinkText: string;
   ctaTitle: string;
   ctaSubtitle: string;
   ctaPrimary: string;
@@ -42,9 +43,10 @@ const no: ImplementeringContent = {
     '90-dagers oppfølgingsmøte',
   ],
   bannerTitle:
-    'Alle kommunale kunder får dedikert implementeringsstøtte de første tre månedene.',
+    'Alle kommunale kunder får dedikert oppfølging de første tre månedene.',
   bannerBody:
-    'Pris avhenger av omfang og antall avdelinger. Ta kontakt for et tilbud tilpasset din kommune.',
+    'Oppstart koster kr 28 000 per kommune og inkluderer alt som står over.',
+  priceLinkText: 'Se alle priser',
   ctaTitle: 'Klar til å starte?',
   ctaSubtitle: 'Ta kontakt for en uforpliktende samtale om implementering i din kommune.',
   ctaPrimary: 'Kontakt oss om implementering',
@@ -88,8 +90,9 @@ const en: ImplementeringContent = {
     'Data processing agreement, DPIA and security documentation',
     'A 90-day follow-up meeting',
   ],
-  bannerTitle: 'Every municipal customer receives dedicated implementation support for the first three months.',
-  bannerBody: 'Pricing depends on scope and number of units. Contact us for a tailored quote.',
+  bannerTitle: 'Every municipal customer receives dedicated follow-up for the first three months.',
+  bannerBody: 'Onboarding costs NOK 28,000 per municipality and includes everything listed above.',
+  priceLinkText: 'See all prices',
   ctaTitle: 'Ready to start?',
   ctaSubtitle: 'Get in touch for an informal conversation about implementation in your municipality.',
   ctaPrimary: 'Contact us about implementation',

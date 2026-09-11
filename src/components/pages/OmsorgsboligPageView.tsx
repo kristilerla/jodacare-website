@@ -155,7 +155,16 @@ export function OmsorgsboligPageView({ locale }: Props) {
                 {d.statusTitle}
               </h2>
               <p className="text-lg text-text-light max-w-xl mx-auto mb-8">{d.statusP1}</p>
-              <p className="text-text-light max-w-xl mx-auto mb-10">{d.statusP2}</p>
+              <p className="text-text-light max-w-xl mx-auto">{d.statusP2}</p>
+              <p className="mt-6 mb-10 text-text-light max-w-xl mx-auto">
+                {d.priceNote}{' '}
+                <Link
+                  href={withLocale('/priser', locale)}
+                  className="text-primary font-medium underline underline-offset-2 hover:text-primary-dark"
+                >
+                  {d.priceLinkText} &rarr;
+                </Link>
+              </p>
               <Button href={withLocale('/kontakt', locale)} size="lg">
                 {d.statusCta}
               </Button>

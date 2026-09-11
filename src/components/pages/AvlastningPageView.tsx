@@ -123,7 +123,16 @@ export function AvlastningPageView({ locale }: Props) {
               <h2 id="status-title" className="font-serif text-3xl sm:text-4xl font-bold text-text mb-6">
                 {d.statusTitle}
               </h2>
-              <p className="text-lg text-text-light max-w-xl mx-auto mb-10">{d.statusBody}</p>
+              <p className="text-lg text-text-light max-w-xl mx-auto">{d.statusBody}</p>
+              <p className="mt-6 mb-10 text-text-light max-w-xl mx-auto">
+                {d.priceNote}{' '}
+                <Link
+                  href={withLocale('/priser', locale)}
+                  className="text-primary font-medium underline underline-offset-2 hover:text-primary-dark"
+                >
+                  {d.priceLinkText} &rarr;
+                </Link>
+              </p>
               <Button href={withLocale('/kontakt', locale)} size="lg">
                 {d.statusCta}
               </Button>

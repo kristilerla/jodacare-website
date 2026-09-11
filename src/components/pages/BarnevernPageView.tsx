@@ -457,6 +457,15 @@ export function BarnevernPageView({ locale }: Props) {
                 {d.statusTitle}
               </h2>
               <p className="mt-4 text-lg text-text-light">{d.statusSubtitle}</p>
+              <p className="mt-6 text-text-light">
+                {d.priceNote}{' '}
+                <Link
+                  href={withLocale('/priser', locale)}
+                  className="text-primary font-medium underline underline-offset-2 hover:text-primary-dark"
+                >
+                  {d.priceLinkText} &rarr;
+                </Link>
+              </p>
             </div>
           </FadeIn>
 

@@ -23,6 +23,8 @@ export type OmsorgsboligContent = {
   statusTitle: string;
   statusP1: string;
   statusP2: string;
+  priceNote: string;
+  priceLinkText: string;
   statusCta: string;
   relatedTitle: string;
   readMore: string;
@@ -118,7 +120,10 @@ const no: OmsorgsboligContent = {
   statusTitle: 'Bli med som pilotkommune',
   statusP1:
     'JodaCare Hub er i aktiv utvikling og tas i bruk av de første kommunene i løpet av 2026. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet.',
-  statusP2: 'Pris settes basert på antall leiligheter og tjenestenivå. Ta kontakt for en uforpliktende samtale.',
+  statusP2: 'Ta kontakt for en uforpliktende samtale om en pilotplass.',
+  priceNote:
+    'Grunnmodulen koster kr 2 990 per måned for inntil 10 beboere. Hub prises separat når modulen er ferdig.',
+  priceLinkText: 'Se alle priser',
   statusCta: 'Meld din kommune som pilotkommune',
   relatedTitle: 'Andre deler av JodaCare som styrker omsorgsboligen',
   readMore: 'Les mer',
@@ -231,7 +236,10 @@ const en: OmsorgsboligContent = {
   statusTitle: 'Join as a pilot municipality',
   statusP1:
     'JodaCare Hub is in active development and will be adopted by the first municipalities during 2026. Pilot sites receive close follow-up and help shape the final product.',
-  statusP2: 'Pricing depends on number of flats and service level. Contact us for an informal conversation.',
+  statusP2: 'Contact us for an informal conversation about a pilot place.',
+  priceNote:
+    'The core module costs NOK 2,990 per month for up to 10 residents. Hub is priced separately once the module is finished.',
+  priceLinkText: 'See all prices',
   statusCta: 'Register your municipality as a pilot',
   relatedTitle: 'Other parts of JodaCare that strengthen the care home',
   readMore: 'Read more',
