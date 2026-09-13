@@ -169,7 +169,7 @@ export function Rettighetsveileder() {
       <Container size="sm" className="py-12 sm:py-16">
         {/* Hero */}
         <section className="mb-12">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className="text-sm font-semibold uppercase tracking-wide text-primary-dark">
             {data.hero.eyebrow}
           </p>
           <h1 className="mt-3 font-serif text-3xl font-semibold text-text sm:text-4xl">

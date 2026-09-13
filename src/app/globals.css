@@ -24,11 +24,11 @@
 
   /* Tekst */
   --color-text: #2c5f6f;
-  --color-text-light: #6B7280;
-  --color-text-muted: #9CA3AF;
+  --color-text-light: #626A77;   /* 5,46:1 mot hvitt, 4,94:1 mot background-alt */
+  --color-text-muted: #68707E;   /* 4,99:1 mot hvitt, 4,52:1 mot background-alt */
 
   /* Semantiske farger */
-  --color-success: #10B981;
+  --color-success: #047857;      /* 5,48:1 mot hvitt, 4,99:1 mot bg-success/10 */
   --color-warning: #F59E0B;
   --color-error: #DC2626;
   

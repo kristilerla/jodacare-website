@@ -51,7 +51,7 @@ export function HomePageView({ locale }: Props) {
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <p className="mt-8 text-base sm:text-lg text-white/90 leading-relaxed drop-shadow-md">
+              <p className="mt-8 text-base sm:text-lg text-white leading-relaxed drop-shadow-md">
                 {m.heroP2}
               </p>
             </FadeIn>
@@ -73,7 +73,7 @@ export function HomePageView({ locale }: Props) {
         <Container size="md">
           <div className="text-center max-w-2xl mx-auto">
             <FadeIn>
-              <p className="text-sm text-white/70">{m.quoteCaption}</p>
+              <p className="text-sm text-white/80">{m.quoteCaption}</p>
               <blockquote className="mt-6">
                 <p className="text-2xl sm:text-3xl leading-relaxed text-white font-serif drop-shadow-lg">
                   {m.quoteBody}

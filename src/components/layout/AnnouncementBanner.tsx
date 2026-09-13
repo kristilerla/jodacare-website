@@ -32,7 +32,7 @@ export function AnnouncementBanner() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <p className="font-semibold text-lg">{s.title}</p>
-            <p className="text-white/80 text-sm mt-1">{s.body}</p>
+            <p className="text-white text-sm mt-1">{s.body}</p>
             <Link
               href="https://app.jodacare.no"
               className="inline-block mt-2 text-sm font-medium text-accent-light hover:text-white underline"

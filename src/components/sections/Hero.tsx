@@ -169,7 +169,7 @@ export function Hero({
           <FadeIn delay={0.1}>
             <p
               className={`mt-6 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto ${
-                hasImages ? 'text-white/90 drop-shadow-md' : 'text-text-light'
+                hasImages ? 'text-white drop-shadow-md' : 'text-text-light'
               }`}
             >
               {subtitle}
