@@ -41,7 +41,7 @@ export function CTA({
               {title}
             </h2>
             {subtitle && (
-              <p className="mt-4 text-lg text-white/80 max-w-xl mx-auto">
+              <p className="mt-4 text-lg text-white max-w-xl mx-auto">
                 {subtitle}
               </p>
             )}

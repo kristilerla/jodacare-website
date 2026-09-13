@@ -4,9 +4,9 @@
 
 :root {
   /* Primary - JodaCare teal */
-  --color-primary: #2c7a8c;
-  --color-primary-light: #3d9aad;
-  --color-primary-dark: #245f6d;
+  --color-primary: #3C7583;        /* merkevaretealen fra logopakken */
+  --color-primary-light: #488D9D;
+  --color-primary-dark: #2D5862;   /* 7,82:1 med hvit tekst */
 
   /* Secondary - Nøytral grå */
   --color-secondary: #E5E7EB;
@@ -14,21 +14,21 @@
   --color-secondary-dark: #D1D5DB;
 
   /* Accent - Teal-aksent */
-  --color-accent: #2c7a8c;
-  --color-accent-light: #F0FDFA;
-  --color-accent-dark: #245f6d;
+  --color-accent: #3C7583;
+  --color-accent-light: #EFF8FA;   /* lys flate fra logopakken */
+  --color-accent-dark: #2D5862;
 
   /* Bakgrunn */
   --color-background: #FFFFFF;
   --color-background-alt: #F0F4F8;
 
   /* Tekst */
-  --color-text: #2c5f6f;
-  --color-text-light: #6B7280;
-  --color-text-muted: #9CA3AF;
+  --color-text: #305E69;           /* samme tone som merkevaretealen, 7,17:1 */
+  --color-text-light: #626A77;   /* 5,46:1 mot hvitt, 4,94:1 mot background-alt */
+  --color-text-muted: #68707E;   /* 4,99:1 mot hvitt, 4,52:1 mot background-alt */
 
   /* Semantiske farger */
-  --color-success: #10B981;
+  --color-success: #047857;      /* 5,48:1 mot hvitt, 4,99:1 mot bg-success/10 */
   --color-warning: #F59E0B;
   --color-error: #DC2626;
   

@@ -47,7 +47,7 @@ export function Story({
                 {author}
               </div>
               {role && (
-                <div className={`text-sm mt-1 ${isFeatured ? 'text-white/70' : 'text-text-light'}`}>
+                <div className={`text-sm mt-1 ${isFeatured ? 'text-white' : 'text-text-light'}`}>
                   {role}
                 </div>
               )}

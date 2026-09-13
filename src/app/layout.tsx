@@ -39,11 +39,17 @@ export const metadata: Metadata = {
   publisher: 'JodaCare AS',
   metadataBase: new URL('https://www.jodacare.no'),
   icons: {
+    // SVG først: moderne nettlesere velger den og får et skarpt ikon i alle
+    // størrelser. PNG-ene er fallback, og src/app/favicon.ico dekker
+    // forespørsler som går rett på /favicon.ico.
     icon: [
-      { url: '/favicon_io/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon_io/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
-    apple: '/favicon_io/apple-touch-icon.png',
+    apple: '/apple-touch-icon-180x180.png',
   },
   openGraph: {
     type: 'website',

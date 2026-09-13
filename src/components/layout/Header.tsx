@@ -49,16 +49,14 @@ export function Header() {
               className="-m-1.5 p-1.5"
               aria-label={locale === 'no' ? 'JodaCare - Gå til forsiden' : 'JodaCare - Home'}
             >
-              <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
-                <Image
-                  src="/brand/jodacare-horisontal.svg"
-                  alt="JodaCare logo"
-                  width={252}
-                  height={54}
-                  className="h-8 w-auto"
-                  priority
-                />
-              </div>
+              <Image
+                src="/brand/jodacare-horisontal-teal.svg"
+                alt=""
+                width={252}
+                height={54}
+                className="h-8 w-auto"
+                priority
+              />
             </Link>
           </div>
 
@@ -162,16 +160,15 @@ export function Header() {
               href={withLocale('/', locale)}
               className="-m-1.5 p-1.5"
               onClick={() => setMobileMenuOpen(false)}
+              aria-label={locale === 'no' ? 'JodaCare - Gå til forsiden' : 'JodaCare - Home'}
             >
-              <div className="border border-secondary-dark rounded-lg px-3 py-1.5 bg-white">
-                <Image
-                  src="/brand/jodacare-horisontal.svg"
-                  alt="JodaCare logo"
-                  width={252}
-                  height={54}
-                  className="h-7 w-auto"
-                />
-              </div>
+              <Image
+                src="/brand/jodacare-horisontal-teal.svg"
+                alt=""
+                width={252}
+                height={54}
+                className="h-7 w-auto"
+              />
             </Link>
             <button
               type="button"

@@ -1,0 +1,35 @@
+name: Tilgjengelighet
+
+# Porten for WCAG 2.1 AA på jodacare.no.
+#
+# Kjører hele jsx-a11y/recommended som `error`. Terskelen er NULL, ikke dagens
+# tall: nettsiden var ren da porten ble satt 13. september 2026. Den skal ikke
+# få lov til å bli skitten igjen uten at noen ser det.
+#
+# Kontrast kan ikke måles her — det krever en nettleser som rendrer siden.
+# Den målingen kjøres manuelt med scripts/a11y/axe-nettsiden.js i jodacare-2.0,
+# og skal kjøres på nytt hver gang paletten i globals.css endres.
+#
+# Bakgrunn og måletall: docs/accessibility/nettsiden.md i jodacare-2.0.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Installer avhengigheter
+        run: npm ci
+
+      - name: jsx-a11y
+        run: npx eslint

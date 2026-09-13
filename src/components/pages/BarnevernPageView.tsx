@@ -521,7 +521,7 @@ export function BarnevernPageView({ locale }: Props) {
               >
                 {d.ctaTitle}
               </h2>
-              <p className="mt-6 text-lg text-white/90 leading-relaxed max-w-2xl mx-auto">
+              <p className="mt-6 text-lg text-white leading-relaxed max-w-2xl mx-auto">
                 {d.ctaBody}
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
