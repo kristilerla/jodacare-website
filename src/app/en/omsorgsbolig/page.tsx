@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { OmsorgsboligPageView } from '@/components/pages/OmsorgsboligPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/omsorgsbolig', 'en'),
   title: 'JodaCare Hub — sheltered and supported housing',
   description:
     'JodaCare Hub connects resident, family and staff through a screen in the flat. For sheltered housing schemes in Norwegian municipalities.',

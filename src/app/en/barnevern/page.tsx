@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { BarnevernPageView } from '@/components/pages/BarnevernPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/barnevern', 'en'),
   title: 'JodaCare for child welfare — contact visits and documentation',
   description:
     'jodacare supports supervised contact with information barriers that protect everyone involved and full traceability that meets legal requirements.',

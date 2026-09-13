@@ -10,6 +10,9 @@ import {
 import { Button } from '@/components/ui';
 
 export const metadata: Metadata = {
+  // /en/brief serverer det samme dokumentet på samme språk — det er en
+  // dublett, ikke en oversettelse. Begge peker derfor hit.
+  alternates: { canonical: '/brief' },
   title: 'Company Brief',
   description:
     'Strategisk selskapspresentasjon av JodaCare — Norges plattform for å koordinere omsorg mellom helsepersonell, pårørende og mottaker. Bygd siden 2016.',

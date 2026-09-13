@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { HomePageView } from '@/components/pages/HomePageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/', 'en'),
   title: 'jodacare — Secure communication around vulnerable people',
   description:
     'jodacare is a secure digital platform that supports dignity and peace of mind through communication between relatives, health professionals and the person receiving care.',

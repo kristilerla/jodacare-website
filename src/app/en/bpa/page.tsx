@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { BpaPageView } from '@/components/pages/BpaPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/bpa', 'en'),
   title: 'JodaCare for user-controlled personal assistance (BPA)',
   description:
     'JodaCare brings the care team around the user with Jodabook, checklists and full overview for coordinator and family.',

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { TeknologiPageView } from '@/components/pages/TeknologiPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/teknologi', 'no'),
   title: 'Teknologi',
   description:
     'jodacare 2.0 er bygget med moderne teknologi — sikker, skalerbar og brukervennlig. Les om plattformen, arkitekturen og sikkerhetsmekanismene.',

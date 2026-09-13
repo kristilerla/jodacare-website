@@ -3,6 +3,7 @@ import { Source_Sans_3, Source_Serif_4 } from 'next/font/google';
 import { Header, Footer, AnnouncementBanner } from '@/components/layout';
 import { getLocaleFromHeaders } from '@/lib/i18n/get-locale';
 import { getSite } from '@/i18n/site';
+import { jsonLd, nettstedet, organisasjon } from '@/lib/seo';
 import './globals.css';
 
 const sourceSans = Source_Sans_3({
@@ -93,6 +94,12 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${sourceSans.variable} ${sourceSerif.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
+        {/* Strukturerte data: hvem som står bak nettstedet. Leses av
+            søkemotorer og språkmodeller, og gjentas ikke per side. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(organisasjon, nettstedet) }}
+        />
         <a href="#main-content" className="skip-to-content">
           {site.skipToContent}
         </a>

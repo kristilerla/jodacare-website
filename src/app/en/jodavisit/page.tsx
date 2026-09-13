@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { JodavisitPageView } from '@/components/pages/JodavisitPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/jodavisit', 'en'),
   title: 'JodaVisit — video visits for home nursing',
   description:
     'JodaVisit replaces unnecessary physical visits with secure video visits. People stay at home longer with family close.',

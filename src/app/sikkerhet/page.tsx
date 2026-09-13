@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { SikkerhetPageView } from '@/components/pages/SikkerhetPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/sikkerhet', 'no'),
   title: 'Sikkerhet',
   description:
     'jodacare tar sikkerhet på største alvor. Les om ID-porten, GDPR, databehandling og hvordan vi beskytter sensitive helseopplysninger.',

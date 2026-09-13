@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { TeknologiPageView } from '@/components/pages/TeknologiPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/teknologi', 'en'),
   title: 'Technology',
   description:
     'jodacare 2.0 is built with modern technology — secure, scalable and user-friendly. Read about the platform, architecture and safeguards.',

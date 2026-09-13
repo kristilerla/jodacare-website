@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { FamiliePageView } from '@/components/pages/FamiliePageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/familie', 'en'),
   title: 'For families',
   description:
     'jodacare for families. Keep everyone updated on the everyday life of someone you love, wherever you live.',

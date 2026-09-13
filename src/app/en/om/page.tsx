@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { OmPageView } from '@/components/pages/OmPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/om', 'en'),
   title: 'About',
   description:
     'jodacare was founded by Kristil Erla Håland from her own experience coordinating care for her mother who lived with dementia. Read the story behind the platform.',

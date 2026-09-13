@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { AvlastningPageView } from '@/components/pages/AvlastningPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/avlastning', 'en'),
   title: 'JodaCare for respite — children with intellectual disabilities',
   description:
     'JodaCare creates continuity for the child — the same routines and the same sense of safety at home and in respite care.',

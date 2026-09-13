@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { KommunePageView } from '@/components/pages/KommunePageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/kommune', 'no'),
   title: 'JodaCare for kommuner — alle tjenester',
   description:
     'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie — koordinert omsorg i én plattform. Se alle tjenester fra JodaCare.',

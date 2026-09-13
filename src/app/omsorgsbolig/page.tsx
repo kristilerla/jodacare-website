@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { sprakvarianter } from '@/lib/seo';
 import { OmsorgsboligPageView } from '@/components/pages/OmsorgsboligPageView';
 
 export const metadata: Metadata = {
+  alternates: sprakvarianter('/omsorgsbolig', 'no'),
   title: 'JodaCare Hub — omsorgsbolig og servicebolig',
   description:
     'JodaCare Hub kobler beboer, familie og ansatte gjennom en skjerm i leiligheten. For omsorgsboliger og servicebolig i norske kommuner.',
