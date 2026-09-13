@@ -1,0 +1,553 @@
+{
+  "checkedAt": "2026-09-13",
+  "hero": {
+    "eyebrow": "Rettighetsveilederen",
+    "title": "Finn ut hva du har rett til. Og få hjelp til å si fra på riktig måte.",
+    "lead": "Mange klager på dårlig behandling når det de egentlig mangler er en tjeneste de har krav på. Svar på tre spørsmål, så får du vite hvilken rett det handler om, hvor det står i loven, og et ferdig klagebrev du kan kopiere.",
+    "promise": [
+      {
+        "title": "Ingenting lagres",
+        "body": "Alt du skriver blir i nettleseren din. Vi sender ikke noe videre."
+      },
+      {
+        "title": "Alltid med kilde",
+        "body": "Hvert svar peker til lovteksten på Lovdata og Helsedirektoratets kommentarer."
+      },
+      {
+        "title": "Gratis å klage",
+        "body": "Klagen koster ingenting. Pasient- og brukerombudet hjelper deg også gratis."
+      }
+    ]
+  },
+  "steps": {
+    "who": "Hvem gjelder det?",
+    "what": "Hva har skjedd?",
+    "form": "Fyll inn det brevet trenger"
+  },
+  "answerTitles": {
+    "selv": "Dette har du rett til",
+    "paa": "Dette har den du er pårørende til rett til",
+    "egen": "Dette har du rett til som pårørende"
+  },
+  "sourcesHeading": "Kilder",
+  "checkedNote": "Henvisningene er kontrollert mot Lovdata og Helsedirektoratets rundskriv 13. september 2026. Ny forvaltningslov er vedtatt (LOV-2025-06-20-81) og henvisningene til forvaltningsloven oppdateres når den trer i kraft.",
+  "formNote": "Opplysningene brukes bare til å sette sammen brevet her i nettleseren. De sendes ikke til JodaCare eller noen andre.",
+  "formNoteExample": "Feltene er fylt med et oppdiktet eksempel. Bytt ut med dine egne.",
+  "formNoteOslo": "Bor du i Oslo, er det bydelen som fatter vedtaket og skal ha klagen. Skriv derfor både kommune og bydel.",
+  "fields": {
+    "navn": "Ditt navn",
+    "kommune": "Kommune (i Oslo: også bydel)",
+    "fylke": "Statsforvalteren i (embetet som dekker kommunen din)",
+    "enhet": "Enheten som fattet vedtaket",
+    "pasient": "Navn på den det gjelder",
+    "relasjon": "Din relasjon",
+    "tjeneste": "Tjenesten det gjelder",
+    "dato": "Vedtaket er datert",
+    "saksnr": "Saksnummer",
+    "idag": "Dagens dato",
+    "sok": "Hva søkte du om, og hva står i vedtaket?",
+    "hvorfor": "Hvorfor mener du rettigheten ikke er oppfylt? Beskriv behovet konkret."
+  },
+  "examples": {
+    "navn": "Anne Berg",
+    "kommune": "Oslo kommune, Bydel Nordstrand",
+    "fylke": "Østfold, Buskerud, Oslo og Akershus",
+    "enhet": "Søknadskontoret",
+    "pasient": "Ola Berg",
+    "relasjon": "mor",
+    "dato": "2026-09-01",
+    "saksnr": "26/1432",
+    "sok": "Jeg søkte om avlastning to helger i måneden for Ola, som har en utviklingshemming og bor hjemme hos meg. Vedtaket gir avslag med begrunnelsen at kommunen ikke har ledig kapasitet.",
+    "hvorfor": "Jeg har omsorgen for Ola døgnet rundt og har ikke hatt en sammenhengende fridag på over ett år. Fastlegen har skrevet at jeg står i fare for å bli utslitt. Uten avlastning klarer jeg ikke å fortsette å ha Ola boende hjemme, noe som vil koste kommunen langt mer enn avlastningen."
+  },
+  "copy": {
+    "button": "Kopier brevet",
+    "copied": "Kopiert",
+    "fallback": "Merket. Trykk Ctrl+C / Cmd+C"
+  },
+  "who": [
+    {
+      "id": "selv",
+      "label": "Meg selv",
+      "sub": "Jeg er pasient eller mottar tjenester fra kommunen"
+    },
+    {
+      "id": "paa",
+      "label": "En jeg er pårørende til",
+      "sub": "Jeg klager på vegne av et familiemedlem"
+    },
+    {
+      "id": "egen",
+      "label": "Meg som pårørende",
+      "sub": "Det gjelder mine egne rettigheter, for eksempel avlastning"
+    }
+  ],
+  "routes": {
+    "klage": {
+      "boxLead": "Dette er en rettighetsklage.",
+      "boxBody": "Klagen sendes til kommunen, som må vurdere saken på nytt. Holder kommunen på vedtaket, skal den sende klagen videre til Statsforvalteren. Fristen er fire uker fra du fikk vedtaket.",
+      "letterTitle": "Klagebrevet ditt",
+      "letterIntro": "Brevet er skrevet som et krav om en rettighet, med hjemmel, frist og oversendelse til Statsforvalteren. Les gjennom og juster ordlyden så den blir din.",
+      "commonSources": [
+        "pbrl-7-2",
+        "pbrl-7-5",
+        "hdir-7-2",
+        "helsenorge"
+      ],
+      "sendSteps": [
+        {
+          "lead": "Send til kommunen.",
+          "text": " Statsforvalteren får saken fra kommunen. Kommunen skal vurdere saken på nytt før den eventuelt sender klagen videre. Det står i pasient- og brukerrettighetsloven § 7-2."
+        },
+        {
+          "lead": "Bruk kommunens sikre kanal",
+          "text": ": eDialog, sikkert digitalt skjema eller brevpost. Vanlig e-post er ikke egnet fordi brevet inneholder helseopplysninger."
+        },
+        {
+          "lead": "Fristen er fire uker",
+          "text": " fra du fikk vedtaket, jf. § 7-5. Er fristen nær, send klagen kort og ettersend begrunnelsen."
+        },
+        {
+          "lead": "Legg ved",
+          "text": " kopi av vedtaket{fullmakt} og eventuelle uttalelser fra lege eller andre."
+        },
+        {
+          "lead": "Klagen er gratis.",
+          "text": " Kommunen har ingen adgang til å redusere tjenesten fordi du klager."
+        }
+      ]
+    },
+    "purring": {
+      "boxLead": "Dette er ikke en klage ennå.",
+      "boxBody": "Uten vedtak er det ingenting å klage på. Første steg er en skriftlig purring med frist.",
+      "letterTitle": "Purringen din",
+      "letterIntro": "En kort, skriftlig purring med frist. Ta vare på en kopi.",
+      "commonSources": [
+        "helsenorge"
+      ],
+      "sendSteps": [
+        {
+          "lead": "Send til kommunen",
+          "text": " gjennom eDialog eller kommunens sikre skjema, eventuelt brevpost. Ikke bruk vanlig e-post til helseopplysninger."
+        },
+        {
+          "lead": "Ta vare på en kopi",
+          "text": " med dato. Den trenger du hvis saken går videre."
+        }
+      ]
+    },
+    "tilsyn": {
+      "boxLead": "Dette går i et annet spor.",
+      "boxBody": "En anmodning om tilsyn sendes rett til Statsforvalteren. Sjekk også om du mangler en tjeneste du har krav på. Da bør du i tillegg sende en rettighetsklage.",
+      "letterTitle": "Anmodningen din",
+      "letterIntro": "Anmodningen går rett til Statsforvalteren. Skriv nøkternt om hva som skjedde.",
+      "commonSources": [
+        "helsenorge"
+      ],
+      "sendSteps": [
+        {
+          "lead": "Send til Statsforvalteren i {fylke}",
+          "text": " via sikker melding på statsforvalteren.no. Vanlig e-post er ikke egnet fordi brevet inneholder helseopplysninger."
+        },
+        {
+          "lead": "Ingen formell frist",
+          "text": ", men jo nærmere hendelsen, jo bedre."
+        },
+        {
+          "lead": "Pasient- og brukerombudet",
+          "text": " kan hjelpe deg gratis med både anmodningen og en eventuell rettighetsklage."
+        }
+      ]
+    }
+  },
+  "sendHeading": "Slik sender du det",
+  "help": [
+    {
+      "title": "Pasient- og brukerombudet",
+      "body": "Gratis hjelp til å forstå rettighetene dine og skrive klagen. Finnes i alle fylker.",
+      "url": "https://www.pasientogbrukerombudet.no/"
+    },
+    {
+      "title": "Helsenorge: klage og erstatning",
+      "body": "Offentlig oversikt over klageordningene i helse- og omsorgstjenesten.",
+      "url": "https://www.helsenorge.no/klage-og-erstatning/"
+    }
+  ],
+  "disclaimer": "© 2026 JodaCare AS · Rettighetsveilederen gir generell informasjon og erstatter ikke rådgivning i din konkrete sak.",
+  "commonSources": [
+    {
+      "id": "pbrl-7-2",
+      "label": "Pasient- og brukerrettighetsloven § 7-2 Klage",
+      "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A77-2",
+      "note": "Lovdata"
+    },
+    {
+      "id": "pbrl-7-5",
+      "label": "Pasient- og brukerrettighetsloven § 7-5 Frist for klage (fire uker)",
+      "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A77-5",
+      "note": "Lovdata"
+    },
+    {
+      "id": "hdir-7-2",
+      "label": "Helsedirektoratet: kommentarer til § 7-2",
+      "url": "https://www.helsedirektoratet.no/rundskriv/pasient-og-brukerrettighetsloven-med-kommentarer/klage-mv/-7-2-klage-mv",
+      "note": "Rundskriv"
+    },
+    {
+      "id": "helsenorge",
+      "label": "Helsenorge: Rett til å klage",
+      "url": "https://www.helsenorge.no/klage-og-erstatning/",
+      "note": "Offentlig veiledning"
+    }
+  ],
+  "statsforvaltere": [
+    "Agder",
+    "Innlandet",
+    "Møre og Romsdal",
+    "Nordland",
+    "Rogaland",
+    "Troms og Finnmark",
+    "Trøndelag",
+    "Vestfold og Telemark",
+    "Vestland",
+    "Østfold, Buskerud, Oslo og Akershus"
+  ],
+  "situations": [
+    {
+      "id": "avslag",
+      "label": "Fått avslag på en tjeneste",
+      "sub": "Hjemmesykepleie, praktisk bistand, sykehjemsplass, støttekontakt, dagtilbud",
+      "appliesTo": [
+        "selv",
+        "paa"
+      ],
+      "route": "klage",
+      "defaultService": "hjemmesykepleie",
+      "answer": [
+        "Kommunen skal sørge for at du får nødvendige helse- og omsorgstjenester når du har behov for det. Dette er en rettighet du har etter pasient- og brukerrettighetsloven § 2-1a, og kommunens plikt følger av helse- og omsorgstjenesteloven §§ 3-1 og 3-2.",
+        "Kommunen bestemmer selv hvordan hjelpen gis, men den kan ikke avslå fordi det mangler penger eller kapasitet når behovet er der. Tjenesten skal være forsvarlig, jf. helse- og omsorgstjenesteloven § 4-1.",
+        "Et avslag er et enkeltvedtak. Du kan klage innen fire uker etter at du fikk vedtaket."
+      ],
+      "claim": "min rett til nødvendige helse- og omsorgstjenester fra kommunen etter pasient- og brukerrettighetsloven § 2-1a andre ledd, jf. helse- og omsorgstjenesteloven §§ 3-1 og 3-2",
+      "argument": "Kommunen har plikt til å tilby forsvarlige tjenester når behovet er til stede, jf. helse- og omsorgstjenesteloven § 4-1. Manglende kapasitet eller økonomi gir ikke grunnlag for å avslå en tjeneste som er nødvendig.",
+      "request": "vedtaket omgjøres og at det innvilges {tjeneste} i et omfang som dekker behovet",
+      "sources": [
+        {
+          "label": "Pasient- og brukerrettighetsloven § 2-1a",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A72-1a",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helse- og omsorgstjenesteloven §§ 3-1 og 3-2",
+          "url": "https://lovdata.no/lov/2011-06-24-30/%C2%A73-2",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helse- og omsorgstjenesteloven § 4-1 Forsvarlighet",
+          "url": "https://lovdata.no/lov/2011-06-24-30/%C2%A74-1",
+          "note": "Lovdata"
+        }
+      ]
+    },
+    {
+      "id": "redusert",
+      "label": "Tjenesten er redusert eller for liten",
+      "sub": "Færre timer, kortere besøk, tilbud som er tatt bort",
+      "appliesTo": [
+        "selv",
+        "paa"
+      ],
+      "route": "klage",
+      "defaultService": "praktisk bistand",
+      "answer": [
+        "En reduksjon i tjenesten er et nytt vedtak og kan påklages på samme måte som et avslag. Kommunen må begrunne hvorfor behovet er endret, og tjenesten må fortsatt være forsvarlig, jf. helse- og omsorgstjenesteloven § 4-1.",
+        "Har behovet ditt ikke blitt mindre, kan kommunen ikke redusere hjelpen bare fordi den omorganiserer eller sparer. Retten til nødvendige tjenester står i pasient- og brukerrettighetsloven § 2-1a.",
+        "Be alltid om et skriftlig vedtak hvis reduksjonen bare er meddelt muntlig. Uten vedtak er det ingenting å klage på, og det er i seg selv en feil."
+      ],
+      "claim": "min rett til nødvendige og forsvarlige helse- og omsorgstjenester etter pasient- og brukerrettighetsloven § 2-1a, jf. helse- og omsorgstjenesteloven § 4-1",
+      "argument": "Behovet er ikke redusert, og vedtaket viser ikke til nye opplysninger om behovet. En reduksjon som ikke bygger på en ny vurdering av behovet, oppfyller ikke kravet til forsvarlighet.",
+      "request": "vedtaket omgjøres slik at {tjeneste} videreføres i samme omfang som tidligere",
+      "sources": [
+        {
+          "label": "Pasient- og brukerrettighetsloven § 2-1a",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A72-1a",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helse- og omsorgstjenesteloven § 4-1 Forsvarlighet",
+          "url": "https://lovdata.no/lov/2011-06-24-30/%C2%A74-1",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Forvaltningsloven § 35 Omgjøring",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A735",
+          "note": "Lovdata"
+        }
+      ]
+    },
+    {
+      "id": "bpa",
+      "label": "Fått avslag på BPA",
+      "sub": "Brukerstyrt personlig assistanse",
+      "appliesTo": [
+        "selv",
+        "paa"
+      ],
+      "route": "klage",
+      "defaultService": "brukerstyrt personlig assistanse (BPA)",
+      "answer": [
+        "Er du under 67 år, har et langvarig behov (over to år) og et stort behov for hjelp (over 32 timer i uken), har du rett til å få praktisk bistand organisert som BPA. Ved 25 til 32 timer i uken har du også rett, med mindre kommunen kan dokumentere at BPA blir vesentlig dyrere. Dette står i pasient- og brukerrettighetsloven § 2-1d.",
+        "Retten omfatter også avlastning for foreldre til hjemmeboende barn under 18 år med nedsatt funksjonsevne.",
+        "Selv om du faller utenfor rettighetsbestemmelsen, skal kommunen ha BPA som tilbud, jf. helse- og omsorgstjenesteloven § 3-8, og vurdere det konkret."
+      ],
+      "claim": "min rett til å få tjenestene organisert som brukerstyrt personlig assistanse etter pasient- og brukerrettighetsloven § 2-1d, jf. helse- og omsorgstjenesteloven § 3-8",
+      "argument": "Vilkårene i § 2-1d er oppfylt: behovet er langvarig, omfanget overstiger grensen i loven, og jeg er under 67 år. Kommunen har ikke dokumentert at BPA vil medføre vesentlig økt kostnad.",
+      "request": "vedtaket omgjøres og at tjenestene organiseres som BPA med et timetall som dekker behovet",
+      "sources": [
+        {
+          "label": "Pasient- og brukerrettighetsloven § 2-1d Rett til BPA",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A72-1d",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helse- og omsorgstjenesteloven § 3-8",
+          "url": "https://lovdata.no/lov/2011-06-24-30/%C2%A73-8",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helsedirektoratet: kommentarer til § 2-1d",
+          "url": "https://www.helsedirektoratet.no/rundskriv/pasient-og-brukerrettighetsloven-med-kommentarer",
+          "note": "Rundskriv"
+        }
+      ]
+    },
+    {
+      "id": "avlastning",
+      "label": "Fått avslag på avlastning eller omsorgsstønad",
+      "sub": "Du har tunge omsorgsoppgaver og trenger støtte selv",
+      "appliesTo": [
+        "egen"
+      ],
+      "route": "klage",
+      "defaultService": "avlastning",
+      "answer": [
+        "Kommunen skal tilby pårørende med særlig tyngende omsorgsarbeid opplæring og veiledning, avlastning og omsorgsstønad. Dette er kommunens plikt etter helse- og omsorgstjenesteloven § 3-6.",
+        "Som pårørende kan du kreve at kommunen fatter vedtak om hvilke tiltak som skal settes inn. Det står i pasient- og brukerrettighetsloven § 2-8. Får du avslag, kan du klage selv. Du trenger ingen fullmakt, fordi dette er din egen rettighet.",
+        "Kommunen kan ikke avslå fordi den ikke har tilbud. Har den ikke avlastningsplasser, må den finne en annen måte å avlaste deg på."
+      ],
+      "claim": "min rett som pårørende til å få vedtak om tiltak ved særlig tyngende omsorgsoppgaver etter pasient- og brukerrettighetsloven § 2-8, jf. kommunens plikt etter helse- og omsorgstjenesteloven § 3-6",
+      "argument": "Omsorgsarbeidet er særlig tyngende i omfang og varighet, og det er nødvendig for at jeg skal kunne fortsette å yte omsorgen. Kommunen har plikt til å ha et tilbud om avlastning, og manglende kapasitet fritar ikke kommunen fra å finne et forsvarlig tiltak.",
+      "request": "vedtaket omgjøres og at det innvilges {tjeneste} i et omfang som gir reell avlastning",
+      "sources": [
+        {
+          "label": "Helse- og omsorgstjenesteloven § 3-6 Kommunens ansvar overfor pårørende",
+          "url": "https://lovdata.no/lov/2011-06-24-30/%C2%A73-6",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 2-8 Tiltak ved særlig tyngende omsorgsoppgaver",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A72-8",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helsedirektoratet: kommentarer til hol § 3-6",
+          "url": "https://www.helsedirektoratet.no/rundskriv/helse-og-omsorgstjenesteloven-med-kommentarer/kommunenes-ansvar-for-helse-og-omsorgstjenester/-3-6-kommunens-ansvar-overfor-parorende",
+          "note": "Rundskriv"
+        },
+        {
+          "label": "Helsedirektoratet: Pårørendes rettigheter",
+          "url": "https://www.helsedirektoratet.no/lov-og-forskrift/parorende/parorendes-rettigheter",
+          "note": "Oversikt"
+        }
+      ]
+    },
+    {
+      "id": "koordinator",
+      "label": "Mangler koordinator eller individuell plan",
+      "sub": "Mange tjenester, ingen som holder tråden",
+      "appliesTo": [
+        "selv",
+        "paa",
+        "egen"
+      ],
+      "route": "klage",
+      "defaultService": "koordinator",
+      "answer": [
+        "Har du behov for langvarige og koordinerte tjenester, har du rett til en individuell plan (pasient- og brukerrettighetsloven § 2-5) og rett til å få oppnevnt en koordinator (§ 2-5b). Retten til koordinator gjelder uavhengig av om du ønsker individuell plan.",
+        "Familier med barn som har alvorlig sykdom, skade eller nedsatt funksjonsevne har rett til barnekoordinator etter § 2-5c.",
+        "Kommunens plikt følger av helse- og omsorgstjenesteloven §§ 7-1, 7-2 og 7-2a. Avslag, eller at kommunen bare lar være å svare, kan påklages til Statsforvalteren."
+      ],
+      "claim": "retten til koordinator etter pasient- og brukerrettighetsloven § 2-5b og retten til individuell plan etter § 2-5, jf. helse- og omsorgstjenesteloven §§ 7-1 og 7-2",
+      "argument": "Behovet for tjenester er langvarig og sammensatt, og flere tjenesteytere er involvert uten at noen har hovedansvaret for koordinering og oppfølging. Vilkårene i § 2-5b er dermed oppfylt.",
+      "request": "det oppnevnes en navngitt koordinator og at arbeidet med individuell plan startes",
+      "sources": [
+        {
+          "label": "Pasient- og brukerrettighetsloven § 2-5 Individuell plan",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A72-5",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 2-5b Rett til koordinator",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A72-5b",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 2-5c Rett til barnekoordinator",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A72-5c",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helsedirektoratet: kommentarer til § 2-5b",
+          "url": "https://www.helsedirektoratet.no/rundskriv/pasient-og-brukerrettighetsloven-med-kommentarer/rett-til-helse-og-omsorgstjenester-og-transport-/-2-5b-rett-til-koordinator",
+          "note": "Rundskriv"
+        }
+      ]
+    },
+    {
+      "id": "informasjon",
+      "label": "Blir ikke informert eller hørt",
+      "sub": "Beslutninger tas uten at du får være med",
+      "appliesTo": [
+        "selv",
+        "paa"
+      ],
+      "route": "klage",
+      "defaultService": "medvirkning og informasjon",
+      "answer": [
+        "Du har rett til å medvirke når tjenesten utformes og til å få den informasjonen du trenger for å forstå tilbudet. Dette står i pasient- og brukerrettighetsloven § 3-1 og § 3-2. Informasjonen skal være tilpasset deg, jf. § 3-5.",
+        "Nærmeste pårørende har rett til informasjon når pasienten samtykker eller forholdene tilsier det. Kan pasienten ikke ivareta egne interesser, har nærmeste pårørende rett til informasjon og til å medvirke sammen med pasienten. Dette står i § 3-3 og § 3-1 tredje ledd.",
+        "Brudd på disse rettighetene kan påklages til Statsforvalteren etter § 7-2, selv om det ikke foreligger et vedtak."
+      ],
+      "claim": "retten til medvirkning og informasjon etter pasient- og brukerrettighetsloven §§ 3-1, 3-2 og 3-3",
+      "argument": "Beslutninger om tjenesten er tatt uten at jeg er informert eller gitt anledning til å medvirke. Retten til medvirkning gjelder også ved gjennomføring av tjenestene, og den gjelder løpende.",
+      "request": "kommunen bekrefter hvordan retten til informasjon og medvirkning vil bli ivaretatt framover, og at jeg innkalles til et møte om tjenesten",
+      "sources": [
+        {
+          "label": "Pasient- og brukerrettighetsloven § 3-1 Rett til medvirkning",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A73-1",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 3-2 Rett til informasjon",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A73-2",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 3-3 Informasjon til nærmeste pårørende",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A73-3",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 3-5 Informasjonens form",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A73-5",
+          "note": "Lovdata"
+        }
+      ]
+    },
+    {
+      "id": "journal",
+      "label": "Får ikke innsyn i journal",
+      "sub": "Du ber om å lese, men får nei eller ikke svar",
+      "appliesTo": [
+        "selv",
+        "paa"
+      ],
+      "route": "klage",
+      "defaultService": "innsyn i journal",
+      "answer": [
+        "Du har rett til innsyn i din egen journal med bilag, og du har rett til en kort forklaring på faguttrykk. Dette står i pasient- og brukerrettighetsloven § 5-1.",
+        "Nærmeste pårørende har rett til innsyn i journalen i samme utstrekning som de har rett til informasjon etter § 3-3, altså når pasienten samtykker eller ikke kan ivareta egne interesser.",
+        "Innsyn kan bare nektes hvis det er påtrengende nødvendig for å hindre fare for liv eller alvorlig helseskade, eller klart utilrådelig av hensyn til nærstående. Avslag kan påklages til Statsforvalteren."
+      ],
+      "claim": "retten til innsyn i journal etter pasient- og brukerrettighetsloven § 5-1, jf. § 3-3",
+      "argument": "Ingen av unntakene i § 5-1 er påberopt eller foreligger. Innsyn er nødvendig for å kunne ivareta rettigheter og medvirke i tjenesten.",
+      "request": "det gis fullt innsyn i journalen med bilag uten ytterligere opphold",
+      "sources": [
+        {
+          "label": "Pasient- og brukerrettighetsloven § 5-1 Rett til innsyn i journal",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A75-1",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 3-3",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A73-3",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helsedirektoratet: kommentarer til § 5-1",
+          "url": "https://www.helsedirektoratet.no/rundskriv/pasient-og-brukerrettighetsloven-med-kommentarer",
+          "note": "Rundskriv"
+        }
+      ]
+    },
+    {
+      "id": "ventet",
+      "label": "Venter på svar på en søknad",
+      "sub": "Søknaden er sendt, ingenting skjer",
+      "appliesTo": [
+        "selv",
+        "paa",
+        "egen"
+      ],
+      "route": "purring",
+      "defaultService": "søknaden",
+      "answer": [
+        "Kommunen skal behandle søknaden uten ugrunnet opphold. Tar det mer enn én måned, skal du få et foreløpig svar som sier hvorfor det tar tid og når du kan vente et vedtak. Dette står i forvaltningsloven § 11 a.",
+        "Forvaltningsloven gjelder for søknader om tjenester som er ment å vare i mer enn to uker, jf. pasient- og brukerrettighetsloven § 2-7.",
+        "Så lenge det ikke foreligger et vedtak, kan du ikke sende en rettighetsklage. Første steg er en skriftlig purring med frist. Får du fortsatt ikke svar, kan du ta saksbehandlingstiden opp med Statsforvalteren."
+      ],
+      "sources": [
+        {
+          "label": "Forvaltningsloven § 11 a Saksbehandlingstid og foreløpig svar",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A711a",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 2-7 Forvaltningslovens anvendelse",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A72-7",
+          "note": "Lovdata"
+        }
+      ]
+    },
+    {
+      "id": "behandling",
+      "label": "Dårlig behandling, feil eller uverdig omsorg",
+      "sub": "Noe har gått galt i måten hjelpen ble gitt på",
+      "tag": "Annet spor",
+      "appliesTo": [
+        "selv",
+        "paa",
+        "egen"
+      ],
+      "route": "tilsyn",
+      "defaultService": "hjelpen",
+      "answer": [
+        "Når det handler om måten hjelpen ble gitt på, kan du be Statsforvalteren vurdere om helsepersonellet eller tjenesten har brutt pliktene sine. Dette kalles en anmodning om tilsyn og står i pasient- og brukerrettighetsloven § 7-4. Den sendes rett til Statsforvalteren.",
+        "Tilsyn kan føre til at tjenesten må rette opp rutiner, men det gir sjelden deg som enkeltperson noe nytt. Derfor lønner det seg å spørre: mangler jeg egentlig en tjeneste jeg har krav på? Da er en rettighetsklage etter § 7-2 veien å gå, og du kan gjøre begge deler.",
+        "Gå tilbake til steg 2 og se om en av de andre situasjonene passer. Brevet under er skrevet som en anmodning om tilsyn."
+      ],
+      "sources": [
+        {
+          "label": "Pasient- og brukerrettighetsloven § 7-4 Anmodning om vurdering av mulig pliktbrudd",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A77-4",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helse- og omsorgstjenesteloven § 4-1 Forsvarlighet",
+          "url": "https://lovdata.no/lov/2011-06-24-30/%C2%A74-1",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helsepersonelloven § 4 Forsvarlighet",
+          "url": "https://lovdata.no/lov/1999-07-02-64/%C2%A74",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helsetilsynet: Klage- og erstatningsordninger",
+          "url": "https://www.helsetilsynet.no/tilsyn/om-tilsynssaker/klage-og-erstatningsordninger-i-helse-og-omsorgstjenesten/",
+          "note": "Oversikt"
+        }
+      ]
+    }
+  ]
+}
