@@ -11,8 +11,16 @@ type Props = {
   locale: Locale;
 };
 
+/**
+ * Sider som bare finnes på norsk. Språkbytteren skjules her, ellers peker
+ * flagget til en /en-adresse som ikke finnes (404). /rettigheter er bevisst
+ * norsk-bare: lovtekstene skal ikke maskinoversettes.
+ */
+const NORWEGIAN_ONLY = ['/rettigheter'];
+
 export function LanguageSwitcher({ locale }: Props) {
   const pathname = usePathname() || '/';
+  if (NORWEGIAN_ONLY.includes(pathname)) return null;
   const toNo = alternatePathForLocale(pathname, 'no');
   const toEn = alternatePathForLocale(pathname, 'en');
   const copy = getSite(locale).lang;
