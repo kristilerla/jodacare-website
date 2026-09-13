@@ -25,8 +25,8 @@ export async function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-6">
             <Image
-              src="/brand/jodacare-horisontal.svg"
-              alt="JodaCare logo"
+              src="/brand/jodacare-horisontal-hvit.svg"
+              alt="JodaCare"
               width={252}
               height={54}
               className="h-10 w-auto"
