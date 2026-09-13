@@ -32,7 +32,6 @@ const no: OmPageContent = {
     { name: 'Universitetet i Agder', description: 'Akademisk partner for forskning på digital omsorg' },
     { name: 'Innovasjon Norge', description: 'Virkemiddelpartner for JodaCare' },
     { name: 'Norway Healthtech', description: 'Norges ledende helseklynge' },
-    { name: 'Dynamisk Helse', description: 'SkillAid, AI-partner for JodaCare' },
   ],
   timeline: [
     { year: '2016', event: 'JodaCare lanseres for første gang i norske kommuner' },
@@ -75,7 +74,6 @@ const en: OmPageContent = {
     { name: 'University of Agder', description: 'Academic partner for research on digital care' },
     { name: 'Innovation Norway', description: 'Funding and growth partner for JodaCare' },
     { name: 'Norway Healthtech', description: "Norway's leading health technology cluster" },
-    { name: 'Dynamisk Helse', description: 'SkillAid, AI partner for JodaCare' },
   ],
   timeline: [
     { year: '2016', event: 'JodaCare launches for the first time in Norwegian municipalities' },

@@ -622,11 +622,9 @@ export default function BriefPage() {
 
         <h3 className="font-serif text-xl font-semibold text-text">Partnere</h3>
         <p>
-          Vi samarbeider med Dynamisk Helse om å integrere Drops-pedagogikken
-          inn i JodaCares kunnskapsarkitektur. Vi har inngått en
-          integrasjonsavtale med Aidn som gir oss distribusjonsvei inn i
-          deres kommunale kundebase. Vi støtter JAG Assistanse-nettverket i
-          BPA-segmentet med pilotløsninger.
+          Vi har inngått en integrasjonsavtale med Aidn som gir oss
+          distribusjonsvei inn i deres kommunale kundebase. Vi støtter
+          JAG Assistanse-nettverket i BPA-segmentet med pilotløsninger.
         </p>
       </Section>
 
@@ -754,12 +752,14 @@ export default function BriefPage() {
               name: 'Kodemaker',
               body: 'Teknisk leveransepartner som leder utvikling, arkitektur og kundemigrering for JodaCare 2.0.',
             },
-            {
-              name: 'Dynamisk Helse / Drops',
-              body: 'Vårt første partnerskap i en modulær add-on-modell: Drops-innholdet — pedagogisk veiledning utviklet av Ann-Kristin Johansen for helsepersonell — er tilgjengelig som tilleggstjeneste for JodaCare-kunder. Modellen viser hvordan JodaCare kan integrere spesialisert innhold fra tredjepart, og åpne tilsvarende samarbeid med andre fagleverandører i fremtiden.',
-            },
           ]}
         />
+        <p>
+          JodaCare er lagt opp for en modulær add-on-modell, der spesialisert
+          faginnhold fra tredjepart kan tilbys som tilleggstjeneste til
+          JodaCare-kunder uten å endre kjerneplattformen. Det åpner for
+          samarbeid med fagleverandører innenfor de enkelte segmentene.
+        </p>
       </Section>
 
       {/* 19 — Kundenytte */}
