@@ -63,7 +63,9 @@ export function Rettighetsveileder() {
   const [who, setWho] = useState<WhoId>(DEFAULT_WHO);
   const [sitId, setSitId] = useState<string>(DEFAULT_SIT);
   const [fields, setFields] = useState<Fields>(initialFields);
-  const [tjenesteTouched, setTjenesteTouched] = useState(false);
+  // Hvilke felt brukeren selv har skrevet i. Styrer både dempet tekst,
+  // tømming ved fokus og om «Tjenesten det gjelder» fylles automatisk.
+  const [touched, setTouched] = useState<Partial<Record<FieldKey, boolean>>>({});
   const [toast, setToast] = useState('');
   const letterRef = useRef<HTMLPreElement>(null);
   const answerRef = useRef<HTMLDivElement>(null);
@@ -81,7 +83,7 @@ export function Rettighetsveileder() {
     const validSit = allowed.find((s) => s.id === sitPart) ?? allowed[0];
     setWho(validWho.id);
     setSitId(validSit.id);
-    if (!tjenesteTouched) {
+    if (!touched.tjeneste) {
       setFields((f) => ({ ...f, tjeneste: validSit.defaultService }));
     }
     // Kjøres bare ved montering — hash leses én gang.
@@ -100,32 +102,55 @@ export function Rettighetsveileder() {
   const paaVegne = who === 'paa';
 
   // Felt som fortsatt står med eksempelverdien vises dempet, slik at det er
-  // tydelig at teksten skal byttes ut. Så snart feltet endres, blir den mørk.
+  // tydelig at teksten skal byttes ut. Så snart brukeren skriver, blir den mørk.
   const examples = data.examples as Partial<Record<FieldKey, string>>;
+  const erEksempel = (key: FieldKey) =>
+    examples[key] !== undefined && !touched[key];
   const fieldClass = (key: FieldKey) =>
-    clsx(
-      inputClass,
-      examples[key] !== undefined && fields[key] === examples[key]
-        ? 'text-text-light'
-        : 'text-text',
-    );
+    clsx(inputClass, erEksempel(key) ? 'text-text-light' : 'text-text');
 
   const setField = useCallback((key: FieldKey, value: string) => {
     setFields((f) => ({ ...f, [key]: value }));
   }, []);
+
+  /**
+   * Feltene er forhåndsfylt med et eksempel. Klikker du i et felt som fortsatt
+   * står med eksempelteksten, tømmes det, slik at du bare kan skrive.
+   *
+   * Går du ut igjen uten å skrive noe, kommer eksempelet tilbake — ellers ville
+   * en tilfeldig klikk-gjennomgang tømt hele brevet. Har du først skrevet i
+   * feltet, står det du etterlot deg, også om det er tomt.
+   */
+  const feltProps = (key: FieldKey) => ({
+    className: fieldClass(key),
+    value: fields[key],
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setTouched((t) => ({ ...t, [key]: true }));
+      setField(key, e.target.value);
+    },
+    onFocus: () => {
+      if (erEksempel(key) && fields[key] !== '') setField(key, '');
+    },
+    onBlur: () => {
+      const eksempel = examples[key];
+      if (eksempel !== undefined && !touched[key] && fields[key] === '') {
+        setField(key, eksempel);
+      }
+    },
+  });
 
   const chooseWho = (id: WhoId) => {
     setWho(id);
     const ok = data.situations.filter((s) => s.appliesTo.includes(id));
     if (!ok.find((s) => s.id === sitId)) {
       setSitId(ok[0].id);
-      if (!tjenesteTouched) setField('tjeneste', ok[0].defaultService);
+      if (!touched.tjeneste) setField('tjeneste', ok[0].defaultService);
     }
   };
 
   const chooseSit = (s: Situation) => {
     setSitId(s.id);
-    if (!tjenesteTouched) setField('tjeneste', s.defaultService);
+    if (!touched.tjeneste) setField('tjeneste', s.defaultService);
     answerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
@@ -332,17 +357,13 @@ export function Rettighetsveileder() {
             <label className={labelClass}>
               {data.fields.navn}
               <input
-                className={fieldClass('navn')}
-                value={fields.navn}
-                onChange={(e) => setField('navn', e.target.value)}
+                {...feltProps('navn')}
               />
             </label>
             <label className={labelClass}>
               {data.fields.kommune}
               <input
-                className={fieldClass('kommune')}
-                value={fields.kommune}
-                onChange={(e) => setField('kommune', e.target.value)}
+                {...feltProps('kommune')}
               />
             </label>
             <label className={labelClass}>
@@ -350,7 +371,10 @@ export function Rettighetsveileder() {
               <select
                 className={fieldClass('fylke')}
                 value={fields.fylke}
-                onChange={(e) => setField('fylke', e.target.value)}
+                onChange={(e) => {
+                  setTouched((t) => ({ ...t, fylke: true }));
+                  setField('fylke', e.target.value);
+                }}
               >
                 {data.statsforvaltere.map((f) => (
                   <option key={f} value={f}>
@@ -362,9 +386,7 @@ export function Rettighetsveileder() {
             <label className={labelClass}>
               {data.fields.enhet}
               <input
-                className={fieldClass('enhet')}
-                value={fields.enhet}
-                onChange={(e) => setField('enhet', e.target.value)}
+                {...feltProps('enhet')}
               />
             </label>
             {paaVegne ? (
@@ -372,17 +394,13 @@ export function Rettighetsveileder() {
                 <label className={labelClass}>
                   {data.fields.pasient}
                   <input
-                    className={fieldClass('pasient')}
-                    value={fields.pasient}
-                    onChange={(e) => setField('pasient', e.target.value)}
+                    {...feltProps('pasient')}
                   />
                 </label>
                 <label className={labelClass}>
                   {data.fields.relasjon}
                   <input
-                    className={fieldClass('relasjon')}
-                    value={fields.relasjon}
-                    onChange={(e) => setField('relasjon', e.target.value)}
+                    {...feltProps('relasjon')}
                   />
                 </label>
               </>
@@ -390,56 +408,41 @@ export function Rettighetsveileder() {
             <label className={labelClass}>
               {data.fields.tjeneste}
               <input
-                className={fieldClass('tjeneste')}
-                value={fields.tjeneste}
-                onChange={(e) => {
-                  setTjenesteTouched(true);
-                  setField('tjeneste', e.target.value);
-                }}
+{...feltProps('tjeneste')}
               />
             </label>
             <label className={labelClass}>
               {data.fields.dato}
               <input
                 type="date"
-                className={fieldClass('dato')}
-                value={fields.dato}
-                onChange={(e) => setField('dato', e.target.value)}
+                {...feltProps('dato')}
               />
             </label>
             <label className={labelClass}>
               {data.fields.saksnr}
               <input
-                className={fieldClass('saksnr')}
-                value={fields.saksnr}
-                onChange={(e) => setField('saksnr', e.target.value)}
+                {...feltProps('saksnr')}
               />
             </label>
             <label className={labelClass}>
               {data.fields.idag}
               <input
                 type="date"
-                className={fieldClass('idag')}
-                value={fields.idag}
-                onChange={(e) => setField('idag', e.target.value)}
+                {...feltProps('idag')}
               />
             </label>
             <label className={clsx(labelClass, 'sm:col-span-2')}>
               {data.fields.sok}
               <textarea
                 rows={4}
-                className={fieldClass('sok')}
-                value={fields.sok}
-                onChange={(e) => setField('sok', e.target.value)}
+                {...feltProps('sok')}
               />
             </label>
             <label className={clsx(labelClass, 'sm:col-span-2')}>
               {data.fields.hvorfor}
               <textarea
                 rows={5}
-                className={fieldClass('hvorfor')}
-                value={fields.hvorfor}
-                onChange={(e) => setField('hvorfor', e.target.value)}
+                {...feltProps('hvorfor')}
               />
             </label>
           </form>
