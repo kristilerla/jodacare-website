@@ -19,6 +19,8 @@ export type BpaContent = {
   statusBadge: string;
   statusTitle: string;
   statusBody: string;
+  priceNote: string;
+  priceLinkText: string;
   statusCta: string;
   relatedTitle: string;
   readMore: string;
@@ -83,7 +85,10 @@ const no: BpaContent = {
   statusBadge: 'Beta 2026',
   statusTitle: 'Bli med som pilotkommune',
   statusBody:
-    'JodaCare for BPA er i aktiv bruk og tas inn i JodaCare 2.0 i løpet av 2026. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet. Pris settes basert på antall brukere og tjenestenivå.',
+    'JodaCare for BPA er i aktiv bruk og tas inn i JodaCare 2.0 i løpet av 2026. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet.',
+  priceNote:
+    'Lisens fra kr 2 990 per måned for inntil 10 tjenestemottakere, pluss oppstart.',
+  priceLinkText: 'Se alle priser',
   statusCta: 'Kontakt oss for pilotplass',
   relatedTitle: 'Andre deler av JodaCare som styrker BPA-arbeidet',
   readMore: 'Les mer',
@@ -163,7 +168,10 @@ const en: BpaContent = {
   statusBadge: 'Beta 2026',
   statusTitle: 'Join as a pilot municipality',
   statusBody:
-    'JodaCare for BPA is in active use and is being brought into JodaCare 2.0 during 2026. Pilot municipalities receive close follow-up and help shape the final product. Pricing depends on number of users and service level.',
+    'JodaCare for BPA is in active use and is being brought into JodaCare 2.0 during 2026. Pilot municipalities receive close follow-up and help shape the final product.',
+  priceNote:
+    'Licence from NOK 2,990 per month for up to 10 service recipients, plus onboarding.',
+  priceLinkText: 'See all prices',
   statusCta: 'Contact us for a pilot place',
   relatedTitle: 'Other parts of JodaCare that strengthen personal assistance',
   readMore: 'Read more',

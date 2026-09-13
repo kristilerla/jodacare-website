@@ -17,6 +17,8 @@ export type AvlastningContent = {
   statusBadge: string;
   statusTitle: string;
   statusBody: string;
+  priceNote: string;
+  priceLinkText: string;
   statusCta: string;
   relatedTitle: string;
   readMore: string;
@@ -79,6 +81,9 @@ const no: AvlastningContent = {
   statusTitle: 'Slik bygges JodaCare for avlastning',
   statusBody:
     'JodaCare for avlastning er under aktiv utvikling som del av JodaCare 2.0. Ta kontakt for å høre mer eller melde din kommune som pilot.',
+  priceNote:
+    'Lisens fra kr 2 990 per måned for inntil 10 tjenestemottakere, pluss oppstart.',
+  priceLinkText: 'Se alle priser',
   statusCta: 'Meld interesse',
   relatedTitle: 'Andre deler av JodaCare som styrker avlastningen',
   readMore: 'Les mer',
@@ -157,6 +162,9 @@ const en: AvlastningContent = {
   statusTitle: 'How JodaCare for respite is being built',
   statusBody:
     'JodaCare for respite is being developed as part of JodaCare 2.0. Get in touch to learn more or register interest.',
+  priceNote:
+    'Licence from NOK 2,990 per month for up to 10 service recipients, plus onboarding.',
+  priceLinkText: 'See all prices',
   statusCta: 'Register interest',
   relatedTitle: 'Other parts of JodaCare that strengthen respite care',
   readMore: 'Read more',

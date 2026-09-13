@@ -104,31 +104,43 @@ export function HomePageView({ locale }: Props) {
               const Icon = pathIcons[index] ?? HeartIcon;
               return (
                 <StaggerItem key={card.title}>
-                  <Link href={withLocale(card.href, locale)} className="block h-full group">
-                    <div
-                      className={`h-full rounded-2xl bg-white p-8 flex flex-col transition-all duration-200 ${
-                        card.highlighted
-                          ? 'border-2 border-primary shadow-lg'
-                          : 'border border-secondary hover:border-primary/40 hover:shadow-md'
-                      }`}
-                    >
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
-                      </div>
-                      <h3 className="mt-4 font-serif text-xl font-semibold text-text">{card.title}</h3>
-                      <p className="mt-3 text-text-light text-sm leading-relaxed flex-1">
-                        {card.description}
-                      </p>
-                      <span
-                        className={`mt-4 inline-block self-start px-3 py-1 text-xs font-medium rounded-full ${card.badgeColor}`}
-                      >
-                        {card.badge}
-                      </span>
-                      <span className="mt-4 inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:gap-2 transition-all">
-                        {card.cta} <ArrowRightIcon className="w-4 h-4" />
-                      </span>
+                  <div
+                    className={`relative h-full rounded-2xl bg-white p-8 flex flex-col transition-all duration-200 group ${
+                      card.highlighted
+                        ? 'border-2 border-primary shadow-lg'
+                        : 'border border-secondary hover:border-primary/40 hover:shadow-md'
+                    }`}
+                  >
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
-                  </Link>
+                    <h3 className="mt-4 font-serif text-xl font-semibold text-text">{card.title}</h3>
+                    <p className="mt-3 text-text-light text-sm leading-relaxed flex-1">
+                      {card.description}
+                    </p>
+                    {card.priceNote && card.priceLinkText && (
+                      <p className="mt-4 text-sm text-text-light">
+                        {card.priceNote}{' '}
+                        <Link
+                          href={withLocale('/priser', locale)}
+                          className="relative z-10 text-primary font-medium underline underline-offset-2 hover:text-primary-dark"
+                        >
+                          {card.priceLinkText} &rarr;
+                        </Link>
+                      </p>
+                    )}
+                    <span
+                      className={`mt-4 inline-block self-start px-3 py-1 text-xs font-medium rounded-full ${card.badgeColor}`}
+                    >
+                      {card.badge}
+                    </span>
+                    <Link
+                      href={withLocale(card.href, locale)}
+                      className="mt-4 inline-flex items-center gap-1 self-start text-primary text-sm font-medium group-hover:gap-2 transition-all after:absolute after:inset-0 after:rounded-2xl"
+                    >
+                      {card.cta} <ArrowRightIcon className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </StaggerItem>
               );
             })}

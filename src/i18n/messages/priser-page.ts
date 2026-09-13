@@ -1,0 +1,247 @@
+import type { Locale } from '@/lib/i18n/types';
+
+export type PriserCard = {
+  name: string;
+  price: string;
+  period: string;
+  unit: string;
+  body: string;
+  includesLabel: string;
+  includes: string[];
+  footnote?: string;
+};
+
+export type PriserTableRow = { label: string; year1: string; year2: string };
+
+export type PriserFaqItem = { question: string; answer: string };
+
+export type PriserContent = {
+  heroBadge: string;
+  heroTitle: string;
+  heroSubtitle: string;
+
+  kommuneTitle: string;
+  cards: PriserCard[];
+
+  exampleTitle: string;
+  exampleColumns: { year1: string; year2: string };
+  exampleRows: PriserTableRow[];
+  exampleSumLabel: string;
+  exampleSumYear1: string;
+  exampleSumYear2: string;
+  exampleNote: string;
+
+  modulesTitle: string;
+  modulesP1: string;
+  modulesP2: string;
+  modules: string[];
+  modulesP3: string;
+
+  faqTitle: string;
+  faq: PriserFaqItem[];
+  faqCta: string;
+};
+
+const no: PriserContent = {
+  heroBadge: 'For kommuner',
+  heroTitle: 'Priser',
+  heroSubtitle: 'Én pris for lisens. Én pris for oppstart. Ingen skjulte tillegg.',
+
+  kommuneTitle: 'For kommuner',
+  cards: [
+    {
+      name: 'Lisens',
+      price: 'kr 2 990',
+      period: 'per måned',
+      unit: 'per pakke à 10 tjenestemottakere',
+      body: 'Én pakke dekker inntil 10 tjenestemottakere. Rundt hver av dem kan kommunen legge til så mange ansatte og pårørende som trengs, uten ekstra kostnad. Trenger dere plass til flere enn 10, legger dere til en pakke til.',
+      includesLabel: 'Lisensen inkluderer:',
+      includes: [
+        'Boka: felles feed for hver tjenestemottaker',
+        'Kalender med opphold, avtaler og aktiviteter',
+        'Meldinger mellom ansatte og pårørende',
+        'Rollebasert tilgang: bare teamet rundt en tjenestemottaker ser innholdet',
+        'Web og app for iOS og Android',
+        'Support på e-post og telefon på hverdager',
+      ],
+      footnote: 'Alle priser er oppgitt eks. mva. Avtalen løper i 12 måneder om gangen.',
+    },
+    {
+      name: 'Oppstart',
+      price: 'kr 28 000',
+      period: '',
+      unit: 'engangsbeløp per kommune',
+      body: 'Oppstart er der de fleste digitale verktøy stopper opp. Derfor er det en egen tjeneste med en egen pris, og den inkluderer:',
+      includesLabel: 'Oppstart inkluderer:',
+      includes: [
+        'Teknisk oppsett av kommunen, tjenestestedet og første team',
+        'Igangsettelseskurs 1 på Teams for ansatte',
+        'Igangsettelseskurs 2 på Teams for ansatte og pårørende sammen',
+        'Databehandleravtale, DPIA og sikkerhetsdokumentasjon',
+        'Fast kontaktperson de første 90 dagene, med oppfølgingsmøte til slutt',
+      ],
+    },
+  ],
+
+  exampleTitle: 'Hva koster det for én avlastningsbolig?',
+  exampleColumns: { year1: 'År 1', year2: 'År 2 og videre' },
+  exampleRows: [
+    { label: 'Lisens, 1 pakke à 10', year1: 'kr 35 880', year2: 'kr 35 880' },
+    { label: 'Oppstart', year1: 'kr 28 000', year2: 'kr 0' },
+  ],
+  exampleSumLabel: 'Sum',
+  exampleSumYear1: 'kr 63 880',
+  exampleSumYear2: 'kr 35 880',
+  exampleNote:
+    'Beløpet ligger godt under terskelverdien for direkte anskaffelse. Kommunen kan inngå avtalen uten anbudskonkurranse.',
+
+  modulesTitle: 'Nye JodaCare bygges modul for modul',
+  modulesP1:
+    'JodaCare bygges nå på nytt fra grunnen, med sikkerhet og tilgangsstyring som første prioritet. Lisensen over dekker grunnmodulen: Boka, kalender, meldinger og rollebasert tilgang. Det er dette som er i drift i dag, og det er dette nye kunder starter med.',
+  modulesP2:
+    'Flere moduler er under utvikling. Hver av dem får sin egen pris når den er ferdig, og kommunen velger selv om den vil legge modulen til:',
+  modules: [
+    'Sjekklister og rutiner',
+    'Hendelseslogg',
+    'Hub for omsorgsbolig og servicebolig',
+    'Jodabook for tjenestemottakere med kognitive utfordringer',
+    'Barnevern og samvær',
+    'JodaVisit for hjemmesykepleie',
+  ],
+  modulesP3:
+    'Kunder med løpende avtale får beskjed i god tid før en modul lanseres. Prisen på grunnmodulen endres ikke av at nye moduler kommer til.',
+
+
+  faqTitle: 'Vanlige spørsmål om pris',
+  faq: [
+    {
+      question: 'Hva om vi har færre enn 10 tjenestemottakere?',
+      answer:
+        'Pakken er den samme. De fleste avlastningsboliger og bofellesskap vokser inn i den i løpet av det første året.',
+    },
+    {
+      question: 'Betaler vi for ansatte og pårørende?',
+      answer: 'Nei. Lisensen følger tjenestemottakeren. Alle rundt hen er inkludert.',
+    },
+    {
+      question: 'Hvordan faktureres det?',
+      answer:
+        'Oppstart faktureres ved avtaleinngåelse. Lisensen faktureres kvartalsvis på forskudd.',
+    },
+    {
+      question: 'Trenger vi en databehandleravtale?',
+      answer:
+        'Ja. Den inngås før oppstart, og vi stiller med forslag. Kommunen kan også bruke sin egen mal.',
+    },
+    {
+      question: 'Kan vi si opp?',
+      answer:
+        'Avtalen løper i 12 måneder og fornyes automatisk. Oppsigelse skjer skriftlig med tre måneders varsel før avtaleperioden løper ut.',
+    },
+  ],
+  faqCta: 'Ta kontakt for avtaleforslag',
+};
+
+const en: PriserContent = {
+  heroBadge: 'For municipalities',
+  heroTitle: 'Pricing',
+  heroSubtitle: 'One price for the licence. One price for onboarding. No hidden extras.',
+
+  kommuneTitle: 'For municipalities',
+  cards: [
+    {
+      name: 'Licence',
+      price: 'NOK 2,990',
+      period: 'per month',
+      unit: 'per package of 10 service recipients',
+      body: 'One package covers up to 10 service recipients. Around each of them the municipality can add as many staff and relatives as needed, at no extra cost. If you need room for more than 10, you add another package.',
+      includesLabel: 'The licence includes:',
+      includes: [
+        'Boka: a shared feed for each service recipient',
+        'Calendar with stays, appointments and activities',
+        'Messages between staff and relatives',
+        'Role-based access: only the team around a service recipient sees the content',
+        'Web and apps for iOS and Android',
+        'Support by email and phone on weekdays',
+      ],
+      footnote: 'All prices are excluding VAT. The agreement runs for 12 months at a time.',
+    },
+    {
+      name: 'Onboarding',
+      price: 'NOK 28,000',
+      period: '',
+      unit: 'one-off fee per municipality',
+      body: 'Onboarding is where most digital tools stall. That is why it is a service of its own, with a price of its own, and it includes:',
+      includesLabel: 'Onboarding includes:',
+      includes: [
+        'Technical setup of the municipality, the service location and the first team',
+        'Launch course 1 on Teams for staff',
+        'Launch course 2 on Teams for staff and relatives together',
+        'Data processing agreement, DPIA and security documentation',
+        'A named contact for the first 90 days, with a follow-up meeting at the end',
+      ],
+    },
+  ],
+
+  exampleTitle: 'What does one respite home cost?',
+  exampleColumns: { year1: 'Year 1', year2: 'Year 2 onwards' },
+  exampleRows: [
+    { label: 'Licence, 1 package of 10', year1: 'NOK 35,880', year2: 'NOK 35,880' },
+    { label: 'Onboarding', year1: 'NOK 28,000', year2: 'NOK 0' },
+  ],
+  exampleSumLabel: 'Total',
+  exampleSumYear1: 'NOK 63,880',
+  exampleSumYear2: 'NOK 35,880',
+  exampleNote:
+    'The amount is well below the Norwegian threshold for direct procurement. The municipality can enter into the agreement without a tender process.',
+
+  modulesTitle: 'The new JodaCare is built module by module',
+  modulesP1:
+    'JodaCare is being rebuilt from the ground up, with security and access control as the first priority. The licence above covers the core module: Boka, calendar, messages and role-based access. This is what is in operation today, and this is what new customers start with.',
+  modulesP2:
+    'More modules are under development. Each gets its own price once it is finished, and the municipality decides whether to add it:',
+  modules: [
+    'Checklists and routines',
+    'Event log',
+    'Hub for care homes and service housing',
+    'Jodabook for service recipients with cognitive challenges',
+    'Child welfare and contact visits',
+    'JodaVisit for home nursing',
+  ],
+  modulesP3:
+    'Customers with a running agreement are notified well before a module is launched. The price of the core module does not change because new modules arrive.',
+
+
+  faqTitle: 'Common questions about pricing',
+  faq: [
+    {
+      question: 'What if we have fewer than 10 service recipients?',
+      answer:
+        'The package is the same. Most respite homes and shared housing grow into it during the first year.',
+    },
+    {
+      question: 'Do we pay for staff and relatives?',
+      answer: 'No. The licence follows the service recipient. Everyone around them is included.',
+    },
+    {
+      question: 'How is it invoiced?',
+      answer:
+        'Onboarding is invoiced when the agreement is signed. The licence is invoiced quarterly in advance.',
+    },
+    {
+      question: 'Do we need a data processing agreement?',
+      answer:
+        'Yes. It is signed before onboarding, and we provide a draft. The municipality can also use its own template.',
+    },
+    {
+      question: 'Can we cancel?',
+      answer:
+        'The agreement runs for 12 months and renews automatically. Cancellation is made in writing with three months notice before the agreement period ends.',
+    },
+  ],
+  faqCta: 'Get in touch for a draft agreement',
+};
+
+export function getPriserContent(locale: Locale): PriserContent {
+  return locale === 'en' ? en : no;
+}

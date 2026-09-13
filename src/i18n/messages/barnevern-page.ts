@@ -59,6 +59,8 @@ export type BarnevernContent = {
   statusTitle: string;
   statusSubtitle: string;
   statusColumns: { title: string; items: string[] }[];
+  priceNote: string;
+  priceLinkText: string;
 
   // Seksjon 10 — CTA-footer
   ctaTitle: string;
@@ -293,6 +295,9 @@ const no: BarnevernContent = {
   // Seksjon 9 — Status
   statusTitle: 'Slik bygges JodaCare for barnevern',
   statusSubtitle: 'Plattformen står på en moden kjerne i drift siden 2016, og barnevernsmodulen tas i bruk i etapper sammen med pilotkommunene.',
+  priceNote:
+    'Grunnmodulen koster kr 2 990 per måned for inntil 10 tjenestemottakere. Barnevernsmodulen prises separat når den er ferdig.',
+  priceLinkText: 'Se alle priser',
   statusColumns: [
     {
       title: 'Klart i dag',
@@ -571,6 +576,9 @@ const en: BarnevernContent = {
 
   statusTitle: 'How far along are we',
   statusSubtitle: 'The platform builds on a mature core in production since 2016, and the child welfare module is being adopted in stages together with pilot municipalities.',
+  priceNote:
+    'The core module costs NOK 2,990 per month for up to 10 service recipients. The child welfare module is priced separately once it is finished.',
+  priceLinkText: 'See all prices',
   statusColumns: [
     {
       title: 'Ready today',

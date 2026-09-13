@@ -73,6 +73,7 @@ export const site: Record<Locale, SiteCopy> = {
       { name: 'Barnevern', href: '/barnevern' },
       { name: 'JodaVisit', href: '/jodavisit' },
       { name: 'Implementering', href: '/implementering' },
+      { name: 'Priser', href: '/priser' },
     ],
     footer: {
       heading: 'Bunntekst',
@@ -92,6 +93,7 @@ export const site: Record<Locale, SiteCopy> = {
           { name: 'Barnevern', href: '/barnevern' },
           { name: 'JodaVisit', href: '/jodavisit' },
           { name: 'Implementering', href: '/implementering' },
+          { name: 'Priser for kommuner', href: '/priser' },
           { name: 'Sikkerhet', href: '/sikkerhet' },
           { name: 'Teknologi', href: '/teknologi' },
         ],
@@ -152,6 +154,7 @@ export const site: Record<Locale, SiteCopy> = {
       { name: 'Child welfare', href: '/barnevern' },
       { name: 'JodaVisit', href: '/jodavisit' },
       { name: 'Implementation', href: '/implementering' },
+      { name: 'Pricing', href: '/priser' },
     ],
     footer: {
       heading: 'Footer',
@@ -170,6 +173,7 @@ export const site: Record<Locale, SiteCopy> = {
           { name: 'Child welfare', href: '/barnevern' },
           { name: 'JodaVisit', href: '/jodavisit' },
           { name: 'Implementation', href: '/implementering' },
+          { name: 'Pricing for municipalities', href: '/priser' },
           { name: 'Security', href: '/sikkerhet' },
           { name: 'Technology', href: '/teknologi' },
         ],

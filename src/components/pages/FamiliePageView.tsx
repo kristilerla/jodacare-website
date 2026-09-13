@@ -11,6 +11,7 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 import { getFamilieContent } from '@/i18n/messages/familie-page';
+import { withLocale } from '@/lib/i18n/paths';
 import type { Locale } from '@/lib/i18n/types';
 
 const featureIcons = [
@@ -27,13 +28,18 @@ type Props = { locale: Locale };
 
 export function FamiliePageView({ locale }: Props) {
   const d = getFamilieContent(locale);
+  const kontaktHref = withLocale('/kontakt', locale);
+  const pricingTiers = d.pricingTiers.map((tier) => ({
+    ...tier,
+    cta: { ...tier.cta, href: withLocale(tier.cta.href, locale) },
+  }));
 
   return (
     <>
       <Hero
         title={d.heroTitle}
         subtitle={d.heroSubtitle}
-        primaryCta={{ text: d.primaryCta, href: 'https://app.jodaskills.com/register?flow=family' }}
+        primaryCta={{ text: d.primaryCta, href: kontaktHref }}
         secondaryCta={{ text: d.secondaryCta, href: d.secondaryCtaHref }}
         variant="page"
         badge={d.heroBadge}
@@ -153,14 +159,14 @@ export function FamiliePageView({ locale }: Props) {
       <Pricing
         title={d.pricingTitle}
         subtitle={d.pricingSubtitle}
-        tiers={d.pricingTiers}
+        tiers={pricingTiers}
         footnote={d.pricingFootnote}
       />
 
       <CTA
         title={d.ctaTitle}
         subtitle={d.ctaSubtitle}
-        primaryCta={{ text: d.ctaPrimary, href: 'https://app.jodaskills.com/register?flow=family' }}
+        primaryCta={{ text: d.ctaPrimary, href: kontaktHref }}
         variant="accent"
       />
     </>

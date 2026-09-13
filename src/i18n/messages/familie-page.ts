@@ -101,7 +101,7 @@ const pricingNo: FamiliePricingTier[] = [
       'Sikker meldingskanal',
       'Koble til kommunens helseteam',
     ],
-    cta: { text: 'Opprett Familierom gratis', href: 'https://app.jodaskills.com/register?flow=family' },
+    cta: { text: 'Ta kontakt om Familierom', href: '/kontakt' },
     highlighted: true,
     badge: 'Gratis i 14 dager',
   },
@@ -122,7 +122,7 @@ const pricingEn: FamiliePricingTier[] = [
       'Secure messaging channel',
       'Connect to the municipal health team',
     ],
-    cta: { text: 'Create family room free', href: 'https://app.jodaskills.com/register?flow=family' },
+    cta: { text: 'Contact us about a family room', href: '/kontakt' },
     highlighted: true,
     badge: '14 days free',
   },
@@ -133,7 +133,7 @@ const no: FamilieContent = {
   heroSubtitle:
     'Samle familien rundt den som trenger omsorg. Del hverdagen, koordiner besøk, og hold alle oppdatert uansett hvor dere bor i landet.',
   heroBadge: 'Gratis i 14 dager',
-  primaryCta: 'Opprett Familierom gratis',
+  primaryCta: 'Ta kontakt om Familierom',
   secondaryCta: 'Se hvordan det fungerer',
   secondaryCtaHref: '#hvordan',
   scenarioTitle: 'Kjenner du deg igjen?',
@@ -156,7 +156,7 @@ const no: FamilieContent = {
   pricingTiers: pricingNo,
   ctaTitle: 'Gi familien din trygghet',
   ctaSubtitle: 'Start gratis i dag og se hvor enkelt det er å holde alle oppdatert.',
-  ctaPrimary: 'Opprett Familierom gratis',
+  ctaPrimary: 'Ta kontakt om Familierom',
 };
 
 const en: FamilieContent = {
@@ -164,7 +164,7 @@ const en: FamilieContent = {
   heroSubtitle:
     'Bring the family together around the person who needs care. Share everyday life, coordinate visits and keep everyone updated wherever you live.',
   heroBadge: '14 days free',
-  primaryCta: 'Create family room free',
+  primaryCta: 'Contact us about a family room',
   secondaryCta: 'See how it works',
   secondaryCtaHref: '#hvordan',
   scenarioTitle: 'Does this sound familiar?',
@@ -187,7 +187,7 @@ const en: FamilieContent = {
   pricingTiers: pricingEn,
   ctaTitle: 'Give your family peace of mind',
   ctaSubtitle: 'Start free today and see how easy it is to keep everyone updated.',
-  ctaPrimary: 'Create family room free',
+  ctaPrimary: 'Contact us about a family room',
 };
 
 export function getFamilieContent(locale: Locale): FamilieContent {

@@ -79,7 +79,16 @@ export function KommunePageView({ locale }: Props) {
           <FadeIn>
             <div className="text-center">
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text mb-4">{d.bottomTitle}</h2>
-              <p className="text-lg text-text-light mb-8">{d.bottomBody}</p>
+              <p className="text-lg text-text-light">{d.bottomBody}</p>
+              <p className="mt-4 mb-8 text-text-light">
+                {d.priceNote}{' '}
+                <Link
+                  href={withLocale('/priser', locale)}
+                  className="text-primary font-medium underline underline-offset-2 hover:text-primary-dark"
+                >
+                  {d.priceLinkText} &rarr;
+                </Link>
+              </p>
               <Button href={withLocale('/kontakt', locale)} size="lg">
                 {d.bottomCta}
               </Button>

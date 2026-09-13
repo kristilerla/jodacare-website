@@ -18,6 +18,8 @@ export type KommuneContent = {
   readMore: string;
   bottomTitle: string;
   bottomBody: string;
+  priceNote: string;
+  priceLinkText: string;
   bottomCta: string;
   services: KommuneService[];
 };
@@ -67,7 +69,7 @@ const servicesNo: KommuneService[] = [
     title: 'Implementeringsstøtte',
     description:
       'Vår Implementeringsansvarlig veileder din kommune steg for steg, fra første oppsett til systemet sitter i ryggmargen.',
-    badge: 'Inkludert',
+    badge: 'Oppstart kr 28 000',
     badgeColor: 'bg-primary/10 text-primary',
     href: '/implementering',
   },
@@ -118,7 +120,7 @@ const servicesEn: KommuneService[] = [
     title: 'Implementation support',
     description:
       'A dedicated implementation lead guides your municipality step by step, from first setup until the system is second nature.',
-    badge: 'Included',
+    badge: 'Onboarding NOK 28,000',
     badgeColor: 'bg-primary/10 text-primary',
     href: '/implementering',
   },
@@ -139,6 +141,9 @@ const no: KommuneContent = {
   servicesSubtitle: 'Klikk på en tjeneste for å lese mer.',
   readMore: 'Les mer',
   bottomTitle: 'Klar til å komme i gang?',
+  priceNote:
+    'Lisens kr 2 990 per måned for inntil 10 tjenestemottakere, pluss oppstart kr 28 000 per kommune.',
+  priceLinkText: 'Se alle priser',
   bottomBody:
     'Ta kontakt for en uforpliktende samtale om hvordan JodaCare kan passe i din kommune.',
   bottomCta: 'Kontakt oss',
@@ -160,6 +165,9 @@ const en: KommuneContent = {
   servicesSubtitle: 'Click a service to read more.',
   readMore: 'Read more',
   bottomTitle: 'Ready to get started?',
+  priceNote:
+    'Licence NOK 2,990 per month for up to 10 service recipients, plus onboarding NOK 28,000 per municipality.',
+  priceLinkText: 'See all prices',
   bottomBody: 'Get in touch for an informal conversation about how JodaCare can fit your municipality.',
   bottomCta: 'Contact us',
   services: servicesEn,

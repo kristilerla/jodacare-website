@@ -8,6 +8,8 @@ export type HomePathCard = {
   cta: string;
   href: string;
   highlighted: boolean;
+  priceNote?: string;
+  priceLinkText?: string;
 };
 
 export type HomeService = {
@@ -78,12 +80,14 @@ const no: HomeMessages = {
       cta: 'Se alle tjenester',
       href: '/kommune',
       highlighted: false,
+      priceNote: 'Fra kr 2 990 per måned.',
+      priceLinkText: 'Se priser',
     },
     {
       title: 'Vi hjelper med implementeringen',
       description:
         'Vår Implementeringsansvarlig veileder din kommune steg for steg, fra første oppsett til systemet sitter.',
-      badge: 'Inkludert for kommuner',
+      badge: 'Oppstart kr 28 000',
       badgeColor: 'bg-primary/10 text-primary',
       cta: 'Les mer',
       href: '/implementering',
@@ -181,13 +185,15 @@ const en: HomeMessages = {
       badgeColor: 'bg-warning/10 text-warning',
       cta: 'See all services',
       href: '/kommune',
+      priceNote: 'From NOK 2,990 per month.',
+      priceLinkText: 'See pricing',
       highlighted: false,
     },
     {
       title: 'Implementation support',
       description:
         'A dedicated implementation lead guides your municipality step by step, from first setup until the system is second nature.',
-      badge: 'Included for municipalities',
+      badge: 'Onboarding NOK 28,000',
       badgeColor: 'bg-primary/10 text-primary',
       cta: 'Read more',
       href: '/implementering',

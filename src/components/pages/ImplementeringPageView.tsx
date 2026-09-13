@@ -65,7 +65,15 @@ export function ImplementeringPageView({ locale }: Props) {
           <FadeIn>
             <div className="text-center">
               <p className="text-lg sm:text-xl font-semibold text-text">{d.bannerTitle}</p>
-              <p className="mt-4 text-text-light">{d.bannerBody}</p>
+              <p className="mt-4 text-text-light">
+                {d.bannerBody}{' '}
+                <Link
+                  href={withLocale('/priser', locale)}
+                  className="text-primary font-medium underline underline-offset-2 hover:text-primary-dark"
+                >
+                  {d.priceLinkText} &rarr;
+                </Link>
+              </p>
             </div>
           </FadeIn>
         </Container>
