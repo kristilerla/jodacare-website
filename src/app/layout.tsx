@@ -4,6 +4,8 @@ import { Header, Footer, AnnouncementBanner } from '@/components/layout';
 import { getLocaleFromHeaders } from '@/lib/i18n/get-locale';
 import { getSite } from '@/i18n/site';
 import { jsonLd, nettstedet, organisasjon } from '@/lib/seo';
+import { SamtykkeBanner } from '@/components/consent/SamtykkeBanner';
+import { Statistikk } from '@/components/consent/Statistikk';
 import './globals.css';
 
 const sourceSans = Source_Sans_3({
@@ -109,6 +111,11 @@ export default async function RootLayout({
           {children}
         </main>
         <Footer />
+        {/* Spør om lov før statistikken lastes. Rekkefølgen er ikke
+            tilfeldig: banneret ligger sist i dokumentet, så det ikke kommer
+            foran innholdet for den som bruker tastatur eller skjermleser. */}
+        <SamtykkeBanner />
+        <Statistikk />
       </body>
     </html>
   );

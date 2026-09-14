@@ -40,6 +40,18 @@ export type SiteCopy = {
     close: string;
     imageAlt: string;
   };
+  samtykke: {
+    label: string;
+    title: string;
+    body: string;
+    godta: string;
+    avsla: string;
+    lesMer: string;
+    endre: string;
+    statusJa: string;
+    statusNei: string;
+    statusUkjent: string;
+  };
   lang: {
     switchToNorwegian: string;
     switchToEnglish: string;
@@ -124,6 +136,19 @@ export const site: Record<Locale, SiteCopy> = {
       close: 'Lukk melding',
       imageAlt: 'JodaCare app',
     },
+    samtykke: {
+      label: 'Valg om besøksstatistikk',
+      title: 'Vi vil gjerne se hvilke sider som blir lest',
+      body:
+        'Statistikken er anonym, teller bare sidevisninger, og bruker ingen informasjonskapsler. Ingenting lastes før du sier ja.',
+      godta: 'Ja, det er greit',
+      avsla: 'Nei takk',
+      lesMer: 'Les mer i personvernerklæringen',
+      endre: 'Endre valget mitt',
+      statusJa: 'Du har sagt ja til besøksstatistikk.',
+      statusNei: 'Du har sagt nei til besøksstatistikk.',
+      statusUkjent: 'Du har ikke svart ennå.',
+    },
     lang: {
       switchToNorwegian: 'Bytt til norsk',
       switchToEnglish: 'Switch to English',
@@ -204,6 +229,19 @@ export const site: Record<Locale, SiteCopy> = {
       cta: 'Open the existing app →',
       close: 'Dismiss message',
       imageAlt: 'JodaCare app',
+    },
+    samtykke: {
+      label: 'Choice about visitor statistics',
+      title: 'We would like to see which pages are read',
+      body:
+        'The statistics are anonymous, count page views only, and use no cookies. Nothing loads until you say yes.',
+      godta: 'Yes, that is fine',
+      avsla: 'No thanks',
+      lesMer: 'Read more in the privacy policy',
+      endre: 'Change my choice',
+      statusJa: 'You have said yes to visitor statistics.',
+      statusNei: 'You have said no to visitor statistics.',
+      statusUkjent: 'You have not answered yet.',
     },
     lang: {
       switchToNorwegian: 'Bytt til norsk',

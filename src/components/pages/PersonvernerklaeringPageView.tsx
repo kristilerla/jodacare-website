@@ -2,6 +2,7 @@ import { Hero } from '@/components/sections';
 import { Container } from '@/components/ui';
 import { getPersonvernerklaeringContent } from '@/i18n/messages/personvernerklaering-page';
 import type { Locale } from '@/lib/i18n/types';
+import { EndreSamtykke } from '@/components/consent/EndreSamtykke';
 
 type Props = { locale: Locale };
 
@@ -30,6 +31,8 @@ export function PersonvernerklaeringPageView({ locale }: Props) {
               </article>
             ))}
           </div>
+
+          <EndreSamtykke locale={locale} />
         </Container>
       </section>
     </>

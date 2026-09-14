@@ -22,7 +22,7 @@ const no: PersonvernerklaeringBundle = {
   ogDescription:
     'Informasjon om behandling av personopplysninger, sikkerhet, lagring, rettigheter og kontakt hos JodaCare.',
   heroTitle: 'Personvernerklæring for JodaCare',
-  heroSubtitle: 'Sist oppdatert: 28. april 2026',
+  heroSubtitle: 'Sist oppdatert: 14. september 2026',
   srHeading: 'Personvernerklæring',
   sections: [
     {
@@ -88,10 +88,18 @@ const no: PersonvernerklaeringBundle = {
       ],
     },
     {
-      title: '10. Endringer i erklæringen',
+      title: '10. Informasjonskapsler og besøksstatistikk',
+      paragraphs: [
+        'jodacare.no bruker ingen informasjonskapsler til markedsføring, profilering eller sporing på tvers av nettsteder. Skrifttypene er lagret på vårt eget domene, så nettleseren din kontakter ingen tredjepart når du leser sidene.',
+        'Vi ønsker å vite hvilke sider som blir lest, og spør om lov først. Sier du ja, teller vi sidevisninger med Vercel Web Analytics. Statistikken er anonym, den setter ingen informasjonskapsler, og den identifiserer ikke enkeltpersoner. Sier du nei, lastes den ikke.',
+        'Svaret ditt lagres lokalt i nettleseren, slik at vi slipper å spørre hver gang. Det er det eneste vi legger igjen på enheten din, og det kan du fjerne når som helst med knappen under.',
+      ],
+    },
+    {
+      title: '11. Endringer i erklæringen',
       paragraphs: [
         'Vi kan oppdatere personvernerklæringen ved behov. Ved vesentlige endringer vil vi varsle gjennom relevante kanaler.',
-        'Sist oppdatert: 28. april 2026.',
+        'Sist oppdatert: 14. september 2026.',
       ],
     },
   ],
@@ -105,7 +113,7 @@ const en: PersonvernerklaeringBundle = {
   ogDescription:
     'Information on processing of personal data, security, storage, your rights and how to contact JodaCare.',
   heroTitle: 'Privacy policy — JodaCare',
-  heroSubtitle: 'Last updated: 28 April 2026',
+  heroSubtitle: 'Last updated: 14 September 2026',
   srHeading: 'Privacy policy',
   sections: [
     {
@@ -171,10 +179,18 @@ const en: PersonvernerklaeringBundle = {
       ],
     },
     {
-      title: '10. Changes to this policy',
+      title: '10. Cookies and visitor statistics',
+      paragraphs: [
+        'jodacare.no uses no cookies for marketing, profiling or cross-site tracking. Our fonts are served from our own domain, so your browser contacts no third party while you read these pages.',
+        'We would like to know which pages are read, and we ask first. If you say yes, we count page views using Vercel Web Analytics. The statistics are anonymous, set no cookies, and do not identify individuals. If you say no, nothing is loaded.',
+        'Your answer is stored locally in your browser so that we do not have to ask every time. It is the only thing we leave on your device, and you can remove it at any time using the button below.',
+      ],
+    },
+    {
+      title: '11. Changes to this policy',
       paragraphs: [
         'We may update this privacy policy when needed. For material changes we will notify users through appropriate channels.',
-        'Last updated: 28 April 2026.',
+        'Last updated: 14 September 2026.',
       ],
     },
   ],
