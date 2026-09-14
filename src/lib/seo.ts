@@ -71,6 +71,7 @@ export const organisasjon = {
   description:
     'JodaCare er en sikker digital plattform for kommunikasjon mellom pårørende, ' +
     'helsepersonell og den som mottar omsorg. Brukt av norske kommuner siden 2016.',
+  taxID: '937323565',
   email: 'post@jodacare.com',
   telephone: '+47 906 06 433',
   address: {

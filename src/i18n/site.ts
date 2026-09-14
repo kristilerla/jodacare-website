@@ -26,6 +26,7 @@ export type SiteCopy = {
     company: string;
     resources: string;
     rights: string;
+    orgNumber: string;
     items: {
       produkt: { name: string; href: string }[];
       selskap: { name: string; href: string }[];
@@ -84,6 +85,7 @@ export const site: Record<Locale, SiteCopy> = {
       resources: 'Ressurser',
       rights:
         'Alle rettigheter reservert. JodaCare er et registrert varemerke.',
+      orgNumber: 'Org.nr. 937 323 565',
       items: {
         produkt: [
           { name: 'For familier', href: '/familie' },
@@ -164,6 +166,7 @@ export const site: Record<Locale, SiteCopy> = {
       company: 'Company',
       resources: 'Resources',
       rights: 'All rights reserved. JodaCare is a registered trademark.',
+      orgNumber: 'Org. no. 937 323 565',
       items: {
         produkt: [
           { name: 'For families', href: '/familie' },

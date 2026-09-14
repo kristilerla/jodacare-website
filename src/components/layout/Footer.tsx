@@ -110,7 +110,8 @@ export async function Footer() {
         </div>
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-xs text-white">
-            &copy; {new Date().getFullYear()} JodaCare AS. {s.footer.rights}
+            &copy; {new Date().getFullYear()} JodaCare AS. {s.footer.rights}{' '}
+            {s.footer.orgNumber}
           </p>
         </div>
       </Container>
