@@ -1,0 +1,222 @@
+/*
+ * Company brief — sidespesifikk stil.
+ *
+ * Kilde: utkastet Kristil laget i Claude (september 2026). Markupen er
+ * beholdt som hun skrev den; det eneste som er gjort med stilen er:
+ *
+ *   1. Hver selektor er prefikset med .company-brief, så ingenting lekker
+ *      ut på resten av nettstedet. Det er derfor denne fila kan importeres
+ *      globalt uten å være en CSS-modul.
+ *   2. Utkastets egne farge- og fontvariabler er koblet til prosjektets
+ *      tokens i globals.css. Ingen nye hex-verdier.
+ *   3. Utkastets <header> og <footer> er fjernet — root-layouten har dem
+ *      allerede — og reglene for dem er tatt bort her.
+ *   4. @media print er skrevet om, fordi one-pageren nå ligger inne i
+ *      sidestrukturen i stedet for rett under <body>.
+ */
+
+.company-brief {
+  /* Utkastets variabelnavn, koblet til prosjektets tokens. */
+  --primary: var(--color-primary);
+  --primary-dark: var(--color-primary-dark);
+  --text: var(--color-text);
+  --muted: var(--color-text-light);
+  --bg: var(--color-background);
+  --bg-alt: var(--color-background-alt);
+  --accent-light: var(--color-accent-light);
+  --line: var(--color-secondary-dark);
+  --serif: var(--font-serif);
+  --sans: var(--font-sans);
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.company-brief * { box-sizing:border-box }
+.company-brief a { color:var(--primary) }
+.company-brief a:focus-visible,
+.company-brief button:focus-visible { outline:2px solid var(--primary);outline-offset:3px }
+.company-brief .container { max-width:64rem;margin:0 auto;padding-inline:1rem }
+@media (min-width:640px) {
+  .company-brief .container { padding-inline:1.5rem }
+}
+@media (min-width:1024px) {
+  .company-brief .container { padding-inline:2rem }
+}
+.company-brief .btn { display:inline-flex;align-items:center;justify-content:center;font-weight:500;border-radius:.5rem;padding:.7rem 1.4rem;font-size:1rem;text-decoration:none;transition:background .2s,color .2s;border:2px solid var(--primary);line-height:1.4 }
+.company-brief .btn-primary { background:var(--primary);color:#fff }
+.company-brief .btn-primary:hover { background:var(--primary-dark);border-color:var(--primary-dark) }
+.company-brief .btn-outline { background:transparent;color:var(--primary) }
+.company-brief .btn-outline:hover { background:var(--primary);color:#fff }
+.company-brief .btn-lg { padding:1rem 2rem;font-size:1.125rem }
+.company-brief .btn-sm { padding:.45rem 1rem;font-size:.9rem }
+.company-brief section { padding-block:4.5rem }
+@media (min-width:1024px) {
+  .company-brief section { padding-block:6rem }
+}
+.company-brief .alt { background:var(--bg-alt) }
+.company-brief .accent { background:var(--accent-light) }
+.company-brief .label { display:block;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem }
+.company-brief h1,
+.company-brief h2,
+.company-brief h3 { font-family:var(--serif);color:var(--text);text-wrap:balance;margin:0 }
+.company-brief h1 { font-size:2.4rem;line-height:1.15;font-weight:600 }
+.company-brief h2 { font-size:1.9rem;line-height:1.2;font-weight:600;margin-bottom:1.5rem }
+.company-brief h3 { font-size:1.25rem;line-height:1.3;font-weight:600;margin-bottom:.4rem }
+@media (min-width:640px) {
+  .company-brief h1 { font-size:3rem }
+  .company-brief h2 { font-size:2.1rem }
+}
+.company-brief p { margin:0 0 1.1rem;font-size:1.125rem;line-height:1.65;color:var(--muted) }
+.company-brief p:last-child { margin-bottom:0 }
+.company-brief .prose { max-width:46rem }
+.company-brief .prose strong { color:var(--text);font-weight:600 }
+.company-brief .pill { display:inline-block;padding:.375rem 1rem;background:var(--primary);color:#fff;font-size:.875rem;font-weight:500;border-radius:999px;margin-bottom:1.5rem }
+.company-brief ul.plain { list-style:none;padding:0;margin:0 0 1.1rem;display:grid;gap:.4rem;max-width:46rem }
+.company-brief ul.plain li { position:relative;padding-left:1.4rem;font-size:1.125rem;color:var(--muted);line-height:1.55 }
+.company-brief ul.plain li::before { content:"";position:absolute;left:0;top:.72em;width:.5rem;height:.5rem;border-radius:50%;background:var(--primary) }
+.company-brief .hero { padding-block:4rem 4.5rem }
+.company-brief .hero p { font-size:1.25rem;max-width:46rem }
+.company-brief .hero-cta { display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem }
+.company-brief .brief-grid { display:grid;gap:1rem;counter-reset:pt }
+@media (min-width:768px) {
+  .company-brief .brief-grid { grid-template-columns:1fr 1fr }
+}
+.company-brief .brief-item { display:grid;grid-template-columns:2.6rem 1fr;gap:.8rem;align-items:start;padding:1.2rem 1.3rem;background:#fff;border:1px solid var(--line);border-radius:1rem }
+.company-brief .brief-item span { font-family:var(--serif);font-weight:700;font-size:1.6rem;line-height:1;color:var(--primary);counter-increment:pt }
+.company-brief .brief-item span::before { content:counter(pt) }
+.company-brief .brief-item p { font-size:1.05rem;line-height:1.55 }
+.company-brief .quote { background:#fff;border:1px solid var(--line);border-radius:1rem;padding:2rem;box-shadow:0 1px 2px rgba(48,94,105,.06);max-width:46rem }
+.company-brief .quote blockquote { margin:0;font-family:var(--serif);font-size:1.25rem;line-height:1.6;color:var(--text) }
+.company-brief .quote cite { display:block;margin-top:1rem;font-style:normal;font-size:.95rem;color:var(--muted) }
+.company-brief .quotes { display:grid;gap:1.25rem }
+@media (min-width:900px) {
+  .company-brief .quotes { grid-template-columns:repeat(3,1fr) }
+  .company-brief .quotes .quote { max-width:none;padding:1.5rem }
+  .company-brief .quotes blockquote { font-size:1.05rem }
+}
+.company-brief .stats { display:grid;gap:1rem;margin:1.5rem 0 2rem }
+@media (min-width:640px) {
+  .company-brief .stats { grid-template-columns:repeat(2,1fr) }
+}
+@media (min-width:1024px) {
+  .company-brief .stats { grid-template-columns:repeat(4,1fr) }
+}
+.company-brief .stat { background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.25rem 1.4rem }
+.company-brief .stat b { display:block;font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--primary);line-height:1.1;font-variant-numeric:tabular-nums }
+.company-brief .stat small { display:block;margin-top:.35rem;font-size:.95rem;color:var(--muted);line-height:1.4 }
+.company-brief .source { font-size:.9rem;color:var(--muted) }
+.company-brief .cols { display:grid;gap:1.5rem }
+@media (min-width:900px) {
+  .company-brief .cols { grid-template-columns:1fr 1fr }
+}
+.company-brief .block { background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.6rem 1.7rem }
+.company-brief .alt .block,
+.company-brief .accent .block { background:#fff }
+.company-brief .block h3 { margin-bottom:.6rem }
+.company-brief .block p { font-size:1.05rem }
+.company-brief .kicker { font-family:var(--serif);font-size:1.35rem;color:var(--text);max-width:46rem;margin-bottom:1.5rem;line-height:1.5 }
+.company-brief .timeline { display:grid;gap:1.75rem;max-width:46rem;border-left:2px solid var(--line);padding-left:1.5rem;margin-top:.5rem }
+.company-brief .tl { position:relative }
+.company-brief .tl::before { content:"";position:absolute;left:calc(-1.5rem - 7px);top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--primary);border:2px solid #fff }
+.company-brief .tl .yr { font-family:var(--serif);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--primary);margin-bottom:.25rem }
+.company-brief .tl p { font-size:1.05rem }
+.company-brief .numbered { display:grid;gap:1.75rem;max-width:46rem }
+.company-brief .num { display:grid;grid-template-columns:3rem 1fr;gap:1rem;align-items:start }
+@media (min-width:768px) {
+  .company-brief .num { grid-template-columns:4rem 1fr;gap:1.5rem }
+}
+.company-brief .num b { font-family:var(--serif);font-size:2rem;font-weight:700;line-height:1;color:var(--primary) }
+@media (min-width:768px) {
+  .company-brief .num b { font-size:2.4rem }
+}
+.company-brief .num p { font-size:1.05rem }
+.company-brief .sec-grid { display:grid;gap:1rem }
+@media (min-width:900px) {
+  .company-brief .sec-grid { grid-template-columns:1fr 1fr }
+}
+.company-brief .sec-grid .block { padding:1.4rem 1.5rem }
+.company-brief .callout { background:var(--primary);color:#fff;border-radius:1rem;padding:1.75rem 2rem;max-width:46rem;margin:1.5rem 0 2rem }
+.company-brief .callout p { color:#fff;font-family:var(--serif);font-size:1.3rem;line-height:1.45;margin:0 }
+.company-brief .price-grid { display:grid;gap:1.25rem;margin-bottom:1.5rem }
+@media (min-width:768px) {
+  .company-brief .price-grid { grid-template-columns:1fr 1fr }
+}
+.company-brief .price { background:#fff;border:1px solid var(--line);border-radius:1rem;padding:1.75rem }
+.company-brief .price .amt { font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--primary);line-height:1.1;font-variant-numeric:tabular-nums }
+.company-brief .price .per { font-size:.95rem;color:var(--muted);margin-bottom:.9rem }
+.company-brief .price p { font-size:1rem }
+.company-brief .team { display:grid;gap:1.25rem;margin-bottom:1.5rem }
+@media (min-width:768px) {
+  .company-brief .team { grid-template-columns:1fr 1fr }
+}
+.company-brief .docs { display:grid;gap:.5rem;max-width:46rem;margin-bottom:1.5rem }
+@media (min-width:640px) {
+  .company-brief .docs { grid-template-columns:1fr 1fr }
+}
+.company-brief .docs div { background:#fff;border:1px solid var(--line);border-radius:.6rem;padding:.7rem 1rem;font-size:1rem;color:var(--text) }
+.company-brief .op-backdrop { position:fixed;inset:0;background:rgba(48,94,105,.55);z-index:90;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto }
+.company-brief .op { background:#fff;border-radius:1rem;max-width:52rem;width:100%;padding:2rem;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.25) }
+@media (min-width:768px) {
+  .company-brief .op { padding:2.75rem 3rem }
+}
+.company-brief .op-head { display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.25rem }
+.company-brief .op-head svg { height:34px;width:auto }
+.company-brief .op-actions { display:flex;gap:.5rem }
+.company-brief .op h2 { font-size:1.7rem;margin-bottom:.4rem }
+.company-brief .op .lede { font-size:1.1rem;color:var(--text);margin-bottom:1.5rem }
+.company-brief .op-grid { display:grid;gap:1.1rem 1.75rem }
+@media (min-width:640px) {
+  .company-brief .op-grid { grid-template-columns:1fr 1fr }
+}
+.company-brief .op-grid h3 { font-size:.8rem;font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:.3rem }
+.company-brief .op-grid p { font-size:1rem;line-height:1.5 }
+.company-brief .op-foot { margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.95rem;color:var(--muted) }
+
+/*
+ * Utskrift: bare one-pageren skal på papiret. Utkastet skjulte «body > *»,
+ * men dialogen ligger nå inne i <main>, så den regelen ville skjult den
+ * sammen med resten. Her skjules i stedet nettstedets egen topp og bunn,
+ * og selve brief-innholdet — bortsett fra dialogen.
+ */
+@media print {
+  body > header,
+  body > footer,
+  body > div:has(> [data-banner]),
+  .company-brief > section,
+  .company-brief > .hero {
+    display: none !important;
+  }
+  .company-brief .op-backdrop {
+    position: static;
+    background: none;
+    padding: 0;
+    overflow: visible;
+  }
+  .company-brief .op {
+    box-shadow: none;
+    max-width: none;
+    padding: 0;
+  }
+  .company-brief .op-actions {
+    display: none;
+  }
+}
+
+/* Flaten bak one-pageren. En gjennomsiktig knapp, slik at «klikk utenfor for
+   å lukke» også er tilgjengelig med tastatur. Panelet legges over den. */
+.company-brief .op-dismiss {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: default;
+}
+.company-brief .op {
+  position: relative;
+  z-index: 1;
+}
