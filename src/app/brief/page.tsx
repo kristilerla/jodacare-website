@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CompanyBrief } from '@/components/brief/CompanyBrief';
+import { CompanyBrief } from '@/components/brief';
 
 export const metadata: Metadata = {
   // /en/brief serverer det samme dokumentet på samme språk — det er en
