@@ -9,6 +9,8 @@ import {
   data,
   type FieldKey,
   type Fields,
+  type RouteCopy,
+  type RouteId,
   type Situation,
   type Source,
   type WhoId,
@@ -33,22 +35,31 @@ function situationById(id: string): Situation {
   return data.situations.find((s) => s.id === id) ?? data.situations[0];
 }
 
-function initialFields(): Fields {
-  const e = data.examples;
+/**
+ * Eksempelverdiene for et spor: de globale, overstyrt av sporets egne.
+ * «Tjenesten det gjelder» har ikke noe globalt eksempel — der er sporets
+ * defaultService eksempelet.
+ */
+function examplesFor(
+  s: Situation,
+  who: WhoId,
+): Partial<Record<FieldKey, string>> {
   return {
-    navn: e.navn,
-    kommune: e.kommune,
-    fylke: e.fylke,
-    enhet: e.enhet,
-    pasient: e.pasient,
-    relasjon: e.relasjon,
-    tjeneste: situationById(DEFAULT_SIT).defaultService,
-    dato: e.dato,
-    saksnr: e.saksnr,
-    idag: '',
-    sok: e.sok,
-    hvorfor: e.hvorfor,
+    ...(data.examples as Partial<Record<FieldKey, string>>),
+    tjeneste: s.defaultService,
+    ...(s.examples ?? {}),
+    ...(s.examplesByWho?.[who] ?? {}),
   };
+}
+
+function initialFields(): Fields {
+  const e = examplesFor(situationById(DEFAULT_SIT), DEFAULT_WHO);
+  const tom: Fields = {
+    navn: '', kommune: '', fylke: '', enhet: '', pasient: '', relasjon: '',
+    tjeneste: '', dato: '', saksnr: '', idag: '', sok: '', hvorfor: '',
+    endring: '', saksnrKommune: '',
+  };
+  return { ...tom, ...e, idag: '' };
 }
 
 const stepHeadClass =
@@ -69,13 +80,43 @@ export function Rettighetsveileder() {
   const [touched, setTouched] = useState<Partial<Record<FieldKey, boolean>>>({});
   const [toast, setToast] = useState('');
   const [fullmaktToast, setFullmaktToast] = useState('');
+  // Spor med flere brev (Spor B) lar brukeren bytte rute i steg 3.
+  const [routeChoice, setRouteChoice] = useState<RouteId | null>(null);
   const letterRef = useRef<HTMLPreElement>(null);
   const fullmaktRef = useRef<HTMLPreElement>(null);
   const answerRef = useRef<HTMLDivElement>(null);
 
+  /**
+   * Bytter spor. Eksempelverdier følger sporet, men bare i de feltene
+   * brukeren ikke har skrevet i selv — ellers ville et sporbytte slettet
+   * teksten deres.
+   */
+  const applySituation = useCallback(
+    (s: Situation, nyWho: WhoId, scroll: boolean) => {
+      setSitId(s.id);
+      setRouteChoice(s.routeOptions ? s.routeOptions[0].id : null);
+      const nye = examplesFor(s, nyWho);
+      setFields((f) => {
+        const neste = { ...f };
+        (Object.keys(nye) as FieldKey[]).forEach((k) => {
+          if (!touched[k]) neste[k] = nye[k] ?? '';
+        });
+        return neste;
+      });
+      if (scroll) {
+        answerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    },
+    [touched],
+  );
+
   // Alt som avhenger av nettleseren settes etter montering, slik at
   // server-renderingen og første klient-render er identiske.
   useEffect(() => {
+    // Bevisst setState etter montering: dagens dato og hash finnes bare i
+    // nettleseren, og må settes her for at server- og klient-render skal
+    // være like. Kjøres én gang, så det gir ingen kaskade.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFields((f) => ({ ...f, idag: new Date().toISOString().slice(0, 10) }));
 
     const hash = window.location.hash.replace(/^#/, '');
@@ -86,12 +127,30 @@ export function Rettighetsveileder() {
     const validSit = allowed.find((s) => s.id === sitPart) ?? allowed[0];
     setWho(validWho.id);
     setSitId(validSit.id);
-    if (!touched.tjeneste) {
-      setFields((f) => ({ ...f, tjeneste: validSit.defaultService }));
-    }
+    setRouteChoice(validSit.routeOptions ? validSit.routeOptions[0].id : null);
+    setFields((f) => ({ ...f, ...examplesFor(validSit, validWho.id) }));
     // Kjøres bare ved montering — hash leses én gang.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  /**
+   * Adressen leses bare ved montering, så en lenke til et annet spor på
+   * samme side ville ellers bytte adresse uten å bytte spor. replaceState
+   * under sender ikke hashchange, så dette gir ingen løkke.
+   */
+  useEffect(() => {
+    const onHash = () => {
+      const [whoDel, sitDel] = window.location.hash.replace(/^#/, '').split('/');
+      const nyWho = data.who.find((w) => w.id === whoDel);
+      if (!nyWho) return;
+      const tillatt = data.situations.filter((s) => s.appliesTo.includes(nyWho.id));
+      const nySit = tillatt.find((s) => s.id === sitDel);
+      if (!nySit || (nyWho.id === who && nySit.id === sitId)) return;
+      setWho(nyWho.id);
+      applySituation(nySit, nyWho.id, true);
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, [who, sitId, applySituation]);
 
   // Valgt situasjon speiles i adressen slik at siden kan deles.
   // replaceState, ikke pushState: hvert valg skal ikke bli et steg i historikken.
@@ -100,13 +159,26 @@ export function Rettighetsveileder() {
   }, [who, sitId]);
 
   const sit = situationById(sitId);
-  const route = data.routes[sit.route];
+  // Har sporet flere ruter, styrer knappevalget hvilken som gjelder.
+  const valgtRute =
+    sit.routeOptions?.find((o) => o.id === routeChoice) ?? sit.routeOptions?.[0];
+  const aktivRute: RouteId = valgtRute?.id ?? sit.route;
+  // Ruten er grunnlaget. Sporet kan overstyre, og rutevalget vinner til slutt.
+  const route: RouteCopy = {
+    ...data.routes[aktivRute],
+    ...(sit.routeCopy ?? {}),
+    ...(valgtRute
+      ? { letterTitle: valgtRute.letterTitle, letterIntro: valgtRute.letterIntro }
+      : {}),
+  };
   const available = data.situations.filter((s) => s.appliesTo.includes(who));
   const paaVegne = who === 'paa';
+  const labelFor = (key: FieldKey) => sit.fieldLabels?.[key] ?? data.fields[key];
+  const harFelt = (key: FieldKey) => sit.extraFields?.includes(key) ?? false;
 
   // Felt som fortsatt står med eksempelverdien vises dempet, slik at det er
   // tydelig at teksten skal byttes ut. Så snart brukeren skriver, blir den mørk.
-  const examples = data.examples as Partial<Record<FieldKey, string>>;
+  const examples = examplesFor(sit, who);
   const erEksempel = (key: FieldKey) =>
     examples[key] !== undefined && !touched[key];
   const fieldClass = (key: FieldKey) =>
@@ -145,25 +217,19 @@ export function Rettighetsveileder() {
   const chooseWho = (id: WhoId) => {
     setWho(id);
     const ok = data.situations.filter((s) => s.appliesTo.includes(id));
-    if (!ok.find((s) => s.id === sitId)) {
-      setSitId(ok[0].id);
-      if (!touched.tjeneste) setField('tjeneste', ok[0].defaultService);
-    }
+    // Eksempelteksten kan avhenge av rollen, så den må friskes opp også når
+    // sporet blir stående.
+    applySituation(ok.find((s) => s.id === sitId) ?? ok[0], id, false);
   };
 
-  const chooseSit = (s: Situation) => {
-    setSitId(s.id);
-    if (!touched.tjeneste) setField('tjeneste', s.defaultService);
-    answerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+  const chooseSit = (s: Situation) => applySituation(s, who, true);
 
-  const letter = buildLetter(sit, who, fields);
-  // Fullmakt er bare aktuelt når noen klager på vegne av en voksen.
-  const visFullmakt = paaVegne && sit.route === 'klage';
+  const letter = buildLetter(sit, who, fields, valgtRute?.letterTemplate ?? sit.route);
+  // Representerer du en annen, trengs fullmakt uansett hvilket spor saken går i.
+  const visFullmakt = paaVegne;
   const fullmakt = visFullmakt ? buildFullmakt(sit, fields) : '';
-  // Purring har ikke noe «Hva Statsforvalteren kan gjøre» — saken er ikke der ennå.
-  const sfAvsnitt =
-    sit.route === 'purring' ? null : data.statsforvalterenKan[sit.route];
+  // Bare ruter der Statsforvalteren prøver saken har et slikt avsnitt.
+  const sfAvsnitt = data.statsforvalterenKan[aktivRute] ?? null;
 
   const sources: Source[] = [
     ...sit.sources,
@@ -193,7 +259,12 @@ export function Rettighetsveileder() {
     window.setTimeout(() => setMelding(''), 2000);
   };
 
-  const sendSteps = route.sendSteps.map((step) => ({
+  // Rutevalget kan ha punkter som bare gjelder den ene ruten.
+  const alleSendSteps = valgtRute?.sendStepsExtra
+    ? [...route.sendSteps, ...valgtRute.sendStepsExtra]
+    : route.sendSteps;
+  const sendSteps = alleSendSteps.map((step) => ({
+    ...step,
     lead: step.lead.replace('{fylke}', fields.fylke),
     text: step.text.replace(
       '{fullmakt}',
@@ -309,13 +380,13 @@ export function Rettighetsveileder() {
               →
             </span>
             <h2 id="svar" className={stepTitleClass}>
-              {data.answerTitles[who]}
+              {sit.answerTitle ?? data.answerTitles[who]}
             </h2>
           </div>
           <div
             className={clsx(
               'rounded-xl border-l-4 p-4',
-              sit.route === 'tilsyn'
+              aktivRute === 'tilsyn'
                 ? 'border-warning bg-secondary-light'
                 : 'border-primary bg-accent-light',
             )}
@@ -377,6 +448,32 @@ export function Rettighetsveileder() {
               {data.steps.form}
             </h2>
           </div>
+          {sit.routeOptions ? (
+            <div className="mb-6">
+              <p className="mb-3 text-sm font-medium text-text">
+                {data.routeChoiceHeading}
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {sit.routeOptions.map((o) => (
+                  <button
+                    key={o.id}
+                    type="button"
+                    aria-pressed={aktivRute === o.id}
+                    onClick={() => setRouteChoice(o.id)}
+                    className={clsx(
+                      'rounded-xl border p-4 text-left text-sm transition-colors',
+                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
+                      aktivRute === o.id
+                        ? 'border-primary bg-accent-light font-medium text-text'
+                        : 'border-secondary-dark bg-white text-text hover:border-primary',
+                    )}
+                  >
+                    {o.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
           <p className="mb-5 text-sm text-text-light">
             {data.formNote}{' '}
             <span className="font-medium text-text">{data.formNoteExample}</span>{' '}
@@ -384,19 +481,19 @@ export function Rettighetsveileder() {
           </p>
           <form className="grid gap-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
             <label className={labelClass}>
-              {data.fields.navn}
+              {labelFor('navn')}
               <input
                 {...feltProps('navn')}
               />
             </label>
             <label className={labelClass}>
-              {data.fields.kommune}
+              {labelFor('kommune')}
               <input
                 {...feltProps('kommune')}
               />
             </label>
             <label className={labelClass}>
-              {data.fields.fylke}
+              {labelFor('fylke')}
               <select
                 className={fieldClass('fylke')}
                 value={fields.fylke}
@@ -413,7 +510,7 @@ export function Rettighetsveileder() {
               </select>
             </label>
             <label className={labelClass}>
-              {data.fields.enhet}
+              {labelFor('enhet')}
               <input
                 {...feltProps('enhet')}
               />
@@ -421,13 +518,13 @@ export function Rettighetsveileder() {
             {paaVegne ? (
               <>
                 <label className={labelClass}>
-                  {data.fields.pasient}
+                  {labelFor('pasient')}
                   <input
                     {...feltProps('pasient')}
                   />
                 </label>
                 <label className={labelClass}>
-                  {data.fields.relasjon}
+                  {labelFor('relasjon')}
                   <input
                     {...feltProps('relasjon')}
                   />
@@ -435,40 +532,52 @@ export function Rettighetsveileder() {
               </>
             ) : null}
             <label className={labelClass}>
-              {data.fields.tjeneste}
+              {labelFor('tjeneste')}
               <input
 {...feltProps('tjeneste')}
               />
             </label>
             <label className={labelClass}>
-              {data.fields.dato}
+              {labelFor('dato')}
               <input
                 type="date"
                 {...feltProps('dato')}
               />
             </label>
             <label className={labelClass}>
-              {data.fields.saksnr}
+              {labelFor('saksnr')}
               <input
                 {...feltProps('saksnr')}
               />
             </label>
+            {harFelt('saksnrKommune') ? (
+              <label className={labelClass}>
+                {labelFor('saksnrKommune')}
+                <input {...feltProps('saksnrKommune')} />
+              </label>
+            ) : null}
             <label className={labelClass}>
-              {data.fields.idag}
+              {labelFor('idag')}
               <input
                 type="date"
                 {...feltProps('idag')}
               />
             </label>
             <label className={clsx(labelClass, 'sm:col-span-2')}>
-              {data.fields.sok}
+              {labelFor('sok')}
               <textarea
                 rows={4}
                 {...feltProps('sok')}
               />
             </label>
+            {harFelt('endring') ? (
+              <label className={clsx(labelClass, 'sm:col-span-2')}>
+                {labelFor('endring')}
+                <textarea rows={4} {...feltProps('endring')} />
+              </label>
+            ) : null}
             <label className={clsx(labelClass, 'sm:col-span-2')}>
-              {data.fields.hvorfor}
+              {labelFor('hvorfor')}
               <textarea
                 rows={5}
                 {...feltProps('hvorfor')}
@@ -517,6 +626,17 @@ export function Rettighetsveileder() {
               <li key={step.lead}>
                 <b className="text-text">{step.lead}</b>
                 {step.text}
+                {step.link ? (
+                  <>
+                    <a
+                      href={`#${who}/${step.link}`}
+                      className="text-primary-dark underline underline-offset-2 hover:text-primary"
+                    >
+                      {step.linkLabel}
+                    </a>
+                    {step.textEnd}
+                  </>
+                ) : null}
               </li>
             ))}
           </ul>
@@ -524,8 +644,8 @@ export function Rettighetsveileder() {
           {visFullmakt ? (
             <div className="mt-8 rounded-xl border border-secondary-dark p-4 sm:p-6">
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <p className="max-w-[52ch] text-sm text-text-light">
-                  {data.fullmakt.intro}
+                <p className="max-w-[52ch] text-sm text-text">
+                  {data.fullmakt.lead}
                 </p>
                 <div className="flex items-center gap-3">
                   <span aria-live="polite" className="text-sm font-medium text-primary">
@@ -542,6 +662,14 @@ export function Rettighetsveileder() {
                   </button>
                 </div>
               </div>
+              <ol className="mt-4 max-w-[60ch] list-decimal space-y-1.5 pl-5 text-sm text-text-light">
+                {data.fullmakt.steps.map((steg) => (
+                  <li key={steg}>{steg}</li>
+                ))}
+              </ol>
+              <p className="mt-4 max-w-[60ch] text-sm text-text-light">
+                {data.fullmakt.note}
+              </p>
               <pre
                 ref={fullmaktRef}
                 className="mt-5 overflow-x-auto whitespace-pre-wrap rounded-xl border border-secondary-dark bg-background-alt p-4 font-sans text-sm leading-relaxed text-text sm:p-6"
