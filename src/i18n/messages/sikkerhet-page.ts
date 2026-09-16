@@ -175,8 +175,8 @@ const no: SikkerhetContent = {
   ],
   trustSr: 'Tillitsindikatorer',
   trustStats: [
-    { value: '2016', label: 'I drift siden' },
-    { value: 'Norske kommuner', label: 'I bruk hos' },
+    { value: 'Siden 2016', label: 'I drift' },
+    { value: 'Norske kommuner', label: 'Kunder' },
     { value: 'Nivå 4', label: 'Sikkerhetsnivå' },
     { value: 'EU', label: 'Datalokasjon' },
   ],
@@ -217,8 +217,8 @@ const en: SikkerhetContent = {
   ],
   trustSr: 'Trust indicators',
   trustStats: [
-    { value: '2016', label: 'In operation since' },
-    { value: 'Norwegian municipalities', label: 'In use with' },
+    { value: 'Since 2016', label: 'In operation' },
+    { value: 'Norwegian municipalities', label: 'Customers' },
     { value: 'Level 4', label: 'Security level' },
     { value: 'EU', label: 'Data location' },
   ],
