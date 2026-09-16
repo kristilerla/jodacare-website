@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-13",
+  "checkedAt": "2026-09-16",
   "hero": {
     "eyebrow": "Rettighetsveilederen",
     "title": "Finn ut hva du har rett til. Og få hjelp til å si fra på riktig måte.",
@@ -30,7 +30,7 @@
     "egen": "Dette har du rett til som pårørende"
   },
   "sourcesHeading": "Kilder",
-  "checkedNote": "Henvisningene er kontrollert mot Lovdata og Helsedirektoratets rundskriv 13. september 2026. Ny forvaltningslov er vedtatt (LOV-2025-06-20-81) og henvisningene til forvaltningsloven oppdateres når den trer i kraft.",
+  "checkedNote": "Henvisningene er kontrollert mot Lovdata og Helsedirektoratets rundskriv 16. september 2026. Ny forvaltningslov er vedtatt (LOV-2025-06-20-81), men ikke satt i kraft. Henvisningene til forvaltningsloven oppdateres når den trer i kraft.",
   "whatNote": "Velg den ene situasjonen som passer best. Har du flere saker, lager du ett brev per sak. Da vet den som leser nøyaktig hva du ber om.",
   "formNote": "Opplysningene brukes bare til å sette sammen brevet her i nettleseren. De sendes ikke til JodaCare eller noen andre.",
   "formNoteExample": "Feltene er fylt med et oppdiktet eksempel. Bytt ut med dine egne.",
@@ -47,7 +47,9 @@
     "saksnr": "Saksnummer",
     "idag": "Dagens dato",
     "sok": "Hva søkte du om, og hva står i vedtaket?",
-    "hvorfor": "Hvorfor mener du rettigheten ikke er oppfylt? Beskriv behovet konkret."
+    "hvorfor": "Hvorfor mener du rettigheten ikke er oppfylt? Beskriv behovet konkret.",
+    "endring": "Hva ble endret, og når?",
+    "saksnrKommune": "Kommunens saksnummer (vedtaket du klaget på)"
   },
   "examples": {
     "navn": "Anne Berg",
@@ -124,6 +126,13 @@
         {
           "lead": "Klagen er gratis.",
           "text": " Kommunen har ingen adgang til å redusere tjenesten fordi du klager."
+        },
+        {
+          "lead": "Får du ikke medhold hos Statsforvalteren,",
+          "text": " kan du klage til Sivilombudet innen ett år. Se sporet ",
+          "link": "sivilombudet",
+          "linkLabel": "Statsforvalteren ga meg ikke medhold",
+          "textEnd": "."
         }
       ]
     },
@@ -168,6 +177,68 @@
           "text": " kan hjelpe deg gratis med både anmodningen og en eventuell rettighetsklage."
         }
       ]
+    },
+    "innsyn": {
+      "boxLead": "Dette er en innsynsklage.",
+      "boxBody": "Avslag på innsyn klages til kommunen, som sender saken videre til Statsforvalteren dersom den ikke snur. Fristen er tre uker fra du fikk avslaget.",
+      "letterTitle": "Innsynsklagen din",
+      "letterIntro": "Brevet er skrevet som en klage på avslag på partsinnsyn, med hjemmel, frist og oversendelse til Statsforvalteren.",
+      "commonSources": [],
+      "sendSteps": [
+        {
+          "lead": "Send til kommunen.",
+          "text": " Kommunen skal vurdere klagen selv først. Holder den på avslaget, skal den sende saken til Statsforvalteren. Det står i forvaltningsloven § 21 andre ledd."
+        },
+        {
+          "lead": "Bruk kommunens sikre kanal.",
+          "text": " Vanlig e-post er ikke egnet fordi brevet nevner helseopplysninger."
+        },
+        {
+          "lead": "Fristen er tre uker",
+          "text": " fra du fikk avslaget, jf. § 29. Har du bare fått et muntlig nei, kan du sende klagen med en gang og be om skriftlig avslag samtidig."
+        },
+        {
+          "lead": "Klager du også på selve vedtaket, gjør begge deler.",
+          "text": " Klagefristen på vedtaket stopper ikke fordi du venter på innsyn. Send en kort klage på vedtaket innen fire uker, og skriv at begrunnelsen ettersendes når du har fått dokumentene."
+        },
+        {
+          "lead": "Sivilombudet",
+          "text": " har en egen innsynsguide og behandler mange klager om innsyn. Får du ikke medhold hos Statsforvalteren, kan du klage dit."
+        }
+      ]
+    },
+    "sivilombud": {
+      "boxLead": "Statsforvalterens avgjørelse i en rettighetsklage er endelig i forvaltningen.",
+      "boxBody": "Neste mulighet er Sivilombudet. Klagen er gratis, og fristen er ett år fra Statsforvalterens avgjørelse.",
+      "letterTitle": "Klagen din til Sivilombudet",
+      "letterIntro": "Sivilombudet har eget klageskjema på sivilombudet.no. Teksten under kan limes inn der, eller sendes som brev.",
+      "commonSources": [],
+      "sendSteps": [
+        {
+          "lead": "Bruk klageskjemaet på sivilombudet.no.",
+          "text": " Det er sikkert, og du kan laste opp vedlegg. Du kan også sende brev."
+        },
+        {
+          "lead": "Fristen er ett år",
+          "text": " fra Statsforvalterens avgjørelse, jf. § 9."
+        },
+        {
+          "lead": "Legg ved",
+          "text": " Statsforvalterens avgjørelse, kommunens vedtak og klagen din. Sivilombudet kan hente resten selv."
+        },
+        {
+          "lead": "Klagen er gratis.",
+          "text": " Sivilombudet kan også gi veiledning og hjelpe med å utforme klagen. Det står i § 7."
+        },
+        {
+          "lead": "Regn med tid.",
+          "text": " Sivilombudet avgjør selv hvilke saker som undersøkes, og hvor grundig. Får du beskjed om at saken ikke tas opp, får du en begrunnelse."
+        },
+        {
+          "lead": "Sivilombudet stopper ikke Statsforvalterens avgjørelse",
+          "text": " mens saken behandles. Trenger du hjelp nå, søk kommunen om tjenesten på nytt samtidig."
+        }
+      ]
     }
   },
   "sendHeading": "Slik sender du det",
@@ -181,6 +252,11 @@
       "title": "Helsenorge: klage og erstatning",
       "body": "Offentlig oversikt over klageordningene i helse- og omsorgstjenesten.",
       "url": "https://www.helsenorge.no/klage-og-erstatning/"
+    },
+    {
+      "title": "Sivilombudet",
+      "body": "Gratis klageinstans når forvaltningen har sagt sitt. Kontrollerer både kommuner og Statsforvalteren.",
+      "url": "https://www.sivilombudet.no/klage/"
     }
   ],
   "disclaimer": "© 2026 JodaCare AS · Rettighetsveilederen gir generell informasjon og erstatter ikke rådgivning i din konkrete sak.",
@@ -497,6 +573,77 @@
       ]
     },
     {
+      "id": "innsyn-sak",
+      "label": "Får ikke innsyn i saksdokumentene",
+      "sub": "Du ber om å se hva kommunen har i saken, men får nei eller ikke svar",
+      "appliesTo": [
+        "selv",
+        "paa",
+        "egen"
+      ],
+      "route": "innsyn",
+      "defaultService": "avlastning",
+      "answer": [
+        "Den som er part i en sak, har rett til å se sakens dokumenter. Det står i forvaltningsloven § 18. Retten gjelder både mens saken behandles og etter at vedtaket er fattet. Du trenger ikke begrunne hvorfor du vil se dokumentene.",
+        "Kommunen kan bare holde tilbake dokumenter der loven gir adgang til det. De vanligste unntakene er interne arbeidsdokumenter etter § 18 a og opplysninger om andre personer etter § 19. Selv når et unntak gjelder, skal kommunen vurdere å gi delvis innsyn. Det står i § 18 andre ledd.",
+        "Et avslag på innsyn skal være skriftlig. Kommunen skal oppgi hvilken paragraf, hvilket ledd og hvilken bokstav avslaget bygger på, og opplyse om klagerett og frist. Det står i § 21. Får du et muntlig nei, eller ikke noe svar, kan du kreve et skriftlig avslag.",
+        "Får du ikke svar i det hele tatt, gjelder forvaltningsloven § 11 a. Kommunen skal behandle henvendelsen uten ugrunnet opphold og gi et foreløpig svar dersom det tar tid.",
+        "Gjelder det dokumenter du ikke er part i, for eksempel kommunens rutiner, tilsynsrapporter eller avviksmeldinger, gjelder offentleglova i stedet. Da kan du be om innsyn som hvem som helst. Har du ikke fått svar innen fem arbeidsdager, regnes det som avslag du kan klage på. Det står i offentleglova § 32."
+      ],
+      "fieldLabels": {
+        "dato": "Avslaget er datert (eller: dato du ba om innsyn)",
+        "sok": "Hvilke dokumenter ba du om, og hva svarte kommunen?",
+        "hvorfor": "Hvorfor trenger du dokumentene? (Valgfritt. Kravet trenger ingen begrunnelse. En kort forklaring kan likevel hjelpe ved delvis innsyn.)"
+      },
+      "examples": {
+        "dato": "2026-09-09",
+        "sok": "Jeg ba 2.9.2026 om innsyn i alle dokumenter i saken om avlastning for Ola, inkludert kartleggingen fra saksbehandler og uttalelsen fra avlastningsboligen. Kommunen svarte 9.9.2026 at kartleggingen er et internt dokument og ikke kan utleveres.",
+        "hvorfor": "Vedtaket bygger på kartleggingen. Uten å se den kan jeg ikke vite om opplysningene om Olas behov er riktige, og jeg kan ikke skrive en god klage."
+      },
+      "sources": [
+        {
+          "label": "Forvaltningsloven § 18 Partenes adgang til å gjøre seg kjent med sakens dokumenter",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A718",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Forvaltningsloven § 18 a Dokumenter utarbeidet for egen saksforberedelse",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A718a",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Forvaltningsloven § 19 Innskrenket adgang til visse slags opplysninger",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A719",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Forvaltningsloven § 21 Klage over avslag på krav om å få gjøre seg kjent med et dokument",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A721",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Forvaltningsloven § 29 Klagefrist (tre uker)",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A729",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Forvaltningsloven § 11 a Saksbehandlingstid, foreløpig svar",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A711a",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Offentleglova § 32 Klage",
+          "url": "https://lovdata.no/lov/2006-05-19-16/%C2%A732",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Sivilombudet: Innsynsguiden",
+          "url": "https://www.sivilombudet.no/veiledere/innsynsguiden/",
+          "note": "Veileder"
+        }
+      ]
+    },
+    {
       "id": "ventet",
       "label": "Venter på svar på en søknad",
       "sub": "Søknaden er sendt, ingenting skjer",
@@ -564,6 +711,222 @@
           "note": "Oversikt"
         }
       ]
+    },
+    {
+      "id": "represalier",
+      "label": "Det ble verre etter at jeg sa fra",
+      "sub": "Tjenesten ble redusert, du holdes utenfor, eller du blir behandlet som problemet",
+      "tag": "To spor",
+      "appliesTo": [
+        "selv",
+        "paa",
+        "egen"
+      ],
+      "route": "klage",
+      "routeOptions": [
+        {
+          "id": "klage",
+          "label": "Tjenesten ble redusert eller endret",
+          "letterTitle": "Klagebrevet ditt",
+          "letterIntro": "Brevet er skrevet som en klage på et nytt vedtak om redusert tjeneste, med hjemmel, frist og oversendelse til Statsforvalteren.",
+          "letterTemplate": "represalier-klage"
+        },
+        {
+          "id": "tilsyn",
+          "label": "Jeg blir holdt utenfor eller behandlet som et problem",
+          "letterTitle": "Anmodningen din",
+          "letterIntro": "Anmodningen går rett til Statsforvalteren. Skriv nøkternt, med datoer.",
+          "letterTemplate": "represalier-tilsyn"
+        }
+      ],
+      "routeCopy": {
+        "boxLead": "Dette går i to spor.",
+        "boxBody": "Er tjenesten redusert eller endret, er det et nytt vedtak du kan klage på til kommunen innen fire uker. Handler det om måten du blir møtt på, sendes en anmodning om tilsyn rett til Statsforvalteren. Du kan gjøre begge deler.",
+        "commonSources": [],
+        "sendSteps": [
+          {
+            "lead": "Rettighetsklagen sendes til kommunen.",
+            "text": " Fristen er fire uker fra du fikk beskjed om endringen, jf. § 7-5. Be samtidig om at tjenesten fortsetter som før til klagen er avgjort."
+          },
+          {
+            "lead": "Tilsynsanmodningen sendes rett til Statsforvalteren",
+            "text": " via sikker melding på statsforvalteren.no. Ingen formell frist."
+          },
+          {
+            "lead": "Bruk sikre kanaler.",
+            "text": " Vanlig e-post er ikke egnet fordi brevene inneholder helseopplysninger."
+          },
+          {
+            "lead": "Før logg.",
+            "text": " Skriv ned dato, hvem som sa hva, og hva som ble endret. Det er det Statsforvalteren spør etter."
+          },
+          {
+            "lead": "Pasient- og brukerombudet",
+            "text": " kan hjelpe deg gratis med begge brevene, og kan være med i møter med kommunen."
+          }
+        ]
+      },
+      "defaultService": "avlastning",
+      "answer": [
+        "Å klage er en rettighet. Kommunen kan ikke bruke klagen som grunn til å gi mindre hjelp, holde deg utenfor eller endre tonen i samarbeidet.",
+        "Blir tjenesten redusert eller tatt bort, er det et nytt enkeltvedtak. Det gjelder alle tjenester som er ventet å vare lenger enn to uker, etter pasient- og brukerrettighetsloven § 2-7. Da skal du få skriftlig forhåndsvarsel etter forvaltningsloven § 16, et skriftlig vedtak med begrunnelse etter §§ 24 og 25, og du har klagerett etter pasient- og brukerrettighetsloven § 7-2. Kommunen kan ikke sette ned en tjeneste uten at behovet er vurdert på nytt. Klagen din er ikke en endring i behovet.",
+        "Blir du holdt utenfor møter eller beslutninger, gjelder retten til medvirkning og informasjon. Den du er pårørende til har rett til å medvirke etter § 3-1. Nærmeste pårørende har rett til informasjon etter § 3-3 når pasienten samtykker eller ikke selv kan ivareta sine interesser. Å bli stengt ute fra samarbeidet er derfor noe du kan klage på etter § 7-2.",
+        "Handler det om måten du blir møtt på, om ansatte som ikke svarer, som omtaler deg som vanskelig, eller som lar det gå ut over den du er pårørende til, kan du be Statsforvalteren vurdere om tjenesten er forsvarlig. Det står i pasient- og brukerrettighetsloven § 7-4 og helse- og omsorgstjenesteloven § 4-1. Beskriv konkret hva som skjedde, med datoer.",
+        "Skriv nøkternt. Det som overbeviser, er datoer, hva som ble sagt, og hva som endret seg. Skriv ned hendelsene etter hvert som de skjer."
+      ],
+      "extraFields": [
+        "endring"
+      ],
+      "fieldLabels": {
+        "dato": "Dato for klagen du sendte først",
+        "endring": "Hva ble endret, og når?",
+        "sok": "Hva klaget du på først, og hva skjedde etterpå?",
+        "hvorfor": "Hva har endringen betydd for deg og den du er pårørende til?"
+      },
+      "examples": {
+        "dato": "2026-06-01",
+        "sok": "Jeg klaget 1.6.2026 på at Ola bare fikk avlastning én helg i måneden.",
+        "endring": "I brev datert 20.8.2026 fikk vi beskjed om at avlastningen reduseres til én helg annenhver måned fra 1.10.2026, uten forhåndsvarsel og uten ny kartlegging. Samme uke fikk jeg beskjed om at jeg ikke lenger skal delta i ansvarsgruppemøtene.",
+        "hvorfor": "Ola har ikke fått nytt behov. Jeg har mistet all mulighet til å hvile, og jeg får ikke lenger informasjon om hvordan Ola har det i boligen."
+      },
+      "sources": [
+        {
+          "label": "Pasient- og brukerrettighetsloven § 2-7 Forvaltningslovens anvendelse (vedtak om tjenester over to uker)",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A72-7",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Forvaltningsloven § 16 Forhåndsvarsling",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A716",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Forvaltningsloven § 24 Når enkeltvedtak skal grunngis",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A724",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Forvaltningsloven § 25 Begrunnelsens innhold",
+          "url": "https://lovdata.no/lov/1967-02-10/%C2%A725",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 3-1 Rett til medvirkning",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A73-1",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 3-3 Informasjon til nærmeste pårørende",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A73-3",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 7-2 Klage",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A77-2",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 7-4 Anmodning om vurdering av mulig pliktbrudd",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A77-4",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helse- og omsorgstjenesteloven § 4-1 Forsvarlighet",
+          "url": "https://lovdata.no/lov/2011-06-24-30/%C2%A74-1",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Helsedirektoratet: Pårørendeveileder, kapittelet om pårørendes rettigheter",
+          "url": "https://www.helsedirektoratet.no/veiledere/parorendeveileder",
+          "note": "Veileder"
+        }
+      ]
+    },
+    {
+      "id": "sivilombudet",
+      "label": "Statsforvalteren ga meg ikke medhold",
+      "sub": "Klagen er ferdig behandlet, eller den blir liggende, og du vet ikke hvor du skal gå videre",
+      "appliesTo": [
+        "selv",
+        "paa",
+        "egen"
+      ],
+      "route": "sivilombud",
+      "answerTitle": "Dette kan du gjøre videre",
+      "defaultService": "avlastning",
+      "answer": [
+        "Sivilombudet er Stortingets ombud for kontroll med forvaltningen. Alle som mener seg utsatt for urett fra det offentlige, kan klage dit. Det står i sivilombudsloven § 7. Sivilombudet kan undersøke både kommunen og Statsforvalteren.",
+        "Vilkåret er at du har brukt alle klagemulighetene i forvaltningen først. Det står i § 8. I en rettighetsklage etter pasient- og brukerrettighetsloven § 7-2 er Statsforvalteren siste instans, så vilkåret er oppfylt når Statsforvalteren har avgjort saken.",
+        "Fristen er ett år fra Statsforvalterens endelige avgjørelse. Det står i § 9. Gjelder klagen at saken blir liggende, eller annen saksbehandling, løper fristen fra forholdet skjedde eller opphørte.",
+        "Sivilombudet kan ikke oppheve vedtak. Ombudet uttaler sin mening om saken, og kan si at forvaltningen har gjort feil, at et vedtak er ugyldig eller klart urimelig, eller at saken bør behandles på nytt. Det står i § 12. Forvaltningen retter seg som regel etter ombudets uttalelser. Uttalelsene er offentlige og brukes som rettesnor i lignende saker.",
+        "Sivilombudet kan også ta opp saker på eget initiativ, og ombudet har rett til å få alle dokumenter det trenger fra forvaltningen, uten hinder av taushetsplikt. Det står i § 20. I 2026 gikk Sivilombudet til domstolene for første gang på mange år for å få ut dokumenter en kommune nektet å levere. Ombudet tar dokumenttilgang på alvor.",
+        "Handler saken om at Statsforvalteren ikke svarer, kan du også klage på saksbehandlingstiden. Lang saksbehandlingstid hos Statsforvalteren er noe Sivilombudet undersøker jevnlig.",
+        "Det finnes ett unntak. Har Statsforvalteren avgjort en tilsynssak etter § 7-4, er det ikke et enkeltvedtak du kan klage på. Du kan likevel be Statens helsetilsyn se på saken, og du kan klage saksbehandlingen inn for Sivilombudet."
+      ],
+      "extraFields": [
+        "saksnrKommune"
+      ],
+      "fieldLabels": {
+        "dato": "Statsforvalterens avgjørelse er datert",
+        "saksnr": "Statsforvalterens saksnummer",
+        "saksnrKommune": "Kommunens saksnummer (vedtaket du klaget på)",
+        "sok": "Hva klaget du på, og hva kom Statsforvalteren til?",
+        "hvorfor": "Hva mener du Statsforvalteren har oversett eller vurdert feil?"
+      },
+      "examples": {
+        "dato": "2026-08-15",
+        "saksnr": "2026/14321",
+        "saksnrKommune": "26/1432",
+        "sok": "Jeg klaget på avslag på avlastning for Ola. Statsforvalteren stadfestet kommunens vedtak 15.8.2026 med den begrunnelsen at kommunen har rett til å velge hvordan avlastning gis, og at tilbudet om støttekontakt to timer i uken er tilstrekkelig.",
+        "hvorfor": "Statsforvalteren har ikke vurdert om to timer støttekontakt i uken gir reell avlastning for et omsorgsarbeid på døgnbasis. Uttalelsen fra fastlegen om at jeg står i fare for å bli utslitt, er ikke nevnt i avgjørelsen."
+      },
+      "sources": [
+        {
+          "label": "Sivilombudsloven § 7 Klage til Sivilombudet",
+          "url": "https://lovdata.no/lov/2021-06-18-121/%C2%A77",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Sivilombudsloven § 8 Vilkår for behandling av klage",
+          "url": "https://lovdata.no/lov/2021-06-18-121/%C2%A78",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Sivilombudsloven § 9 Fristen for å klage (ett år)",
+          "url": "https://lovdata.no/lov/2021-06-18-121/%C2%A79",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Sivilombudsloven § 12 Avslutning av klagesaksbehandlingen",
+          "url": "https://lovdata.no/lov/2021-06-18-121/%C2%A712",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Sivilombudsloven § 20 Rett til opplysninger og fysisk tilgang",
+          "url": "https://lovdata.no/lov/2021-06-18-121/%C2%A720",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 7-2 Klage (Statsforvalteren er klageinstans)",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A77-2",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasient- og brukerrettighetsloven § 7-4 a Saksbehandling ved anmodning om tilsyn",
+          "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A77-4a",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Sivilombudet: Slik klager du",
+          "url": "https://www.sivilombudet.no/klage/",
+          "note": "Offentlig veiledning"
+        },
+        {
+          "label": "Sivilombudet: Uttalelser i saker om helse og omsorg",
+          "url": "https://www.sivilombudet.no/uttalelser/",
+          "note": "Oversikt"
+        }
+      ]
     }
   ],
   "statsforvalterenKan": {
@@ -580,5 +943,6 @@
   "fullmakt": {
     "intro": "Klager du på vegne av en voksen, må den det gjelder skrive under på en fullmakt. Uten fullmakt blir klagen avvist. Er du oppnevnt verge, legger du ved vergefullmakten i stedet.",
     "button": "Kopier fullmakten"
-  }
+  },
+  "routeChoiceHeading": "Hva gjelder saken? Valget styrer hvilket brev du får."
 }
