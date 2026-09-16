@@ -941,7 +941,7 @@
     ]
   },
   "fullmakt": {
-    "intro": "Klager du på vegne av en voksen, må den det gjelder skrive under på en fullmakt. Uten fullmakt blir klagen avvist. Er du oppnevnt verge, legger du ved vergefullmakten i stedet.",
+    "intro": "Den du representerer må skrive under på fullmakten for hånd. Du fyller ikke ut noe på skjermen: kopier teksten, skriv den ut eller skriv den av, og la sted, dato og underskrift fylles ut med penn. Legg den signerte fullmakten ved saken. Uten fullmakt blir klagen avvist. Er du oppnevnt verge, legger du ved vergefullmakten i stedet.",
     "button": "Kopier fullmakten"
   },
   "routeChoiceHeading": "Hva gjelder saken? Valget styrer hvilket brev du får."

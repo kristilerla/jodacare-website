@@ -123,11 +123,16 @@ export function fmt(d: string): string {
 }
 
 /**
- * Fullmakt fra den det gjelder, til den som klager på vegne av vedkommende.
- * Brukes bare i klagesporet når «En jeg er pårørende til» er valgt — er du
- * oppnevnt verge, er det vergefullmakten som legges ved i stedet.
+ * Fullmakt fra den det gjelder, til den som representerer vedkommende.
+ * Vises på alle ruter når «En jeg er pårørende til» er valgt — er du oppnevnt
+ * verge, er det vergefullmakten som legges ved i stedet.
  *
- * Bruker de samme feltene som klagebrevet, slik at teksten følger skjemaet.
+ * Teksten gjelder saken, ikke én handling. En fullmakt låst til «klage på
+ * vedtak» blir feil på purringssporet, der det ennå ikke finnes noe vedtak.
+ * Hjemmelen for å la seg representere er forvaltningsloven § 12; § 7-3 dekker
+ * klagen særskilt.
+ *
+ * Bruker de samme feltene som brevet, slik at teksten følger skjemaet.
  */
 export function buildFullmakt(sit: Situation, fields: Fields): string {
   const t = (key: FieldKey) => fields[key].trim();
@@ -136,13 +141,17 @@ export function buildFullmakt(sit: Situation, fields: Fields): string {
   const rel = t('relasjon') || '[relasjon]';
   const tj = t('tjeneste') || sit.defaultService;
   const kommune = t('kommune') || '[kommune]';
-  const saks = t('saksnr') || '[saksnummer]';
+  // Sporet mot Sivilombudet har to saksnumre. Fullmakten gjelder saken hos
+  // kommunen, så kommunens nummer vinner der det finnes.
+  const saks = t('saksnrKommune') || t('saksnr') || '[saksnummer]';
 
   return `FULLMAKT
 
-Jeg, ${pasient}, gir herved ${navn} (${rel}) fullmakt til å klage på vedtak om ${tj} fra ${kommune}, saksnummer ${saks}, og til å motta all informasjon i saken, jf. pasient- og brukerrettighetsloven § 7-3.
+Jeg, ${pasient}, gir herved ${navn} (${rel}) fullmakt til å representere meg i saken om ${tj}. Saken gjelder ${kommune}, saksnummer ${saks}.
 
-Fullmakten gjelder til klagen er endelig avgjort.
+Fullmakten gjelder å sende og følge opp henvendelser i saken, herunder klage, og å motta all informasjon i den, jf. forvaltningsloven § 12 og pasient- og brukerrettighetsloven § 7-3.
+
+Fullmakten gjelder til saken er endelig avgjort, eller til jeg trekker den tilbake.
 
 Sted og dato: ______________________
 
