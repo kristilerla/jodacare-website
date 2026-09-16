@@ -179,3 +179,14 @@ img {
     padding-right: var(--spacing-xl);
   }
 }
+
+/*
+ * Fargebehandling på fotografiene i segmentsidene.
+ *
+ * Bildene ligger i farger på disk. Forsiden er svart-hvitt, og denne klassen
+ * gjør de nye bildene like. Vil dere ha farger i stedet, kommenter ut
+ * filter-linjen under. Det er den eneste endringen som trengs.
+ */
+.img-tone {
+  filter: grayscale(1);
+}

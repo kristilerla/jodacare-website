@@ -1,4 +1,5 @@
 import { Hero, CTA } from '@/components/sections';
+import Image from 'next/image';
 import { Container, Card, CardTitle, CardContent, Badge } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
@@ -41,15 +42,27 @@ export function SikkerhetPageView({ locale }: Props) {
 
       <section className="py-20 lg:py-28" aria-labelledby="security-main-title">
         <Container>
+          {/* Bildet står ved siden av overskriften, ikke under den. */}
           <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <Badge variant="success" className="mb-4">
-                {d.mainBadge}
-              </Badge>
-              <h2 id="security-main-title" className="font-serif text-3xl sm:text-4xl font-bold text-text">
-                {d.mainTitle}
-              </h2>
-              <p className="mt-4 text-lg text-text-light">{d.mainIntro}</p>
+            <div className="mb-16 grid gap-10 md:grid-cols-2 md:items-center">
+              <div className="max-w-xl">
+                <Badge variant="success" className="mb-4">
+                  {d.mainBadge}
+                </Badge>
+                <h2 id="security-main-title" className="font-serif text-3xl sm:text-4xl font-bold text-text">
+                  {d.mainTitle}
+                </h2>
+                <p className="mt-4 text-lg text-text-light">{d.mainIntro}</p>
+              </div>
+              <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl md:ml-auto">
+                <Image
+                  src="/images/mann-ved-vinduet.jpg"
+                  alt={d.protectionImageAlt}
+                  fill
+                  sizes="(min-width: 768px) 45vw, 100vw"
+                  className="img-tone object-cover object-[center_30%]"
+                />
+              </div>
             </div>
           </FadeIn>
 

@@ -77,7 +77,7 @@ const no: BruksvilkarBundle = {
     {
       title: '7. Abonnement og betaling',
       paragraphs: [
-        'For Familierom gjelder: 14 dager gratis prøveperiode, deretter 299 kr/mnd. Betaling skjer via Vipps. Abonnementet kan sies opp når som helst, og løper ut ved slutten av inneværende betalingsperiode.',
+        'For Familierom vil det gjelde: 14 dager gratis prøveperiode, deretter 299 kr/mnd. Vilkår for betaling publiseres når Familierom lanseres.',
         'For kommunale kunder reguleres betaling av separat avtale.',
       ],
     },
@@ -163,7 +163,7 @@ const en: BruksvilkarBundle = {
     {
       title: '7. Subscription and payment',
       paragraphs: [
-        'For Family Room: 14 days free trial, then NOK 299/month. Payment is via Vipps. You may cancel the subscription at any time; it runs until the end of the current billing period.',
+        'For Family Room the following will apply: 14 days free trial, then NOK 299/month. Payment terms will be published when Family Room launches.',
         'For municipal customers, payment is governed by a separate agreement.',
       ],
     },

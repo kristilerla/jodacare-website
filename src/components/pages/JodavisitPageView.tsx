@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Hero } from '@/components/sections';
 import { Container, Card, CardTitle, CardContent, Button } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
@@ -33,6 +34,11 @@ export function JodavisitPageView({ locale }: Props) {
         subtitle={d.heroSubtitle}
         primaryCta={{ text: d.primaryCta, href: withLocale('/kontakt', locale) }}
         variant="page"
+        image={{
+          src: '/images/mamma-nettbrett.jpg',
+          alt: d.heroImageAlt,
+          portrait: true,
+        }}
         badge={d.heroBadge}
       />
 
@@ -58,6 +64,18 @@ export function JodavisitPageView({ locale }: Props) {
               <h2 id="usergroups-title" className="font-serif text-3xl sm:text-4xl font-bold text-text">
                 {d.userGroupsTitle}
               </h2>
+            </div>
+          </FadeIn>
+
+          <FadeIn>
+            <div className="relative mx-auto mb-12 aspect-[4/3] w-full max-w-3xl overflow-hidden rounded-2xl sm:aspect-[16/9]">
+              <Image
+                src="/images/mann-ved-arbeidsbenken.jpg"
+                alt={d.homeUserImageAlt}
+                fill
+                sizes="(min-width: 768px) 60vw, 100vw"
+                className="img-tone object-cover"
+              />
             </div>
           </FadeIn>
 

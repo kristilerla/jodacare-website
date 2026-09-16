@@ -1,4 +1,5 @@
 import { Hero, CTA } from '@/components/sections';
+import Image from 'next/image';
 import { Container, Card, CardTitle, CardContent, Badge } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
@@ -294,6 +295,18 @@ export function TeknologiPageView({ locale }: Props) {
                 {d.aiTitle}
               </h2>
               <p className="mt-4 text-lg text-text-light">{d.aiIntro}</p>
+            </div>
+          </FadeIn>
+
+          <FadeIn>
+            <div className="relative mx-auto mb-16 aspect-[16/9] w-full max-w-3xl overflow-hidden rounded-2xl">
+              <Image
+                src="/images/barn-med-drage.jpg"
+                alt={d.aiImageAlt}
+                fill
+                sizes="(min-width: 768px) 60vw, 100vw"
+                className="img-tone object-cover"
+              />
             </div>
           </FadeIn>
 

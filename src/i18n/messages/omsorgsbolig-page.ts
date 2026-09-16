@@ -5,9 +5,12 @@ export type HubStep = { step: string; title: string; description: string };
 export type HubRelated = { title: string; description: string; href: string };
 
 export type OmsorgsboligContent = {
+  heroImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   heroBadge: string;
+  /** Rolig informasjonsboks under hero, om hva som er klart når. */
+  noticeBody: string;
   primaryCta: string;
   secondaryCta: string;
   scenarioTitle: string;
@@ -32,10 +35,13 @@ export type OmsorgsboligContent = {
 };
 
 const no: OmsorgsboligContent = {
+  heroImageAlt: 'Eldre person leser på en benk under blomstrende trær',
   heroTitle: 'Beboeren er aldri alene. Familien er alltid nær.',
   heroSubtitle:
     'JodaCare Hub kobler beboer, familie og ansatte i én sammenhengende flyt gjennom en skjerm i leiligheten som alltid er på.',
   heroBadge: 'Omsorgsbolig og servicebolig',
+  noticeBody:
+    'JodaCare Hub er under utvikling med pilot i 2027. Grunnmodulen med Boka, kalender og beskjeder lanseres for omsorgsbolig høsten 2026.',
   primaryCta: 'Kontakt oss for pilotplass',
   secondaryCta: 'Se hvordan Hub fungerer',
   scenarioTitle: 'Kjenner du deg igjen?',
@@ -57,7 +63,7 @@ const no: OmsorgsboligContent = {
     {
       title: 'For ansatte',
       description:
-        'Ansatte registrerer hendelseslogg, sjekklister og bekymringsmeldinger der jobben skjer, og slipper å huske og dokumentere etterpå ved en PC.',
+        'Ansatte skriver i Boka der jobben skjer. Hendelseslogg og sjekklister kommer Q4 2026, bekymringsmelding Q1 2027.',
     },
   ],
   featuresTitle: 'Funksjoner som dekker hverdagen',
@@ -88,7 +94,7 @@ const no: OmsorgsboligContent = {
         'Beboere og familie kan melde seg på arrangementer og ta oppgaver, slik at det bygges fellesskap i boligen.',
     },
     {
-      title: 'IoT-sensorer valgfritt',
+      title: 'IoT-sensorer, senere',
       description: 'Sensorer for dør, bevegelse og røyk kan kobles til via gateway, og varslene går alltid til ansatte slik at familien skånes for unødig uro.',
     },
   ],
@@ -116,10 +122,10 @@ const no: OmsorgsboligContent = {
       description: 'Velferdskoordinator styrer hverdagen fra sitt dashboard, og vi er tilgjengelige hvis noe butter.',
     },
   ],
-  statusBadge: 'Beta 2026',
+  statusBadge: 'Pilot 2027',
   statusTitle: 'Bli med som pilotkommune',
   statusP1:
-    'JodaCare Hub er i aktiv utvikling og tas i bruk av de første kommunene i løpet av 2026. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet.',
+    'JodaCare Hub er under utvikling og prøves ut sammen med de første kommunene i 2027. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet.',
   statusP2: 'Ta kontakt for en uforpliktende samtale om en pilotplass.',
   priceNote:
     'Grunnmodulen koster kr 2 990 per måned for inntil 10 beboere. Hub prises separat når modulen er ferdig.',
@@ -147,10 +153,13 @@ const no: OmsorgsboligContent = {
 };
 
 const en: OmsorgsboligContent = {
+  heroImageAlt: 'Older person reading on a bench under blossoming trees',
   heroTitle: 'Residents are never alone. Family is always close.',
   heroSubtitle:
     'JodaCare Hub connects resident, family and staff in one continuous flow through a screen in the flat that stays on.',
   heroBadge: 'Sheltered housing and supported living',
+  noticeBody:
+    'JodaCare Hub is under development with a pilot in 2027. The core module with Boka, calendar and messages launches for sheltered housing in autumn 2026.',
   primaryCta: 'Contact us for a pilot place',
   secondaryCta: 'See how Hub works',
   scenarioTitle: 'Does this sound familiar?',
@@ -172,7 +181,7 @@ const en: OmsorgsboligContent = {
     {
       title: 'For staff',
       description:
-        'Staff log events, checklists and concern notifications where the work happens, without having to remember and document afterwards at a PC.',
+        'Staff write in Boka where the work happens. The event log and checklists arrive in Q4 2026, concern notifications in Q1 2027.',
     },
   ],
   featuresTitle: 'Features for everyday life',
@@ -203,7 +212,7 @@ const en: OmsorgsboligContent = {
         'Residents and family can sign up for events and take on tasks, helping to build community in the building.',
     },
     {
-      title: 'Optional IoT sensors',
+      title: 'IoT sensors, later',
       description:
         'Sensors for door, motion and smoke can connect via a gateway, and alerts always go to staff so the family is spared unnecessary worry.',
     },
@@ -232,10 +241,10 @@ const en: OmsorgsboligContent = {
       description: 'The welfare coordinator runs everyday life from the dashboard. We are available if anything sticks.',
     },
   ],
-  statusBadge: 'Beta 2026',
+  statusBadge: 'Pilot 2027',
   statusTitle: 'Join as a pilot municipality',
   statusP1:
-    'JodaCare Hub is in active development and will be adopted by the first municipalities during 2026. Pilot sites receive close follow-up and help shape the final product.',
+    'JodaCare Hub is under development and is being trialled with the first municipalities in 2027. Pilot sites receive close follow-up and help shape the final product.',
   statusP2: 'Contact us for an informal conversation about a pilot place.',
   priceNote:
     'The core module costs NOK 2,990 per month for up to 10 residents. Hub is priced separately once the module is finished.',

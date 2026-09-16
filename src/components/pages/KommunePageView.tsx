@@ -19,6 +19,11 @@ export function KommunePageView({ locale }: Props) {
         subtitle={d.heroSubtitle}
         primaryCta={{ text: d.primaryCta, href: withLocale('/kontakt', locale) }}
         variant="page"
+        image={{
+          src: '/images/ung-mann-i-aker.jpg',
+          alt: d.heroImageAlt,
+          portrait: true,
+        }}
       />
 
       <section className="border-y border-secondary">

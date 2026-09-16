@@ -30,7 +30,7 @@ export type BpaContent = {
 const no: BpaContent = {
   heroTitle: 'Brukeren beholder kontrollen, og assistentene vet hva som forventes.',
   heroSubtitle:
-    'JodaCare samler hele omsorgsteamet rundt brukeren, med et enkelt verktøy for brukeren selv, sjekklister for assistentene, og full oversikt for koordinator og familie.',
+    'JodaCare samler hele omsorgsteamet rundt brukeren, med Boka for assistentene og full oversikt for koordinator og familie.',
   heroBadge: 'Brukerstyrt personlig assistanse',
   primaryCta: 'Kontakt oss',
   secondaryCta: 'Se funksjoner',
@@ -41,12 +41,12 @@ const no: BpaContent = {
     {
       title: 'For brukeren',
       description:
-        'Jodabook er en enkel app med store knapper og bilder, tilpasset den som trenger ekstra støtte. Brukeren slipper å huske passord, og logger inn med QR-kode og PIN.',
+        'Jodabook er en enkel app med store knapper og bilder, tilpasset den som trenger ekstra støtte. Brukeren slipper å huske passord, og logger inn med QR-kode og PIN. Jodabook kommer Q1 2027.',
     },
     {
       title: 'For assistentene',
       description:
-        'Assistentene jobber etter felles rutiner og sjekklister, og bruker dagboken Boka til kommunikasjon i teamet. Informasjonen er alltid oppdatert og alltid tilgjengelig.',
+        'Assistentene bruker Boka til kommunikasjon i teamet. Informasjonen er alltid oppdatert og alltid tilgjengelig.',
     },
     {
       title: 'For koordinator og familie',
@@ -56,12 +56,12 @@ const no: BpaContent = {
   featuresTitle: 'Funksjoner som dekker hverdagen',
   features: [
     {
-      title: 'Jodabook for brukeren',
+      title: 'Jodabook for brukeren (kommer Q1 2027)',
       description:
         'Jodabook er en enkel app med store knapper, bilder og lyd, og støtter kognitiv tilpasning for utviklingshemming, autisme og demens.',
     },
     {
-      title: 'Rutiner og sjekklister',
+      title: 'Rutiner og sjekklister (kommer Q4 2026)',
       description:
         'Du oppretter gjentakende eller engangs sjekklister, og assistentene avhuker steg for steg mens alt loggføres automatisk.',
     },
@@ -70,22 +70,22 @@ const no: BpaContent = {
       description: 'Kun de som hører til i teamet ser brukeren, og personvern og rollebasert tilgang er bygget inn fra grunnen av.',
     },
     {
-      title: 'Hendelseslogg',
+      title: 'Hendelseslogg (kommer Q4 2026)',
       description:
-        'Hendelsesloggen registrerer avvik, atferd, medisin og mer, og varsler går automatisk til koordinator og relevant helsepersonell.',
+        'Hendelsesloggen registrerer avvik, atferd, medisin og mer.',
     },
     {
       title: 'KAI-assistent',
-      description: 'KAI er en AI-hjelper for helsepersonell, og forklarer rutiner, svarer på spørsmål og veileder i plattformen.',
+      description: 'KAI hjelper deg å finne frem i JodaCare og forklarer hvordan appen brukes.',
     },
   ],
   referenceTitle: 'I bruk siden 2016',
   referenceBody:
-    'Horten kommune er betalende BPA-kunde og har brukt JodaCare siden oppstarten. Silje Figved-nettverket er en aktiv pilot for migrering til JodaCare 2.0.',
-  statusBadge: 'Beta 2026',
-  statusTitle: 'Bli med som pilotkommune',
+    'Horten kommune er betalende BPA-kunde og har brukt JodaCare siden oppstarten.',
+  statusBadge: 'Lanseres høst 2026',
+  statusTitle: 'Bli med fra starten',
   statusBody:
-    'JodaCare for BPA er i aktiv bruk og tas inn i JodaCare 2.0 i løpet av 2026. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet.',
+    'Nye JodaCare lanseres høsten 2026 med Boka, kalender, beskjeder og team rundt hver bruker. Nye moduler kommer kvartal for kvartal, og kommunen velger selv hvilke den vil ha.',
   priceNote:
     'Lisens fra kr 2 990 per måned for inntil 10 tjenestemottakere, pluss oppstart.',
   priceLinkText: 'Se alle priser',
@@ -114,7 +114,7 @@ const no: BpaContent = {
 const en: BpaContent = {
   heroTitle: 'The user keeps control, and assistants know what is expected.',
   heroSubtitle:
-    'JodaCare brings the whole care team around the user, with a simple tool for the user, checklists for assistants, and full overview for coordinator and family.',
+    'JodaCare brings the whole care team around the user, with Boka for assistants and full overview for coordinator and family.',
   heroBadge: 'User-controlled personal assistance',
   primaryCta: 'Contact us',
   secondaryCta: 'See features',
@@ -125,12 +125,12 @@ const en: BpaContent = {
     {
       title: 'For the user',
       description:
-        'Jodabook is a simple app with large buttons and images for people who need extra support. No passwords to remember, just sign in with QR code and PIN.',
+        'Jodabook is a simple app with large buttons and images for people who need extra support. No passwords to remember, just sign in with QR code and PIN. Jodabook arrives in Q1 2027.',
     },
     {
       title: 'For assistants',
       description:
-        'Routines and checklists everyone follows. The diary (“Boka”) for team communication. Always up to date, always available.',
+        'Assistants use Boka for team communication. The information is always up to date and always available.',
     },
     {
       title: 'For coordinator and family',
@@ -140,12 +140,12 @@ const en: BpaContent = {
   featuresTitle: 'Features for everyday life',
   features: [
     {
-      title: 'Jodabook for the user',
+      title: 'Jodabook for the user (coming Q1 2027)',
       description:
         'A simple app with large buttons, images and sound. Supports cognitive adaptations for intellectual disability, autism and dementia.',
     },
     {
-      title: 'Routines and checklists',
+      title: 'Routines and checklists (coming Q4 2026)',
       description:
         'Create recurring or one-off checklists. Assistants tick off step by step. Everything is logged.',
     },
@@ -154,21 +154,21 @@ const en: BpaContent = {
       description: 'Only people in the team see the user. Privacy and role-based access built in.',
     },
     {
-      title: 'Event log',
-      description: 'Record incidents, behaviour, medication and more. Coordinator and relevant staff are notified.',
+      title: 'Event log (coming Q4 2026)',
+      description: 'Record incidents, behaviour, medication and more.',
     },
     {
       title: 'KAI assistant',
-      description: 'An AI helper for staff that explains routines, answers questions and guides you in the platform.',
+      description: 'KAI helps you find your way around JodaCare and explains how the app works.',
     },
   ],
   referenceTitle: 'In use since 2016',
   referenceBody:
-    'Horten municipality is a paying BPA customer and has used JodaCare from the start. The Silje Figved network is an active pilot for migration to JodaCare 2.0.',
-  statusBadge: 'Beta 2026',
-  statusTitle: 'Join as a pilot municipality',
+    'Horten municipality is a paying BPA customer and has used JodaCare from the start.',
+  statusBadge: 'Launching autumn 2026',
+  statusTitle: 'Join from the start',
   statusBody:
-    'JodaCare for BPA is in active use and is being brought into JodaCare 2.0 during 2026. Pilot municipalities receive close follow-up and help shape the final product.',
+    'The new JodaCare launches in autumn 2026 with Boka, calendar, messages and a team around each user. New modules arrive quarter by quarter, and the municipality chooses which ones it wants.',
   priceNote:
     'Licence from NOK 2,990 per month for up to 10 service recipients, plus onboarding.',
   priceLinkText: 'See all prices',

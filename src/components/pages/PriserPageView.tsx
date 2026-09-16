@@ -36,6 +36,9 @@ export function PriserPageView({ locale }: Props) {
               <StaggerItem key={card.name}>
                 <Card variant="elevated" padding="lg" className="h-full flex flex-col">
                   <h3 className="font-serif text-xl font-semibold text-text">{card.name}</h3>
+                  {card.status && (
+                    <p className="mt-2 text-sm font-medium text-success">{card.status}</p>
+                  )}
 
                   <div className="mt-4 rounded-xl bg-accent-light px-5 py-4">
                     <p>

@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Originaler av egne bilder. Inneholder EXIF med GPS og skal aldri committes.
+# Web-versjonene ligger i public/images/.
+_originaler-egne-bilder/

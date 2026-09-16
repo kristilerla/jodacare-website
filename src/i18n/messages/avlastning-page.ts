@@ -4,6 +4,7 @@ export type AvCard = { title: string; description: string };
 export type AvRelated = { title: string; description: string; href: string };
 
 export type AvlastningContent = {
+  heroImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   heroBadge: string;
@@ -26,6 +27,7 @@ export type AvlastningContent = {
 };
 
 const no: AvlastningContent = {
+  heroImageAlt: 'Barn titter frem bak en rød stolpe',
   heroTitle: 'De samme rutinene og den samme tryggheten, uansett hvor barnet er.',
   heroSubtitle:
     'JodaCare skaper kontinuitet mellom hjem og avlastning, slik at barnet møter de samme forventningene, de samme bildene og den samme forståelsen uansett hvem som er på jobb.',
@@ -39,7 +41,7 @@ const no: AvlastningContent = {
     {
       title: 'For barnet',
       description:
-        'Jodabook har store knapper og kjente bilder, og barnet får det samme trygge grensesnittet i avlastningen som det kjenner fra hjemmet.',
+        'Jodabook har store knapper og kjente bilder, og barnet får det samme trygge grensesnittet i avlastningen som det kjenner fra hjemmet. Jodabook kommer Q1 2027.',
     },
     {
       title: 'For foreldrene',
@@ -49,38 +51,43 @@ const no: AvlastningContent = {
     {
       title: 'For ansatte',
       description:
-        'Ansatte jobber etter delte rutiner mellom hjem og avlastning, vet hva som forventes, og hendelsesloggen dokumenterer det som skjer underveis.',
+        'Ansatte skriver i Boka der jobben skjer, og foreldrene ser det samme dagen. Hendelseslogg kommer Q4 2026.',
     },
     {
       title: 'For koordinator',
       description:
-        'Koordinator har full oversikt over alle barn, team og tjenestesteder, og delingskontroll bestemmer hva foreldrene får se.',
+        'Koordinator setter opp team, plasserer ansatte og ser hvem som har tilgang til hva.',
     },
   ],
   featuresTitle: 'Funksjoner som dekker hverdagen',
   features: [
     {
-      title: 'Delte rutiner mellom hjem og avlastning',
+      title: 'Boka: hverdagen delt mellom hjem og avlastning',
+      description:
+        'Ansatte skriver, foreldrene leser og svarer. Bilder og korte videoer følger med. Bare teamet rundt barnet ser innholdet.',
+    },
+    {
+      title: 'Delte rutiner mellom hjem og avlastning (kommer Q4 2026)',
       description: 'Du oppretter rutiner én gang, og begge steder jobber etter dem.',
     },
     {
-      title: 'Jodabook for barnet',
+      title: 'Jodabook for barnet (kommer Q1 2027)',
       description: 'Jodabook har et enkelt grensesnitt tilpasset kognitive utfordringer, med innlogging via QR-kode, PIN eller biometri.',
     },
     {
-      title: 'Delingskontroll for hendelseslogg',
+      title: 'Hendelseslogg med delingskontroll (kommer Q4 2026)',
       description: 'Admin velger hvilke hendelsestyper foreldrene får se, og sensitive interne notater forblir innenfor avlastningens egne rammer.',
     },
     {
-      title: 'Bekymringsmelding',
+      title: 'Bekymringsmelding (kommer Q1 2027)',
       description:
         'Foreldre kan opprette bekymringsmelding direkte i appen, og meldingen følger en tydelig status-flyt fra opprettet til under behandling, besvart og lukket.',
     },
   ],
-  statusBadge: 'Kommer',
+  statusBadge: 'Lanseres høst 2026',
   statusTitle: 'Slik bygges JodaCare for avlastning',
   statusBody:
-    'JodaCare for avlastning er under aktiv utvikling som del av JodaCare 2.0. Ta kontakt for å høre mer eller melde din kommune som pilot.',
+    'Nye JodaCare lanseres høsten 2026 med Boka, kalender, beskjeder og team rundt hvert barn. Rutiner og hendelseslogg kommer Q4 2026, Jodabook og bekymringsmelding Q1 2027.',
   priceNote:
     'Lisens fra kr 2 990 per måned for inntil 10 tjenestemottakere, pluss oppstart.',
   priceLinkText: 'Se alle priser',
@@ -107,6 +114,7 @@ const no: AvlastningContent = {
 };
 
 const en: AvlastningContent = {
+  heroImageAlt: 'Child peeking out from behind a red post',
   heroTitle: 'The same routines and the same sense of safety, wherever the child is.',
   heroSubtitle:
     'JodaCare creates continuity between home and respite, so the child meets the same expectations, the same images and the same understanding no matter who is on shift.',
@@ -120,7 +128,7 @@ const en: AvlastningContent = {
     {
       title: 'For the child',
       description:
-        'Jodabook with large buttons and familiar images. The same reassuring interface as at home, available in respite too.',
+        'Jodabook with large buttons and familiar images. The same reassuring interface as at home, available in respite too. Jodabook arrives in Q1 2027.',
     },
     {
       title: 'For parents',
@@ -130,38 +138,43 @@ const en: AvlastningContent = {
     {
       title: 'For staff',
       description:
-        'Shared routines between home and respite. Everyone knows what is expected. The event log records what happens.',
+        'Staff write in Boka where the work happens, and parents see it the same day. The event log arrives in Q4 2026.',
     },
     {
       title: 'For the coordinator',
       description:
-        'Full overview of children, teams and locations. Sharing controls decide what parents can see.',
+        'The coordinator sets up teams, places staff and sees who has access to what.',
     },
   ],
   featuresTitle: 'Features for everyday life',
   features: [
     {
-      title: 'Shared routines between home and respite',
+      title: 'Boka: everyday life shared between home and respite',
+      description:
+        'Staff write, parents read and reply. Photos and short videos come along. Only the team around the child sees the content.',
+    },
+    {
+      title: 'Shared routines between home and respite (coming Q4 2026)',
       description: 'Create routines once. Both sides work from the same plan.',
     },
     {
-      title: 'Jodabook for the child',
+      title: 'Jodabook for the child (coming Q1 2027)',
       description: 'A simple interface adapted to cognitive challenges. QR sign-in, PIN and biometrics.',
     },
     {
-      title: 'Sharing control for the event log',
+      title: 'Event log with sharing control (coming Q4 2026)',
       description: 'Admins choose which event types parents see. Sensitive notes stay internal.',
     },
     {
-      title: 'Concern notification',
+      title: 'Concern notification (coming Q1 2027)',
       description:
         'Parents can send a concern directly in the app. Status flow: Created → In progress → Answered → Closed.',
     },
   ],
-  statusBadge: 'Coming',
+  statusBadge: 'Launching autumn 2026',
   statusTitle: 'How JodaCare for respite is being built',
   statusBody:
-    'JodaCare for respite is being developed as part of JodaCare 2.0. Get in touch to learn more or register interest.',
+    'The new JodaCare launches in autumn 2026 with Boka, calendar, messages and a team around each child. Routines and the event log arrive in Q4 2026, Jodabook and concern notifications in Q1 2027.',
   priceNote:
     'Licence from NOK 2,990 per month for up to 10 service recipients, plus onboarding.',
   priceLinkText: 'See all prices',

@@ -86,7 +86,6 @@ export const organisasjon = {
     name: 'Kristil Erla Håland',
     jobTitle: 'Grunnlegger og daglig leder',
   },
-  award: 'Europol Innovation Award 2024',
   areaServed: { '@type': 'Country', name: 'Norge' },
   knowsLanguage: ['nb-NO', 'en'],
 };
@@ -123,8 +122,8 @@ export const plattformen = {
   featureList: [
     'Daglig dialog mellom pårørende og helsepersonell',
     'Delt kalender og oppgaver rundt tjenestemottakeren',
-    'Jodabook — tilpasset visning for personer med demens eller kognitive utfordringer',
-    'Innlogging med ID-porten og Vipps',
+    'Jodabook — tilpasset visning for personer med demens eller kognitive utfordringer (kommer 2027)',
+    'Innlogging med ID-porten',
     'Data lagret i Europa, i tråd med GDPR',
   ],
 };

@@ -35,8 +35,23 @@ export function OmsorgsboligPageView({ locale }: Props) {
         primaryCta={{ text: d.primaryCta, href: withLocale('/kontakt', locale) }}
         secondaryCta={{ text: d.secondaryCta, href: '#funksjoner' }}
         variant="page"
+        image={{
+          src: '/images/benk-under-blomstrende-traer.jpg',
+          alt: d.heroImageAlt,
+          portrait: true,
+        }}
         badge={d.heroBadge}
       />
+
+      <section className="pt-12" aria-label="Status">
+        <Container size="md">
+          <FadeIn>
+            <p className="rounded-xl border border-secondary-dark bg-background-alt p-5 text-text-light">
+              {d.noticeBody}
+            </p>
+          </FadeIn>
+        </Container>
+      </section>
 
       <section className="py-20 lg:py-28 bg-background-alt" aria-labelledby="scenario-title">
         <Container size="md">

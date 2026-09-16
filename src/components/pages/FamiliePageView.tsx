@@ -1,4 +1,5 @@
 import { Hero, Pricing, CTA } from '@/components/sections';
+import Image from 'next/image';
 import { Container, Card, CardTitle, CardContent } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
@@ -42,6 +43,10 @@ export function FamiliePageView({ locale }: Props) {
         primaryCta={{ text: d.primaryCta, href: kontaktHref }}
         secondaryCta={{ text: d.secondaryCta, href: d.secondaryCtaHref }}
         variant="page"
+        image={{
+          src: '/images/mamma-og-barnebarn.jpg',
+          alt: d.heroImageAlt,
+        }}
         badge={d.heroBadge}
       />
 
@@ -52,12 +57,23 @@ export function FamiliePageView({ locale }: Props) {
               <h2 id="scenario-title" className="font-serif text-2xl sm:text-3xl font-bold text-text mb-6">
                 {d.scenarioTitle}
               </h2>
-              <div className="prose prose-lg text-text-light">
-                <p>{d.scenarioP1}</p>
-                <p>
-                  <em>{d.scenarioP2}</em>
-                </p>
-                <p>{d.scenarioP3}</p>
+              <div className="grid gap-8 md:grid-cols-2 md:items-center">
+                <div className="prose prose-lg text-text-light">
+                  <p>{d.scenarioP1}</p>
+                  <p>
+                    <em>{d.scenarioP2}</em>
+                  </p>
+                  <p>{d.scenarioP3}</p>
+                </div>
+                <div className="relative mx-auto aspect-[3/4] w-full max-w-[640px] overflow-hidden rounded-2xl">
+                  <Image
+                    src="/images/mamma-trappa.jpg"
+                    alt={d.scenarioImageAlt}
+                    fill
+                    sizes="(min-width: 768px) 45vw, 100vw"
+                    className="img-tone object-cover object-[center_30%]"
+                  />
+                </div>
               </div>
             </div>
           </FadeIn>

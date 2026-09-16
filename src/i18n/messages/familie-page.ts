@@ -15,6 +15,8 @@ export type FamiliePricingTier = {
 };
 
 export type FamilieContent = {
+  heroImageAlt: string;
+  scenarioImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   heroBadge: string;
@@ -45,7 +47,6 @@ export type FamilieContent = {
 const familyFeaturesNo: FamilieFeature[] = [
   { title: 'Del dagbok, bilder og meldinger', description: 'Del hverdagsøyeblikk og viktige beskjeder med hele familien i én sikker kanal.' },
   { title: 'Felles kalender', description: 'Familien holder oversikt over avtaler, besøk og aktiviteter på ett sted.' },
-  { title: 'En livshistorie som vokser med familien', description: 'KAI samler bilder og hverdagsnotater til en sammenhengende livshistorie som familien kan lese seg gjennom.' },
   { title: 'Plass til hele familien', description: 'Du kan invitere opptil ti familiemedlemmer inn i Familierommet, slik at alle som bryr seg får følge med.' },
   { title: 'Koble til kommunens helseteam', description: 'Når behovet oppstår, kan dere koble helsepersonell fra kommunen inn i Familierommet.' },
 ];
@@ -53,7 +54,6 @@ const familyFeaturesNo: FamilieFeature[] = [
 const familyFeaturesEn: FamilieFeature[] = [
   { title: 'Share diary, photos and messages', description: 'Share diary entries, photos and messages with the whole family.' },
   { title: 'Shared calendar', description: 'One calendar for appointments, visits and activities.' },
-  { title: 'AI-generated life story', description: 'An AI-generated life story that helps preserve memories.' },
   { title: 'Invite up to 10 family members', description: 'Invite up to 10 family members.' },
   { title: 'Connect to the municipal health team', description: 'Connect to municipal health services when the need arises.' },
 ];
@@ -73,14 +73,14 @@ const scenariosEn: FamilieScenario[] = [
 ];
 
 const stepsNo: FamilieStep[] = [
-  { step: '1', title: 'Opprett familierom', description: 'Registrer deg og fortell oss hvem som skal få omsorg.' },
+  { step: '1', title: 'Opprett Familierom', description: 'Fortell oss hvem som skal få omsorg.' },
   { step: '2', title: 'Inviter familien', description: 'Legg til søsken, barn og andre som vil følge med.' },
   { step: '3', title: 'Del hverdagen', description: 'Skriv i dagboken, del bilder og bruk kalenderen.' },
   { step: '4', title: 'Koble til kommunen', description: 'Når behovet oppstår, inviterer dere helsepersonell inn i teamet.' },
 ];
 
 const stepsEn: FamilieStep[] = [
-  { step: '1', title: 'Create a family room', description: 'Sign up and tell us who the care is for.' },
+  { step: '1', title: 'Create a family room', description: 'Tell us who the care is for.' },
   { step: '2', title: 'Invite the family', description: 'Add siblings, children and others who want to stay involved.' },
   { step: '3', title: 'Share everyday life', description: 'Write in the diary, share photos and use the calendar.' },
   { step: '4', title: 'Connect the municipality', description: 'When the need arises, invite health staff into the team.' },
@@ -97,13 +97,12 @@ const pricingNo: FamiliePricingTier[] = [
       'Inviter opptil 10 familiemedlemmer',
       'Delt tidslinje med bilder og tekst',
       'Felles kalender',
-      'AI-generert livshistorie',
       'Sikker meldingskanal',
       'Koble til kommunens helseteam',
     ],
-    cta: { text: 'Ta kontakt om Familierom', href: '/kontakt' },
+    cta: { text: 'Meld interesse', href: '/kontakt' },
     highlighted: true,
-    badge: 'Gratis i 14 dager',
+    badge: 'Kommer 2027',
   },
 ];
 
@@ -118,22 +117,23 @@ const pricingEn: FamiliePricingTier[] = [
       'Invite up to 10 family members',
       'Shared timeline with photos and text',
       'Shared calendar',
-      'AI-generated life story',
       'Secure messaging channel',
       'Connect to the municipal health team',
     ],
-    cta: { text: 'Contact us about a family room', href: '/kontakt' },
+    cta: { text: 'Register interest', href: '/kontakt' },
     highlighted: true,
-    badge: '14 days free',
+    badge: 'Coming 2027',
   },
 ];
 
 const no: FamilieContent = {
-  heroTitle: 'Start et Familierom',
+  heroImageAlt: 'Ung mann og eldre kvinne sitter tett sammen i en sofa',
+  scenarioImageAlt: 'Eldre kvinne sett nedenfra i en trappeoppgang, svart-hvitt',
+  heroTitle: 'Familierom kommer i 2027',
   heroSubtitle:
     'Samle familien rundt den som trenger omsorg. Del hverdagen, koordiner besøk, og hold alle oppdatert uansett hvor dere bor i landet.',
-  heroBadge: 'Gratis i 14 dager',
-  primaryCta: 'Ta kontakt om Familierom',
+  heroBadge: 'Kommer 2027',
+  primaryCta: 'Meld interesse',
   secondaryCta: 'Se hvordan det fungerer',
   secondaryCtaHref: '#hvordan',
   scenarioTitle: 'Kjenner du deg igjen?',
@@ -148,23 +148,25 @@ const no: FamilieContent = {
   whoTitle: 'Hvem er dette for?',
   whoSubtitle: 'JodaCare passer for alle familier som koordinerer omsorg på tvers av avstand.',
   scenarios: scenariosNo,
-  stepsTitle: 'Kom i gang på minutter',
+  stepsTitle: 'Slik vil det fungere',
   steps: stepsNo,
   pricingTitle: 'Enkel prising for familier',
-  pricingSubtitle: 'Start gratis og oppgrader når du er klar.',
-  pricingFootnote: 'Ingen kredittkort kreves. Du får fjorten dager gratis prøveperiode, og prisen er 299 kr per måned uten binding etter det.',
+  pricingSubtitle: 'Prisen er satt. Betalingsløsningen kommer sammen med Familierom.',
+  pricingFootnote: 'Prisen blir 299 kr per måned uten binding, med fjorten dager gratis først.',
   pricingTiers: pricingNo,
   ctaTitle: 'Gi familien din trygghet',
-  ctaSubtitle: 'Start gratis i dag og se hvor enkelt det er å holde alle oppdatert.',
-  ctaPrimary: 'Ta kontakt om Familierom',
+  ctaSubtitle: 'Legg igjen e-post, så sier vi fra når Familierom er klart.',
+  ctaPrimary: 'Meld interesse',
 };
 
 const en: FamilieContent = {
-  heroTitle: 'Start a family room',
+  heroImageAlt: 'Young man and older woman sitting close together on a sofa',
+  scenarioImageAlt: 'Older woman seen from below in a stairwell, black and white',
+  heroTitle: 'Family room is coming in 2027',
   heroSubtitle:
     'Bring the family together around the person who needs care. Share everyday life, coordinate visits and keep everyone updated wherever you live.',
-  heroBadge: '14 days free',
-  primaryCta: 'Contact us about a family room',
+  heroBadge: 'Coming 2027',
+  primaryCta: 'Register interest',
   secondaryCta: 'See how it works',
   secondaryCtaHref: '#hvordan',
   scenarioTitle: 'Does this sound familiar?',
@@ -179,15 +181,15 @@ const en: FamilieContent = {
   whoTitle: 'Who is this for?',
   whoSubtitle: 'JodaCare suits any family coordinating care across distance.',
   scenarios: scenariosEn,
-  stepsTitle: 'Get started in minutes',
+  stepsTitle: 'How it will work',
   steps: stepsEn,
   pricingTitle: 'Simple pricing for families',
-  pricingSubtitle: 'Start free and upgrade when you are ready.',
-  pricingFootnote: 'No credit card. 14 days free. NOK 299/month afterwards, no lock-in.',
+  pricingSubtitle: 'The price is set. The payment solution arrives together with Family room.',
+  pricingFootnote: 'The price will be NOK 299 per month with no lock-in, with fourteen days free first.',
   pricingTiers: pricingEn,
   ctaTitle: 'Give your family peace of mind',
-  ctaSubtitle: 'Start free today and see how easy it is to keep everyone updated.',
-  ctaPrimary: 'Contact us about a family room',
+  ctaSubtitle: 'Leave your email and we will let you know when Family room is ready.',
+  ctaPrimary: 'Register interest',
 };
 
 export function getFamilieContent(locale: Locale): FamilieContent {

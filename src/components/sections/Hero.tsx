@@ -25,6 +25,12 @@ interface HeroProps {
   variant?: 'home' | 'page';
   images?: HeroImage[];
   badge?: string;
+  /**
+   * Bilde ved siden av teksten på segmentsidene. Tekst til venstre, bilde til
+   * høyre i 5/12 av bredden på desktop. På mobil ligger bildet over teksten.
+   * Stående motiv beskjæres fra 30 % ned, slik at ansikter ikke kuttes.
+   */
+  image?: { src: string; alt: string; portrait?: boolean };
 }
 
 const SLIDE_DURATION = 6000;
@@ -37,6 +43,7 @@ export function Hero({
   variant = 'home',
   images = [],
   badge,
+  image,
 }: HeroProps) {
   const isHome = variant === 'home';
   const hasImages = isHome && images.length > 0;
@@ -62,7 +69,39 @@ export function Hero({
         aria-labelledby="hero-title"
       >
         <Container size="md">
-          <div className="max-w-3xl">
+          <div
+            className={
+              image
+                ? 'grid gap-10 lg:grid-cols-12 lg:items-center'
+                : undefined
+            }
+          >
+            {image && (
+              <FadeIn className="order-1 lg:order-2 lg:col-span-5">
+                {/*
+                  Liggende motiv står i 4/3. Stående motiv står i 3/4 også på
+                  mobil: i en liggende ramme havner ansiktet utenfor bildet,
+                  som er det motsatte av hensikten med beskjæringen.
+                */}
+                <div
+                  className={`relative overflow-hidden rounded-2xl ${
+                    image.portrait ? 'aspect-[3/4]' : 'aspect-[4/3]'
+                  }`}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className={`img-tone object-cover ${
+                      image.portrait ? 'object-[center_30%]' : ''
+                    }`}
+                    priority
+                  />
+                </div>
+              </FadeIn>
+            )}
+          <div className={image ? 'order-2 lg:order-1 lg:col-span-7' : 'max-w-3xl'}>
             {badge && (
               <FadeIn>
                 <span className="inline-block px-4 py-1.5 bg-accent text-white text-sm font-medium rounded-full mb-6">
@@ -99,6 +138,7 @@ export function Hero({
                 </div>
               </FadeIn>
             )}
+          </div>
           </div>
         </Container>
       </section>
