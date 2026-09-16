@@ -31,6 +31,7 @@
   },
   "sourcesHeading": "Kilder",
   "checkedNote": "Henvisningene er kontrollert mot Lovdata og Helsedirektoratets rundskriv 13. september 2026. Ny forvaltningslov er vedtatt (LOV-2025-06-20-81) og henvisningene til forvaltningsloven oppdateres når den trer i kraft.",
+  "whatNote": "Velg den ene situasjonen som passer best. Har du flere saker, lager du ett brev per sak. Da vet den som leser nøyaktig hva du ber om.",
   "formNote": "Opplysningene brukes bare til å sette sammen brevet her i nettleseren. De sendes ikke til JodaCare eller noen andre.",
   "formNoteExample": "Feltene er fylt med et oppdiktet eksempel. Bytt ut med dine egne.",
   "formNoteOslo": "Bor du i Oslo, er det bydelen som fatter vedtaket og skal ha klagen. Skriv derfor både kommune og bydel.",
@@ -92,6 +93,7 @@
         "pbrl-7-2",
         "pbrl-7-5",
         "hdir-7-2",
+        "pbrl-7-7",
         "helsenorge"
       ],
       "sendSteps": [
@@ -110,6 +112,14 @@
         {
           "lead": "Legg ved",
           "text": " kopi av vedtaket{fullmakt} og eventuelle uttalelser fra lege eller andre."
+        },
+        {
+          "lead": "Én sak per brev.",
+          "text": " Har du flere vedtak eller flere problemer, send ett brev for hvert. Da er det tydelig hva kommunen og Statsforvalteren skal ta stilling til."
+        },
+        {
+          "lead": "Skriv nøkternt.",
+          "text": " Beskriv hva som mangler og hva det fører til. Karakteristikker av ansatte eller kommunen svekker klagen."
         },
         {
           "lead": "Klagen er gratis.",
@@ -192,6 +202,12 @@
       "label": "Helsedirektoratet: kommentarer til § 7-2",
       "url": "https://www.helsedirektoratet.no/rundskriv/pasient-og-brukerrettighetsloven-med-kommentarer/klage-mv/-7-2-klage-mv",
       "note": "Rundskriv"
+    },
+    {
+      "id": "pbrl-7-7",
+      "label": "Pasient- og brukerrettighetsloven § 7-7 Statsforvalterens prøving og kommunalt selvstyre",
+      "url": "https://lovdata.no/lov/1999-07-02-63/%C2%A77-7",
+      "note": "Lovdata"
     },
     {
       "id": "helsenorge",
@@ -549,5 +565,20 @@
         }
       ]
     }
-  ]
+  ],
+  "statsforvalterenKan": {
+    "heading": "Hva Statsforvalteren kan gjøre",
+    "klage": [
+      "Statsforvalteren kan prøve om kommunen har forstått loven riktig, om saksbehandlingen var forsvarlig og om tjenesten dekker behovet. Den kan omgjøre vedtaket eller sende det tilbake til kommunen for ny behandling.",
+      "Der kommunen har valgfrihet i hvordan hjelpen gis, skal Statsforvalteren legge vekt på kommunens selvstyre (pasient- og brukerrettighetsloven § 7-7). Skriv derfor om behovet og om hva som skjer uten hjelpen. Det veier tyngre enn hvilken løsning du ønsker deg.",
+      "En avgjørelse som kjennes urimelig er ikke alltid ulovlig. Klagen handler om det loven gir deg rett til. Er du usikker på om du har en sak, spør Pasient- og brukerombudet først."
+    ],
+    "tilsyn": [
+      "I en tilsynssak vurderer Statsforvalteren om tjenesten eller helsepersonellet har brutt pliktene sine. Utfallet er som regel at tjenesten må rette rutiner. Statsforvalteren avgjør ikke hvilke tjenester du skal få i en tilsynssak. Det krever en rettighetsklage."
+    ]
+  },
+  "fullmakt": {
+    "intro": "Klager du på vegne av en voksen, må den det gjelder skrive under på en fullmakt. Uten fullmakt blir klagen avvist. Er du oppnevnt verge, legger du ved vergefullmakten i stedet.",
+    "button": "Kopier fullmakten"
+  }
 }

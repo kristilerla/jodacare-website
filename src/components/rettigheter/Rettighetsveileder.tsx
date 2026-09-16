@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { Container } from '@/components/ui';
 import {
+  buildFullmakt,
   buildLetter,
   data,
   type FieldKey,
@@ -67,7 +68,9 @@ export function Rettighetsveileder() {
   // tømming ved fokus og om «Tjenesten det gjelder» fylles automatisk.
   const [touched, setTouched] = useState<Partial<Record<FieldKey, boolean>>>({});
   const [toast, setToast] = useState('');
+  const [fullmaktToast, setFullmaktToast] = useState('');
   const letterRef = useRef<HTMLPreElement>(null);
+  const fullmaktRef = useRef<HTMLPreElement>(null);
   const answerRef = useRef<HTMLDivElement>(null);
 
   // Alt som avhenger av nettleseren settes etter montering, slik at
@@ -155,6 +158,12 @@ export function Rettighetsveileder() {
   };
 
   const letter = buildLetter(sit, who, fields);
+  // Fullmakt er bare aktuelt når noen klager på vegne av en voksen.
+  const visFullmakt = paaVegne && sit.route === 'klage';
+  const fullmakt = visFullmakt ? buildFullmakt(sit, fields) : '';
+  // Purring har ikke noe «Hva Statsforvalteren kan gjøre» — saken er ikke der ennå.
+  const sfAvsnitt =
+    sit.route === 'purring' ? null : data.statsforvalterenKan[sit.route];
 
   const sources: Source[] = [
     ...sit.sources,
@@ -163,12 +172,15 @@ export function Rettighetsveileder() {
       .filter((c): c is Source & { id: string } => Boolean(c)),
   ];
 
-  const copyLetter = async () => {
+  const copyText = async (
+    text: string,
+    node: HTMLPreElement | null,
+    setMelding: (v: string) => void,
+  ) => {
     try {
-      await navigator.clipboard.writeText(letter);
-      setToast(data.copy.copied);
+      await navigator.clipboard.writeText(text);
+      setMelding(data.copy.copied);
     } catch {
-      const node = letterRef.current;
       const selection = window.getSelection();
       if (node && selection) {
         const range = document.createRange();
@@ -176,9 +188,9 @@ export function Rettighetsveileder() {
         selection.removeAllRanges();
         selection.addRange(range);
       }
-      setToast(data.copy.fallback);
+      setMelding(data.copy.fallback);
     }
-    window.setTimeout(() => setToast(''), 2000);
+    window.setTimeout(() => setMelding(''), 2000);
   };
 
   const sendSteps = route.sendSteps.map((step) => ({
@@ -256,6 +268,9 @@ export function Rettighetsveileder() {
               {data.steps.what}
             </h2>
           </div>
+          <p className="mb-5 max-w-[60ch] text-sm text-text-light">
+            {data.whatNote}
+          </p>
           <div className="grid gap-3 sm:grid-cols-2">
             {available.map((s) => (
               <button
@@ -315,6 +330,20 @@ export function Rettighetsveileder() {
               </p>
             ))}
           </div>
+          {sfAvsnitt ? (
+            <div className="mt-6 rounded-xl border border-secondary-dark p-4">
+              <h3 className="font-serif text-lg font-semibold text-text">
+                {data.statsforvalterenKan.heading}
+              </h3>
+              <div className="mt-3 space-y-3">
+                {sfAvsnitt.map((p) => (
+                  <p key={p} className="text-sm text-text-light">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ) : null}
           <div className="mt-6 rounded-xl bg-background-alt p-4">
             <h3 className="font-serif text-lg font-semibold text-text">
               {data.sourcesHeading}
@@ -466,7 +495,7 @@ export function Rettighetsveileder() {
               </span>
               <button
                 type="button"
-                onClick={copyLetter}
+                onClick={() => copyText(letter, letterRef.current, setToast)}
                 className="rounded-lg bg-primary px-5 py-2.5 font-medium text-white transition-colors hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 {data.copy.button}
@@ -491,6 +520,36 @@ export function Rettighetsveileder() {
               </li>
             ))}
           </ul>
+
+          {visFullmakt ? (
+            <div className="mt-8 rounded-xl border border-secondary-dark p-4 sm:p-6">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <p className="max-w-[52ch] text-sm text-text-light">
+                  {data.fullmakt.intro}
+                </p>
+                <div className="flex items-center gap-3">
+                  <span aria-live="polite" className="text-sm font-medium text-primary">
+                    {fullmaktToast}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      copyText(fullmakt, fullmaktRef.current, setFullmaktToast)
+                    }
+                    className="rounded-lg border border-primary px-5 py-2.5 font-medium text-primary-dark transition-colors hover:bg-accent-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  >
+                    {data.fullmakt.button}
+                  </button>
+                </div>
+              </div>
+              <pre
+                ref={fullmaktRef}
+                className="mt-5 overflow-x-auto whitespace-pre-wrap rounded-xl border border-secondary-dark bg-background-alt p-4 font-sans text-sm leading-relaxed text-text sm:p-6"
+              >
+                {fullmakt}
+              </pre>
+            </div>
+          ) : null}
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {data.help.map((h) => (
