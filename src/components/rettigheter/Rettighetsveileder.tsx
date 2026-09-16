@@ -40,16 +40,20 @@ function situationById(id: string): Situation {
  * «Tjenesten det gjelder» har ikke noe globalt eksempel — der er sporets
  * defaultService eksempelet.
  */
-function examplesFor(s: Situation): Partial<Record<FieldKey, string>> {
+function examplesFor(
+  s: Situation,
+  who: WhoId,
+): Partial<Record<FieldKey, string>> {
   return {
     ...(data.examples as Partial<Record<FieldKey, string>>),
     tjeneste: s.defaultService,
     ...(s.examples ?? {}),
+    ...(s.examplesByWho?.[who] ?? {}),
   };
 }
 
 function initialFields(): Fields {
-  const e = examplesFor(situationById(DEFAULT_SIT));
+  const e = examplesFor(situationById(DEFAULT_SIT), DEFAULT_WHO);
   const tom: Fields = {
     navn: '', kommune: '', fylke: '', enhet: '', pasient: '', relasjon: '',
     tjeneste: '', dato: '', saksnr: '', idag: '', sok: '', hvorfor: '',
@@ -88,10 +92,10 @@ export function Rettighetsveileder() {
    * teksten deres.
    */
   const applySituation = useCallback(
-    (s: Situation, scroll: boolean) => {
+    (s: Situation, nyWho: WhoId, scroll: boolean) => {
       setSitId(s.id);
       setRouteChoice(s.routeOptions ? s.routeOptions[0].id : null);
-      const nye = examplesFor(s);
+      const nye = examplesFor(s, nyWho);
       setFields((f) => {
         const neste = { ...f };
         (Object.keys(nye) as FieldKey[]).forEach((k) => {
@@ -124,7 +128,7 @@ export function Rettighetsveileder() {
     setWho(validWho.id);
     setSitId(validSit.id);
     setRouteChoice(validSit.routeOptions ? validSit.routeOptions[0].id : null);
-    setFields((f) => ({ ...f, ...examplesFor(validSit) }));
+    setFields((f) => ({ ...f, ...examplesFor(validSit, validWho.id) }));
     // Kjøres bare ved montering — hash leses én gang.
   }, []);
 
@@ -142,7 +146,7 @@ export function Rettighetsveileder() {
       const nySit = tillatt.find((s) => s.id === sitDel);
       if (!nySit || (nyWho.id === who && nySit.id === sitId)) return;
       setWho(nyWho.id);
-      applySituation(nySit, true);
+      applySituation(nySit, nyWho.id, true);
     };
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
@@ -174,7 +178,7 @@ export function Rettighetsveileder() {
 
   // Felt som fortsatt står med eksempelverdien vises dempet, slik at det er
   // tydelig at teksten skal byttes ut. Så snart brukeren skriver, blir den mørk.
-  const examples = examplesFor(sit);
+  const examples = examplesFor(sit, who);
   const erEksempel = (key: FieldKey) =>
     examples[key] !== undefined && !touched[key];
   const fieldClass = (key: FieldKey) =>
@@ -213,10 +217,12 @@ export function Rettighetsveileder() {
   const chooseWho = (id: WhoId) => {
     setWho(id);
     const ok = data.situations.filter((s) => s.appliesTo.includes(id));
-    if (!ok.find((s) => s.id === sitId)) applySituation(ok[0], false);
+    // Eksempelteksten kan avhenge av rollen, så den må friskes opp også når
+    // sporet blir stående.
+    applySituation(ok.find((s) => s.id === sitId) ?? ok[0], id, false);
   };
 
-  const chooseSit = (s: Situation) => applySituation(s, true);
+  const chooseSit = (s: Situation) => applySituation(s, who, true);
 
   const letter = buildLetter(sit, who, fields, valgtRute?.letterTemplate ?? sit.route);
   // Representerer du en annen, trengs fullmakt uansett hvilket spor saken går i.
@@ -253,7 +259,11 @@ export function Rettighetsveileder() {
     window.setTimeout(() => setMelding(''), 2000);
   };
 
-  const sendSteps = route.sendSteps.map((step) => ({
+  // Rutevalget kan ha punkter som bare gjelder den ene ruten.
+  const alleSendSteps = valgtRute?.sendStepsExtra
+    ? [...route.sendSteps, ...valgtRute.sendStepsExtra]
+    : route.sendSteps;
+  const sendSteps = alleSendSteps.map((step) => ({
     ...step,
     lead: step.lead.replace('{fylke}', fields.fylke),
     text: step.text.replace(

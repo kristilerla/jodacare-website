@@ -641,7 +641,17 @@
           "url": "https://www.sivilombudet.no/veiledere/innsynsguiden/",
           "note": "Veileder"
         }
-      ]
+      ],
+      "examplesByWho": {
+        "selv": {
+          "sok": "Jeg ba 2.9.2026 om innsyn i alle dokumenter i saken min om avlastning, inkludert kartleggingen fra saksbehandler og uttalelsen fra avlastningsboligen. Kommunen svarte 9.9.2026 at kartleggingen er et internt dokument og ikke kan utleveres.",
+          "hvorfor": "Vedtaket bygger på kartleggingen. Uten å se den kan jeg ikke vite om opplysningene om behovet mitt er riktige, og jeg kan ikke skrive en god klage."
+        },
+        "egen": {
+          "sok": "Jeg ba 2.9.2026 om innsyn i alle dokumenter i saken min om avlastning, inkludert kartleggingen fra saksbehandler og uttalelsen fra avlastningsboligen. Kommunen svarte 9.9.2026 at kartleggingen er et internt dokument og ikke kan utleveres.",
+          "hvorfor": "Vedtaket bygger på kartleggingen. Uten å se den kan jeg ikke vite om opplysningene om behovet mitt er riktige, og jeg kan ikke skrive en god klage."
+        }
+      }
     },
     {
       "id": "ventet",
@@ -729,7 +739,16 @@
           "label": "Tjenesten ble redusert eller endret",
           "letterTitle": "Klagebrevet ditt",
           "letterIntro": "Brevet er skrevet som en klage på et nytt vedtak om redusert tjeneste, med hjemmel, frist og oversendelse til Statsforvalteren.",
-          "letterTemplate": "represalier-klage"
+          "letterTemplate": "represalier-klage",
+          "sendStepsExtra": [
+            {
+              "lead": "Får du ikke medhold hos Statsforvalteren,",
+              "text": " kan du klage til Sivilombudet innen ett år. Se sporet ",
+              "link": "sivilombudet",
+              "linkLabel": "Statsforvalteren ga meg ikke medhold",
+              "textEnd": "."
+            }
+          ]
         },
         {
           "id": "tilsyn",

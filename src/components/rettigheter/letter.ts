@@ -29,6 +29,8 @@ export type RouteOption = {
   letterTitle: string;
   letterIntro: string;
   letterTemplate: LetterTemplate;
+  /** Punkter som bare gjelder denne ruten, lagt til sist i sendelista. */
+  sendStepsExtra?: SendStep[];
 };
 
 export type Situation = {
@@ -56,6 +58,12 @@ export type Situation = {
   fieldLabels?: Partial<Record<FieldKey, string>>;
   /** Eksempelverdier som gjelder bare her. */
   examples?: Partial<Record<FieldKey, string>>;
+  /**
+   * Eksempler som avhenger av hvem saken gjelder. Et spor som kan gjelde
+   * både deg selv og en du representerer, trenger ulik ordlyd: «saken min»
+   * mot «saken for Ola». Overstyrer `examples`.
+   */
+  examplesByWho?: Partial<Record<WhoId, Partial<Record<FieldKey, string>>>>;
 };
 
 /**
@@ -220,7 +228,9 @@ Klagefristen i hovedsaken om ${tj} løper parallelt. Jeg ber om at fristen for �
 Med vennlig hilsen
 
 ${navn}
-${idag}${paaVegne ? '\n\nVedlegg: fullmakt' : ''}`;
+${idag}
+
+Vedlegg: kopi av avslaget${paaVegne ? ', fullmakt' : ''}`;
   }
 
   if (template === 'represalier-klage') {
