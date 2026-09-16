@@ -29,31 +29,31 @@ const servicesNo: KommuneService[] = [
     title: 'Omsorgsbolig / Hub',
     description:
       'En skjerm i leiligheten kobler beboer, familie og ansatte i én sammenhengende flyt, slik at familien alltid er nær.',
-    badge: 'Beta 2026',
-    badgeColor: 'bg-warning/10 text-warning',
+    badge: 'Pilot 2027',
+    badgeColor: 'bg-primary/10 text-primary',
     href: '/omsorgsbolig',
   },
   {
     title: 'BPA, brukerstyrt personlig assistanse',
     description:
       'Samle omsorgsteamet rundt brukeren med Jodabook, sjekklister og full oversikt for koordinator og familie.',
-    badge: 'Beta 2026',
-    badgeColor: 'bg-warning/10 text-warning',
+    badge: 'Lanseres høst 2026',
+    badgeColor: 'bg-success/10 text-success',
     href: '/bpa',
   },
   {
     title: 'Avlastning',
     description:
       'Kontinuitet for barnet, med de samme rutinene og den samme tryggheten enten det er hjemme eller i avlastningen.',
-    badge: 'Kommer',
-    badgeColor: 'bg-secondary-light text-text-muted',
+    badge: 'Lanseres høst 2026',
+    badgeColor: 'bg-success/10 text-success',
     href: '/avlastning',
   },
   {
     title: 'Barnevern og samvær',
     description:
       'JodaCare følger barnet gjennom hver overgang, med informasjonsbarrierer som beskytter hver enkelt rolle og full sporbarhet for kommunen.',
-    badge: 'Kommer',
+    badge: 'Kommer Q2 2027',
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/barnevern',
   },
@@ -61,7 +61,7 @@ const servicesNo: KommuneService[] = [
     title: 'JodaVisit, videobesøk',
     description:
       'Trygge videobesøk erstatter unødvendige fysiske besøk, slik at eldre kan bo hjemme lenger med familien nær.',
-    badge: 'Kommer',
+    badge: 'Kommer 2027',
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/jodavisit',
   },
@@ -80,31 +80,31 @@ const servicesEn: KommuneService[] = [
     title: 'Care home / Hub',
     description:
       'A screen in the flat that connects resident, family and staff in one coherent flow. Family stays close.',
-    badge: 'Beta 2026',
-    badgeColor: 'bg-warning/10 text-warning',
+    badge: 'Pilot 2027',
+    badgeColor: 'bg-primary/10 text-primary',
     href: '/omsorgsbolig',
   },
   {
     title: 'User-controlled personal assistance (BPA)',
     description:
       'Bring the care team around the user with Jodabook, checklists and full overview for coordinator and family.',
-    badge: 'Beta 2026',
-    badgeColor: 'bg-warning/10 text-warning',
+    badge: 'Launching autumn 2026',
+    badgeColor: 'bg-success/10 text-success',
     href: '/bpa',
   },
   {
     title: 'Respite care',
     description:
       'Continuity for the child, with the same routines and the same sense of safety whether at home or in respite.',
-    badge: 'Coming',
-    badgeColor: 'bg-secondary-light text-text-muted',
+    badge: 'Launching autumn 2026',
+    badgeColor: 'bg-success/10 text-success',
     href: '/avlastning',
   },
   {
     title: 'Child welfare and contact visits',
     description:
       'Contact visits documented safely with information barriers that protect everyone and full traceability.',
-    badge: 'Coming',
+    badge: 'Coming Q2 2027',
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/barnevern',
   },
@@ -112,7 +112,7 @@ const servicesEn: KommuneService[] = [
     title: 'JodaVisit, video visits',
     description:
       'Replace unnecessary physical visits with secure video visits. People stay at home longer with family near.',
-    badge: 'Coming',
+    badge: 'Coming 2027',
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/jodavisit',
   },
@@ -133,7 +133,7 @@ const no: KommuneContent = {
   primaryCta: 'Kontakt oss',
   trustItems: [
     'Norske kommuner siden 2016',
-    'ID-porten og Vipps',
+    'Innlogging med ID-porten',
     'GDPR · data i Europa',
     'Europol Innovation Award 2024',
   ],
@@ -157,7 +157,7 @@ const en: KommuneContent = {
   primaryCta: 'Contact us',
   trustItems: [
     'Norwegian municipalities since 2016',
-    'ID-porten and Vipps',
+    'Sign-in with ID-porten',
     'GDPR · data in Europe',
     'Europol Innovation Award 2024',
   ],

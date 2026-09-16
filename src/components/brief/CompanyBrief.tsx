@@ -134,7 +134,7 @@ export function CompanyBrief() {
             </div>
             <div className="block">
               <h3>Slik blir det</h3>
-              <p>JodaVisit er under utvikling: videobesøk fra hjemmetjenesten som erstatter unødvendige kjøreturer, med dokumentasjon rett i Boka etterpå. Familierom med Vipps er neste trinn for private: en datter skal kunne opprette rommet selv og invitere kommunen inn når behovet oppstår.</p>
+              <p>JodaVisit er under utvikling: videobesøk fra hjemmetjenesten som erstatter unødvendige kjøreturer, med dokumentasjon rett i Boka etterpå. Familierom med Vipps kommer i 2027: en datter skal kunne opprette rommet selv og invitere kommunen inn når behovet oppstår.</p>
             </div>
           </div>
           <div className="prose" style={{ marginTop: '1.5rem' }}>
@@ -274,7 +274,7 @@ export function CompanyBrief() {
             <p>Avtaler løper 12 måneder med automatisk fornyelse og tre måneders oppsigelse. Lisens faktureres kvartalsvis på forskudd. Alle priser eks. mva. Nye moduler får egen pris når de er ferdige. Prisen på grunnmodulen endres ikke av at nye moduler kommer.</p>
           </div>
           <div className="cols" style={{ marginTop: '1.5rem' }}>
-            <div className="block"><h3>For familier</h3><p>Familierom for private via Vipps kommer som neste trinn etter lansering: 14 dagers gratis prøveperiode, deretter 299 kroner per måned per familierom, ingen binding. Det blir den første tjenesten i Norge der en datter kan opprette et omsorgsrom selv og invitere kommunen inn.</p></div>
+            <div className="block"><h3>For familier</h3><p>Familierom for private via Vipps kommer i 2027: 14 dagers gratis prøveperiode, deretter 299 kroner per måned per familierom, ingen binding. Det blir den første tjenesten i Norge der en datter kan opprette et omsorgsrom selv og invitere kommunen inn.</p></div>
             <div className="block"><h3>For omsorgsboliger</h3><p>JodaCare Hub prises per enhet med engangsbeløp for oppsett og månedlig lisens per leilighet. Prisstruktur oppgis på forespørsel.</p></div>
           </div>
         </div>
@@ -430,7 +430,7 @@ export function CompanyBrief() {
                 <div><h3>Problemet</h3><p>Rundt hver eldre som får hjelp står et lag som sjelden møtes. Ingen har ett sted å se hva som skjedde i dag. Kommunikasjonen går på telefon, SMS og gule lapper. Alle kommuner er lovpålagt å sikre kommunikasjon, pårørendestøtte, dokumentasjon og brukermedvirkning.</p></div>
                 <div><h3>Løsningen</h3><p>Boka er teamets felles feed rundt én person. Helsepersonell skriver med fagspråk, pårørende leser i hverdagsspråk, og den det gjelder får en forenklet inngang gjennom Jodabook. Rundt Boka: kalender, meldinger og rollebasert tilgang.</p></div>
                 <div><h3>Markedet</h3><p>302 676 personer mottar kommunale omsorgstjenester (SSB 2025). 200 000 av dem får hjelp hjemme, 37 000 bor på sykehjem. Gruppen over 80 år vokser fra 270 000 til 463 000 innen 2040. Fokus fremover: eldre som bor hjemme og eldre på sykehjem.</p></div>
-                <div><h3>Forretningsmodellen</h3><p>SaaS. Kommuner: 2 990 kr per måned per pakke à 10 tjenestemottakere, pluss 28 000 kr i oppstart. Offentlig pris, under terskelen for direkte anskaffelse (500 000 kr fra 1. juli 2026). Familierom for private via Vipps kommer som neste trinn, 299 kr per måned.</p></div>
+                <div><h3>Forretningsmodellen</h3><p>SaaS. Kommuner: 2 990 kr per måned per pakke à 10 tjenestemottakere, pluss 28 000 kr i oppstart. Offentlig pris, under terskelen for direkte anskaffelse (500 000 kr fra 1. juli 2026). Familierom for private via Vipps kommer i 2027, 299 kr per måned.</p></div>
                 <div><h3>Distribusjon</h3><p>Direktekjøp, integrasjon med journalleverandøren Aidn (avtaler i 180 kommuner), JAG Assistanse i BPA-segmentet, anbud og rammeavtaler, eiendomsutviklere gjennom JodaCare Hub.</p></div>
                 <div><h3>Sikkerhet</h3><p>Normen, GDPR siden 2018 og forberedt på KI-forordningen. Backend i Java og PostgreSQL på AWS i Stockholm. KAI på Mistral AI i Paris. ID-porten-innlogging. Bare teammedlemskap gir innsyn. Tretti testbare tilgangsvektorer.</p></div>
                 <div><h3>Teamet</h3><p>Kristil Erla Haland, grunnlegger og CEO, har bygd JodaCare siden 2016. Bård Lind, medgründer og backend-arkitekt, kom inn i 2026 for å styrke teamet på teknologi og sikkerhet.</p></div>

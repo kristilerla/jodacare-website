@@ -56,9 +56,7 @@ const techBadges = [
   'React',
   'TypeScript',
   'PostgreSQL',
-  'Supabase',
   'Tailwind CSS',
-  'Vercel',
   'Node.js',
 ];
 
@@ -99,7 +97,7 @@ const no: TeknologiPageCopy = {
     {
       title: 'Skybasert infrastruktur',
       description:
-        'Hostet på Supabase og Vercel med automatisk skalering. All data lagret i EU.',
+        'Kjører på europeiske servere i Stockholm. All data lagret i EU.',
     },
     {
       title: 'Serverless arkitektur',
@@ -132,7 +130,7 @@ const no: TeknologiPageCopy = {
     {
       title: 'Rollebasert tilgang (RBAC)',
       description:
-        '10 definerte rollenivåer sørger for at hver bruker kun ser og gjør det de har rett til, fra pårørende til superadmin.',
+        'Rollebasert tilgang: bare teamet rundt en tjenestemottaker ser innholdet.',
     },
     {
       title: 'Flerfaktor-autentisering (MFA)',
@@ -221,18 +219,18 @@ const no: TeknologiPageCopy = {
   aiFeatures: [
     {
       title: 'KAI, KI-assistent for helsepersonell',
-      description: 'KAI forklarer rutiner, svarer på spørsmål og veileder ansatte i JodaCare. Tilpasser seg rollen din automatisk.',
+      description: 'KAI hjelper deg å finne frem i JodaCare og forklarer hvordan appen brukes. Tilpasser seg rollen din.',
     },
     {
       title: 'Intelligente sammendrag',
-      description: 'Automatisk oppsummering av dagbokinnlegg fra den siste uken. Saksbehandler kan lese to ukers historikk på ett minutt.',
+      description: 'Automatisk oppsummering kommer sammen med livshistorie-modulen i 2027.',
     },
   ],
   aiUpcomingTitle: 'Kommer snart',
   aiUpcoming: [
     {
       title: 'Mønstergjenkjenning i dagsform',
-      description: 'Hendelsesloggen registrerer allerede søvn, humør og adferd daglig. Neste steg er at KI finner mønstrene, slik at saksbehandler ser at nettene ble verre etter samvær, eller at humøret stiger når én bestemt assistent er på jobb.',
+      description: 'Hendelsesloggen kommer Q4 2026 og registrerer søvn, humør og adferd daglig. Neste steg er at KI finner mønstrene, slik at saksbehandler ser at nettene ble verre etter samvær, eller at humøret stiger når én bestemt assistent er på jobb.',
     },
   ],
   aiFootnote:
@@ -286,7 +284,7 @@ const en: TeknologiPageCopy = {
   archPoints: [
     {
       title: 'Cloud infrastructure',
-      description: 'Hosted on Supabase and Vercel with automatic scaling. All data stored in the EU.',
+      description: 'Runs on European servers in Stockholm. All data stored in the EU.',
     },
     {
       title: 'Serverless architecture',
@@ -404,18 +402,18 @@ const en: TeknologiPageCopy = {
   aiFeatures: [
     {
       title: 'KAI, AI assistant for health staff',
-      description: 'KAI explains routines, answers questions and guides staff in JodaCare. Adapts to your role automatically.',
+      description: 'KAI helps you find your way around JodaCare and explains how the app works. Adapts to your role.',
     },
     {
       title: 'Intelligent summaries',
-      description: 'Automatic summaries of diary entries from the past week. A case worker can read two weeks of history in one minute.',
+      description: 'Automatic summaries arrive together with the life story module in 2027.',
     },
   ],
   aiUpcomingTitle: 'Coming soon',
   aiUpcoming: [
     {
       title: 'Pattern detection in daily reports',
-      description: 'The event log already records sleep, mood and behaviour daily. The next step is for AI to find the patterns, so a case worker can see that nights got worse after contact visits, or that mood improves when one particular assistant is on shift.',
+      description: 'The event log arrives in Q4 2026 and records sleep, mood and behaviour daily. The next step is for AI to find the patterns, so a case worker can see that nights got worse after contact visits, or that mood improves when one particular assistant is on shift.',
     },
   ],
   aiFootnote:

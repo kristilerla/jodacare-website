@@ -35,7 +35,7 @@ const no: OmPageContent = {
   ],
   timeline: [
     { year: '2016', event: 'JodaCare lanseres for første gang i norske kommuner' },
-    { year: '2018', event: 'Jodabook utvikles i samarbeid med SINTEF som en demensvennlig versjon av JodaCare' },
+    { year: '2018', event: 'Jodabook ble utviklet i samarbeid med SINTEF som en demensvennlig versjon av JodaCare' },
     { year: '2020', event: 'Videosamtaler lanseres under pandemien' },
     { year: '2022', event: 'Jodacare AS bytter navn til Jodatech AS' },
     { year: '2025', event: 'Jodatech AS går konkurs, og JodaCare AS overtar eierskapet av plattformen' },

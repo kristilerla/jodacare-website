@@ -87,7 +87,7 @@ const no: BarnevernContent = {
   // Seksjon 2 — Mai Life + JodaCare
   partnerSectionTitle: 'Sammen om det viktigste',
   partnerIntro:
-    'JodaCare og Mai Life jobber under samme paraply (Aiantic AB). Sammen dekker vi to sider av barnevernet:',
+    'JodaCare og Mai Life utfyller hverandre. Sammen dekker vi to sider av barnevernet:',
   partnerCards: [
     {
       title: 'Mai Life tar vare på saken',
@@ -158,24 +158,24 @@ const no: BarnevernContent = {
   featuresTitle: 'Funksjoner for det daglige arbeidet',
   features: [
     {
-      title: 'Samværsplaner med status-flyt',
+      title: 'Samværsplaner med status-flyt (kommer Q2 2027)',
       description:
         'Samværsstatus følger en tydelig flyt fra planlagt til bekreftet og gjennomført, eller avlyst og ikke oppmøtt. Hver status får en begrunnelse, og alt er søkbart og dokumentert.',
     },
     {
       title: 'Daglig logg fra fosterforeldre',
       description:
-        'Fosterforeldre dokumenterer hverdagen med bilder, notater og hendelser, og en AI-oppsummering lar saksbehandler lese to ukers historikk på ett minutt.',
+        'Fosterforeldre dokumenterer hverdagen med bilder, notater og hendelser.',
     },
     {
-      title: 'Hendelseslogg',
+      title: 'Hendelseslogg (kommer Q4 2026)',
       description:
         'Strukturert registrering av søvn, humør, anfall, adferd og rutiner gir et mønster over tid gjennom en oversiktlig kalendervisning.',
     },
     {
-      title: 'Jodabook for barn med særskilte behov',
+      title: 'Jodabook for barn med særskilte behov (kommer Q1 2027)',
       description:
-        'En egen app for barn med kognitive utfordringer, tilgjengelig i App Store og Google Play, med forenklet grensesnitt, store knapper, rutiner og stemningssjekk.',
+        'En egen app for barn med kognitive utfordringer, med forenklet grensesnitt, store knapper, rutiner og stemningssjekk.',
     },
     {
       title: 'Informasjonsbarrierer',
@@ -203,12 +203,12 @@ const no: BarnevernContent = {
     {
       title: 'Avlastning og kognitive utfordringer',
       description:
-        'Vi har bygget hverdagsverktøy for barn der mange voksne deler ansvaret, fra fosterforeldre og avlastning til foreldre og kommune. Jodabook er allerede tilgjengelig i App Store og Google Play.',
+        'Vi har bygget hverdagsverktøy for barn der mange voksne deler ansvaret, fra fosterforeldre og avlastning til foreldre og kommune.',
     },
     {
       title: 'Bygget med faggruppene som bruker det',
       description:
-        'Hendelseslogg-malene, samværsmodulen og rolle-arkitekturen er utviklet i samskaping med kommuner. Vi har metodikken for å bygge resten sammen med dere som kjenner barnevernet best.',
+        'Hendelseslogg-malene, samværsmodulen og rolle-arkitekturen utvikles i samskaping med kommuner. Vi har metodikken for å bygge resten sammen med dere som kjenner barnevernet best.',
     },
   ],
 
@@ -220,7 +220,7 @@ const no: BarnevernContent = {
     {
       title: 'Mindre tid på dokumentasjon.',
       description:
-        'En AI-oppsummering kutter to ukers loggjennomgang ned til ett minutt, og saksbehandler kan bruke tiden på samtale med barnet i stedet for å lete etter informasjon.',
+        'Når hverdagen dokumenteres ett sted, kan saksbehandler bruke tiden på samtale med barnet i stedet for å lete etter informasjon.',
     },
     {
       title: 'Færre koordineringsmøter.',
@@ -294,35 +294,33 @@ const no: BarnevernContent = {
 
   // Seksjon 9 — Status
   statusTitle: 'Slik bygges JodaCare for barnevern',
-  statusSubtitle: 'Plattformen står på en moden kjerne i drift siden 2016, og barnevernsmodulen tas i bruk i etapper sammen med pilotkommunene.',
+  statusSubtitle: 'Barnevernsmodulen bygges på grunnmodulen i nye JodaCare og tas i bruk i etapper sammen med pilotkommunene.',
   priceNote:
     'Grunnmodulen koster kr 2 990 per måned for inntil 10 tjenestemottakere. Barnevernsmodulen prises separat når den er ferdig.',
   priceLinkText: 'Se alle priser',
   statusColumns: [
     {
-      title: 'Klart i dag',
+      title: 'Lanseres høst 2026',
       items: [
-        'Samværsmodul med fire roller',
-        'Informasjonsbarrierer i databasen',
-        'Hendelseslogg og daglig kommunikasjon',
-        'Jodabook i App Store og Google Play',
+        'Boka, kalender og beskjeder',
+        'Team rundt hvert barn med rollebasert tilgang',
         'ID-porten-innlogging',
       ],
     },
     {
-      title: 'Klar for pilot Q2 2026',
+      title: 'Kommer 2026 og 2027',
       items: [
-        'Tilpasning til kommunens fagsystem',
-        'Integrasjoner mot Mai Life',
-        'Implementeringsstøtte med dedikert ansvarlig',
+        'Hendelseslogg (Q4 2026)',
+        'Jodabook (Q1 2027)',
+        'Samværsmodul med fire roller og informasjonsbarrierer (Q2 2027)',
       ],
     },
     {
       title: 'Etter første pilot',
       items: [
+        'Tilpasning til kommunens fagsystem',
+        'Integrasjoner mot Mai Life',
         'Bredere utrulling i flere kommuner',
-        'Tilpasning basert på pilot-erfaring',
-        'Skalering nasjonalt sammen med Mai Life og Aiantic',
       ],
     },
   ],
@@ -376,7 +374,7 @@ const en: BarnevernContent = {
 
   partnerSectionTitle: 'Together on what matters most',
   partnerIntro:
-    'JodaCare and Mai Life work under the same umbrella (Aiantic AB). Together we cover two sides of child welfare:',
+    'JodaCare and Mai Life complement each other. Together we cover two sides of child welfare:',
   partnerCards: [
     {
       title: 'Mai Life takes care of the case',
@@ -444,24 +442,24 @@ const en: BarnevernContent = {
   featuresTitle: 'Features for the daily work',
   features: [
     {
-      title: 'Contact plans with status flow',
+      title: 'Contact plans with status flow (coming Q2 2027)',
       description:
         'Contact status follows a clear flow from planned to confirmed and completed, or cancelled and no-show. Each status includes a reason, and everything is searchable and documented.',
     },
     {
       title: 'Daily log from foster carers',
       description:
-        'Foster carers document daily life with photos, notes and events, and an AI summary lets the case worker read two weeks of history in one minute.',
+        'Foster carers document daily life with photos, notes and events.',
     },
     {
-      title: 'Event log',
+      title: 'Event log (coming Q4 2026)',
       description:
         'Structured recording of sleep, mood, seizures, behaviour and routines reveals patterns over time through a clear calendar view.',
     },
     {
-      title: 'Jodabook for children with special needs',
+      title: 'Jodabook for children with special needs (coming Q1 2027)',
       description:
-        'A dedicated app for children with cognitive challenges, available in App Store and Google Play, with a simplified interface, large buttons, routines and mood checks.',
+        'A dedicated app for children with cognitive challenges, with a simplified interface, large buttons, routines and mood checks.',
     },
     {
       title: 'Information barriers',
@@ -488,7 +486,7 @@ const en: BarnevernContent = {
     {
       title: 'Respite care and cognitive challenges',
       description:
-        'We have built everyday tools for children where many adults share responsibility, from foster carers and respite carers to parents and the municipality. Jodabook is already available in App Store and Google Play.',
+        'We have built everyday tools for children where many adults share responsibility, from foster carers and respite carers to parents and the municipality.',
     },
     {
       title: 'Built with the professional groups that use it',
@@ -504,7 +502,7 @@ const en: BarnevernContent = {
     {
       title: 'Less time on documentation.',
       description:
-        'An AI summary cuts two weeks of log review down to one minute, and case workers can spend their time talking to the child instead of searching for information.',
+        'When everyday life is documented in one place, case workers can spend their time talking to the child instead of searching for information.',
     },
     {
       title: 'Fewer coordination meetings.',
@@ -575,35 +573,33 @@ const en: BarnevernContent = {
   trustLink: 'Read more about security →',
 
   statusTitle: 'How far along are we',
-  statusSubtitle: 'The platform builds on a mature core in production since 2016, and the child welfare module is being adopted in stages together with pilot municipalities.',
+  statusSubtitle: 'The child welfare module is built on the core module in the new JodaCare and is adopted in stages together with pilot municipalities.',
   priceNote:
     'The core module costs NOK 2,990 per month for up to 10 service recipients. The child welfare module is priced separately once it is finished.',
   priceLinkText: 'See all prices',
   statusColumns: [
     {
-      title: 'Ready today',
+      title: 'Launching autumn 2026',
       items: [
-        'Contact module with four roles',
-        'Information barriers in the database',
-        'Event log and daily communication',
-        'Jodabook in App Store and Google Play',
+        'Boka, calendar and messages',
+        'A team around each child with role-based access',
         'ID-porten login',
       ],
     },
     {
-      title: 'Ready for pilot Q2 2026',
+      title: 'Coming 2026 and 2027',
       items: [
-        'Adaptation to the municipality\'s case system',
-        'Integrations with Mai Life',
-        'Implementation support with dedicated lead',
+        'Event log (Q4 2026)',
+        'Jodabook (Q1 2027)',
+        'Contact module with four roles and information barriers (Q2 2027)',
       ],
     },
     {
       title: 'After first pilot',
       items: [
+        'Adaptation to the municipality\'s case system',
+        'Integrations with Mai Life',
         'Broader rollout in more municipalities',
-        'Adaptation based on pilot experience',
-        'National scaling together with Mai Life and Aiantic',
       ],
     },
   ],

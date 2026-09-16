@@ -26,7 +26,7 @@ const securityNo: SikkerhetFeature[] = [
   {
     title: 'ID-porten innlogging',
     description:
-      'JodaCare støtter innlogging med ID-porten på sikkerhetsnivå 4, i tillegg til Vipps og e-post med engangskode for roller som ikke krever høyeste sikkerhetsnivå.',
+      'JodaCare bruker innlogging med ID-porten på sikkerhetsnivå 4.',
     badge: 'Sikkerhetsnivå 4',
   },
   {
@@ -43,13 +43,13 @@ const securityNo: SikkerhetFeature[] = [
   {
     title: 'Data lagret i Europa',
     description:
-      'Databasen ligger i Stockholm (Supabase), hosting kjøres i Stockholm (Vercel), AI-tjenestene er europeiske gjennom Mistral i Paris, og e-post går gjennom europeisk leverandør (Brevo).',
+      'Databasen og tjenestene kjører i Stockholm, og AI-tjenestene er europeiske gjennom Mistral i Paris.',
     badge: 'EU-lagring',
   },
   {
     title: 'Full sporbarhet',
     description:
-      'Tilgang til pasientdata logges automatisk med tidsstempel og bruker-ID, og kommunen har full oversikt over hvem som har sett og delt informasjon.',
+      'Tilgang til innhold logges automatisk med tidsstempel og bruker-ID.',
   },
   {
     title: 'Samtykkebasert deling',
@@ -72,7 +72,7 @@ const securityEn: SikkerhetFeature[] = [
   {
     title: 'ID-porten sign-in',
     description:
-      'JodaCare supports sign-in with ID-porten at security level 4, along with Vipps and email with one-time code for roles that do not require the highest security level.',
+      'JodaCare uses sign-in with ID-porten at security level 4.',
     badge: 'Security level 4',
   },
   {
@@ -89,13 +89,13 @@ const securityEn: SikkerhetFeature[] = [
   {
     title: 'Data stored in Europe',
     description:
-      'The database is located in Stockholm (Supabase), hosting runs in Stockholm (Vercel), AI services are European through Mistral in Paris, and email goes through a European provider (Brevo).',
+      'The database and services run in Stockholm, and the AI services are European through Mistral in Paris.',
     badge: 'EU storage',
   },
   {
     title: 'Full traceability',
     description:
-      'Access to patient data is logged automatically with timestamp and user ID, and the municipality has full oversight of who viewed and shared information.',
+      'Access to content is logged automatically with timestamp and user ID.',
   },
   {
     title: 'Consent-based sharing',
@@ -176,7 +176,7 @@ const no: SikkerhetContent = {
   trustSr: 'Tillitsindikatorer',
   trustStats: [
     { value: '2016', label: 'I drift siden' },
-    { value: 'Horten, Lier, Oslo', label: 'Kommuner m.fl.' },
+    { value: 'Norske kommuner', label: 'I bruk hos' },
     { value: 'Nivå 4', label: 'Sikkerhetsnivå' },
     { value: 'EU', label: 'Datalokasjon' },
   ],
@@ -218,7 +218,7 @@ const en: SikkerhetContent = {
   trustSr: 'Trust indicators',
   trustStats: [
     { value: '2016', label: 'In operation since' },
-    { value: 'Horten, Lier, Oslo', label: 'Municipalities etc.' },
+    { value: 'Norwegian municipalities', label: 'In use with' },
     { value: 'Level 4', label: 'Security level' },
     { value: 'EU', label: 'Data location' },
   ],

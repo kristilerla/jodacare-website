@@ -2,6 +2,8 @@ import type { Locale } from '@/lib/i18n/types';
 
 export type PriserCard = {
   name: string;
+  /** Statuslinje øverst i kortet, for eksempel når modulen lanseres. */
+  status?: string;
   price: string;
   period: string;
   unit: string;
@@ -51,6 +53,7 @@ const no: PriserContent = {
   cards: [
     {
       name: 'Lisens',
+      status: 'Lanseres høst 2026.',
       price: 'kr 2 990',
       period: 'per måned',
       unit: 'per pakke à 10 tjenestemottakere',
@@ -97,19 +100,19 @@ const no: PriserContent = {
 
   modulesTitle: 'Nye JodaCare bygges modul for modul',
   modulesP1:
-    'JodaCare bygges nå på nytt fra grunnen, med sikkerhet og tilgangsstyring som første prioritet. Lisensen over dekker grunnmodulen: Boka, kalender, meldinger og rollebasert tilgang. Det er dette som er i drift i dag, og det er dette nye kunder starter med.',
+    'JodaCare bygges nå på nytt fra grunnen, med sikkerhet og tilgangsstyring som første prioritet. Lisensen over dekker grunnmodulen: Boka, kalender, meldinger og rollebasert tilgang. Grunnmodulen lanseres høsten 2026, og det er den nye kunder starter med.',
   modulesP2:
     'Flere moduler er under utvikling. Hver av dem får sin egen pris når den er ferdig, og kommunen velger selv om den vil legge modulen til:',
   modules: [
-    'Sjekklister og rutiner',
-    'Hendelseslogg',
-    'Hub for omsorgsbolig og servicebolig',
-    'Jodabook for tjenestemottakere med kognitive utfordringer',
-    'Barnevern og samvær',
-    'JodaVisit for hjemmesykepleie',
+    'Sjekklister og rutiner (Q4 2026)',
+    'Hendelseslogg med delingskontroll (Q4 2026)',
+    'Hub for omsorgsbolig og servicebolig (pilot 2027)',
+    'Jodabook for tjenestemottakere med kognitive utfordringer (Q1 2027)',
+    'Barnevern og samvær (Q2 2027)',
+    'JodaVisit for hjemmesykepleie (2027)',
   ],
   modulesP3:
-    'Kunder med løpende avtale får beskjed i god tid før en modul lanseres. Prisen på grunnmodulen endres ikke av at nye moduler kommer til.',
+    'Kunder med løpende avtale får beskjed i god tid før en modul lanseres. Prisen på grunnmodulen endres ikke av at nye moduler kommer til. Endres tidsplanen, oppdaterer vi den her.',
 
 
   faqTitle: 'Vanlige spørsmål om pris',
@@ -151,6 +154,7 @@ const en: PriserContent = {
   cards: [
     {
       name: 'Licence',
+      status: 'Launching autumn 2026.',
       price: 'NOK 2,990',
       period: 'per month',
       unit: 'per package of 10 service recipients',
@@ -197,19 +201,19 @@ const en: PriserContent = {
 
   modulesTitle: 'The new JodaCare is built module by module',
   modulesP1:
-    'JodaCare is being rebuilt from the ground up, with security and access control as the first priority. The licence above covers the core module: Boka, calendar, messages and role-based access. This is what is in operation today, and this is what new customers start with.',
+    'JodaCare is being rebuilt from the ground up, with security and access control as the first priority. The licence above covers the core module: Boka, calendar, messages and role-based access. The core module launches in autumn 2026, and that is what new customers start with.',
   modulesP2:
     'More modules are under development. Each gets its own price once it is finished, and the municipality decides whether to add it:',
   modules: [
-    'Checklists and routines',
-    'Event log',
-    'Hub for care homes and service housing',
-    'Jodabook for service recipients with cognitive challenges',
-    'Child welfare and contact visits',
-    'JodaVisit for home nursing',
+    'Checklists and routines (Q4 2026)',
+    'Event log with sharing control (Q4 2026)',
+    'Hub for care homes and service housing (pilot 2027)',
+    'Jodabook for service recipients with cognitive challenges (Q1 2027)',
+    'Child welfare and contact visits (Q2 2027)',
+    'JodaVisit for home nursing (2027)',
   ],
   modulesP3:
-    'Customers with a running agreement are notified well before a module is launched. The price of the core module does not change because new modules arrive.',
+    'Customers with a running agreement are notified well before a module is launched. The price of the core module does not change because new modules arrive. If the schedule changes, we update it here.',
 
 
   faqTitle: 'Common questions about pricing',
