@@ -41,7 +41,7 @@
     "fylke": "Statsforvalteren i (embetet som dekker kommunen din)",
     "enhet": "Enheten som fattet vedtaket",
     "pasient": "Navn på den det gjelder",
-    "relasjon": "Din relasjon",
+    "relasjon": "Din relasjon til den det gjelder",
     "tjeneste": "Tjenesten det gjelder",
     "dato": "Vedtaket er datert",
     "saksnr": "Saksnummer",
@@ -941,7 +941,14 @@
     ]
   },
   "fullmakt": {
-    "intro": "Den du representerer må skrive under på fullmakten for hånd. Du fyller ikke ut noe på skjermen: kopier teksten, skriv den ut eller skriv den av, og la sted, dato og underskrift fylles ut med penn. Legg den signerte fullmakten ved saken. Uten fullmakt blir klagen avvist. Er du oppnevnt verge, legger du ved vergefullmakten i stedet.",
+    "lead": "Fullmakten skal skrives under på papir av den du representerer. Du fyller ikke ut noe her.",
+    "steps": [
+      "Kopier teksten.",
+      "Skriv den ut, eller skriv den av på et ark.",
+      "Be den du representerer fylle ut sted, dato og underskrift med penn.",
+      "Legg den ferdige fullmakten ved når du sender saken."
+    ],
+    "note": "Uten fullmakt blir klagen avvist. Er du oppnevnt verge, legger du ved vergefullmakten i stedet.",
     "button": "Kopier fullmakten"
   },
   "routeChoiceHeading": "Hva gjelder saken? Valget styrer hvilket brev du får."

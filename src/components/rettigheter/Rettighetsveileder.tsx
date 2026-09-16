@@ -634,8 +634,8 @@ export function Rettighetsveileder() {
           {visFullmakt ? (
             <div className="mt-8 rounded-xl border border-secondary-dark p-4 sm:p-6">
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <p className="max-w-[52ch] text-sm text-text-light">
-                  {data.fullmakt.intro}
+                <p className="max-w-[52ch] text-sm text-text">
+                  {data.fullmakt.lead}
                 </p>
                 <div className="flex items-center gap-3">
                   <span aria-live="polite" className="text-sm font-medium text-primary">
@@ -652,6 +652,14 @@ export function Rettighetsveileder() {
                   </button>
                 </div>
               </div>
+              <ol className="mt-4 max-w-[60ch] list-decimal space-y-1.5 pl-5 text-sm text-text-light">
+                {data.fullmakt.steps.map((steg) => (
+                  <li key={steg}>{steg}</li>
+                ))}
+              </ol>
+              <p className="mt-4 max-w-[60ch] text-sm text-text-light">
+                {data.fullmakt.note}
+              </p>
               <pre
                 ref={fullmaktRef}
                 className="mt-5 overflow-x-auto whitespace-pre-wrap rounded-xl border border-secondary-dark bg-background-alt p-4 font-sans text-sm leading-relaxed text-text sm:p-6"

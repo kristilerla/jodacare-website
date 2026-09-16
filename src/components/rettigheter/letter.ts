@@ -147,11 +147,13 @@ export function buildFullmakt(sit: Situation, fields: Fields): string {
 
   return `FULLMAKT
 
-Jeg, ${pasient}, gir herved ${navn} (${rel}) fullmakt til å representere meg i saken om ${tj}. Saken gjelder ${kommune}, saksnummer ${saks}.
+Jeg, ${pasient}, gir ${navn} (${rel}) fullmakt til å representere meg i saken om ${tj} hos ${kommune}, saksnummer ${saks}.
 
-Fullmakten gjelder å sende og følge opp henvendelser i saken, herunder klage, og å motta all informasjon i den, jf. forvaltningsloven § 12 og pasient- og brukerrettighetsloven § 7-3.
+${navn} kan sende brev og klager i saken, følge dem opp, og få all informasjon i saken.
 
-Fullmakten gjelder til saken er endelig avgjort, eller til jeg trekker den tilbake.
+Fullmakten gjelder til saken er ferdig, eller til jeg sier fra at den ikke gjelder lenger.
+
+Hjemmel: forvaltningsloven § 12 og pasient- og brukerrettighetsloven § 7-3.
 
 Sted og dato: ______________________
 
