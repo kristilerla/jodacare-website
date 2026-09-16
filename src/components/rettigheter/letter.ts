@@ -38,13 +38,23 @@ export type RouteCopy = {
 
 export type Content = Omit<
   typeof content,
-  'who' | 'situations' | 'routes' | 'answerTitles' | 'commonSources'
+  | 'who'
+  | 'situations'
+  | 'routes'
+  | 'answerTitles'
+  | 'commonSources'
+  | 'statsforvalterenKan'
 > & {
   who: { id: WhoId; label: string; sub: string }[];
   situations: Situation[];
   routes: Record<RouteId, RouteCopy>;
   answerTitles: Record<WhoId, string>;
   commonSources: (Source & { id: string })[];
+  // Purring har ikke noe avsnitt her — Statsforvalteren er ikke inne i saken ennå.
+  statsforvalterenKan: { heading: string } & Record<
+    Exclude<RouteId, 'purring'>,
+    string[]
+  >;
 };
 
 export const data = content as unknown as Content;
@@ -68,6 +78,34 @@ export function fmt(d: string): string {
   if (!d) return '[dato]';
   const [y, m, dd] = d.split('-');
   return `${parseInt(dd, 10)}.${parseInt(m, 10)}.${y}`;
+}
+
+/**
+ * Fullmakt fra den det gjelder, til den som klager på vegne av vedkommende.
+ * Brukes bare i klagesporet når «En jeg er pårørende til» er valgt — er du
+ * oppnevnt verge, er det vergefullmakten som legges ved i stedet.
+ *
+ * Bruker de samme feltene som klagebrevet, slik at teksten følger skjemaet.
+ */
+export function buildFullmakt(sit: Situation, fields: Fields): string {
+  const t = (key: FieldKey) => fields[key].trim();
+  const pasient = t('pasient') || '[navn på den det gjelder]';
+  const navn = t('navn') || '[ditt navn]';
+  const rel = t('relasjon') || '[relasjon]';
+  const tj = t('tjeneste') || sit.defaultService;
+  const kommune = t('kommune') || '[kommune]';
+  const saks = t('saksnr') || '[saksnummer]';
+
+  return `FULLMAKT
+
+Jeg, ${pasient}, gir herved ${navn} (${rel}) fullmakt til å klage på vedtak om ${tj} fra ${kommune}, saksnummer ${saks}, og til å motta all informasjon i saken, jf. pasient- og brukerrettighetsloven § 7-3.
+
+Fullmakten gjelder til klagen er endelig avgjort.
+
+Sted og dato: ______________________
+
+Underskrift: ______________________
+${pasient}`;
 }
 
 export function buildLetter(sit: Situation, who: WhoId, fields: Fields): string {
