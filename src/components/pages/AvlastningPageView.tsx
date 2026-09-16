@@ -33,6 +33,10 @@ export function AvlastningPageView({ locale }: Props) {
         subtitle={d.heroSubtitle}
         primaryCta={{ text: d.primaryCta, href: withLocale('/kontakt', locale) }}
         variant="page"
+        image={{
+          src: '/images/barn-bak-rod-stolpe.jpg',
+          alt: d.heroImageAlt,
+        }}
         badge={d.heroBadge}
       />
 

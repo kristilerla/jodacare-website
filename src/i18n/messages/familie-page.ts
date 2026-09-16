@@ -15,6 +15,8 @@ export type FamiliePricingTier = {
 };
 
 export type FamilieContent = {
+  heroImageAlt: string;
+  scenarioImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   heroBadge: string;
@@ -125,6 +127,8 @@ const pricingEn: FamiliePricingTier[] = [
 ];
 
 const no: FamilieContent = {
+  heroImageAlt: 'Ung mann og eldre kvinne sitter tett sammen i en sofa',
+  scenarioImageAlt: 'Eldre kvinne sett nedenfra i en trappeoppgang, svart-hvitt',
   heroTitle: 'Familierom kommer i 2027',
   heroSubtitle:
     'Samle familien rundt den som trenger omsorg. Del hverdagen, koordiner besøk, og hold alle oppdatert uansett hvor dere bor i landet.',
@@ -156,6 +160,8 @@ const no: FamilieContent = {
 };
 
 const en: FamilieContent = {
+  heroImageAlt: 'Young man and older woman sitting close together on a sofa',
+  scenarioImageAlt: 'Older woman seen from below in a stairwell, black and white',
   heroTitle: 'Family room is coming in 2027',
   heroSubtitle:
     'Bring the family together around the person who needs care. Share everyday life, coordinate visits and keep everyone updated wherever you live.',

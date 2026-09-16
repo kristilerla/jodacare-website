@@ -4,6 +4,7 @@ export type BvCard = { title: string; description: string };
 export type BvRelated = { title: string; description: string; href: string };
 
 export type BarnevernContent = {
+  heroImageAlt: string;
   // Hero
   heroBadge: string;
   heroTitle: string;
@@ -76,6 +77,7 @@ export type BarnevernContent = {
 };
 
 const no: BarnevernContent = {
+  heroImageAlt: 'Mor holder et spedbarn i skogen, svart-hvitt',
   // Hero
   heroBadge: 'Barnevern',
   heroTitle: 'JodaCare følger barnet.',
@@ -365,6 +367,7 @@ const no: BarnevernContent = {
 };
 
 const en: BarnevernContent = {
+  heroImageAlt: 'Mother holding an infant in the woods, black and white',
   heroBadge: 'Child welfare',
   heroTitle: 'JodaCare follows the child.',
   heroSubtitle:

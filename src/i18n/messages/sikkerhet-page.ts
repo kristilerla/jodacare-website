@@ -5,6 +5,7 @@ export type SikkerhetSmall = { title: string; description: string };
 export type SikkerhetCompliance = { title: string; body: string };
 
 export type SikkerhetContent = {
+  protectionImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   mainBadge: string;
@@ -145,6 +146,7 @@ const additionalEn: SikkerhetSmall[] = [
 ];
 
 const no: SikkerhetContent = {
+  protectionImageAlt: 'Mann sitter ved et vindu i kveldslys',
   heroTitle: 'Sikkerhet du kan stole på',
   heroSubtitle:
     'JodaCare er bygget med sikkerhet i kjernen. Vi tar personvern og datasikkerhet på største alvor.',
@@ -187,6 +189,7 @@ const no: SikkerhetContent = {
 };
 
 const en: SikkerhetContent = {
+  protectionImageAlt: 'Man sitting by a window in evening light',
   heroTitle: 'Security you can trust',
   heroSubtitle:
     'JodaCare is built with security at the core. We take privacy and data protection seriously.',

@@ -4,6 +4,8 @@ export type JvCard = { title: string; description: string };
 export type JvRelated = { title: string; description: string; href: string };
 
 export type JodavisitContent = {
+  heroImageAlt: string;
+  homeUserImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   heroBadge: string;
@@ -24,6 +26,8 @@ export type JodavisitContent = {
 };
 
 const no: JodavisitContent = {
+  heroImageAlt: 'Eldre kvinne sitter i stolen sin og ser på et bilde i JodaCare på nettbrettet',
+  homeUserImageAlt: 'Eldre mann arbeider ved benken i verkstedet sitt',
   heroTitle: 'Eldre bor hjemme lenger. Med familien nær.',
   heroSubtitle:
     'JodaVisit erstatter unødvendige fysiske besøk med videobesøk som oppleves trygge og personlige. Helsepersonell bruker tiden der den trengs mest, og den hjemmeboende slipper å være alene mellom besøkene.',
@@ -95,6 +99,8 @@ const no: JodavisitContent = {
 };
 
 const en: JodavisitContent = {
+  heroImageAlt: 'Older woman in her armchair looking at a photo in JodaCare on a tablet',
+  homeUserImageAlt: 'Older man working at the bench in his workshop',
   heroTitle: 'People stay at home longer. With family close.',
   heroSubtitle:
     'JodaVisit replaces unnecessary physical visits with video visits that feel safe and personal. Staff spend time where it matters most, and the person at home is no longer alone between visits.',

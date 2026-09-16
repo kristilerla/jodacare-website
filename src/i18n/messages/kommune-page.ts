@@ -9,6 +9,7 @@ export type KommuneService = {
 };
 
 export type KommuneContent = {
+  heroImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   primaryCta: string;
@@ -127,6 +128,7 @@ const servicesEn: KommuneService[] = [
 ];
 
 const no: KommuneContent = {
+  heroImageAlt: 'Ung mann står i en åker under blå himmel',
   heroTitle: 'JodaCare for kommuner',
   heroSubtitle:
     'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie møtes i én plattform med koordinert omsorg. Velg tjenesten som passer for din kommune.',
@@ -150,6 +152,7 @@ const no: KommuneContent = {
 };
 
 const en: KommuneContent = {
+  heroImageAlt: 'Young man standing in a field under a blue sky',
   heroTitle: 'JodaCare for municipalities',
   heroSubtitle:
     'Residential care, personal assistance, child welfare, respite and home nursing in one platform with coordinated care. Choose the service that fits your municipality.',

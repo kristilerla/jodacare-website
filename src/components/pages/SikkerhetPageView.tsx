@@ -1,4 +1,5 @@
 import { Hero, CTA } from '@/components/sections';
+import Image from 'next/image';
 import { Container, Card, CardTitle, CardContent, Badge } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
@@ -50,6 +51,18 @@ export function SikkerhetPageView({ locale }: Props) {
                 {d.mainTitle}
               </h2>
               <p className="mt-4 text-lg text-text-light">{d.mainIntro}</p>
+            </div>
+          </FadeIn>
+
+          <FadeIn>
+            <div className="relative mx-auto mb-16 aspect-[4/3] w-full max-w-md overflow-hidden rounded-2xl">
+              <Image
+                src="/images/mann-ved-vinduet.jpg"
+                alt={d.protectionImageAlt}
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="img-tone object-cover object-[center_30%]"
+              />
             </div>
           </FadeIn>
 

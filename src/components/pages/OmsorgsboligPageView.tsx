@@ -35,6 +35,11 @@ export function OmsorgsboligPageView({ locale }: Props) {
         primaryCta={{ text: d.primaryCta, href: withLocale('/kontakt', locale) }}
         secondaryCta={{ text: d.secondaryCta, href: '#funksjoner' }}
         variant="page"
+        image={{
+          src: '/images/benk-under-blomstrende-traer.jpg',
+          alt: d.heroImageAlt,
+          portrait: true,
+        }}
         badge={d.heroBadge}
       />
 

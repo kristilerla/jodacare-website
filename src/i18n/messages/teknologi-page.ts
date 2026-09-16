@@ -10,6 +10,7 @@ export type TeknologiStep = { step: number; title: string; description: string }
 export type TeknologiFact = { value: string; label: string };
 
 export type TeknologiPageCopy = {
+  aiImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   contactCta: string;
@@ -61,6 +62,7 @@ const techBadges = [
 ];
 
 const no: TeknologiPageCopy = {
+  aiImageAlt: 'Barn flyr drage mot hvit himmel',
   heroTitle: 'Moderne teknologi bygget for omsorg',
   heroSubtitle:
     'JodaCare 2.0 er utviklet fra bunnen av med sikkerhet, brukervennlighet og skalerbarhet i kjernen.',
@@ -249,6 +251,7 @@ const no: TeknologiPageCopy = {
 };
 
 const en: TeknologiPageCopy = {
+  aiImageAlt: 'Child flying a kite against a white sky',
   heroTitle: 'Modern technology built for care',
   heroSubtitle:
     'JodaCare 2.0 is built from the ground up with security, usability and scalability at the core.',

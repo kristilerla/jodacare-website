@@ -5,6 +5,7 @@ export type HubStep = { step: string; title: string; description: string };
 export type HubRelated = { title: string; description: string; href: string };
 
 export type OmsorgsboligContent = {
+  heroImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   heroBadge: string;
@@ -34,6 +35,7 @@ export type OmsorgsboligContent = {
 };
 
 const no: OmsorgsboligContent = {
+  heroImageAlt: 'Eldre person leser på en benk under blomstrende trær',
   heroTitle: 'Beboeren er aldri alene. Familien er alltid nær.',
   heroSubtitle:
     'JodaCare Hub kobler beboer, familie og ansatte i én sammenhengende flyt gjennom en skjerm i leiligheten som alltid er på.',
@@ -151,6 +153,7 @@ const no: OmsorgsboligContent = {
 };
 
 const en: OmsorgsboligContent = {
+  heroImageAlt: 'Older person reading on a bench under blossoming trees',
   heroTitle: 'Residents are never alone. Family is always close.',
   heroSubtitle:
     'JodaCare Hub connects resident, family and staff in one continuous flow through a screen in the flat that stays on.',

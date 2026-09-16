@@ -86,6 +86,11 @@ export function BarnevernPageView({ locale }: Props) {
         primaryCta={{ text: d.primaryCta, href: withLocale('/kontakt', locale) }}
         secondaryCta={{ text: d.secondaryCta, href: '#slik-henger-det-sammen' }}
         variant="page"
+        image={{
+          src: '/images/mor-med-spedbarn.jpg',
+          alt: d.heroImageAlt,
+          portrait: true,
+        }}
         badge={d.heroBadge}
       />
 

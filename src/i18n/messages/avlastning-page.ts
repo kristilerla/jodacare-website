@@ -4,6 +4,7 @@ export type AvCard = { title: string; description: string };
 export type AvRelated = { title: string; description: string; href: string };
 
 export type AvlastningContent = {
+  heroImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   heroBadge: string;
@@ -26,6 +27,7 @@ export type AvlastningContent = {
 };
 
 const no: AvlastningContent = {
+  heroImageAlt: 'Barn titter frem bak en rød stolpe',
   heroTitle: 'De samme rutinene og den samme tryggheten, uansett hvor barnet er.',
   heroSubtitle:
     'JodaCare skaper kontinuitet mellom hjem og avlastning, slik at barnet møter de samme forventningene, de samme bildene og den samme forståelsen uansett hvem som er på jobb.',
@@ -112,6 +114,7 @@ const no: AvlastningContent = {
 };
 
 const en: AvlastningContent = {
+  heroImageAlt: 'Child peeking out from behind a red post',
   heroTitle: 'The same routines and the same sense of safety, wherever the child is.',
   heroSubtitle:
     'JodaCare creates continuity between home and respite, so the child meets the same expectations, the same images and the same understanding no matter who is on shift.',
