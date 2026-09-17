@@ -175,6 +175,7 @@ export function Rettighetsveileder() {
   const paaVegne = who === 'paa';
   const labelFor = (key: FieldKey) => sit.fieldLabels?.[key] ?? data.fields[key];
   const harFelt = (key: FieldKey) => sit.extraFields?.includes(key) ?? false;
+  const skjultFelt = (key: FieldKey) => sit.hideFields?.includes(key) ?? false;
 
   // Felt som fortsatt står med eksempelverdien vises dempet, slik at det er
   // tydelig at teksten skal byttes ut. Så snart brukeren skriver, blir den mørk.
@@ -225,10 +226,12 @@ export function Rettighetsveileder() {
   const chooseSit = (s: Situation) => applySituation(s, who, true);
 
   const letter = buildLetter(sit, who, fields, valgtRute?.letterTemplate ?? sit.route);
-  // Representerer du en annen, trengs fullmakt uansett hvilket spor saken går i.
-  const visFullmakt = paaVegne;
+  // Representerer du en annen, trengs fullmakt uansett hvilket spor saken går i
+  // — med unntak av ruter der mottakeren har sin egen rutine, som NPE.
+  const visFullmakt = paaVegne && !route.skipFullmakt;
   const fullmakt = visFullmakt ? buildFullmakt(sit, fields) : '';
-  // Bare ruter der Statsforvalteren prøver saken har et slikt avsnitt.
+  // Bare ruter der noen faktisk prøver saken har et slikt avsnitt. Organet
+  // varierer: Statsforvalteren i klage- og tilsynssporet, NPE i erstatning.
   const sfAvsnitt = data.statsforvalterenKan[aktivRute] ?? null;
 
   const sources: Source[] = [
@@ -404,7 +407,8 @@ export function Rettighetsveileder() {
           {sfAvsnitt ? (
             <div className="mt-6 rounded-xl border border-secondary-dark p-4">
               <h3 className="font-serif text-lg font-semibold text-text">
-                {data.statsforvalterenKan.heading}
+                {data.statsforvalterenKan.headingPerRoute?.[aktivRute] ??
+                  data.statsforvalterenKan.heading}
               </h3>
               <div className="mt-3 space-y-3">
                 {sfAvsnitt.map((p) => (
@@ -544,12 +548,12 @@ export function Rettighetsveileder() {
                 {...feltProps('dato')}
               />
             </label>
-            <label className={labelClass}>
-              {labelFor('saksnr')}
-              <input
-                {...feltProps('saksnr')}
-              />
-            </label>
+            {skjultFelt('saksnr') ? null : (
+              <label className={labelClass}>
+                {labelFor('saksnr')}
+                <input {...feltProps('saksnr')} />
+              </label>
+            )}
             {harFelt('saksnrKommune') ? (
               <label className={labelClass}>
                 {labelFor('saksnrKommune')}

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-16",
+  "checkedAt": "2026-09-17",
   "hero": {
     "eyebrow": "Rettighetsveilederen",
     "title": "Finn ut hva du har rett til. Og få hjelp til å si fra på riktig måte.",
@@ -30,7 +30,7 @@
     "egen": "Dette har du rett til som pårørende"
   },
   "sourcesHeading": "Kilder",
-  "checkedNote": "Henvisningene er kontrollert mot Lovdata og Helsedirektoratets rundskriv 16. september 2026. Ny forvaltningslov er vedtatt (LOV-2025-06-20-81), men ikke satt i kraft. Henvisningene til forvaltningsloven oppdateres når den trer i kraft.",
+  "checkedNote": "Henvisningene er kontrollert mot Lovdata og Helsedirektoratets rundskriv 17. september 2026. Ny forvaltningslov er vedtatt (LOV-2025-06-20-81), men ikke satt i kraft. Henvisningene til forvaltningsloven oppdateres når den trer i kraft.",
   "whatNote": "Velg den ene situasjonen som passer best. Har du flere saker, lager du ett brev per sak. Da vet den som leser nøyaktig hva du ber om.",
   "formNote": "Opplysningene brukes bare til å sette sammen brevet her i nettleseren. De sendes ikke til JodaCare eller noen andre.",
   "formNoteExample": "Feltene er fylt med et oppdiktet eksempel. Bytt ut med dine egne.",
@@ -237,6 +237,36 @@
         {
           "lead": "Sivilombudet stopper ikke Statsforvalterens avgjørelse",
           "text": " mens saken behandles. Trenger du hjelp nå, søk kommunen om tjenesten på nytt samtidig."
+        }
+      ]
+    },
+    "erstatning": {
+      "boxLead": "Dette er sporet for erstatning.",
+      "boxBody": "Søknaden går til Norsk pasientskadeerstatning (NPE). Den kan sendes uavhengig av, og samtidig med, en klage eller en tilsynssak. Fristen er tre år.",
+      "letterTitle": "Beskrivelsen til NPE-søknaden",
+      "letterIntro": "NPE har sitt eget skjema. Denne teksten er skrevet slik at du kan lime den inn i feltet for hva som skjedde, og slik at ingenting viktig blir glemt.",
+      "commonSources": [],
+      "skipFullmakt": true,
+      "sendSteps": [
+        {
+          "lead": "Søk på npe.no",
+          "text": " med BankID. Søker du for en annen, legg ved fullmakt og kopi av legitimasjon. Etterlatte legger ved skifteattest."
+        },
+        {
+          "lead": "Fristen er tre år",
+          "text": " fra du forsto eller burde ha forstått at helsehjelpen ga skaden. Er du i tvil, send søknaden nå."
+        },
+        {
+          "lead": "Det er gratis.",
+          "text": " NPE henter journalen og innhenter sakkyndig vurdering. I noen saker dekker NPE rimelige advokatutgifter når erstatningen skal beregnes."
+        },
+        {
+          "lead": "Be om journalinnsyn samtidig",
+          "text": " (pasient- og brukerrettighetsloven § 5-1). Da vet du hva som er dokumentert før NPE spør."
+        },
+        {
+          "lead": "Pasient- og brukerombudet",
+          "text": " hjelper gratis med søknaden."
         }
       ]
     }
@@ -664,6 +694,11 @@
       ],
       "route": "purring",
       "defaultService": "søknaden",
+      "fieldLabels": {
+        "dato": "Søknaden ble sendt",
+        "sok": "Hva har du søkt om?",
+        "hvorfor": "Hvorfor haster det?"
+      },
       "answer": [
         "Kommunen skal behandle søknaden uten ugrunnet opphold. Tar det mer enn én måned, skal du få et foreløpig svar som sier hvorfor det tar tid og når du kan vente et vedtak. Dette står i forvaltningsloven § 11 a.",
         "Forvaltningsloven gjelder for søknader om tjenester som er ment å vare i mer enn to uker, jf. pasient- og brukerrettighetsloven § 2-7.",
@@ -681,6 +716,83 @@
           "note": "Lovdata"
         }
       ]
+    },
+    {
+      "id": "skade",
+      "label": "Fått en skade av helsehjelp",
+      "sub": "Feilmedisinering, fall, liggesår, forsinket eller feil behandling som ga varig skade eller tap",
+      "tag": "Erstatning",
+      "appliesTo": [
+        "selv",
+        "paa",
+        "egen"
+      ],
+      "route": "erstatning",
+      "defaultService": "helsehjelpen",
+      "answer": [
+        "Har du fått en skade på grunn av svikt i helsehjelpen, kan du ha rett til pasientskadeerstatning. Ordningen gjelder all offentlig helsehjelp, også på sykehjem, i hjemmesykepleien og hos fastlegen. Det står i pasientskadeloven §§ 1 og 2.",
+        "Vilkårene er at skaden skyldes svikt ved helsehjelpen, og at du har hatt et økonomisk tap på minst 10 000 kroner. Ved varig eller betydelig skade kan du få menerstatning selv uten økonomisk tap (§ 4). Ingen trenger å ha gjort noe straffbart, og du trenger ikke peke ut en enkeltperson.",
+        "Søknaden sendes til Norsk pasientskadeerstatning (NPE), ikke til kommunen eller Statsforvalteren. Fristen er tre år fra du forsto eller burde ha forstått at helsehjelpen ga skaden (§ 5). Det er gratis å søke, og NPE henter selv inn journalen."
+      ],
+      "sources": [
+        {
+          "label": "Pasientskadeloven § 2 Erstatning for pasientskade",
+          "url": "https://lovdata.no/lov/2001-06-15-53/%C2%A72",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasientskadeloven § 4 Andre erstatningsregler (minstebeløp, menerstatning)",
+          "url": "https://lovdata.no/lov/2001-06-15-53/%C2%A74",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Pasientskadeloven § 5 Foreldelse",
+          "url": "https://lovdata.no/lov/2001-06-15-53/%C2%A75",
+          "note": "Lovdata"
+        },
+        {
+          "label": "Norsk pasientskadeerstatning: søk erstatning",
+          "url": "https://www.npe.no/",
+          "note": "Søknad"
+        },
+        {
+          "label": "Helseklage: Vilkårene for pasientskadeerstatning",
+          "url": "https://www.helseklage.no/nemndene-vi-er-sekretariat-for/pasientskadenemnda/spoersmaal-og-svar-om-pasientskadeordningen/hva-er-vilkaarene-for-aa-faa-pasientskadeerstatning",
+          "note": "Klageorgan"
+        },
+        {
+          "label": "Helsenorge: Slik søker du erstatning for en pasientskade",
+          "url": "https://www.helsenorge.no/klage-og-erstatning/slik-soker-du-erstatning/",
+          "note": "Offentlig veiledning"
+        }
+      ],
+      "fieldLabels": {
+        "enhet": "Sted der helsehjelpen ble gitt (sykehjem, avdeling, legekontor)",
+        "dato": "Når skjedde skaden",
+        "sok": "Hva skjedde? Ta det i rekkefølge.",
+        "hvorfor": "Hva har skaden ført til? Helse, hjelpebehov, utgifter, tapt inntekt."
+      },
+      "hideFields": [
+        "saksnr"
+      ],
+      "examples": {
+        "pasient": "Ingrid Berg",
+        "relasjon": "datter",
+        "tjeneste": "hjemmesykepleie og medisinhåndtering",
+        "dato": "2026-08-14",
+        "sok": "Mor fikk over flere uker dobbel dose av blodfortynnende fordi dosetten ble fylt feil. Hun ble innlagt med indre blødning 14. august og lå på sykehus i tolv dager.",
+        "hvorfor": "Hun har etterpå trengt mer hjelp i hverdagen og har fått varig nedsatt kraft i venstre side. Jeg har hatt utgifter til transport, egenandeler og fri fra jobb i innleggelsesperioden, anslagsvis 26 000 kroner så langt."
+      },
+      "examplesByWho": {
+        "selv": {
+          "sok": "Jeg fikk over flere uker dobbel dose av blodfortynnende fordi dosetten ble fylt feil. Jeg ble innlagt med indre blødning 14. august og lå på sykehus i tolv dager.",
+          "hvorfor": "Jeg har etterpå trengt mer hjelp i hverdagen og har fått varig nedsatt kraft i venstre side. Jeg har hatt utgifter til transport, egenandeler og tapt inntekt i innleggelsesperioden, anslagsvis 26 000 kroner så langt."
+        },
+        "egen": {
+          "sok": "Jeg fikk over flere uker dobbel dose av blodfortynnende fordi dosetten ble fylt feil. Jeg ble innlagt med indre blødning 14. august og lå på sykehus i tolv dager.",
+          "hvorfor": "Jeg har etterpå trengt mer hjelp i hverdagen og har fått varig nedsatt kraft i venstre side. Jeg har hatt utgifter til transport, egenandeler og tapt inntekt i innleggelsesperioden, anslagsvis 26 000 kroner så langt."
+        }
+      }
     },
     {
       "id": "behandling",
@@ -950,6 +1062,9 @@
   ],
   "statsforvalterenKan": {
     "heading": "Hva Statsforvalteren kan gjøre",
+    "headingPerRoute": {
+      "erstatning": "Hva NPE kan gjøre"
+    },
     "klage": [
       "Statsforvalteren kan prøve om kommunen har forstått loven riktig, om saksbehandlingen var forsvarlig og om tjenesten dekker behovet. Den kan omgjøre vedtaket eller sende det tilbake til kommunen for ny behandling.",
       "Der kommunen har valgfrihet i hvordan hjelpen gis, skal Statsforvalteren legge vekt på kommunens selvstyre (pasient- og brukerrettighetsloven § 7-7). Skriv derfor om behovet og om hva som skjer uten hjelpen. Det veier tyngre enn hvilken løsning du ønsker deg.",
@@ -957,6 +1072,10 @@
     ],
     "tilsyn": [
       "I en tilsynssak vurderer Statsforvalteren om tjenesten eller helsepersonellet har brutt pliktene sine. Utfallet er som regel at tjenesten må rette rutiner. Statsforvalteren avgjør ikke hvilke tjenester du skal få i en tilsynssak. Det krever en rettighetsklage."
+    ],
+    "erstatning": [
+      "NPE vurderer om helsehjelpen sviktet og om svikten ga skaden. Får du medhold, dekker NPE økonomisk tap som utgifter og tapt inntekt, og menerstatning ved varig skade. NPE tar ikke stilling til om noen skal få kritikk. Vil du det, er tilsyn et eget spor.",
+      "Får du avslag, kan du klage til NPE innen tre uker. Holder NPE på vedtaket, går saken til Pasientskadenemnda. Journalinnsyn (pasient- og brukerrettighetsloven § 5-1) er ofte det lureste første steget, fordi journalen viser hva som faktisk ble gjort."
     ]
   },
   "fullmakt": {

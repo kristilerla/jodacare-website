@@ -1,9 +1,12 @@
 /**
  * Brevmalene i Rettighetsveilederen.
  *
- * Ren funksjon uten nettleser-avhengigheter: samme tre maler som i prototypen
- * (rettighetsklage, purring, anmodning om tilsyn). Teksten som er juridisk
- * ligger i src/content/rettigheter.json — her er bare skjelettet.
+ * Ren funksjon uten nettleser-avhengigheter. Teksten som er juridisk ligger i
+ * src/content/rettigheter.json — her er bare skjelettet.
+ *
+ * Erstatningssporet er ikke et brev: det er en beskrivelse som limes inn i
+ * NPE sitt eget skjema. Den ligger likevel her, fordi den settes sammen av
+ * de samme feltene.
  */
 import content from '@/content/rettigheter.json';
 
@@ -13,7 +16,8 @@ export type RouteId =
   | 'purring'
   | 'tilsyn'
   | 'innsyn'
-  | 'sivilombud';
+  | 'sivilombud'
+  | 'erstatning';
 
 /** Brevmal. Følger ruten, men spor med flere brev velger selv. */
 export type LetterTemplate =
@@ -54,6 +58,11 @@ export type Situation = {
   routeCopy?: Partial<RouteCopy>;
   /** Felt som bare finnes i dette sporet. */
   extraFields?: FieldKey[];
+  /**
+   * Felt som ikke hører hjemme i dette sporet. Erstatningssporet har ingen
+   * sak hos et forvaltningsorgan ennå, så det finnes ikke noe saksnummer.
+   */
+  hideFields?: FieldKey[];
   /** Feltetiketter som gjelder bare her. */
   fieldLabels?: Partial<Record<FieldKey, string>>;
   /** Eksempelverdier som gjelder bare her. */
@@ -85,6 +94,12 @@ export type RouteCopy = {
   letterIntro: string;
   commonSources: string[];
   sendSteps: SendStep[];
+  /**
+   * Ruter der mottakeren har sin egen fullmaktsrutine. NPE krever fullmakt og
+   * legitimasjon i søknadsskjemaet sitt, så veilederens fullmakt ville bare
+   * forvirre.
+   */
+  skipFullmakt?: boolean;
 };
 
 export type Content = Omit<
@@ -101,8 +116,12 @@ export type Content = Omit<
   routes: Record<RouteId, RouteCopy>;
   answerTitles: Record<WhoId, string>;
   commonSources: (Source & { id: string })[];
-  // Bare ruter der Statsforvalteren faktisk prøver saken har avsnitt her.
-  statsforvalterenKan: { heading: string } & Partial<Record<RouteId, string[]>>;
+  // Bare ruter der noen faktisk prøver saken har avsnitt her. Overskriften er
+  // Statsforvalteren som standard; ruter med et annet organ overstyrer den.
+  statsforvalterenKan: {
+    heading: string;
+    headingPerRoute?: Partial<Record<RouteId, string>>;
+  } & Partial<Record<RouteId, string[]>>;
 };
 
 export const data = content as unknown as Content;
@@ -336,6 +355,43 @@ ${navn}
 ${idag}
 
 Vedlegg: Statsforvalterens avgjørelse av ${dato}, kommunens vedtak, min klage til kommunen${paaVegne ? ', fullmakt' : ''}`;
+  }
+
+  /**
+   * Erstatningssporet. Ikke et brev, men teksten som limes inn i NPE sitt
+   * skjema. Derfor ingen adressat og ingen «Med vennlig hilsen»: strukturen
+   * følger feltene i skjemaet, slik at ingenting viktig blir glemt.
+   */
+  if (template === 'erstatning') {
+    return `BESKRIVELSE TIL SØKNAD OM PASIENTSKADEERSTATNING
+Til bruk i skjemaet på npe.no
+
+${
+      paaVegne
+        ? `Søknaden gjelder ${pasient}. Jeg, ${navn}, søker på vegne av ${pasient} som ${rel}. Fullmakt og kopi av legitimasjon følger vedlagt. [Er ${pasient} død, legg ved skifteattest i stedet.]
+
+`
+        : ''
+    }HVOR OG NÅR
+Helsehjelpen ble gitt av ${kommune}, ${enhet}. Skaden skjedde ${dato} (omtrentlig dato hvis du er usikker).
+
+HVILKEN HELSEHJELP DET GJELDER
+${tj}
+
+HVA SOM SKJEDDE
+${sok || '[Beskriv hendelsesforløpet i rekkefølge: hva som ble gjort, hva som ikke ble gjort, og når. Navngi avdeling, ikke enkeltpersoner.]'}
+
+HVA SKADEN HAR FØRT TIL
+${hvorfor || '[Beskriv skaden og følgene: helse, funksjon, behov for mer hjelp, utgifter og eventuelt tapt inntekt. Anslå beløp der du kan.]'}
+
+DOKUMENTER JEG VISER TIL
+Journal fra ${enhet} (NPE henter den selv, men jeg har bedt om innsyn etter pasient- og brukerrettighetsloven § 5-1)
+Kvitteringer og annen dokumentasjon på utgifter
+${paaVegne ? 'Fullmakt og legitimasjon\n' : ''}
+Jeg ber om at NPE vurderer om helsehjelpen sviktet og om svikten har ført til skaden, jf. pasientskadeloven § 2.
+
+${navn}
+${idag}`;
   }
 
   if (template === 'klage') {
