@@ -1,4 +1,5 @@
 import type { Locale } from '@/lib/i18n/types';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
 
 export type PriserCard = {
   name: string;
@@ -54,10 +55,10 @@ const no: PriserContent = {
     {
       name: 'Lisens',
       status: 'Lanseres høst 2026.',
-      price: 'kr 2 990',
+      price: formaterPris(pakkeprisMnd()),
       period: 'per måned',
-      unit: 'per pakke à 10 tjenestemottakere',
-      body: 'Én pakke dekker inntil 10 tjenestemottakere. Rundt hver av dem kan kommunen legge til så mange ansatte og pårørende som trengs, uten ekstra kostnad. Trenger dere plass til flere enn 10, legger dere til en pakke til.',
+      unit: `per pakke à ${priser.pakkeStorrelse} tjenestemottakere`,
+      body: `Én pakke dekker inntil ${priser.pakkeStorrelse} tjenestemottakere. Rundt hver av dem kan kommunen legge til så mange ansatte og pårørende som trengs, uten ekstra kostnad. Trenger dere plass til flere enn ${priser.pakkeStorrelse}, legger dere til en pakke til.`,
       includesLabel: 'Lisensen inkluderer:',
       includes: [
         'Boka: felles feed for hver tjenestemottaker',
@@ -67,11 +68,11 @@ const no: PriserContent = {
         'Web og app for iOS og Android',
         'Support på e-post og telefon på hverdager',
       ],
-      footnote: 'Alle priser er oppgitt eks. mva. Avtalen løper i 12 måneder om gangen.',
+      footnote: `Alle priser er oppgitt eks. mva. Avtalen løper i ${priser.avtaleManeder} måneder om gangen.`,
     },
     {
       name: 'Oppstart',
-      price: 'kr 28 000',
+      price: formaterPris(priser.oppstart),
       period: '',
       unit: 'engangsbeløp per kommune',
       body: 'Oppstart er der de fleste digitale verktøy stopper opp. Derfor er det en egen tjeneste med en egen pris, og den inkluderer:',
@@ -89,12 +90,12 @@ const no: PriserContent = {
   exampleTitle: 'Hva koster det for én avlastningsbolig?',
   exampleColumns: { year1: 'År 1', year2: 'År 2 og videre' },
   exampleRows: [
-    { label: 'Lisens, 1 pakke à 10', year1: 'kr 35 880', year2: 'kr 35 880' },
-    { label: 'Oppstart', year1: 'kr 28 000', year2: 'kr 0' },
+    { label: `Lisens, 1 pakke à ${priser.pakkeStorrelse}`, year1: formaterPris(aar2()), year2: formaterPris(aar2()) },
+    { label: 'Oppstart', year1: formaterPris(priser.oppstart), year2: formaterPris(0) },
   ],
   exampleSumLabel: 'Sum',
-  exampleSumYear1: 'kr 63 880',
-  exampleSumYear2: 'kr 35 880',
+  exampleSumYear1: formaterPris(aar1()),
+  exampleSumYear2: formaterPris(aar2()),
   exampleNote:
     'Beløpet ligger godt under terskelverdien for direkte anskaffelse. Kommunen kan inngå avtalen uten anbudskonkurranse.',
 
@@ -118,7 +119,7 @@ const no: PriserContent = {
   faqTitle: 'Vanlige spørsmål om pris',
   faq: [
     {
-      question: 'Hva om vi har færre enn 10 tjenestemottakere?',
+      question: `Hva om vi har færre enn ${priser.pakkeStorrelse} tjenestemottakere?`,
       answer:
         'Pakken er den samme. De fleste avlastningsboliger og bofellesskap vokser inn i den i løpet av det første året.',
     },
@@ -139,7 +140,7 @@ const no: PriserContent = {
     {
       question: 'Kan vi si opp?',
       answer:
-        'Avtalen løper i 12 måneder og fornyes automatisk. Oppsigelse skjer skriftlig med tre måneders varsel før avtaleperioden løper ut.',
+        `Avtalen løper i ${priser.avtaleManeder} måneder og fornyes automatisk. Oppsigelse skjer skriftlig med tre måneders varsel før avtaleperioden løper ut.`,
     },
   ],
   faqCta: 'Ta kontakt for avtaleforslag',
@@ -155,10 +156,10 @@ const en: PriserContent = {
     {
       name: 'Licence',
       status: 'Launching autumn 2026.',
-      price: 'NOK 2,990',
+      price: formaterPrisEn(pakkeprisMnd()),
       period: 'per month',
-      unit: 'per package of 10 service recipients',
-      body: 'One package covers up to 10 service recipients. Around each of them the municipality can add as many staff and relatives as needed, at no extra cost. If you need room for more than 10, you add another package.',
+      unit: `per package of ${priser.pakkeStorrelse} service recipients`,
+      body: `One package covers up to ${priser.pakkeStorrelse} service recipients. Around each of them the municipality can add as many staff and relatives as needed, at no extra cost. If you need room for more than ${priser.pakkeStorrelse}, you add another package.`,
       includesLabel: 'The licence includes:',
       includes: [
         'Boka: a shared feed for each service recipient',
@@ -168,11 +169,11 @@ const en: PriserContent = {
         'Web and apps for iOS and Android',
         'Support by email and phone on weekdays',
       ],
-      footnote: 'All prices are excluding VAT. The agreement runs for 12 months at a time.',
+      footnote: `All prices are excluding VAT. The agreement runs for ${priser.avtaleManeder} months at a time.`,
     },
     {
       name: 'Onboarding',
-      price: 'NOK 28,000',
+      price: formaterPrisEn(priser.oppstart),
       period: '',
       unit: 'one-off fee per municipality',
       body: 'Onboarding is where most digital tools stall. That is why it is a service of its own, with a price of its own, and it includes:',
@@ -190,12 +191,12 @@ const en: PriserContent = {
   exampleTitle: 'What does one respite home cost?',
   exampleColumns: { year1: 'Year 1', year2: 'Year 2 onwards' },
   exampleRows: [
-    { label: 'Licence, 1 package of 10', year1: 'NOK 35,880', year2: 'NOK 35,880' },
-    { label: 'Onboarding', year1: 'NOK 28,000', year2: 'NOK 0' },
+    { label: `Licence, 1 package of ${priser.pakkeStorrelse}`, year1: formaterPrisEn(aar2()), year2: formaterPrisEn(aar2()) },
+    { label: 'Onboarding', year1: formaterPrisEn(priser.oppstart), year2: formaterPrisEn(0) },
   ],
   exampleSumLabel: 'Total',
-  exampleSumYear1: 'NOK 63,880',
-  exampleSumYear2: 'NOK 35,880',
+  exampleSumYear1: formaterPrisEn(aar1()),
+  exampleSumYear2: formaterPrisEn(aar2()),
   exampleNote:
     'The amount is well below the Norwegian threshold for direct procurement. The municipality can enter into the agreement without a tender process.',
 
@@ -219,7 +220,7 @@ const en: PriserContent = {
   faqTitle: 'Common questions about pricing',
   faq: [
     {
-      question: 'What if we have fewer than 10 service recipients?',
+      question: `What if we have fewer than ${priser.pakkeStorrelse} service recipients?`,
       answer:
         'The package is the same. Most respite homes and shared housing grow into it during the first year.',
     },
@@ -240,7 +241,7 @@ const en: PriserContent = {
     {
       question: 'Can we cancel?',
       answer:
-        'The agreement runs for 12 months and renews automatically. Cancellation is made in writing with three months notice before the agreement period ends.',
+        `The agreement runs for ${priser.avtaleManeder} months and renews automatically. Cancellation is made in writing with three months notice before the agreement period ends.`,
     },
   ],
   faqCta: 'Get in touch for a draft agreement',

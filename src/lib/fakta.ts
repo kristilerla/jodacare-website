@@ -79,6 +79,18 @@ export function formaterPris(belop: number): string {
   return `kr ${medSkille}`;
 }
 
+/**
+ * Engelsk form: «NOK 2,990». Komma som tusenskille, «NOK» foran.
+ */
+export function formaterPrisEn(belop: number): string {
+  return `NOK ${Math.round(belop).toLocaleString('en-US')}`;
+}
+
+/** Velger norsk eller engelsk form. */
+export function pris(belop: number, locale: 'no' | 'en'): string {
+  return locale === 'en' ? formaterPrisEn(belop) : formaterPris(belop);
+}
+
 /** Bare tallet med tusenskille, uten «kr». */
 export function formaterTall(belop: number): string {
   return String(Math.round(belop)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
