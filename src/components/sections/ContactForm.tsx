@@ -6,6 +6,7 @@ import { FadeIn } from '@/components/animations';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { getContactFormCopy } from '@/i18n/messages/contact-form';
 import type { Locale } from '@/lib/i18n/types';
+import { selskap, kontakt } from '@/lib/fakta';
 
 interface ContactFormProps {
   showContactInfo?: boolean;
@@ -94,7 +95,7 @@ export function ContactForm({
 
                 <div className="space-y-4">
                   <a 
-                    href="mailto:post@jodacare.com"
+                    href={`mailto:${kontakt.epost}`}
                     className="flex items-center gap-4 text-text hover:text-primary transition-colors group"
                   >
                     <div className="w-12 h-12 bg-secondary-light rounded-xl flex items-center justify-center group-hover:bg-secondary transition-colors">
@@ -102,12 +103,12 @@ export function ContactForm({
                     </div>
                     <div>
                       <div className="text-sm text-text-muted">{c.emailLabel}</div>
-                      <div className="font-medium">post@jodacare.com</div>
+                      <div className="font-medium">{kontakt.epost}</div>
                     </div>
                   </a>
 
                   <a 
-                    href="tel:+4790606433"
+                    href={`tel:+47${kontakt.telefonRaa}`}
                     className="flex items-center gap-4 text-text hover:text-primary transition-colors group"
                   >
                     <div className="w-12 h-12 bg-secondary-light rounded-xl flex items-center justify-center group-hover:bg-secondary transition-colors">
@@ -115,7 +116,7 @@ export function ContactForm({
                     </div>
                     <div>
                       <div className="text-sm text-text-muted">{c.phoneLabel}</div>
-                      <div className="font-medium">+47 906 06 433</div>
+                      <div className="font-medium">+47 {kontakt.telefon}</div>
                     </div>
                   </a>
 
@@ -136,8 +137,8 @@ export function ContactForm({
                     <br />
                     {c.cardRole}
                     <br />
-                    <a href="tel:+4790606433" className="text-primary hover:underline">
-                      +47 906 06 433
+                    <a href={`tel:+47${kontakt.telefonRaa}`} className="text-primary hover:underline">
+                      +47 {kontakt.telefon}
                     </a>
                   </p>
                 </Card>

@@ -1,4 +1,5 @@
 import type { Locale } from '@/lib/i18n/types';
+import { getStatusVisning } from './status';
 import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
 
 export type PriserCard = {
@@ -54,7 +55,7 @@ const no: PriserContent = {
   cards: [
     {
       name: 'Lisens',
-      status: 'Lanseres høst 2026.',
+      status: getStatusVisning('bpa', 'no').tekst + '.',
       price: formaterPris(pakkeprisMnd()),
       period: 'per måned',
       unit: `per pakke à ${priser.pakkeStorrelse} tjenestemottakere`,
@@ -155,7 +156,7 @@ const en: PriserContent = {
   cards: [
     {
       name: 'Licence',
-      status: 'Launching autumn 2026.',
+      status: getStatusVisning('bpa', 'en').tekst + '.',
       price: formaterPrisEn(pakkeprisMnd()),
       period: 'per month',
       unit: `per package of ${priser.pakkeStorrelse} service recipients`,

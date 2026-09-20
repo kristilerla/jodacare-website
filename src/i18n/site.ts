@@ -1,4 +1,5 @@
 import type { Locale } from '@/lib/i18n/types';
+import { selskap, kontakt } from '@/lib/fakta';
 
 export type SiteCopy = {
   skipToContent: string;
@@ -97,7 +98,7 @@ export const site: Record<Locale, SiteCopy> = {
       resources: 'Ressurser',
       rights:
         'Alle rettigheter reservert. JodaCare er et registrert varemerke.',
-      orgNumber: 'Org.nr. 937 323 565',
+      orgNumber: `Org.nr. ${selskap.orgNr}`,
       items: {
         produkt: [
           { name: 'For familier', href: '/familie' },
@@ -191,7 +192,7 @@ export const site: Record<Locale, SiteCopy> = {
       company: 'Company',
       resources: 'Resources',
       rights: 'All rights reserved. JodaCare is a registered trademark.',
-      orgNumber: 'Org. no. 937 323 565',
+      orgNumber: `Org. no. ${selskap.orgNr}`,
       items: {
         produkt: [
           { name: 'For families', href: '/familie' },

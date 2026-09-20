@@ -1,4 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
+import { getStatusVisning } from './status';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
 
 export type AvCard = { title: string; description: string };
 export type AvRelated = { title: string; description: string; href: string };
@@ -84,12 +86,12 @@ const no: AvlastningContent = {
         'Foreldre kan opprette bekymringsmelding direkte i appen, og meldingen følger en tydelig status-flyt fra opprettet til under behandling, besvart og lukket.',
     },
   ],
-  statusBadge: 'Lanseres høst 2026',
+  statusBadge: getStatusVisning('avlastning', 'no').tekst,
   statusTitle: 'Slik bygges JodaCare for avlastning',
   statusBody:
     'Nye JodaCare lanseres høsten 2026 med Boka, kalender, beskjeder og team rundt hvert barn. Rutiner og hendelseslogg kommer Q4 2026, Jodabook og bekymringsmelding Q1 2027.',
   priceNote:
-    'Lisens fra kr 2 990 per måned for inntil 10 tjenestemottakere, pluss oppstart.',
+    `Lisens fra ${formaterPris(pakkeprisMnd())} per måned for inntil 10 tjenestemottakere, pluss oppstart.`,
   priceLinkText: 'Se alle priser',
   statusCta: 'Meld interesse',
   relatedTitle: 'Andre deler av JodaCare som styrker avlastningen',
@@ -171,12 +173,12 @@ const en: AvlastningContent = {
         'Parents can send a concern directly in the app. Status flow: Created → In progress → Answered → Closed.',
     },
   ],
-  statusBadge: 'Launching autumn 2026',
+  statusBadge: getStatusVisning('avlastning', 'en').tekst,
   statusTitle: 'How JodaCare for respite is being built',
   statusBody:
     'The new JodaCare launches in autumn 2026 with Boka, calendar, messages and a team around each child. Routines and the event log arrive in Q4 2026, Jodabook and concern notifications in Q1 2027.',
   priceNote:
-    'Licence from NOK 2,990 per month for up to 10 service recipients, plus onboarding.',
+    `Licence from ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 service recipients, plus onboarding.`,
   priceLinkText: 'See all prices',
   statusCta: 'Register interest',
   relatedTitle: 'Other parts of JodaCare that strengthen respite care',

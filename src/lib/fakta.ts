@@ -71,7 +71,8 @@ export const aar1 = (): number => 12 * pakkeprisMnd() + priser.oppstart;
 export const aar2 = (): number => 12 * pakkeprisMnd();
 
 /**
- * Formaterer et beløp slik nettsiden gjør det: «kr 2 990».
+ * Formaterer et beløp slik nettsiden gjør det, med mellomrom som tusenskille
+ * og «kr» foran.
  * Mellomrom som tusenskille, «kr» foran.
  */
 export function formaterPris(belop: number): string {
@@ -80,7 +81,7 @@ export function formaterPris(belop: number): string {
 }
 
 /**
- * Engelsk form: «NOK 2,990». Komma som tusenskille, «NOK» foran.
+ * Engelsk form: komma som tusenskille, «NOK» foran.
  */
 export function formaterPrisEn(belop: number): string {
   return `NOK ${Math.round(belop).toLocaleString('en-US')}`;

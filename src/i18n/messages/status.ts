@@ -36,6 +36,20 @@ const ENGELSK_PER_SEGMENT: Record<string, string> = {
   jodavisit: 'Coming 2027',
 };
 
+/**
+ * Merker for kort som ikke er kundesegmenter, for eksempel kortet for
+ * kommuner og kortet for implementering på forsiden. All statustekst skal bo
+ * i denne filen, også disse.
+ */
+const LOSE_MERKER: Record<Locale, Record<string, string>> = {
+  no: { kommune: 'Lanseres høst 2026' },
+  en: { kommune: 'Launching autumn 2026' },
+};
+
+export function loseMerke(id: string, locale: Locale): string {
+  return LOSE_MERKER[locale][id] ?? '';
+}
+
 export function getStatusVisning(segmentId: string, locale: Locale): StatusVisning {
   const s = segment(segmentId);
   const tekst =

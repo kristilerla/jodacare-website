@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/types';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser, selskap } from '@/lib/fakta';
 
 export type LegalSection = { title: string; paragraphs: string[] };
 
@@ -36,7 +37,7 @@ const no: BruksvilkarBundle = {
     {
       title: '1. Om tjenesten',
       paragraphs: [
-        'JodaCare er en sikker kommunikasjonsplattform levert av JodaCare AS (org.nr. 937 323 565). Plattformen kobler helsepersonell, pårørende og pasienter i omsorgsboliger, sykehjem og hjemmetjenester.',
+        `JodaCare er en sikker kommunikasjonsplattform levert av JodaCare AS (org.nr. ${selskap.orgNr}). Plattformen kobler helsepersonell, pårørende og pasienter i omsorgsboliger, sykehjem og hjemmetjenester.`,
         'Ved å opprette en brukerkonto eller ta i bruk JodaCare, godtar du disse bruksvilkårene.',
       ],
     },
@@ -77,7 +78,7 @@ const no: BruksvilkarBundle = {
     {
       title: '7. Abonnement og betaling',
       paragraphs: [
-        'For Familierom vil det gjelde: 14 dager gratis prøveperiode, deretter 299 kr/mnd. Vilkår for betaling publiseres når Familierom lanseres.',
+        `For Familierom vil det gjelde: ${priser.proveperiodeDager} dager gratis prøveperiode, deretter ${priser.familieromMnd} kr/mnd. Vilkår for betaling publiseres når Familierom lanseres.`,
         'For kommunale kunder reguleres betaling av separat avtale.',
       ],
     },
@@ -122,7 +123,7 @@ const en: BruksvilkarBundle = {
     {
       title: '1. About the service',
       paragraphs: [
-        'JodaCare is a secure communication platform provided by JodaCare AS (org. no. 937 323 565). The platform connects health professionals, relatives and patients in care homes, nursing homes and home care services.',
+        `JodaCare is a secure communication platform provided by JodaCare AS (org. no. ${selskap.orgNr}). The platform connects health professionals, relatives and patients in care homes, nursing homes and home care services.`,
         'By creating a user account or using JodaCare, you accept these terms of use.',
       ],
     },
@@ -163,7 +164,7 @@ const en: BruksvilkarBundle = {
     {
       title: '7. Subscription and payment',
       paragraphs: [
-        'For Family Room the following will apply: 14 days free trial, then NOK 299/month. Payment terms will be published when Family Room launches.',
+        `For Family Room the following will apply: 14 days free trial, then ${formaterPrisEn(priser.familieromMnd)}/month. Payment terms will be published when Family Room launches.`,
         'For municipal customers, payment is governed by a separate agreement.',
       ],
     },

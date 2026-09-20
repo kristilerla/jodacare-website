@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { selskap, kontakt } from '@/lib/fakta';
 import type { Locale } from '@/lib/i18n/types';
 
 export type LegalSection = { title: string; paragraphs: string[] };
@@ -28,7 +29,7 @@ const no: PersonvernerklaeringBundle = {
     {
       title: '1. Behandlingsansvarlig',
       paragraphs: [
-        'JodaCare AS (org.nr. 937 323 565) er behandlingsansvarlig for personopplysninger som behandles i forbindelse med bruk av jodacare.no og JodaCare-plattformen, med mindre annet er avtalt med kundens organisasjon.',
+        `JodaCare AS (org.nr. ${selskap.orgNr}) er behandlingsansvarlig for personopplysninger som behandles i forbindelse med bruk av jodacare.no og JodaCare-plattformen, med mindre annet er avtalt med kundens organisasjon.`,
         'Kontakt: support@jodacare.no.',
       ],
     },
@@ -119,7 +120,7 @@ const en: PersonvernerklaeringBundle = {
     {
       title: '1. Data controller',
       paragraphs: [
-        'JodaCare AS (org. no. 937 323 565) is the data controller for personal data processed in connection with use of jodacare.no and the JodaCare platform, unless otherwise agreed with the customer organisation.',
+        `JodaCare AS (org. no. ${selskap.orgNr}) is the data controller for personal data processed in connection with use of jodacare.no and the JodaCare platform, unless otherwise agreed with the customer organisation.`,
         'Contact: support@jodacare.no.',
       ],
     },

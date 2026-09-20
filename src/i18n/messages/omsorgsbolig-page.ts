@@ -1,4 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
+import { getStatusVisning } from './status';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
 
 export type HubCard = { title: string; description: string };
 export type HubStep = { step: string; title: string; description: string };
@@ -122,13 +124,13 @@ const no: OmsorgsboligContent = {
       description: 'Velferdskoordinator styrer hverdagen fra sitt dashboard, og vi er tilgjengelige hvis noe butter.',
     },
   ],
-  statusBadge: 'Pilot 2027',
+  statusBadge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
   statusTitle: 'Bli med som pilotkommune',
   statusP1:
     'JodaCare Hub er under utvikling og prøves ut sammen med de første kommunene i 2027. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet.',
   statusP2: 'Ta kontakt for en uforpliktende samtale om en pilotplass.',
   priceNote:
-    'Grunnmodulen koster kr 2 990 per måned for inntil 10 beboere. Hub prises separat når modulen er ferdig.',
+    `Grunnmodulen koster ${formaterPris(pakkeprisMnd())} per måned for inntil 10 beboere. Hub prises separat når modulen er ferdig.`,
   priceLinkText: 'Se alle priser',
   statusCta: 'Meld din kommune som pilotkommune',
   relatedTitle: 'Andre deler av JodaCare som styrker omsorgsboligen',
@@ -241,13 +243,13 @@ const en: OmsorgsboligContent = {
       description: 'The welfare coordinator runs everyday life from the dashboard. We are available if anything sticks.',
     },
   ],
-  statusBadge: 'Pilot 2027',
+  statusBadge: getStatusVisning('omsorgsbolig-hub', 'en').tekst,
   statusTitle: 'Join as a pilot municipality',
   statusP1:
     'JodaCare Hub is under development and is being trialled with the first municipalities in 2027. Pilot sites receive close follow-up and help shape the final product.',
   statusP2: 'Contact us for an informal conversation about a pilot place.',
   priceNote:
-    'The core module costs NOK 2,990 per month for up to 10 residents. Hub is priced separately once the module is finished.',
+    `The core module costs ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 residents. Hub is priced separately once the module is finished.`,
   priceLinkText: 'See all prices',
   statusCta: 'Register your municipality as a pilot',
   relatedTitle: 'Other parts of JodaCare that strengthen the care home',

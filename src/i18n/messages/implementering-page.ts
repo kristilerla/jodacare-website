@@ -1,4 +1,5 @@
 import type { Locale } from '@/lib/i18n/types';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
 
 export type ImplementeringRelated = { title: string; description: string; href: string };
 
@@ -45,7 +46,7 @@ const no: ImplementeringContent = {
   bannerTitle:
     'Alle kommunale kunder får dedikert oppfølging de første tre månedene.',
   bannerBody:
-    'Oppstart koster kr 28 000 per kommune og inkluderer alt som står over.',
+    `Oppstart koster ${formaterPris(priser.oppstart)} per kommune og inkluderer alt som står over.`,
   priceLinkText: 'Se alle priser',
   ctaTitle: 'Klar til å starte?',
   ctaSubtitle: 'Ta kontakt for en uforpliktende samtale om implementering i din kommune.',
@@ -91,7 +92,7 @@ const en: ImplementeringContent = {
     'A 90-day follow-up meeting',
   ],
   bannerTitle: 'Every municipal customer receives dedicated follow-up for the first three months.',
-  bannerBody: 'Onboarding costs NOK 28,000 per municipality and includes everything listed above.',
+  bannerBody: `Onboarding costs ${formaterPrisEn(priser.oppstart)} per municipality and includes everything listed above.`,
   priceLinkText: 'See all prices',
   ctaTitle: 'Ready to start?',
   ctaSubtitle: 'Get in touch for an informal conversation about implementation in your municipality.',

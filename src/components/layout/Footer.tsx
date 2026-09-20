@@ -5,6 +5,7 @@ import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline
 import { getLocaleFromHeaders } from '@/lib/i18n/get-locale';
 import { withLocale } from '@/lib/i18n/paths';
 import { getSite } from '@/i18n/site';
+import { selskap, kontakt } from '@/lib/fakta';
 
 export async function Footer() {
   const locale = await getLocaleFromHeaders();
@@ -34,18 +35,18 @@ export async function Footer() {
             <p className="text-sm text-white max-w-xs">{s.footer.tagline}</p>
             <div className="space-y-3">
               <a
-                href="mailto:post@jodacare.com"
+                href={`mailto:${kontakt.epost}`}
                 className="flex items-center gap-2 text-sm text-white hover:text-white transition-colors"
               >
                 <EnvelopeIcon className="h-5 w-5" aria-hidden="true" />
-                post@jodacare.com
+                {kontakt.epost}
               </a>
               <a
-                href="tel:+4790606433"
+                href={`tel:+47${kontakt.telefonRaa}`}
                 className="flex items-center gap-2 text-sm text-white hover:text-white transition-colors"
               >
                 <PhoneIcon className="h-5 w-5" aria-hidden="true" />
-                +47 906 06 433
+                +47 {kontakt.telefon}
               </a>
               <div className="flex items-center gap-2 text-sm text-white">
                 <MapPinIcon className="h-5 w-5" aria-hidden="true" />
@@ -110,7 +111,7 @@ export async function Footer() {
         </div>
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-xs text-white">
-            &copy; {new Date().getFullYear()} JodaCare AS. {s.footer.rights}{' '}
+            &copy; {new Date().getFullYear()} {selskap.navn}. {s.footer.rights}{' '}
             {s.footer.orgNumber}
           </p>
         </div>

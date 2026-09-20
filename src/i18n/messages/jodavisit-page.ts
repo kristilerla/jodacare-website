@@ -1,4 +1,5 @@
 import type { Locale } from '@/lib/i18n/types';
+import { getStatusVisning } from './status';
 
 export type JvCard = { title: string; description: string };
 export type JvRelated = { title: string; description: string; href: string };
@@ -73,7 +74,7 @@ const no: JodavisitContent = {
       description: 'Helsepersonell skriver dokumentasjonen direkte i JodaCare rett etter videobesøket.',
     },
   ],
-  statusBadge: 'Kommer 2027',
+  statusBadge: getStatusVisning('jodavisit', 'no').tekst,
   statusTitle: 'Under utvikling',
   statusBody: 'JodaVisit er under utvikling og kommer i 2027. Ta kontakt for å melde din kommune som pilot.',
   statusCta: 'Meld interesse',
@@ -146,7 +147,7 @@ const en: JodavisitContent = {
       description: 'Staff document directly in JodaCare after the video visit.',
     },
   ],
-  statusBadge: 'Coming 2027',
+  statusBadge: getStatusVisning('jodavisit', 'en').tekst,
   statusTitle: 'In development',
   statusBody: 'JodaVisit is under development and arrives in 2027. Contact us to register your municipality as a pilot.',
   statusCta: 'Register interest',

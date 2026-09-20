@@ -1,4 +1,7 @@
 import type { Locale } from '@/lib/i18n/types';
+import { segment, selskap } from '@/lib/fakta';
+import { getStatusVisning, loseMerke } from './status';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
 
 export type HomePathCard = {
   title: string;
@@ -65,7 +68,7 @@ const no: HomeMessages = {
       title: 'JodaCare for familien',
       description:
         'Hold deg oppdatert på hverdagen til den du er glad i, uansett avstand.',
-      badge: 'Kommer 2027',
+      badge: getStatusVisning('familierom', 'no').tekst,
       badgeColor: 'bg-secondary-light text-text-muted',
       cta: 'Meld interesse',
       href: '/familie',
@@ -75,19 +78,19 @@ const no: HomeMessages = {
       title: 'JodaCare for kommuner',
       description:
         'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie møtes i én plattform med koordinert omsorg.',
-      badge: 'Lanseres høst 2026',
+      badge: loseMerke('kommune', 'no'),
       badgeColor: 'bg-success/10 text-success',
       cta: 'Se alle tjenester',
       href: '/kommune',
       highlighted: true,
-      priceNote: 'Fra kr 2 990 per måned.',
+      priceNote: `Fra ${formaterPris(pakkeprisMnd())} per måned.`,
       priceLinkText: 'Se priser',
     },
     {
       title: 'Vi hjelper med implementeringen',
       description:
         'Vår Implementeringsansvarlig veileder din kommune steg for steg, fra første oppsett til systemet sitter.',
-      badge: 'Oppstart kr 28 000',
+      badge: `Oppstart ${formaterPris(priser.oppstart)}`,
       badgeColor: 'bg-primary/10 text-primary',
       cta: 'Les mer',
       href: '/implementering',
@@ -105,42 +108,42 @@ const no: HomeMessages = {
     {
       title: 'Familierom',
       subtitle: 'For pårørende og nær familie',
-      badge: 'Kommer 2027',
+      badge: getStatusVisning('familierom', 'no').tekst,
       badgeColor: 'bg-secondary-light text-text-muted',
       href: '/familie',
     },
     {
       title: 'Omsorgsbolig / Hub',
       subtitle: 'En skjerm i leiligheten for beboer, familie og ansatte',
-      badge: 'Pilot 2027',
+      badge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
       badgeColor: 'bg-primary/10 text-primary',
       href: '/omsorgsbolig',
     },
     {
       title: 'BPA',
       subtitle: 'Brukerstyrt personlig assistanse',
-      badge: 'Lanseres høst 2026',
+      badge: getStatusVisning('bpa', 'no').tekst,
       badgeColor: 'bg-success/10 text-success',
       href: '/bpa',
     },
     {
       title: 'Avlastning',
       subtitle: 'For barn med utviklingshemming',
-      badge: 'Lanseres høst 2026',
+      badge: getStatusVisning('avlastning', 'no').tekst,
       badgeColor: 'bg-success/10 text-success',
       href: '/avlastning',
     },
     {
       title: 'Barnevern',
       subtitle: 'Samvær og dokumentasjon',
-      badge: 'Kommer Q2 2027',
+      badge: getStatusVisning('barnevern', 'no').tekst,
       badgeColor: 'bg-secondary-light text-text-muted',
       href: '/barnevern',
     },
     {
       title: 'JodaVisit',
       subtitle: 'Videobesøk for hjemmeboende',
-      badge: 'Kommer 2027',
+      badge: getStatusVisning('jodavisit', 'no').tekst,
       badgeColor: 'bg-secondary-light text-text-muted',
       href: '/jodavisit',
     },
@@ -170,7 +173,7 @@ const en: HomeMessages = {
       title: 'JodaCare for families',
       description:
         'Stay close to the everyday life of someone you love, wherever you live.',
-      badge: 'Coming 2027',
+      badge: getStatusVisning('familierom', 'en').tekst,
       badgeColor: 'bg-secondary-light text-text-muted',
       cta: 'Register interest',
       href: '/familie',
@@ -180,11 +183,11 @@ const en: HomeMessages = {
       title: 'JodaCare for municipalities',
       description:
         'Residential care, personal assistance, child welfare, respite and home nursing in one platform with coordinated care.',
-      badge: 'Launching autumn 2026',
+      badge: loseMerke('kommune', 'en'),
       badgeColor: 'bg-success/10 text-success',
       cta: 'See all services',
       href: '/kommune',
-      priceNote: 'From NOK 2,990 per month.',
+      priceNote: `From ${formaterPrisEn(pakkeprisMnd())} per month.`,
       priceLinkText: 'See pricing',
       highlighted: true,
     },
@@ -192,7 +195,7 @@ const en: HomeMessages = {
       title: 'Implementation support',
       description:
         'A dedicated implementation lead guides your municipality step by step, from first setup until the system is second nature.',
-      badge: 'Onboarding NOK 28,000',
+      badge: `Onboarding ${formaterPrisEn(priser.oppstart)}`,
       badgeColor: 'bg-primary/10 text-primary',
       cta: 'Read more',
       href: '/implementering',
@@ -210,42 +213,42 @@ const en: HomeMessages = {
     {
       title: 'Family room',
       subtitle: 'For relatives and close family',
-      badge: 'Coming 2027',
+      badge: getStatusVisning('familierom', 'en').tekst,
       badgeColor: 'bg-secondary-light text-text-muted',
       href: '/familie',
     },
     {
       title: 'Care home / Hub',
       subtitle: 'A screen in the flat for resident, family and staff',
-      badge: 'Pilot 2027',
+      badge: getStatusVisning('omsorgsbolig-hub', 'en').tekst,
       badgeColor: 'bg-primary/10 text-primary',
       href: '/omsorgsbolig',
     },
     {
       title: 'User-controlled personal assistance',
       subtitle: 'BPA-style coordinated care',
-      badge: 'Launching autumn 2026',
+      badge: getStatusVisning('bpa', 'en').tekst,
       badgeColor: 'bg-success/10 text-success',
       href: '/bpa',
     },
     {
       title: 'Respite care',
       subtitle: 'For children with intellectual disabilities',
-      badge: 'Launching autumn 2026',
+      badge: getStatusVisning('avlastning', 'en').tekst,
       badgeColor: 'bg-success/10 text-success',
       href: '/avlastning',
     },
     {
       title: 'Child welfare',
       subtitle: 'Contact visits and documentation',
-      badge: 'Coming Q2 2027',
+      badge: getStatusVisning('barnevern', 'en').tekst,
       badgeColor: 'bg-secondary-light text-text-muted',
       href: '/barnevern',
     },
     {
       title: 'JodaVisit',
       subtitle: 'Video visits for people living at home',
-      badge: 'Coming 2027',
+      badge: getStatusVisning('jodavisit', 'en').tekst,
       badgeColor: 'bg-secondary-light text-text-muted',
       href: '/jodavisit',
     },
