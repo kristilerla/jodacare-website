@@ -25,8 +25,6 @@ const UNNTAK = [
   'src/components/ui/SegmentBadge.tsx',
   // Porten selv.
   'scripts/',
-  // Ubrukt. Ingen kode importerer den. Ryddes i egen runde.
-  'src/i18n/nb.json',
 ];
 
 const feil = [];
