@@ -42,14 +42,36 @@ for (const n of nokler) {
   else endret.push(`  ENDRET  ${n}: ${a[n]} → ${b[n]}`);
 }
 
-if (endret.length === 0) {
+/**
+ * Sporet skal peke på commiten verdiene faktisk kom fra. Merges en PR i
+ * jodacare-kunnskap uten at en eneste verdi endrer seg, får dist/fakta.json
+ * likevel ny kilde_commit. Da skal kopien her følge etter, ellers peker den
+ * på en eldre commit enn den som er kilden.
+ */
+const METADATA = ['kilde_commit', 'bygget', 'sha256'];
+const metaEndret = METADATA.filter((n) => gammel[n] !== ny[n]);
+
+if (endret.length === 0 && metaEndret.length === 0) {
   console.log('Ingen endringer. fakta.json er allerede oppdatert.');
   process.exit(0);
 }
 
 console.log(`Kilde: ${ny.kilde_commit}, bygget ${ny.bygget}`);
-console.log(`${endret.length} endringer:\n`);
-console.log(endret.join('\n'));
+
+if (endret.length > 0) {
+  console.log(`\n${endret.length} ${endret.length === 1 ? 'verdi' : 'verdier'} endret:\n`);
+  console.log(endret.join('\n'));
+} else {
+  console.log('\nIngen verdier endret.');
+}
+
+if (metaEndret.length > 0) {
+  console.log('\nSporet er oppdatert:\n');
+  for (const n of metaEndret) {
+    const fra = gammel[n] === undefined ? 'mangler' : String(gammel[n]).slice(0, 16);
+    console.log(`  ${n}: ${fra} → ${String(ny[n]).slice(0, 16)}`);
+  }
+}
 
 writeFileSync(MAL, JSON.stringify(ny, null, 2) + '\n');
 console.log('\nsrc/content/fakta.json er oppdatert.');
