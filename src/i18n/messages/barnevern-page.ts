@@ -1,4 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
+import { getStatusVisning } from './status';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
 
 export type BvCard = { title: string; description: string };
 export type BvRelated = { title: string; description: string; href: string };
@@ -298,11 +300,11 @@ const no: BarnevernContent = {
   statusTitle: 'Slik bygges JodaCare for barnevern',
   statusSubtitle: 'Barnevernsmodulen bygges på grunnmodulen i nye JodaCare og tas i bruk i etapper sammen med pilotkommunene.',
   priceNote:
-    'Grunnmodulen koster kr 2 990 per måned for inntil 10 tjenestemottakere. Barnevernsmodulen prises separat når den er ferdig.',
+    `Grunnmodulen koster ${formaterPris(pakkeprisMnd())} per måned for inntil 10 tjenestemottakere. Barnevernsmodulen prises separat når den er ferdig.`,
   priceLinkText: 'Se alle priser',
   statusColumns: [
     {
-      title: 'Lanseres høst 2026',
+      title: getStatusVisning('barnevern', 'no').tekst,
       items: [
         'Boka, kalender og beskjeder',
         'Team rundt hvert barn med rollebasert tilgang',
@@ -578,11 +580,11 @@ const en: BarnevernContent = {
   statusTitle: 'How far along are we',
   statusSubtitle: 'The child welfare module is built on the core module in the new JodaCare and is adopted in stages together with pilot municipalities.',
   priceNote:
-    'The core module costs NOK 2,990 per month for up to 10 service recipients. The child welfare module is priced separately once it is finished.',
+    `The core module costs ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 service recipients. The child welfare module is priced separately once it is finished.`,
   priceLinkText: 'See all prices',
   statusColumns: [
     {
-      title: 'Launching autumn 2026',
+      title: getStatusVisning('barnevern', 'en').tekst,
       items: [
         'Boka, calendar and messages',
         'A team around each child with role-based access',

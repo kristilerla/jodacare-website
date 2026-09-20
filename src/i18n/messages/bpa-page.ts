@@ -1,4 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
+import { getStatusVisning } from './status';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, priser } from '@/lib/fakta';
 
 export type BpaTextCard = { title: string; description: string };
 export type BpaRelated = { title: string; description: string; href: string };
@@ -82,12 +84,12 @@ const no: BpaContent = {
   referenceTitle: 'I bruk siden 2016',
   referenceBody:
     'Horten kommune er betalende BPA-kunde og har brukt JodaCare siden oppstarten.',
-  statusBadge: 'Lanseres høst 2026',
+  statusBadge: getStatusVisning('bpa', 'no').tekst,
   statusTitle: 'Bli med fra starten',
   statusBody:
     'Nye JodaCare lanseres høsten 2026 med Boka, kalender, beskjeder og team rundt hver bruker. Nye moduler kommer kvartal for kvartal, og kommunen velger selv hvilke den vil ha.',
   priceNote:
-    'Lisens fra kr 2 990 per måned for inntil 10 tjenestemottakere, pluss oppstart.',
+    `Lisens fra ${formaterPris(pakkeprisMnd())} per måned for inntil 10 tjenestemottakere, pluss oppstart.`,
   priceLinkText: 'Se alle priser',
   statusCta: 'Kontakt oss for pilotplass',
   relatedTitle: 'Andre deler av JodaCare som styrker BPA-arbeidet',
@@ -165,12 +167,12 @@ const en: BpaContent = {
   referenceTitle: 'In use since 2016',
   referenceBody:
     'Horten municipality is a paying BPA customer and has used JodaCare from the start.',
-  statusBadge: 'Launching autumn 2026',
+  statusBadge: getStatusVisning('bpa', 'en').tekst,
   statusTitle: 'Join from the start',
   statusBody:
     'The new JodaCare launches in autumn 2026 with Boka, calendar, messages and a team around each user. New modules arrive quarter by quarter, and the municipality chooses which ones it wants.',
   priceNote:
-    'Licence from NOK 2,990 per month for up to 10 service recipients, plus onboarding.',
+    `Licence from ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 service recipients, plus onboarding.`,
   priceLinkText: 'See all prices',
   statusCta: 'Contact us for a pilot place',
   relatedTitle: 'Other parts of JodaCare that strengthen personal assistance',

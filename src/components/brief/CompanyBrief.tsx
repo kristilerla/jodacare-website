@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { formaterTall, pakkeprisMnd, aar1, aar2, priser, selskap } from '@/lib/fakta';
 import Image from 'next/image';
 import './brief.css';
 
@@ -254,7 +255,7 @@ export function CompanyBrief() {
             <div className="num"><b>2.</b><div><h3>Multi-segment på samme plattform.</h3><p>En kommune kan bruke JodaCare fra hjemmetjeneste til sykehjem, fra BPA til barnevern. Én lisens, én læringskurve, én leverandør.</p></div></div>
             <div className="num"><b>3.</b><div><h3>Bygd for tilgjengelighet, ikke som tilpasning.</h3><p>Jodabook er en egen app for mennesker med kognitive utfordringer, med eget grensesnitt og egen innlogging. Mottakeren er med i samtalen.</p></div></div>
             <div className="num"><b>4.</b><div><h3>Tilgangskontroll som håndheves.</h3><p>Bare teammedlemskap gir innsyn. Leverandøren selv nektes innsyn i pasientdata. Tretti testbare tilgangsvektorer. Normen, GDPR og KI-forordningen ligger til grunn for arkitekturen.</p></div></div>
-            <div className="num"><b>5.</b><div><h3>Offentlig pris under anbudsgrensen.</h3><p>2 990 kroner per måned per pakke og 28 000 kroner i oppstart står på nettsiden. En avdeling kan vedta kjøpet selv. Ingen anbudsprosess. Ingen «ta kontakt for pris».</p></div></div>
+            <div className="num"><b>5.</b><div><h3>Offentlig pris under anbudsgrensen.</h3><p>{formaterTall(pakkeprisMnd())} kroner per måned per pakke og {formaterTall(priser.oppstart)} kroner i oppstart står på nettsiden. En avdeling kan vedta kjøpet selv. Ingen anbudsprosess. Ingen «ta kontakt for pris».</p></div></div>
           </div>
         </div>
       </section>
@@ -266,15 +267,15 @@ export function CompanyBrief() {
           <div className="prose"><p>JodaCare er en SaaS-virksomhet med abonnement.</p></div>
           <h3 style={{ margin: '1.5rem 0 1rem' }}>For kommuner og organisasjoner</h3>
           <div className="price-grid">
-            <div className="price"><div className="amt">2 990 kr</div><div className="per">per måned per pakke à 10 tjenestemottakere</div><p>Ubegrenset antall ansatte og pårørende rundt hver tjenestemottaker. Trenger kommunen plass til flere, legges det til en pakke til.</p></div>
-            <div className="price"><div className="amt">28 000 kr</div><div className="per">oppstart, engangsbeløp per kommune</div><p>Teknisk oppsett, to igangsettelseskurs på Teams (ett for ansatte, ett for ansatte og pårørende sammen), databehandleravtale, DPIA og sikkerhetsdokumentasjon, og fast kontaktperson de første 90 dagene.</p></div>
+            <div className="price"><div className="amt">{formaterTall(pakkeprisMnd())} kr</div><div className="per">per måned per pakke à {priser.pakkeStorrelse} tjenestemottakere</div><p>Ubegrenset antall ansatte og pårørende rundt hver tjenestemottaker. Trenger kommunen plass til flere, legges det til en pakke til.</p></div>
+            <div className="price"><div className="amt">{formaterTall(priser.oppstart)} kr</div><div className="per">oppstart, engangsbeløp per kommune</div><p>Teknisk oppsett, to igangsettelseskurs på Teams (ett for ansatte, ett for ansatte og pårørende sammen), databehandleravtale, DPIA og sikkerhetsdokumentasjon, og fast kontaktperson de første 90 dagene.</p></div>
           </div>
           <div className="prose">
-            <p>Regneeksempel, én avdeling med én pakke: 63 880 kroner første år, 35 880 kroner per år deretter. Godt under terskelen for direkte anskaffelse.</p>
-            <p>Avtaler løper 12 måneder med automatisk fornyelse og tre måneders oppsigelse. Lisens faktureres kvartalsvis på forskudd. Alle priser eks. mva. Nye moduler får egen pris når de er ferdige. Prisen på grunnmodulen endres ikke av at nye moduler kommer.</p>
+            <p>Regneeksempel, én avdeling med én pakke: {formaterTall(aar1())} kroner første år, {formaterTall(aar2())} kroner per år deretter. Godt under terskelen for direkte anskaffelse.</p>
+            <p>Avtaler løper {priser.avtaleManeder} måneder med automatisk fornyelse og tre måneders oppsigelse. Lisens faktureres kvartalsvis på forskudd. Alle priser eks. mva. Nye moduler får egen pris når de er ferdige. Prisen på grunnmodulen endres ikke av at nye moduler kommer.</p>
           </div>
           <div className="cols" style={{ marginTop: '1.5rem' }}>
-            <div className="block"><h3>For familier</h3><p>Familierom for private via Vipps kommer i 2027: 14 dagers gratis prøveperiode, deretter 299 kroner per måned per familierom, ingen binding. Det blir den første tjenesten i Norge der en datter kan opprette et omsorgsrom selv og invitere kommunen inn.</p></div>
+            <div className="block"><h3>For familier</h3><p>Familierom for private via Vipps kommer i 2027: {priser.proveperiodeDager} dagers gratis prøveperiode, deretter {priser.familieromMnd} kroner per måned per familierom, ingen binding. Det blir den første tjenesten i Norge der en datter kan opprette et omsorgsrom selv og invitere kommunen inn.</p></div>
             <div className="block"><h3>For omsorgsboliger</h3><p>JodaCare Hub prises per enhet med engangsbeløp for oppsett og månedlig lisens per leilighet. Prisstruktur oppgis på forespørsel.</p></div>
           </div>
         </div>
@@ -430,13 +431,13 @@ export function CompanyBrief() {
                 <div><h3>Problemet</h3><p>Rundt hver eldre som får hjelp står et lag som sjelden møtes. Ingen har ett sted å se hva som skjedde i dag. Kommunikasjonen går på telefon, SMS og gule lapper. Alle kommuner er lovpålagt å sikre kommunikasjon, pårørendestøtte, dokumentasjon og brukermedvirkning.</p></div>
                 <div><h3>Løsningen</h3><p>Boka er teamets felles feed rundt én person. Helsepersonell skriver med fagspråk, pårørende leser i hverdagsspråk, og den det gjelder får en forenklet inngang gjennom Jodabook. Rundt Boka: kalender, meldinger og rollebasert tilgang.</p></div>
                 <div><h3>Markedet</h3><p>302 676 personer mottar kommunale omsorgstjenester (SSB 2025). 200 000 av dem får hjelp hjemme, 37 000 bor på sykehjem. Gruppen over 80 år vokser fra 270 000 til 463 000 innen 2040. Fokus fremover: eldre som bor hjemme og eldre på sykehjem.</p></div>
-                <div><h3>Forretningsmodellen</h3><p>SaaS. Kommuner: 2 990 kr per måned per pakke à 10 tjenestemottakere, pluss 28 000 kr i oppstart. Offentlig pris, under terskelen for direkte anskaffelse (500 000 kr fra 1. juli 2026). Familierom for private via Vipps kommer i 2027, 299 kr per måned.</p></div>
+                <div><h3>Forretningsmodellen</h3><p>SaaS. Kommuner: {formaterTall(pakkeprisMnd())} kr per måned per pakke à {priser.pakkeStorrelse} tjenestemottakere, pluss {formaterTall(priser.oppstart)} kr i oppstart. Offentlig pris, under terskelen for direkte anskaffelse (500 000 kr fra 1. juli 2026). Familierom for private via Vipps kommer i 2027, {priser.familieromMnd} kr per måned.</p></div>
                 <div><h3>Distribusjon</h3><p>Direktekjøp, integrasjon med journalleverandøren Aidn (avtaler i 180 kommuner), JAG Assistanse i BPA-segmentet, anbud og rammeavtaler, eiendomsutviklere gjennom JodaCare Hub.</p></div>
                 <div><h3>Sikkerhet</h3><p>Normen, GDPR siden 2018 og forberedt på KI-forordningen. Backend i Java og PostgreSQL på AWS i Stockholm. KAI på Mistral AI i Paris. ID-porten-innlogging. Bare teammedlemskap gir innsyn. Tretti testbare tilgangsvektorer.</p></div>
                 <div><h3>Teamet</h3><p>Kristil Erla Haland, grunnlegger og CEO, har bygd JodaCare siden 2016. Bård Lind, medgründer og backend-arkitekt, kom inn i 2026 for å styrke teamet på teknologi og sikkerhet.</p></div>
                 <div><h3>Kapital</h3><p>Første kapitalrunde som konvertibelt lån. Midlene går til salg og implementering mot kommuner, ferdigstilling av moduler og migrering av eksisterende kunder. Vilkår gis på forespørsel.</p></div>
               </div>
-              <div className="op-foot">Kontakt: Kristil Erla Haland, kristil@jodacare.com · JodaCare AS, org.nr. 937 323 565 · jodacare.no/brief</div>
+              <div className="op-foot">Kontakt: Kristil Erla Haland, kristil@jodacare.com · JodaCare AS, org.nr. {selskap.orgNr} · jodacare.no/brief</div>
             </div>
         </div>
       )}

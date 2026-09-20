@@ -1,4 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
+import { getStatusVisning } from './status';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
 
 export type FamilieFeature = { title: string; description: string };
 export type FamilieScenario = { title: string; description: string };
@@ -89,7 +91,7 @@ const stepsEn: FamilieStep[] = [
 const pricingNo: FamiliePricingTier[] = [
   {
     name: 'Familie',
-    price: 'kr 299',
+    price: `${formaterPris(priser.familieromMnd)}`,
     period: '/mnd',
     description: 'For familier som vil holde kontakten og koordinere hverdagen.',
     features: [
@@ -102,14 +104,14 @@ const pricingNo: FamiliePricingTier[] = [
     ],
     cta: { text: 'Meld interesse', href: '/kontakt' },
     highlighted: true,
-    badge: 'Kommer 2027',
+    badge: getStatusVisning('familierom', 'no').tekst,
   },
 ];
 
 const pricingEn: FamiliePricingTier[] = [
   {
     name: 'Family',
-    price: 'NOK 299',
+    price: `${formaterPrisEn(priser.familieromMnd)}`,
     period: '/month',
     description: 'For families who want to stay in touch and coordinate everyday life.',
     features: [
@@ -122,7 +124,7 @@ const pricingEn: FamiliePricingTier[] = [
     ],
     cta: { text: 'Register interest', href: '/kontakt' },
     highlighted: true,
-    badge: 'Coming 2027',
+    badge: getStatusVisning('familierom', 'en').tekst,
   },
 ];
 
@@ -132,7 +134,7 @@ const no: FamilieContent = {
   heroTitle: 'Familierom kommer i 2027',
   heroSubtitle:
     'Samle familien rundt den som trenger omsorg. Del hverdagen, koordiner besøk, og hold alle oppdatert uansett hvor dere bor i landet.',
-  heroBadge: 'Kommer 2027',
+  heroBadge: getStatusVisning('familierom', 'no').tekst,
   primaryCta: 'Meld interesse',
   secondaryCta: 'Se hvordan det fungerer',
   secondaryCtaHref: '#hvordan',
@@ -152,7 +154,7 @@ const no: FamilieContent = {
   steps: stepsNo,
   pricingTitle: 'Enkel prising for familier',
   pricingSubtitle: 'Prisen er satt. Betalingsløsningen kommer sammen med Familierom.',
-  pricingFootnote: 'Prisen blir 299 kr per måned uten binding, med fjorten dager gratis først.',
+  pricingFootnote: `Prisen blir ${priser.familieromMnd} kr per måned uten binding, med fjorten dager gratis først.`,
   pricingTiers: pricingNo,
   ctaTitle: 'Gi familien din trygghet',
   ctaSubtitle: 'Legg igjen e-post, så sier vi fra når Familierom er klart.',
@@ -165,7 +167,7 @@ const en: FamilieContent = {
   heroTitle: 'Family room is coming in 2027',
   heroSubtitle:
     'Bring the family together around the person who needs care. Share everyday life, coordinate visits and keep everyone updated wherever you live.',
-  heroBadge: 'Coming 2027',
+  heroBadge: getStatusVisning('familierom', 'en').tekst,
   primaryCta: 'Register interest',
   secondaryCta: 'See how it works',
   secondaryCtaHref: '#hvordan',
@@ -185,7 +187,7 @@ const en: FamilieContent = {
   steps: stepsEn,
   pricingTitle: 'Simple pricing for families',
   pricingSubtitle: 'The price is set. The payment solution arrives together with Family room.',
-  pricingFootnote: 'The price will be NOK 299 per month with no lock-in, with fourteen days free first.',
+  pricingFootnote: `The price will be ${formaterPrisEn(priser.familieromMnd)} per month with no lock-in, with fourteen days free first.`,
   pricingTiers: pricingEn,
   ctaTitle: 'Give your family peace of mind',
   ctaSubtitle: 'Leave your email and we will let you know when Family room is ready.',

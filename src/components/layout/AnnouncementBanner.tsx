@@ -8,6 +8,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Container } from '@/components/ui';
 import { getSite } from '@/i18n/site';
 import type { Locale } from '@/lib/i18n/types';
+import { selskap } from '@/lib/fakta';
 
 export function AnnouncementBanner() {
   const [isVisible, setIsVisible] = useState(true);
@@ -34,7 +35,7 @@ export function AnnouncementBanner() {
             <p className="font-semibold text-lg">{s.title}</p>
             <p className="text-white text-sm mt-1">{s.body}</p>
             <Link
-              href="https://app.jodacare.no"
+              href={selskap.appUrl}
               className="inline-block mt-2 text-sm font-medium text-accent-light hover:text-white underline"
               target="_blank"
               rel="noopener noreferrer"

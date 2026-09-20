@@ -1,4 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
+import { getStatusVisning } from './status';
+import { formaterPris, formaterPrisEn, pakkeprisMnd, priser } from '@/lib/fakta';
 
 export type KommuneService = {
   title: string;
@@ -30,7 +32,7 @@ const servicesNo: KommuneService[] = [
     title: 'Omsorgsbolig / Hub',
     description:
       'En skjerm i leiligheten kobler beboer, familie og ansatte i én sammenhengende flyt, slik at familien alltid er nær.',
-    badge: 'Pilot 2027',
+    badge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
     badgeColor: 'bg-primary/10 text-primary',
     href: '/omsorgsbolig',
   },
@@ -38,7 +40,7 @@ const servicesNo: KommuneService[] = [
     title: 'BPA, brukerstyrt personlig assistanse',
     description:
       'Samle omsorgsteamet rundt brukeren med Jodabook, sjekklister og full oversikt for koordinator og familie.',
-    badge: 'Lanseres høst 2026',
+    badge: getStatusVisning('bpa', 'no').tekst,
     badgeColor: 'bg-success/10 text-success',
     href: '/bpa',
   },
@@ -46,7 +48,7 @@ const servicesNo: KommuneService[] = [
     title: 'Avlastning',
     description:
       'Kontinuitet for barnet, med de samme rutinene og den samme tryggheten enten det er hjemme eller i avlastningen.',
-    badge: 'Lanseres høst 2026',
+    badge: getStatusVisning('bpa', 'no').tekst,
     badgeColor: 'bg-success/10 text-success',
     href: '/avlastning',
   },
@@ -54,7 +56,7 @@ const servicesNo: KommuneService[] = [
     title: 'Barnevern og samvær',
     description:
       'JodaCare følger barnet gjennom hver overgang, med informasjonsbarrierer som beskytter hver enkelt rolle og full sporbarhet for kommunen.',
-    badge: 'Kommer Q2 2027',
+    badge: getStatusVisning('barnevern', 'no').tekst,
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/barnevern',
   },
@@ -62,7 +64,7 @@ const servicesNo: KommuneService[] = [
     title: 'JodaVisit, videobesøk',
     description:
       'Trygge videobesøk erstatter unødvendige fysiske besøk, slik at eldre kan bo hjemme lenger med familien nær.',
-    badge: 'Kommer 2027',
+    badge: getStatusVisning('familierom', 'no').tekst,
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/jodavisit',
   },
@@ -70,7 +72,7 @@ const servicesNo: KommuneService[] = [
     title: 'Implementeringsstøtte',
     description:
       'Vår Implementeringsansvarlig veileder din kommune steg for steg, fra første oppsett til systemet sitter i ryggmargen.',
-    badge: 'Oppstart kr 28 000',
+    badge: `Oppstart ${formaterPris(priser.oppstart)}`,
     badgeColor: 'bg-primary/10 text-primary',
     href: '/implementering',
   },
@@ -81,7 +83,7 @@ const servicesEn: KommuneService[] = [
     title: 'Care home / Hub',
     description:
       'A screen in the flat that connects resident, family and staff in one coherent flow. Family stays close.',
-    badge: 'Pilot 2027',
+    badge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
     badgeColor: 'bg-primary/10 text-primary',
     href: '/omsorgsbolig',
   },
@@ -89,7 +91,7 @@ const servicesEn: KommuneService[] = [
     title: 'User-controlled personal assistance (BPA)',
     description:
       'Bring the care team around the user with Jodabook, checklists and full overview for coordinator and family.',
-    badge: 'Launching autumn 2026',
+    badge: getStatusVisning('bpa', 'en').tekst,
     badgeColor: 'bg-success/10 text-success',
     href: '/bpa',
   },
@@ -97,7 +99,7 @@ const servicesEn: KommuneService[] = [
     title: 'Respite care',
     description:
       'Continuity for the child, with the same routines and the same sense of safety whether at home or in respite.',
-    badge: 'Launching autumn 2026',
+    badge: getStatusVisning('bpa', 'en').tekst,
     badgeColor: 'bg-success/10 text-success',
     href: '/avlastning',
   },
@@ -105,7 +107,7 @@ const servicesEn: KommuneService[] = [
     title: 'Child welfare and contact visits',
     description:
       'Contact visits documented safely with information barriers that protect everyone and full traceability.',
-    badge: 'Coming Q2 2027',
+    badge: getStatusVisning('barnevern', 'en').tekst,
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/barnevern',
   },
@@ -113,7 +115,7 @@ const servicesEn: KommuneService[] = [
     title: 'JodaVisit, video visits',
     description:
       'Replace unnecessary physical visits with secure video visits. People stay at home longer with family near.',
-    badge: 'Coming 2027',
+    badge: getStatusVisning('familierom', 'en').tekst,
     badgeColor: 'bg-secondary-light text-text-muted',
     href: '/jodavisit',
   },
@@ -121,7 +123,7 @@ const servicesEn: KommuneService[] = [
     title: 'Implementation support',
     description:
       'A dedicated implementation lead guides your municipality step by step, from first setup until the system is second nature.',
-    badge: 'Onboarding NOK 28,000',
+    badge: `Onboarding ${formaterPrisEn(priser.oppstart)}`,
     badgeColor: 'bg-primary/10 text-primary',
     href: '/implementering',
   },
@@ -143,7 +145,7 @@ const no: KommuneContent = {
   readMore: 'Les mer',
   bottomTitle: 'Klar til å komme i gang?',
   priceNote:
-    'Lisens kr 2 990 per måned for inntil 10 tjenestemottakere, pluss oppstart kr 28 000 per kommune.',
+    `Lisens ${formaterPris(pakkeprisMnd())} per måned for inntil 10 tjenestemottakere, pluss oppstart ${formaterPris(priser.oppstart)} per kommune.`,
   priceLinkText: 'Se alle priser',
   bottomBody:
     'Ta kontakt for en uforpliktende samtale om hvordan JodaCare kan passe i din kommune.',
@@ -167,7 +169,7 @@ const en: KommuneContent = {
   readMore: 'Read more',
   bottomTitle: 'Ready to get started?',
   priceNote:
-    'Licence NOK 2,990 per month for up to 10 service recipients, plus onboarding NOK 28,000 per municipality.',
+    `Licence ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} per municipality.`,
   priceLinkText: 'See all prices',
   bottomBody: 'Get in touch for an informal conversation about how JodaCare can fit your municipality.',
   bottomCta: 'Contact us',
