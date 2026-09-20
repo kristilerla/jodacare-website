@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync-fakta": "node scripts/sync-fakta.mjs",
+    "sjekk-fakta": "node scripts/sjekk-fakta.mjs",
+    "prebuild": "node scripts/sjekk-fakta.mjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
