@@ -22,6 +22,11 @@ interface HeroProps {
     text: string;
     href: string;
   };
+  /**
+   * Kort merknad under knappene i page-varianten, til forbehold om hva
+   * knappen faktisk gjør. Vises bare når en primærknapp finnes.
+   */
+  primaryCtaNote?: string;
   variant?: 'home' | 'page';
   images?: HeroImage[];
   badge?: string;
@@ -40,6 +45,7 @@ export function Hero({
   subtitle,
   primaryCta,
   secondaryCta,
+  primaryCtaNote,
   variant = 'home',
   images = [],
   badge,
@@ -136,6 +142,9 @@ export function Hero({
                     </Button>
                   )}
                 </div>
+                {primaryCta && primaryCtaNote && (
+                  <p className="mt-4 max-w-xl text-sm text-text-light">{primaryCtaNote}</p>
+                )}
               </FadeIn>
             )}
           </div>
