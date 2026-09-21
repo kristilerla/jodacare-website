@@ -41,6 +41,7 @@ export function FamiliePageView({ locale }: Props) {
         title={d.heroTitle}
         subtitle={d.heroSubtitle}
         primaryCta={{ text: d.primaryCta, href: kontaktHref }}
+        primaryCtaNote={d.primaryCtaNote}
         secondaryCta={{ text: d.secondaryCta, href: d.secondaryCtaHref }}
         variant="page"
         image={{

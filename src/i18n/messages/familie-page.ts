@@ -23,6 +23,7 @@ export type FamilieContent = {
   heroSubtitle: string;
   heroBadge: string;
   primaryCta: string;
+  primaryCtaNote: string;
   secondaryCta: string;
   secondaryCtaHref: string;
   scenarioTitle: string;
@@ -95,12 +96,10 @@ const pricingNo: FamiliePricingTier[] = [
     period: '/mnd',
     description: 'For familier som vil holde kontakten og koordinere hverdagen.',
     features: [
-      '14 dager gratis prøveperiode',
-      'Inviter opptil 10 familiemedlemmer',
-      'Delt tidslinje med bilder og tekst',
-      'Felles kalender',
-      'Sikker meldingskanal',
-      'Koble til kommunens helseteam',
+      `${priser.familieromMnd} kr per måned per familierom`,
+      `De første ${priser.proveperiodeDager} dagene er gratis`,
+      'Ingen binding',
+      'Hele familien er med i samme rom',
     ],
     cta: { text: 'Meld interesse', href: '/kontakt' },
     highlighted: true,
@@ -115,14 +114,12 @@ const pricingEn: FamiliePricingTier[] = [
     period: '/month',
     description: 'For families who want to stay in touch and coordinate everyday life.',
     features: [
-      '14-day free trial',
-      'Invite up to 10 family members',
-      'Shared timeline with photos and text',
-      'Shared calendar',
-      'Secure messaging channel',
-      'Connect to the municipal health team',
+      `${formaterPrisEn(priser.familieromMnd)} per month per family room`,
+      `The first ${priser.proveperiodeDager} days are free`,
+      'No commitment',
+      'The whole family in the same room',
     ],
-    cta: { text: 'Register interest', href: '/kontakt' },
+    cta: { text: 'Register your interest', href: '/kontakt' },
     highlighted: true,
     badge: getStatusVisning('familierom', 'en').tekst,
   },
@@ -136,6 +133,8 @@ const no: FamilieContent = {
     'Samle familien rundt den som trenger omsorg. Del hverdagen, koordiner besøk, og hold alle oppdatert uansett hvor dere bor i landet.',
   heroBadge: getStatusVisning('familierom', 'no').tekst,
   primaryCta: 'Meld interesse',
+  primaryCtaNote:
+    'Familierom åpner når nye JodaCare er klar. Meld interesse, så får du beskjed den dagen du kan opprette rommet deres.',
   secondaryCta: 'Se hvordan det fungerer',
   secondaryCtaHref: '#hvordan',
   scenarioTitle: 'Kjenner du deg igjen?',
@@ -152,9 +151,9 @@ const no: FamilieContent = {
   scenarios: scenariosNo,
   stepsTitle: 'Slik vil det fungere',
   steps: stepsNo,
-  pricingTitle: 'Enkel prising for familier',
+  pricingTitle: 'Dette vil Familierom koste',
   pricingSubtitle: 'Prisen er satt. Betalingsløsningen kommer sammen med Familierom.',
-  pricingFootnote: `Prisen blir ${priser.familieromMnd} kr per måned uten binding, med fjorten dager gratis først.`,
+  pricingFootnote: `Familierom er under ferdigstilling. Prisen blir ${priser.familieromMnd} kr per måned uten binding, og de første ${priser.proveperiodeDager} dagene er gratis. Du betaler ingenting for å melde interesse.`,
   pricingTiers: pricingNo,
   ctaTitle: 'Gi familien din trygghet',
   ctaSubtitle: 'Legg igjen e-post, så sier vi fra når Familierom er klart.',
@@ -168,7 +167,9 @@ const en: FamilieContent = {
   heroSubtitle:
     'Bring the family together around the person who needs care. Share everyday life, coordinate visits and keep everyone updated wherever you live.',
   heroBadge: getStatusVisning('familierom', 'en').tekst,
-  primaryCta: 'Register interest',
+  primaryCta: 'Register your interest',
+  primaryCtaNote:
+    'Family Room opens when the new JodaCare is ready. Register your interest and we will let you know the day you can create your room.',
   secondaryCta: 'See how it works',
   secondaryCtaHref: '#hvordan',
   scenarioTitle: 'Does this sound familiar?',
@@ -185,13 +186,13 @@ const en: FamilieContent = {
   scenarios: scenariosEn,
   stepsTitle: 'How it will work',
   steps: stepsEn,
-  pricingTitle: 'Simple pricing for families',
+  pricingTitle: 'What Family Room will cost',
   pricingSubtitle: 'The price is set. The payment solution arrives together with Family room.',
-  pricingFootnote: `The price will be ${formaterPrisEn(priser.familieromMnd)} per month with no lock-in, with fourteen days free first.`,
+  pricingFootnote: `Family Room is being finalised. The price will be ${formaterPrisEn(priser.familieromMnd)} per month with no commitment, and the first ${priser.proveperiodeDager} days are free. Registering your interest costs nothing.`,
   pricingTiers: pricingEn,
   ctaTitle: 'Give your family peace of mind',
   ctaSubtitle: 'Leave your email and we will let you know when Family room is ready.',
-  ctaPrimary: 'Register interest',
+  ctaPrimary: 'Register your interest',
 };
 
 export function getFamilieContent(locale: Locale): FamilieContent {
