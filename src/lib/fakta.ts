@@ -64,6 +64,9 @@ export const priser = {
 /** Pakkepris per måned. Avledet: enhetspris x pakkestørrelse. */
 export const pakkeprisMnd = (): number => priser.perTjenestemottakerMnd * priser.pakkeStorrelse;
 
+/** Lisens per tjenestemottaker per år. Avledet: månedspris x tolv. */
+export const perTjenestemottakerAar = (): number => 12 * priser.perTjenestemottakerMnd;
+
 /** Første år: tolv måneder lisens pluss oppstart. */
 export const aar1 = (): number => 12 * pakkeprisMnd() + priser.oppstart;
 

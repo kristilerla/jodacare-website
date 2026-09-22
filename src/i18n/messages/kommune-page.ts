@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
 import { getStatusVisning } from './status';
-import { formaterPris, formaterPrisEn, pakkeprisMnd, priser } from '@/lib/fakta';
+import { formaterPris, formaterPrisEn, aar2, priser } from '@/lib/fakta';
 
 export type KommuneService = {
   title: string;
@@ -145,7 +145,7 @@ const no: KommuneContent = {
   readMore: 'Les mer',
   bottomTitle: 'Klar til å komme i gang?',
   priceNote:
-    `Lisens ${formaterPris(pakkeprisMnd())} per måned for inntil 10 tjenestemottakere, pluss oppstart ${formaterPris(priser.oppstart)} per kommune.`,
+    `${formaterPris(aar2())} per år for inntil ${priser.pakkeStorrelse} tjenestemottakere, pluss oppstart ${formaterPris(priser.oppstart)} én gang.`,
   priceLinkText: 'Se alle priser',
   bottomBody:
     'Ta kontakt for en uforpliktende samtale om hvordan JodaCare kan passe i din kommune.',
@@ -169,7 +169,7 @@ const en: KommuneContent = {
   readMore: 'Read more',
   bottomTitle: 'Ready to get started?',
   priceNote:
-    `Licence ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} per municipality.`,
+    `${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} one off.`,
   priceLinkText: 'See all prices',
   bottomBody: 'Get in touch for an informal conversation about how JodaCare can fit your municipality.',
   bottomCta: 'Contact us',

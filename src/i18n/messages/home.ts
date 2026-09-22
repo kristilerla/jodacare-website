@@ -1,7 +1,7 @@
 import type { Locale } from '@/lib/i18n/types';
 import { segment, selskap } from '@/lib/fakta';
 import { getStatusVisning, loseMerke } from './status';
-import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
+import { formaterPris, formaterPrisEn, aar1, aar2, priser } from '@/lib/fakta';
 
 export type HomePathCard = {
   title: string;
@@ -83,7 +83,7 @@ const no: HomeMessages = {
       cta: 'Se alle tjenester',
       href: '/kommune',
       highlighted: true,
-      priceNote: `Fra ${formaterPris(pakkeprisMnd())} per måned.`,
+      priceNote: `Fra ${formaterPris(aar2())} per år.`,
       priceLinkText: 'Se priser',
     },
     {
@@ -187,7 +187,7 @@ const en: HomeMessages = {
       badgeColor: 'bg-success/10 text-success',
       cta: 'See all services',
       href: '/kommune',
-      priceNote: `From ${formaterPrisEn(pakkeprisMnd())} per month.`,
+      priceNote: `From ${formaterPrisEn(aar2())} per year.`,
       priceLinkText: 'See pricing',
       highlighted: true,
     },
