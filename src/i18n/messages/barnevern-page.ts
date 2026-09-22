@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
 import { getStatusVisning } from './status';
-import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
+import { formaterPris, formaterPrisEn, aar1, aar2, priser } from '@/lib/fakta';
 
 export type BvCard = { title: string; description: string };
 export type BvRelated = { title: string; description: string; href: string };
@@ -300,7 +300,7 @@ const no: BarnevernContent = {
   statusTitle: 'Slik bygges JodaCare for barnevern',
   statusSubtitle: 'Barnevernsmodulen bygges på grunnmodulen i nye JodaCare og tas i bruk i etapper sammen med pilotkommunene.',
   priceNote:
-    `Grunnmodulen koster ${formaterPris(pakkeprisMnd())} per måned for inntil 10 tjenestemottakere. Barnevernsmodulen prises separat når den er ferdig.`,
+    `${formaterPris(aar2())} per år for inntil ${priser.pakkeStorrelse} tjenestemottakere, pluss oppstart ${formaterPris(priser.oppstart)} én gang. Barnevernsmodulen prises separat når den er ferdig.`,
   priceLinkText: 'Se alle priser',
   statusColumns: [
     {
@@ -580,7 +580,7 @@ const en: BarnevernContent = {
   statusTitle: 'How far along are we',
   statusSubtitle: 'The child welfare module is built on the core module in the new JodaCare and is adopted in stages together with pilot municipalities.',
   priceNote:
-    `The core module costs ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 service recipients. The child welfare module is priced separately once it is finished.`,
+    `${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} one off. The child welfare module is priced separately once it is finished.`,
   priceLinkText: 'See all prices',
   statusColumns: [
     {

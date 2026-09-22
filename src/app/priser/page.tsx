@@ -1,17 +1,19 @@
 import type { Metadata } from 'next';
-import { formaterPris, pakkeprisMnd, priser } from '@/lib/fakta';
+import { formaterPris, aar2, priser } from '@/lib/fakta';
 import { sprakvarianter } from '@/lib/seo';
 import { PriserPageView } from '@/components/pages/PriserPageView';
 
+const beskrivelse =
+  `Én pris per år for kommuner. ${formaterPris(aar2())} per år for inntil ${priser.pakkeStorrelse} tjenestemottakere, oppstart ${formaterPris(priser.oppstart)}. Familierom ${formaterPris(priser.familieromMnd)} per måned.`;
+
 export const metadata: Metadata = {
   alternates: sprakvarianter('/priser', 'no'),
-  title: 'Priser',
-  description:
-    `Lisens ${formaterPris(pakkeprisMnd())} per måned for inntil ${priser.pakkeStorrelse} tjenestemottakere. Oppstart ${formaterPris(priser.oppstart)} per kommune.`,
+  // Rot-layouten legger på « | jodacare», så tittelen står uten suffiks her.
+  title: 'Priser for kommuner og familier',
+  description: beskrivelse,
   openGraph: {
-    title: 'Priser | JodaCare',
-    description:
-      `Lisens ${formaterPris(pakkeprisMnd())} per måned for inntil ${priser.pakkeStorrelse} tjenestemottakere. Oppstart ${formaterPris(priser.oppstart)} per kommune.`,
+    title: 'Priser for kommuner og familier | JodaCare',
+    description: beskrivelse,
   },
 };
 

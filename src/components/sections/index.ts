@@ -7,3 +7,4 @@ export { Story } from './Story';
 export { ContactForm } from './ContactForm';
 export { WhoUsesIt } from './WhoUsesIt';
 export { CTA } from './CTA';
+export { BudsjettSitat } from './BudsjettSitat';

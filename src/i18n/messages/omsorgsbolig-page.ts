@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
 import { getStatusVisning } from './status';
-import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
+import { formaterPris, formaterPrisEn, aar1, aar2, priser } from '@/lib/fakta';
 
 export type HubCard = { title: string; description: string };
 export type HubStep = { step: string; title: string; description: string };
@@ -130,7 +130,7 @@ const no: OmsorgsboligContent = {
     'JodaCare Hub er under utvikling og prøves ut sammen med de første kommunene i 2027. Pilotkommuner får tett oppfølging og er med på å forme det endelige produktet.',
   statusP2: 'Ta kontakt for en uforpliktende samtale om en pilotplass.',
   priceNote:
-    `Grunnmodulen koster ${formaterPris(pakkeprisMnd())} per måned for inntil 10 beboere. Hub prises separat når modulen er ferdig.`,
+    `${formaterPris(aar2())} per år for inntil ${priser.pakkeStorrelse} beboere, pluss oppstart ${formaterPris(priser.oppstart)} én gang. Hub prises separat når modulen er ferdig.`,
   priceLinkText: 'Se alle priser',
   statusCta: 'Meld din kommune som pilotkommune',
   relatedTitle: 'Andre deler av JodaCare som styrker omsorgsboligen',
@@ -249,7 +249,7 @@ const en: OmsorgsboligContent = {
     'JodaCare Hub is under development and is being trialled with the first municipalities in 2027. Pilot sites receive close follow-up and help shape the final product.',
   statusP2: 'Contact us for an informal conversation about a pilot place.',
   priceNote:
-    `The core module costs ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 residents. Hub is priced separately once the module is finished.`,
+    `${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} residents, plus onboarding ${formaterPrisEn(priser.oppstart)} one off. Hub is priced separately once the module is finished.`,
   priceLinkText: 'See all prices',
   statusCta: 'Register your municipality as a pilot',
   relatedTitle: 'Other parts of JodaCare that strengthen the care home',

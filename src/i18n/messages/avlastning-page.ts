@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
 import { getStatusVisning } from './status';
-import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
+import { formaterPris, formaterPrisEn, aar1, aar2, priser } from '@/lib/fakta';
 
 export type AvCard = { title: string; description: string };
 export type AvRelated = { title: string; description: string; href: string };
@@ -91,7 +91,7 @@ const no: AvlastningContent = {
   statusBody:
     'Nye JodaCare lanseres høsten 2026 med Boka, kalender, beskjeder og team rundt hvert barn. Rutiner og hendelseslogg kommer Q4 2026, Jodabook og bekymringsmelding Q1 2027.',
   priceNote:
-    `Lisens fra ${formaterPris(pakkeprisMnd())} per måned for inntil 10 tjenestemottakere, pluss oppstart.`,
+    `${formaterPris(aar2())} per år for inntil ${priser.pakkeStorrelse} tjenestemottakere, pluss oppstart ${formaterPris(priser.oppstart)} én gang.`,
   priceLinkText: 'Se alle priser',
   statusCta: 'Meld interesse',
   relatedTitle: 'Andre deler av JodaCare som styrker avlastningen',
@@ -178,7 +178,7 @@ const en: AvlastningContent = {
   statusBody:
     'The new JodaCare launches in autumn 2026 with Boka, calendar, messages and a team around each child. Routines and the event log arrive in Q4 2026, Jodabook and concern notifications in Q1 2027.',
   priceNote:
-    `Licence from ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 service recipients, plus onboarding.`,
+    `${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} one off.`,
   priceLinkText: 'See all prices',
   statusCta: 'Register interest',
   relatedTitle: 'Other parts of JodaCare that strengthen respite care',

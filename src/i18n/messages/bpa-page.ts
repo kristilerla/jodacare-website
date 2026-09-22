@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
 import { getStatusVisning } from './status';
-import { formaterPris, formaterPrisEn, pakkeprisMnd, priser } from '@/lib/fakta';
+import { formaterPris, formaterPrisEn, aar2, priser } from '@/lib/fakta';
 
 export type BpaTextCard = { title: string; description: string };
 export type BpaRelated = { title: string; description: string; href: string };
@@ -89,7 +89,7 @@ const no: BpaContent = {
   statusBody:
     'Nye JodaCare lanseres høsten 2026 med Boka, kalender, beskjeder og team rundt hver bruker. Nye moduler kommer kvartal for kvartal, og kommunen velger selv hvilke den vil ha.',
   priceNote:
-    `Lisens fra ${formaterPris(pakkeprisMnd())} per måned for inntil 10 tjenestemottakere, pluss oppstart.`,
+    `${formaterPris(aar2())} per år for inntil ${priser.pakkeStorrelse} tjenestemottakere, pluss oppstart ${formaterPris(priser.oppstart)} én gang.`,
   priceLinkText: 'Se alle priser',
   statusCta: 'Kontakt oss for pilotplass',
   relatedTitle: 'Andre deler av JodaCare som styrker BPA-arbeidet',
@@ -172,7 +172,7 @@ const en: BpaContent = {
   statusBody:
     'The new JodaCare launches in autumn 2026 with Boka, calendar, messages and a team around each user. New modules arrive quarter by quarter, and the municipality chooses which ones it wants.',
   priceNote:
-    `Licence from ${formaterPrisEn(pakkeprisMnd())} per month for up to 10 service recipients, plus onboarding.`,
+    `${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} one off.`,
   priceLinkText: 'See all prices',
   statusCta: 'Contact us for a pilot place',
   relatedTitle: 'Other parts of JodaCare that strengthen personal assistance',

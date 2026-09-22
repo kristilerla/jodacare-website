@@ -46,7 +46,7 @@ const no: ImplementeringContent = {
   bannerTitle:
     'Alle kommunale kunder får dedikert oppfølging de første tre månedene.',
   bannerBody:
-    `Oppstart koster ${formaterPris(priser.oppstart)} per kommune og inkluderer alt som står over.`,
+    `Oppstart koster ${formaterPris(priser.oppstart)} én gang per kommune og dekker oppsett, to kurs på Teams, databehandleravtale, DPIA og fast kontaktperson i 90 dager.`,
   priceLinkText: 'Se alle priser',
   ctaTitle: 'Klar til å starte?',
   ctaSubtitle: 'Ta kontakt for en uforpliktende samtale om implementering i din kommune.',
@@ -92,7 +92,7 @@ const en: ImplementeringContent = {
     'A 90-day follow-up meeting',
   ],
   bannerTitle: 'Every municipal customer receives dedicated follow-up for the first three months.',
-  bannerBody: `Onboarding costs ${formaterPrisEn(priser.oppstart)} per municipality and includes everything listed above.`,
+  bannerBody: `Onboarding costs ${formaterPrisEn(priser.oppstart)} one off per municipality and covers setup, two courses on Teams, a data processing agreement, DPIA and a named contact for 90 days.`,
   priceLinkText: 'See all prices',
   ctaTitle: 'Ready to start?',
   ctaSubtitle: 'Get in touch for an informal conversation about implementation in your municipality.',
