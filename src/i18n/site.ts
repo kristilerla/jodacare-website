@@ -114,8 +114,8 @@ export const site: Record<Locale, SiteCopy> = {
         ],
         selskap: [
           { name: 'Om oss', href: '/om' },
-          { name: 'Personvernerklæring', href: '/JodaCare/personvernerklaering' },
-          { name: 'Bruksvilkår', href: '/JodaCare/bruksvilkar' },
+          { name: 'Personvernerklæring', href: '/jodacare/personvernerklaering' },
+          { name: 'Bruksvilkår', href: '/jodacare/bruksvilkar' },
           { name: 'Kontakt', href: '/kontakt' },
           { name: 'JodaCare AS', href: 'https://jodacare.no' },
           { name: 'Company brief', href: '/brief' },
@@ -208,8 +208,8 @@ export const site: Record<Locale, SiteCopy> = {
         ],
         selskap: [
           { name: 'About', href: '/om' },
-          { name: 'Privacy policy', href: '/JodaCare/personvernerklaering' },
-          { name: 'Terms', href: '/JodaCare/bruksvilkar' },
+          { name: 'Privacy policy', href: '/jodacare/personvernerklaering' },
+          { name: 'Terms', href: '/jodacare/bruksvilkar' },
           { name: 'Contact', href: '/kontakt' },
           { name: 'JodaCare AS', href: 'https://jodacare.no' },
           { name: 'Company brief', href: '/brief' },
