@@ -33,6 +33,7 @@ export const RUTEPAR: Record<string, string> = {
   '/sikkerhet': '/en/sikkerhet',
   '/teknologi': '/en/teknologi',
   '/om': '/en/om',
+  '/historier': '/en/historier',
   '/priser': '/en/priser',
   '/kontakt': '/en/kontakt',
   '/jodacare/personvernerklaering': '/en/jodacare/personvernerklaering',

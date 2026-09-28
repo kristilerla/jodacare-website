@@ -8,6 +8,7 @@ export type SiteCopy = {
     kommune: string;
     familier: string;
     om: string;
+    historier: string;
     sikkerhet: string;
     bruksvilkar: string;
     kontakt: string;
@@ -69,6 +70,7 @@ export const site: Record<Locale, SiteCopy> = {
       kommune: 'For kommuner',
       familier: 'For familier',
       om: 'Om oss',
+      historier: 'Historier',
       sikkerhet: 'Sikkerhet',
       bruksvilkar: 'Bruksvilkår',
       kontakt: 'Kontakt',
@@ -114,6 +116,7 @@ export const site: Record<Locale, SiteCopy> = {
         ],
         selskap: [
           { name: 'Om oss', href: '/om' },
+          { name: 'Historier', href: '/historier' },
           { name: 'Personvernerklæring', href: '/jodacare/personvernerklaering' },
           { name: 'Bruksvilkår', href: '/jodacare/bruksvilkar' },
           { name: 'Kontakt', href: '/kontakt' },
@@ -164,6 +167,7 @@ export const site: Record<Locale, SiteCopy> = {
       kommune: 'For municipalities',
       familier: 'For families',
       om: 'About',
+      historier: 'Stories',
       sikkerhet: 'Security',
       bruksvilkar: 'Terms',
       kontakt: 'Contact',
@@ -208,6 +212,7 @@ export const site: Record<Locale, SiteCopy> = {
         ],
         selskap: [
           { name: 'About', href: '/om' },
+          { name: 'Stories', href: '/historier' },
           { name: 'Privacy policy', href: '/jodacare/personvernerklaering' },
           { name: 'Terms', href: '/jodacare/bruksvilkar' },
           { name: 'Contact', href: '/kontakt' },

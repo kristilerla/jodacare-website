@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { RUTEPAR, SITE_URL } from '@/lib/seo';
+import { historier } from '@/content/historier';
 
 /**
  * Sitemap for jodacare.no.
@@ -21,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return 0.7;
   };
 
-  return Object.entries(RUTEPAR).flatMap(([noSti, enSti]) => {
+  const sider = Object.entries(RUTEPAR).flatMap(([noSti, enSti]) => {
     const sprak = { 'nb-NO': `${SITE_URL}${noSti}`, en: `${SITE_URL}${enSti}` };
     return [
       {
@@ -40,4 +41,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     ];
   });
+
+  // Historiene er skrevet på norsk. Den engelske adressen peker kanonisk
+  // hit, så bare den norske står i sitemap.
+  const historieSider = historier.map((h) => ({
+    url: `${SITE_URL}/historier/${h.slug}`,
+    lastModified: new Date(`${h.dato}T12:00:00`),
+    changeFrequency: 'yearly' as const,
+    priority: 0.6,
+  }));
+
+  return [...sider, ...historieSider];
 }

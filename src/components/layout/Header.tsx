@@ -20,6 +20,7 @@ export function Header() {
   const kommuneLinks = s.kommuneLinks;
   const navigation = [
     { name: s.nav.familier, href: '/familie' },
+    { name: s.nav.historier, href: '/historier' },
     { name: s.nav.om, href: '/om' },
     { name: s.nav.sikkerhet, href: '/sikkerhet' },
     { name: s.nav.kontakt, href: '/kontakt' },
