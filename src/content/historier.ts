@@ -28,8 +28,17 @@ export type Historie = {
   forfatter: string;
   /** Valgfritt, vises etter navnet: «gründer og daglig leder, JodaCare AS». */
   forfatterRolle?: string;
-  /** Bilde i /public/images/. Brukes øverst i historien og når lenken deles. */
-  bilde?: { src: string; alt: string };
+  /**
+   * Bilde i /public/images/. Brukes på oversikten, øverst i historien og når
+   * lenken deles. `fokus` styrer beskjæringen, for eksempel 'center 40%' for
+   * et stående portrett der ansiktet skal med.
+   */
+  bilde?: { src: string; alt: string; fokus?: string };
+  /**
+   * Eget bilde til forhåndsvisningen på LinkedIn og Facebook, 1200 × 630.
+   * Trengs når `bilde` er stående, ellers beskjærer tjenestene det selv.
+   */
+  delingsbilde?: string;
   tekst: string;
   lenker?: {
     linkedin?: string;
@@ -49,6 +58,12 @@ export const historier: Historie[] = [
     dato: '2026-09-28',
     forfatter: 'Kristil Erla Håland',
     forfatterRolle: 'gründer og daglig leder, JodaCare AS',
+    bilde: {
+      src: '/images/historier/kristil-sept-2026.jpg',
+      alt: 'Kristil Erla Håland, gründer og daglig leder i JodaCare, utendørs en grå høstdag',
+      fokus: 'center 40%',
+    },
+    delingsbilde: '/images/historier/kristil-sept-2026-deling.jpg',
     tekst: `
 Da konkursen var et faktum i desember 2025 så sto jeg med ti års erfaring, en gammel kodebase, kunder som brukte JodaCare hver eneste dag og ingen utviklere. Jeg er ikke utvikler selv, så den vanlige veien videre ville vært å finne penger til å leie inn noen, og det hadde jeg ikke.
 

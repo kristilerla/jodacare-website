@@ -59,6 +59,7 @@ export function HistorierPageView({ locale }: Props) {
                           fill
                           sizes="(min-width: 640px) 50vw, 100vw"
                           className="img-tone object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                          style={h.bilde.fokus ? { objectPosition: h.bilde.fokus } : undefined}
                         />
                       </div>
                     )}

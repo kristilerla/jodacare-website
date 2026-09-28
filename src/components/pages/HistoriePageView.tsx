@@ -74,6 +74,7 @@ export function HistoriePageView({ historie: h, locale }: Props) {
                 fill
                 sizes="(min-width: 768px) 768px, 100vw"
                 className="img-tone object-cover"
+                style={h.bilde.fokus ? { objectPosition: h.bilde.fokus } : undefined}
                 priority
               />
             </div>

@@ -13,7 +13,9 @@ import { SITE_URL } from '@/lib/seo';
 export function historieMetadata(h: Historie, sprak: 'no' | 'en'): Metadata {
   // Uten eget bilde brukes nettstedets delingsbilde, ellers blir
   // forhåndsvisningen på LinkedIn og Facebook tom.
-  const bilde = h.bilde
+  const bilde = h.delingsbilde
+    ? [{ url: h.delingsbilde, width: 1200, height: 630, alt: h.bilde?.alt ?? h.tittel }]
+    : h.bilde
     ? [{ url: h.bilde.src, alt: h.bilde.alt }]
     : [{ url: '/og-image.png', width: 1200, height: 630, alt: 'JodaCare' }];
   return {
