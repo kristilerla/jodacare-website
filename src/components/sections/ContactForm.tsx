@@ -29,6 +29,9 @@ export function ContactForm({
     type: 'general',
     message: '',
   });
+  // Spam-felle: skjult felt som bare roboter fyller ut, og tid fra skjemaet vises til innsending.
+  const [website, setWebsite] = useState('');
+  const [mountedAt] = useState(() => Date.now());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -42,7 +45,7 @@ export function ContactForm({
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({ ...formState, website, elapsedMs: Date.now() - mountedAt }),
       });
 
       if (!res.ok) {
@@ -160,6 +163,19 @@ export function ContactForm({
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={website}
+                      onChange={(e) => setWebsite(e.target.value)}
+                    />
+                  </div>
+
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-text mb-2">
                       {c.nameLabel} <span className="text-accent">*</span>
