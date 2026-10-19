@@ -5,12 +5,13 @@ const KANONISK = "https://www.jodacare.no";
 // Adresser fra den gamle nettsiden som Google fortsatt besøker (Search
 // Console, oktober 2026). Spesifikke regler står før generelle. Ingen av
 // kildene kan treffe en side i sitemap.xml.
+//
+// /JodaCare/... (stor C) står IKKE her, men i src/middleware.ts. Kildene her
+// matches uavhengig av store/små bokstaver, også på Vercel, så en regel for
+// /JodaCare/:path* sender de ekte sidene på /jodacare/... til seg selv i en
+// evig løkke. experimental.caseSensitiveRoutes virker lokalt, men ikke på
+// Vercel — verifisert på preview 19. oktober 2026.
 const gamleAdresser = [
-  // Juridiske sider: den gamle siden brukte stor C. Krever caseSensitiveRoutes
-  // under — uten det matcher Next uavhengig av store/små bokstaver, og
-  // regelen ville sendt /jodacare/... til seg selv i en evig løkke.
-  { source: "/JodaCare/:path*", destination: "/jodacare/:path*" },
-  { source: "/en/JodaCare/:path*", destination: "/en/jodacare/:path*" },
   { source: "/en/terms-of-use", destination: "/en/jodacare/bruksvilkar" },
 
   // Gamle blogginnlegg. Ingen av dem finnes som egen historie.
@@ -25,9 +26,6 @@ const gamleAdresser = [
 ];
 
 const nextConfig: NextConfig = {
-  experimental: {
-    caseSensitiveRoutes: true,
-  },
   async redirects() {
     return [
       // Hver gamle adresse står to ganger: først for jodacare.no, rett til
@@ -45,8 +43,10 @@ const nextConfig: NextConfig = {
       // jodacare.no → www.jodacare.no. Ligger her i stedet for som domeneredirect i
       // Vercel, fordi /.well-known/ må svare 200 direkte på jodacare.no
       // (Microsofts verifisering av utgiverdomene følger ikke viderekoblinger).
+      // De juridiske sidene hoppes over: der sender middlewaren til www selv,
+      // så /JodaCare/... (stor C) når www i ett hopp og ikke to.
       {
-        source: "/:path((?!\\.well-known(?:/|$)).*)",
+        source: "/:path((?!\\.well-known(?:/|$)|(?:en/)?jodacare(?:/|$)).*)",
         has: [{ type: "host", value: "jodacare.no" }],
         destination: `${KANONISK}/:path`,
         permanent: false,
