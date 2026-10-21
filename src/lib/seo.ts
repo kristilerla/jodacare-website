@@ -17,8 +17,8 @@ export const SITE_URL = 'https://www.jodacare.no';
  * Utenfor listen med vilje:
  * - `/rettigheter` er skjult (noindex, ingen engelsk versjon)
  * - `/en` er bare en videresending til `/en/home`
- * - `/brief` og `/en/brief` er samme dokument på samme språk, ikke en
- *   oversettelse. Den håndteres under, med kanonisk adresse mot `/brief`.
+ * - `/brief` og `/en/brief` er skjult (noindex, ikke lenket fra nettsiden)
+ *   og deles bare direkte. Samme dokument på samme språk, kanonisk mot `/brief`.
  */
 export const RUTEPAR: Record<string, string> = {
   '/': '/en/home',

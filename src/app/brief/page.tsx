@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'JodaCare samler helsepersonell, pårørende og den det gjelder i én felles samtale. Brukt i kommuner siden 2016.',
     type: 'article',
   },
-  robots: { index: true, follow: true },
+  // Skjult: ikke lenket fra nettsiden og ikke indeksert. Deles bare
+  // direkte med dem som skal lese den.
+  robots: { index: false, follow: false, nocache: true },
 };
 
 export default function BriefPage() {
