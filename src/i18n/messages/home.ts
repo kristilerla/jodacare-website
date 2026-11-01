@@ -1,5 +1,5 @@
 import type { Locale } from '@/lib/i18n/types';
-import { getStatusVisning, loseMerke } from './status';
+import { getStatusVisning, loseMerke, loseMerkeFarge } from './status';
 import { formaterPris, formaterPrisEn, aar2, priser } from '@/lib/fakta';
 
 export type HomePathCard = {
@@ -81,7 +81,7 @@ const no: HomeMessages = {
         'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie møtes i én plattform med koordinert omsorg.',
       descriptionLink: { text: 'hjemmesykepleie', href: '/jodavisit' },
       badge: loseMerke('kommune', 'no'),
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: loseMerkeFarge(),
       cta: 'Se alle tjenester',
       href: '/kommune',
       highlighted: true,
@@ -132,7 +132,7 @@ const no: HomeMessages = {
       title: 'Avlastning',
       subtitle: 'For barn med utviklingshemming',
       badge: getStatusVisning('avlastning', 'no').tekst,
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: getStatusVisning('avlastning', 'no').farge,
       href: '/avlastning',
     },
     {
@@ -187,7 +187,7 @@ const en: HomeMessages = {
         'Residential care, personal assistance, child welfare, respite and home nursing in one platform with coordinated care.',
       descriptionLink: { text: 'home nursing', href: '/jodavisit' },
       badge: loseMerke('kommune', 'en'),
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: loseMerkeFarge(),
       cta: 'See all services',
       href: '/kommune',
       priceNote: `From ${formaterPrisEn(aar2())} per year.`,
@@ -238,7 +238,7 @@ const en: HomeMessages = {
       title: 'Respite care',
       subtitle: 'For children with intellectual disabilities',
       badge: getStatusVisning('avlastning', 'en').tekst,
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: getStatusVisning('avlastning', 'en').farge,
       href: '/avlastning',
     },
     {

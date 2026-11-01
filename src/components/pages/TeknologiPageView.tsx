@@ -8,7 +8,6 @@ import {
   DevicePhoneMobileIcon,
   DeviceTabletIcon,
   CloudIcon,
-  ServerIcon,
   CircleStackIcon,
   RocketLaunchIcon,
   UserGroupIcon,
@@ -32,7 +31,7 @@ import { withLocale } from '@/lib/i18n/paths';
 import type { Locale } from '@/lib/i18n/types';
 
 const platformIcons = [GlobeAltIcon, ComputerDesktopIcon, DevicePhoneMobileIcon, DeviceTabletIcon] as const;
-const archIcons = [CloudIcon, ServerIcon, CircleStackIcon, RocketLaunchIcon] as const;
+const archIcons = [CloudIcon, CircleStackIcon, RocketLaunchIcon] as const;
 const securityIcons = [
   CircleStackIcon,
   UserGroupIcon,

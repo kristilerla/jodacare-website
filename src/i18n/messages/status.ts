@@ -50,6 +50,14 @@ export function loseMerke(id: string, locale: Locale): string {
   return LOSE_MERKER[locale][id] ?? '';
 }
 
+/**
+ * Fargen på de løse merkene. Kommunekortet har ingen egen status i fakta.
+ * Det følger segmentene det samler, som står som kommer til de lanseres.
+ */
+export function loseMerkeFarge(): string {
+  return FARGE.kommer;
+}
+
 export function getStatusVisning(segmentId: string, locale: Locale): StatusVisning {
   const s = segment(segmentId);
   const tekst =

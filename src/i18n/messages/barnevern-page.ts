@@ -93,7 +93,7 @@ const no: BarnevernContent = {
   heroStatus: getStatusVisning('barnevern', 'no'),
   heroTitle: 'JodaCare følger barnet.',
   heroSubtitle:
-    'JodaCare samler hverdagen til barnet gjennom alle overganger, fra biologisk hjem til fosterhjem og samvær. Den informasjonen som skal beskyttes, holdes trygg i hver enkelt rolle.',
+    'JodaCare samler hverdagen til barnet gjennom alle overganger, fra biologisk hjem til fosterhjem og samvær.',
   primaryCta: 'Snakk med oss om pilot →',
   secondaryCta: 'Se hvordan det henger sammen',
 
@@ -350,7 +350,7 @@ const no: BarnevernContent = {
   // Seksjon 10 — CTA-footer
   ctaTitle: 'Vi søker pilotkommuner i barnevern',
   ctaBody:
-    `Grunnmodulen i JodaCare er i bruk. Barnevern og samvær: ${samvaerNo.tekst}. Vi søker en kommune som vil tenke sammen med oss om hvordan dette kan se ut i praksis hos dere. I en pilot er det vi som gjør jobben, og dere gir tilbakemeldingen som former plattformen videre.`,
+    `Barnevern og samvær: ${samvaerNo.tekst}. Vi søker en kommune som vil tenke sammen med oss om hvordan dette kan se ut i praksis hos dere. I en pilot er det vi som gjør jobben, og dere gir tilbakemeldingen som former plattformen videre.`,
   ctaPrimary: 'Be om en samtale →',
   ctaSecondary: 'Se også: Slik henger Mai Life og JodaCare sammen',
 
@@ -378,12 +378,6 @@ const no: BarnevernContent = {
         'Trygg samhandling mellom avlastningsfamilie, foreldre og kommune.',
       href: '/avlastning',
     },
-    {
-      title: 'Sikkerhet og lovgrunnlag',
-      description:
-        'Detaljert dokumentasjon av hvordan JodaCare oppfyller GDPR, normen og barnevernsloven.',
-      href: '/sikkerhet',
-    },
   ],
 };
 
@@ -393,7 +387,7 @@ const en: BarnevernContent = {
   heroStatus: getStatusVisning('barnevern', 'en'),
   heroTitle: 'JodaCare follows the child.',
   heroSubtitle:
-    'JodaCare brings together the child\'s everyday life across every transition, from birth home to foster home and contact visits. The information that needs protecting stays safe within each role.',
+    'JodaCare brings together the child\'s everyday life across every transition, from birth home to foster home and contact visits.',
   primaryCta: 'Talk to us about a pilot →',
   secondaryCta: 'See how it fits together',
 
@@ -640,7 +634,7 @@ const en: BarnevernContent = {
 
   ctaTitle: 'We are looking for pilot municipalities in child welfare',
   ctaBody:
-    `The core module in JodaCare is in use. Child welfare and contact: ${samvaerEn.tekst}. We are looking for a municipality willing to think with us about how this could work in practice. In a pilot, we do the work, and you provide the feedback that shapes the platform going forward.`,
+    `Child welfare and contact: ${samvaerEn.tekst}. We are looking for a municipality willing to think with us about how this could work in practice. In a pilot, we do the work, and you provide the feedback that shapes the platform going forward.`,
   ctaPrimary: 'Request a conversation →',
   ctaSecondary: 'See also: How Mai Life and JodaCare fit together',
 
@@ -666,12 +660,6 @@ const en: BarnevernContent = {
       description:
         'Secure collaboration between respite home, parents and municipality.',
       href: '/avlastning',
-    },
-    {
-      title: 'Security and legal basis',
-      description:
-        'Detailed documentation of how JodaCare meets GDPR, the Norm and the Child Welfare Act.',
-      href: '/sikkerhet',
     },
   ],
 };

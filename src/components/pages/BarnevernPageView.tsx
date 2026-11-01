@@ -11,7 +11,6 @@ import {
   CalendarDaysIcon,
   ShieldCheckIcon,
   DocumentTextIcon,
-  LockClosedIcon,
   BuildingLibraryIcon,
   ClipboardDocumentListIcon,
   HomeModernIcon,
@@ -53,7 +52,6 @@ const relatedIcons = [
   ClipboardDocumentListIcon,
   HomeModernIcon,
   HandRaisedIcon,
-  LockClosedIcon,
 ] as const;
 const statusColumnIcons = [CheckCircleIcon, ClockIcon, RocketLaunchIcon] as const;
 const statusColumnColors = [
@@ -574,7 +572,7 @@ export function BarnevernPageView({ locale }: Props) {
             </div>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {d.related.map((page, i) => {
               const Icon = relatedIcons[i] ?? ClipboardDocumentListIcon;
               return (

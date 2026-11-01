@@ -52,7 +52,7 @@ const no: BpaContent = {
     {
       title: 'For assistentene',
       description:
-        'Assistentene bruker Boka til kommunikasjon i teamet. Informasjonen er alltid oppdatert og alltid tilgjengelig.',
+        'Assistentene bruker Boka til kommunikasjon i teamet. Alle i teamet ser det samme.',
     },
     {
       title: 'For familien',
@@ -95,7 +95,7 @@ const no: BpaContent = {
   statusBadge: modulMerke('bpa', 'no').tekst,
   statusTitle: 'Bli med fra starten',
   statusBody:
-    'BPA i nye JodaCare starter som pilot. Kommuner som vil være med i piloten, kan ta kontakt nå. Nye moduler kommer kvartal for kvartal, og kommunen velger selv hvilke den vil ha. Dette kommer senere:',
+    'BPA i nye JodaCare starter som pilot. Kommuner og BPA-leverandører som vil være med i piloten, kan ta kontakt nå. Nye moduler kommer kvartal for kvartal, og kommunen velger selv hvilke den vil ha. Dette kommer senere:',
   statusItems: [
     { label: 'Kalender', status: modulMerke('kalender', 'no') },
     { label: 'Rutiner og sjekklister', status: modulMerke('sjekklister-og-rutiner', 'no') },
@@ -149,7 +149,7 @@ const en: BpaContent = {
     {
       title: 'For assistants',
       description:
-        'Assistants use Boka for team communication. The information is always up to date and always available.',
+        'Assistants use Boka for team communication. Everyone on the team sees the same thing.',
     },
     {
       title: 'For the family',
@@ -191,7 +191,7 @@ const en: BpaContent = {
   statusBadge: modulMerke('bpa', 'en').tekst,
   statusTitle: 'Join from the start',
   statusBody:
-    'BPA in the new JodaCare starts as a pilot. Municipalities that want to join the pilot can contact us now. New modules arrive quarter by quarter, and the municipality chooses which ones it wants. This comes later:',
+    'BPA in the new JodaCare starts as a pilot. Municipalities and BPA providers that want to join the pilot can contact us now. New modules arrive quarter by quarter, and the municipality chooses which ones it wants. This comes later:',
   statusItems: [
     { label: 'Calendar', status: modulMerke('kalender', 'en') },
     { label: 'Routines and checklists', status: modulMerke('sjekklister-og-rutiner', 'en') },

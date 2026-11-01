@@ -21,6 +21,8 @@ export type PriserCard = {
   body?: string;
   includesLabel: string;
   includes: string[];
+  /** Linje under listen, for det som kommer inn i lisensen senere. */
+  includesNote?: string;
 };
 
 export type PriserTableRow = { label: string; year1: string; year2: string };
@@ -92,6 +94,7 @@ const no: PriserContent = {
         'Invitasjon på e-post eller SMS',
         'Rollebasert tilgang',
       ],
+      includesNote: 'Kalender kommer, og inngår i lisensen uten pristillegg.',
     },
     {
       name: 'Oppstart',
@@ -140,7 +143,6 @@ const no: PriserContent = {
     { name: 'Barnevern og samvær', status: modulMerke('barnevern-og-samvaer', 'no') },
     { name: 'Hub for omsorgsbolig', status: modulMerke('hub', 'no') },
     { name: 'JodaVisit', status: modulMerke('jodavisit', 'no') },
-    { name: 'Kalender', status: modulMerke('kalender', 'no') },
   ],
 
   termsTitle: 'Avtalevilkår',
@@ -213,6 +215,7 @@ const en: PriserContent = {
         'Invitations by email or text message',
         'Role-based access',
       ],
+      includesNote: 'A calendar is coming, and it is included in the licence at no extra cost.',
     },
     {
       name: 'Onboarding',
@@ -261,7 +264,6 @@ const en: PriserContent = {
     { name: 'Child welfare and contact sessions', status: modulMerke('barnevern-og-samvaer', 'en') },
     { name: 'Hub for sheltered housing', status: modulMerke('hub', 'en') },
     { name: 'JodaVisit', status: modulMerke('jodavisit', 'en') },
-    { name: 'Calendar', status: modulMerke('kalender', 'en') },
   ],
 
   termsTitle: 'Agreement terms',

@@ -50,6 +50,9 @@ export function PriserPageView({ locale }: Props) {
                       </li>
                     ))}
                   </ul>
+                  {card.includesNote && (
+                    <p className="mt-4 text-sm text-text-light">{card.includesNote}</p>
+                  )}
                 </Card>
               </StaggerItem>
             ))}

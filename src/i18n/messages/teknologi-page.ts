@@ -103,18 +103,13 @@ const no: TeknologiPageCopy = {
         'Kjører på europeiske servere i Stockholm. All data lagret i EU.',
     },
     {
-      title: 'Serverless arkitektur',
-      description:
-        'Moderne serverless-modell som skalerer automatisk etter behov, fra én til tusenvis av samtidige brukere.',
-    },
-    {
       title: 'Relasjonsdatabase',
-      description: 'PostgreSQL med row-level security sørger for at data er konsistent, pålitelig og alltid beskyttet.',
+      description: 'Dataene ligger i PostgreSQL. Databasen holder dataene konsistente og pålitelige.',
     },
     {
       title: 'Automatisk utrulling',
       description:
-        'Nye versjoner rulles ut automatisk uten nedetid. Dere får alltid den nyeste versjonen uten å løfte en finger.',
+        'Nye versjoner rulles ut fortløpende. Dere bruker alltid den nyeste versjonen.',
     },
   ],
   techTitle: 'Teknologier JodaCare bruker',
@@ -126,9 +121,9 @@ const no: TeknologiPageCopy = {
     'Sikkerheten er bygget inn i alle lag av plattformen, fra database til brukergrensesnitt.',
   securityFeatures: [
     {
-      title: 'Databasenivå sikkerhet (RLS)',
+      title: 'Tilgang avgjøres i backend',
       description:
-        'Tilgangskontroll er bygget inn i selve databaselaget. Selv om applikasjonskoden skulle ha en feil, forblir data beskyttet.',
+        'Backend avgjør tilgangen for hver forespørsel. Det er aldri klienten som bestemmer hvem som ser hva.',
     },
     {
       title: 'Rollebasert tilgang (RBAC)',
@@ -289,16 +284,12 @@ const en: TeknologiPageCopy = {
       description: 'Runs on European servers in Stockholm. All data stored in the EU.',
     },
     {
-      title: 'Serverless architecture',
-      description: 'A modern serverless model that scales automatically, from one to thousands of concurrent users.',
-    },
-    {
       title: 'Relational database',
-      description: 'PostgreSQL with row-level security keeps data consistent, reliable and protected.',
+      description: 'The data is stored in PostgreSQL. The database keeps the data consistent and reliable.',
     },
     {
       title: 'Continuous deployment',
-      description: 'New versions roll out automatically without downtime. You always run the latest release.',
+      description: 'New versions are rolled out continuously. You always use the latest version.',
     },
   ],
   techTitle: 'Technologies JodaCare uses',
@@ -309,9 +300,9 @@ const en: TeknologiPageCopy = {
   securityIntro: 'Security is built into every layer, from the database to the user interface.',
   securityFeatures: [
     {
-      title: 'Database-level security (RLS)',
+      title: 'Access is decided in the backend',
       description:
-        'Access control lives in the database layer. Even if application code has a defect, data stays protected.',
+        'The backend decides access for every request. The client never decides who sees what.',
     },
     {
       title: 'Role-based access (RBAC)',
