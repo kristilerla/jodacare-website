@@ -26,8 +26,10 @@ export type Modul = {
   id: string;
   navn: string;
   beskrivelse: string;
-  inngar_i: 'grunnmodul' | 'tilleggsmodul';
+  inngar_i: 'grunnmodul' | 'tilleggsmodul' | null;
   status: Record<Versjon, string>;
+  /** Besluttet tidspunkt, for eksempel «Q4 2026» eller «Pilot 2027». Fritekst. */
+  kvartal?: string;
 };
 
 const fakta = data.fakta as {
@@ -121,6 +123,18 @@ export const moduler: Modul[] = fakta.moduler.moduler;
 export function modul(id: string): Modul {
   const m = moduler.find((x) => x.id === id);
   if (!m) throw new Error(`Ukjent modul: ${id}. Se fakta/moduler.yaml.`);
+  return m;
+}
+
+// ── Innlogging ────────────────────────────────────────────────────────
+
+type InnloggingsMetode = { navn: string; status: string; kommer_nar?: string };
+
+/** Innloggingsmetodene i nye JodaCare, fra fakta/innlogging.yaml. */
+export function innloggingNy(id: string): InnloggingsMetode {
+  const ny = fakta.innlogging.ny as { metoder: Record<string, InnloggingsMetode> };
+  const m = ny.metoder[id];
+  if (!m) throw new Error(`Ukjent innloggingsmetode: ${id}. Se fakta/innlogging.yaml.`);
   return m;
 }
 

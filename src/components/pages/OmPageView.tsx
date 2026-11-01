@@ -4,6 +4,7 @@ import { Container, Card, CardTitle, CardContent } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import { getOmPageContent } from '@/i18n/messages/om-page';
 import { withLocale } from '@/lib/i18n/paths';
+import { selskap } from '@/lib/fakta';
 import type { Locale } from '@/lib/i18n/types';
 
 type Props = { locale: Locale };
@@ -123,7 +124,9 @@ export function OmPageView({ locale }: Props) {
               </h2>
               <p className="text-text-light mb-6">{d.companyCardBody}</p>
               <div className="text-sm text-text-muted space-y-1">
-                <p>Org.nr: 927 828 947</p>
+                <p>
+                  {d.orgNrLabel} {selskap.orgNr}
+                </p>
                 <p>Jørgens vei 9, 1386 Asker</p>
                 <p>
                   <a

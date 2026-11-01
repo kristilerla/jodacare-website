@@ -1,15 +1,18 @@
 import type { Metadata } from 'next';
 import { sprakvarianter } from '@/lib/seo';
+import { modulMerke } from '@/i18n/messages/status';
 import { BarnevernPageView } from '@/components/pages/BarnevernPageView';
+
+const title = 'JodaCare for child welfare: JodaCare follows the child';
+const description = `JodaCare for child welfare brings together the child's everyday life in Boka. Contact visits and information barriers: ${modulMerke('barnevern-og-samvaer', 'en').tekst}.`;
 
 export const metadata: Metadata = {
   alternates: sprakvarianter('/barnevern', 'en'),
-  title: 'JodaCare for child welfare — contact visits and documentation',
-  description:
-    'jodacare supports supervised contact with information barriers that protect everyone involved and full traceability that meets legal requirements.',
+  title,
+  description,
   openGraph: {
-    title: 'JodaCare for child welfare',
-    description: 'Secure digital tools for case workers, foster carers and birth parents.',
+    title,
+    description,
     locale: 'en_GB',
   },
 };

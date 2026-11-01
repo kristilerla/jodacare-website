@@ -50,7 +50,22 @@ export function KommunePageView({ locale }: Props) {
               <h2 id="services-title" className="font-serif text-3xl sm:text-4xl font-bold text-text">
                 {d.servicesTitle}
               </h2>
-              <p className="mt-4 text-lg text-text-light">{d.servicesSubtitle}</p>
+              <p className="mt-4 text-lg text-text-light max-w-2xl mx-auto">
+                {d.servicesIntro.map((bit, i) =>
+                  bit.href ? (
+                    <Link
+                      key={i}
+                      href={withLocale(bit.href, locale)}
+                      className="text-primary font-medium underline underline-offset-2 hover:text-primary-dark"
+                    >
+                      {bit.text}
+                    </Link>
+                  ) : (
+                    <span key={i}>{bit.text}</span>
+                  ),
+                )}
+              </p>
+              <p className="mt-2 text-lg text-text-light">{d.servicesSubtitle}</p>
             </div>
           </FadeIn>
 

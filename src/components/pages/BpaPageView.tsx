@@ -15,11 +15,13 @@ import {
   HeartIcon,
   ArrowRightIcon,
 } from '@heroicons/react/24/outline';
+import { StatusMerke } from '@/components/ui/StatusMerke';
 import { getBpaContent } from '@/i18n/messages/bpa-page';
 import { withLocale } from '@/lib/i18n/paths';
 import type { Locale } from '@/lib/i18n/types';
 
-const userGroupIcons = [UserIcon, UsersIcon, ClipboardDocumentListIcon] as const;
+// Brukeren, assistentene, familien.
+const userGroupIcons = [UserIcon, UsersIcon, HeartIcon] as const;
 const featureIcons = [
   DevicePhoneMobileIcon,
   ClipboardDocumentCheckIcon,
@@ -72,6 +74,7 @@ export function BpaPageView({ locale }: Props) {
                       <Icon className="w-8 h-8 text-accent-dark" aria-hidden="true" />
                     </div>
                     <CardTitle className="text-xl mb-3">{item.title}</CardTitle>
+                    <StatusMerke merke={item.status} className="mb-3" />
                     <CardContent>{item.description}</CardContent>
                   </Card>
                 </StaggerItem>
@@ -103,6 +106,7 @@ export function BpaPageView({ locale }: Props) {
                       </div>
                       <div>
                         <CardTitle className="text-xl">{feature.title}</CardTitle>
+                        <StatusMerke merke={feature.status} className="mt-2" />
                         <CardContent className="mt-2">{feature.description}</CardContent>
                       </div>
                     </div>
@@ -138,6 +142,14 @@ export function BpaPageView({ locale }: Props) {
                 {d.statusTitle}
               </h2>
               <p className="text-lg text-text-light max-w-xl mx-auto">{d.statusBody}</p>
+              <ul className="mt-6 flex flex-wrap justify-center gap-3">
+                {d.statusItems.map((item) => (
+                  <li key={item.label} className="flex items-center gap-2 text-text-light">
+                    <span>{item.label}</span>
+                    <StatusMerke merke={item.status} />
+                  </li>
+                ))}
+              </ul>
               <p className="mt-6 mb-10 text-text-light max-w-xl mx-auto">
                 {d.priceNote}{' '}
                 <Link
@@ -180,6 +192,7 @@ export function BpaPageView({ locale }: Props) {
                         <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
                       </div>
                       <CardTitle className="text-lg">{page.title}</CardTitle>
+                      <StatusMerke merke={page.status} className="mt-2" />
                       <CardContent className="mt-2 text-sm">{page.description}</CardContent>
                       <span className="inline-flex items-center gap-1 mt-4 text-primary text-sm font-medium group-hover:gap-2 transition-all">
                         {d.readMore} <ArrowRightIcon className="w-4 h-4" />

@@ -1,8 +1,12 @@
 import type { Locale } from '@/lib/i18n/types';
-import { getStatusVisning } from './status';
-import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
+import { getStatusVisning, modulMerke } from './status';
+import type { StatusVisning } from './status';
+import { formaterPris, formaterPrisEn, modul, priser } from '@/lib/fakta';
 
-export type FamilieFeature = { title: string; description: string };
+/** Året Familierom kommer, fra fakta (for eksempel «2027»). */
+export const familieromAar = modul('familierom').kvartal ?? '';
+
+export type FamilieFeature = { title: string; description: string; status?: StatusVisning };
 export type FamilieScenario = { title: string; description: string };
 export type FamilieStep = { step: string; title: string; description: string };
 export type FamiliePricingTier = {
@@ -48,15 +52,23 @@ export type FamilieContent = {
 };
 
 const familyFeaturesNo: FamilieFeature[] = [
-  { title: 'Del dagbok, bilder og meldinger', description: 'Del hverdagsøyeblikk og viktige beskjeder med hele familien i én sikker kanal.' },
-  { title: 'Felles kalender', description: 'Familien holder oversikt over avtaler, besøk og aktiviteter på ett sted.' },
+  { title: 'Del hverdagen i Boka', description: 'Familien deler innlegg, bilder og beskjeder i Boka.' },
+  {
+    title: 'Felles kalender',
+    description: 'Familien holder oversikt over avtaler, besøk og aktiviteter på ett sted.',
+    status: modulMerke('kalender', 'no'),
+  },
   { title: 'Plass til hele familien', description: 'Du kan invitere opptil ti familiemedlemmer inn i Familierommet, slik at alle som bryr seg får følge med.' },
   { title: 'Koble til kommunens helseteam', description: 'Når behovet oppstår, kan dere koble helsepersonell fra kommunen inn i Familierommet.' },
 ];
 
 const familyFeaturesEn: FamilieFeature[] = [
-  { title: 'Share diary, photos and messages', description: 'Share diary entries, photos and messages with the whole family.' },
-  { title: 'Shared calendar', description: 'One calendar for appointments, visits and activities.' },
+  { title: 'Share everyday life in Boka', description: 'The family shares posts, photos and notices in Boka.' },
+  {
+    title: 'Shared calendar',
+    description: 'The family keeps track of appointments, visits and activities in one place.',
+    status: modulMerke('kalender', 'en'),
+  },
   { title: 'Invite up to 10 family members', description: 'Invite up to 10 family members.' },
   { title: 'Connect to the municipal health team', description: 'Connect to municipal health services when the need arises.' },
 ];
@@ -78,14 +90,14 @@ const scenariosEn: FamilieScenario[] = [
 const stepsNo: FamilieStep[] = [
   { step: '1', title: 'Opprett Familierom', description: 'Fortell oss hvem som skal få omsorg.' },
   { step: '2', title: 'Inviter familien', description: 'Legg til søsken, barn og andre som vil følge med.' },
-  { step: '3', title: 'Del hverdagen', description: 'Skriv i dagboken, del bilder og bruk kalenderen.' },
+  { step: '3', title: 'Del hverdagen', description: 'Skriv i Boka og del bilder med familien.' },
   { step: '4', title: 'Koble til kommunen', description: 'Når behovet oppstår, inviterer dere helsepersonell inn i teamet.' },
 ];
 
 const stepsEn: FamilieStep[] = [
-  { step: '1', title: 'Create a family room', description: 'Tell us who the care is for.' },
+  { step: '1', title: 'Create a Family Room', description: 'Tell us who the care is for.' },
   { step: '2', title: 'Invite the family', description: 'Add siblings, children and others who want to stay involved.' },
-  { step: '3', title: 'Share everyday life', description: 'Write in the diary, share photos and use the calendar.' },
+  { step: '3', title: 'Share everyday life', description: 'Write in Boka and share photos with the family.' },
   { step: '4', title: 'Connect the municipality', description: 'When the need arises, invite health staff into the team.' },
 ];
 
@@ -128,7 +140,7 @@ const pricingEn: FamiliePricingTier[] = [
 const no: FamilieContent = {
   heroImageAlt: 'Ung mann og eldre kvinne sitter tett sammen i en sofa',
   scenarioImageAlt: 'Eldre kvinne sett nedenfra i en trappeoppgang, svart-hvitt',
-  heroTitle: 'Familierom kommer i 2027',
+  heroTitle: `Familierom kommer i ${familieromAar}`,
   heroSubtitle:
     'Samle familien rundt den som trenger omsorg. Del hverdagen, koordiner besøk, og hold alle oppdatert uansett hvor dere bor i landet.',
   heroBadge: getStatusVisning('familierom', 'no').tekst,
@@ -163,7 +175,7 @@ const no: FamilieContent = {
 const en: FamilieContent = {
   heroImageAlt: 'Young man and older woman sitting close together on a sofa',
   scenarioImageAlt: 'Older woman seen from below in a stairwell, black and white',
-  heroTitle: 'Family room is coming in 2027',
+  heroTitle: `Family Room is coming in ${familieromAar}`,
   heroSubtitle:
     'Bring the family together around the person who needs care. Share everyday life, coordinate visits and keep everyone updated wherever you live.',
   heroBadge: getStatusVisning('familierom', 'en').tekst,
@@ -187,11 +199,11 @@ const en: FamilieContent = {
   stepsTitle: 'How it will work',
   steps: stepsEn,
   pricingTitle: 'What Family Room will cost',
-  pricingSubtitle: 'The price is set. The payment solution arrives together with Family room.',
+  pricingSubtitle: 'The price is set. The payment solution arrives together with Family Room.',
   pricingFootnote: `Family Room is being finalised. The price will be ${formaterPrisEn(priser.familieromMnd)} per month with no commitment, and the first ${priser.proveperiodeDager} days are free. Registering your interest costs nothing.`,
   pricingTiers: pricingEn,
   ctaTitle: 'Give your family peace of mind',
-  ctaSubtitle: 'Leave your email and we will let you know when Family room is ready.',
+  ctaSubtitle: 'Leave your email and we will let you know when Family Room is ready.',
   ctaPrimary: 'Register your interest',
 };
 

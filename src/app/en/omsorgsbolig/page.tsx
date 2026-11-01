@@ -1,16 +1,18 @@
 import type { Metadata } from 'next';
 import { sprakvarianter } from '@/lib/seo';
+import { getStatusVisning } from '@/i18n/messages/status';
 import { OmsorgsboligPageView } from '@/components/pages/OmsorgsboligPageView';
+
+const title = 'JodaCare Hub: sheltered and supported housing';
+const description = `JodaCare Hub will connect resident, family and staff through a screen in the flat. For sheltered housing schemes in Norwegian municipalities. ${getStatusVisning('omsorgsbolig-hub', 'en').tekst}.`;
 
 export const metadata: Metadata = {
   alternates: sprakvarianter('/omsorgsbolig', 'en'),
-  title: 'JodaCare Hub — sheltered and supported housing',
-  description:
-    'JodaCare Hub connects resident, family and staff through a screen in the flat. For sheltered housing schemes in Norwegian municipalities.',
+  title,
+  description,
   openGraph: {
-    title: 'JodaCare Hub — sheltered and supported housing',
-    description:
-      'A screen in the flat that keeps residents, family and staff in one continuous flow.',
+    title,
+    description,
     locale: 'en_GB',
   },
 };

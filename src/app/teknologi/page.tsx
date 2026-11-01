@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   alternates: sprakvarianter('/teknologi', 'no'),
   title: 'Teknologi',
   description:
-    'jodacare 2.0 er bygget med moderne teknologi — sikker, skalerbar og brukervennlig. Les om plattformen, arkitekturen og sikkerhetsmekanismene.',
+    'Nye JodaCare er bygget med moderne teknologi. Plattformen er sikker, skalerbar og brukervennlig. Les om plattformen, arkitekturen og sikkerhetsmekanismene.',
   openGraph: {
-    title: 'Teknologi i jodacare 2.0',
+    title: 'Teknologi i nye JodaCare',
     description:
-      'Moderne teknologi bygget for omsorg. Nettbasert plattform med sanntidssamarbeid, rollebasert tilgang og fremtidig KI-støtte.',
+      'Moderne teknologi bygget for omsorg. JodaCare brukes i nettleseren og kan legges på hjemskjermen. Bare teamet rundt tjenestemottakeren ser innholdet.',
   },
 };
 

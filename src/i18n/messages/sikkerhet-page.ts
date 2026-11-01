@@ -1,6 +1,18 @@
 import type { Locale } from '@/lib/i18n/types';
+import type { StatusVisning } from '@/i18n/messages/status';
+import { funksjonMerke } from '@/i18n/messages/status';
+import { selskap } from '@/lib/fakta';
 
-export type SikkerhetFeature = { title: string; description: string; badge?: string };
+/**
+ * badge er en egenskap ved kortet, for eksempel «EU-lagring». status er et
+ * merke fra status.ts og viser om funksjonen finnes i nye JodaCare.
+ */
+export type SikkerhetFeature = {
+  title: string;
+  description: string;
+  badge?: string;
+  status?: StatusVisning;
+};
 export type SikkerhetSmall = { title: string; description: string };
 export type SikkerhetCompliance = { title: string; body: string };
 
@@ -27,8 +39,8 @@ const securityNo: SikkerhetFeature[] = [
   {
     title: 'ID-porten innlogging',
     description:
-      'JodaCare bruker innlogging med ID-porten på sikkerhetsnivå 4.',
-    badge: 'Sikkerhetsnivå 4',
+      'Du logger inn med ID-porten. Ansatte kan også logge inn med jobbkonto. Innlogging med MinID, BankID, Buypass eller Commfides gjennom ID-porten. JodaCare krever sikkerhetsnivå betydelig.',
+    badge: 'Sikkerhetsnivå betydelig',
   },
   {
     title: 'GDPR-compliant',
@@ -44,23 +56,25 @@ const securityNo: SikkerhetFeature[] = [
   {
     title: 'Data lagret i Europa',
     description:
-      'Databasen og tjenestene kjører i Stockholm, og AI-tjenestene er europeiske gjennom Mistral i Paris.',
+      'Databasen og tjenestene kjører i Stockholm. KI-funksjonene som kommer, skal bruke Mistral i Paris.',
     badge: 'EU-lagring',
   },
   {
-    title: 'Full sporbarhet',
-    description:
-      'Tilgang til innhold logges automatisk med tidsstempel og bruker-ID.',
+    title: 'Innsynslogg',
+    description: 'En logg over hvem som har sett innholdet.',
+    status: funksjonMerke('innsynslogg', 'no'),
   },
   {
-    title: 'Samtykkebasert deling',
+    title: 'Deling bare i teamet',
     description:
-      'Informasjon deles kun basert på samtykke fra tjenestemottaker eller verge. Systemet sørger for at deling skjer i henhold til pasientens rettigheter.',
+      'Bare teamet rundt tjenestemottakeren ser innholdet. Lederen for tjenestestedet bestemmer hvem som er med i teamet.',
   },
   {
     title: 'Personvern i AI-behandling',
     description:
-      'JodaCare fjerner automatisk navn, adresser, fødselsdatoer, diagnoser og stedsnavn fra all tekst før den sendes til AI-tjenester.',
+      'Før tekst sendes til KI, skal JodaCare fjerne navn, adresser, fødselsdatoer, diagnoser og stedsnavn.',
+    // Ingen egen id i status.ts. KI-funksjonene følger KAI-merket.
+    status: funksjonMerke('ki', 'no'),
   },
   {
     title: 'Sikker fillagring',
@@ -73,8 +87,8 @@ const securityEn: SikkerhetFeature[] = [
   {
     title: 'ID-porten sign-in',
     description:
-      'JodaCare uses sign-in with ID-porten at security level 4.',
-    badge: 'Security level 4',
+      'You sign in with ID-porten. Staff can also sign in with a work account. Sign in with MinID, BankID, Buypass or Commfides through ID-porten. JodaCare requires security level substantial.',
+    badge: 'Security level substantial',
   },
   {
     title: 'GDPR compliant',
@@ -90,23 +104,24 @@ const securityEn: SikkerhetFeature[] = [
   {
     title: 'Data stored in Europe',
     description:
-      'The database and services run in Stockholm, and the AI services are European through Mistral in Paris.',
+      'The database and services run in Stockholm. The AI features that are coming will use Mistral in Paris.',
     badge: 'EU storage',
   },
   {
-    title: 'Full traceability',
-    description:
-      'Access to content is logged automatically with timestamp and user ID.',
+    title: 'Access log',
+    description: 'A log of who has viewed the content.',
+    status: funksjonMerke('innsynslogg', 'en'),
   },
   {
-    title: 'Consent-based sharing',
+    title: 'Shared only within the team',
     description:
-      'Information is shared only with consent from the service user or guardian, and the system supports sharing in line with the person\'s rights.',
+      'Only the team around the service recipient can see the content. The service location manager decides who is in the team.',
   },
   {
     title: 'Privacy in AI processing',
     description:
-      'JodaCare automatically removes names, addresses, dates of birth, diagnoses and place names from all text before it is sent to AI services.',
+      'Before text is sent to AI, JodaCare will remove names, addresses, dates of birth, diagnoses and place names.',
+    status: funksjonMerke('ki', 'en'),
   },
   {
     title: 'Secure file storage',
@@ -162,7 +177,7 @@ const no: SikkerhetContent = {
     {
       title: 'Helsepersonelloven',
       body:
-        'JodaCare er bygget for å støtte opp om lovpålagt samhandling mellom helsepersonell, pårørende og andre samarbeidspartnere. Systemet sørger for at deling av informasjon skjer i henhold til helsepersonellovens bestemmelser om taushetsplikt og informasjonsplikt.',
+        'JodaCare er bygget for å støtte samhandlingen mellom helsepersonell, pårørende og andre samarbeidspartnere. Bare teamet rundt tjenestemottakeren ser innholdet. Lederen for tjenestestedet bestemmer hvem som er med i teamet.',
     },
     {
       title: 'Personopplysningsloven og GDPR',
@@ -177,9 +192,9 @@ const no: SikkerhetContent = {
   ],
   trustSr: 'Tillitsindikatorer',
   trustStats: [
-    { value: 'Siden 2016', label: 'I drift' },
+    { value: `Siden ${selskap.etablert}`, label: 'JodaCare i norske kommuner' },
     { value: 'Norske kommuner', label: 'Kunder' },
-    { value: 'Nivå 4', label: 'Sikkerhetsnivå' },
+    { value: 'Betydelig', label: 'Sikkerhetsnivå' },
     { value: 'EU', label: 'Datalokasjon' },
   ],
   ctaTitle: 'Har du spørsmål om sikkerhet?',
@@ -205,7 +220,7 @@ const en: SikkerhetContent = {
     {
       title: 'Norwegian Health Personnel Act',
       body:
-        'JodaCare supports legally required collaboration between health professionals, relatives and partners. Sharing follows the duty of confidentiality and duty to inform under the Act.',
+        'JodaCare is built to support collaboration between health professionals, relatives and partners. Only the team around the service recipient can see the content. The service location manager decides who is in the team.',
     },
     {
       title: 'Personal Data Act and GDPR',
@@ -220,9 +235,9 @@ const en: SikkerhetContent = {
   ],
   trustSr: 'Trust indicators',
   trustStats: [
-    { value: 'Since 2016', label: 'In operation' },
+    { value: `Since ${selskap.etablert}`, label: 'JodaCare in Norwegian municipalities' },
     { value: 'Norwegian municipalities', label: 'Customers' },
-    { value: 'Level 4', label: 'Security level' },
+    { value: 'Substantial', label: 'Security level' },
     { value: 'EU', label: 'Data location' },
   ],
   ctaTitle: 'Questions about security?',

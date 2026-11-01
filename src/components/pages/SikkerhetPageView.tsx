@@ -1,6 +1,7 @@
 import { Hero, CTA } from '@/components/sections';
 import Image from 'next/image';
 import { Container, Card, CardTitle, CardContent, Badge } from '@/components/ui';
+import { StatusMerke } from '@/components/ui/StatusMerke';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
   FingerPrintIcon,
@@ -73,8 +74,13 @@ export function SikkerhetPageView({ locale }: Props) {
                 <StaggerItem key={feature.title}>
                   <Card variant="bordered" padding="lg" className="h-full">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-success" aria-hidden="true" />
+                      {/* Ikonet får fargen fra merket når kortet har et. Uten merke er det grønt. */}
+                      <div
+                        className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${
+                          feature.status?.farge ?? 'bg-success/10 text-success'
+                        }`}
+                      >
+                        <Icon className="w-6 h-6" aria-hidden="true" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 flex-wrap">
@@ -84,6 +90,7 @@ export function SikkerhetPageView({ locale }: Props) {
                               {feature.badge}
                             </Badge>
                           )}
+                          <StatusMerke merke={feature.status} />
                         </div>
                         <CardContent className="mt-2">{feature.description}</CardContent>
                       </div>

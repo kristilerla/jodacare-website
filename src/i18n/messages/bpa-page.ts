@@ -1,9 +1,11 @@
 import type { Locale } from '@/lib/i18n/types';
-import { getStatusVisning } from './status';
+import { getStatusVisning, modulMerke } from './status';
+import type { StatusVisning } from './status';
 import { formaterPris, formaterPrisEn, aar2, priser } from '@/lib/fakta';
 
-export type BpaTextCard = { title: string; description: string };
-export type BpaRelated = { title: string; description: string; href: string };
+export type BpaTextCard = { title: string; description: string; status?: StatusVisning };
+export type BpaRelated = { title: string; description: string; href: string; status?: StatusVisning };
+export type BpaStatusItem = { label: string; status: StatusVisning };
 
 export type BpaContent = {
   heroTitle: string;
@@ -21,6 +23,7 @@ export type BpaContent = {
   statusBadge: string;
   statusTitle: string;
   statusBody: string;
+  statusItems: BpaStatusItem[];
   priceNote: string;
   priceLinkText: string;
   statusCta: string;
@@ -32,7 +35,7 @@ export type BpaContent = {
 const no: BpaContent = {
   heroTitle: 'Brukeren beholder kontrollen, og assistentene vet hva som forventes.',
   heroSubtitle:
-    'JodaCare samler hele omsorgsteamet rundt brukeren, med Boka for assistentene og full oversikt for koordinator og familie.',
+    'JodaCare samler hele omsorgsteamet rundt brukeren. Assistentene og familien skriver og leser i Boka.',
   heroBadge: 'Brukerstyrt personlig assistanse',
   primaryCta: 'Kontakt oss',
   secondaryCta: 'Se funksjoner',
@@ -43,51 +46,62 @@ const no: BpaContent = {
     {
       title: 'For brukeren',
       description:
-        'Jodabook er en enkel app med store knapper og bilder, tilpasset den som trenger ekstra støtte. Brukeren slipper å huske passord, og logger inn med QR-kode og PIN. Jodabook kommer Q1 2027.',
+        'Jodabook er en enkel app med store knapper og bilder, tilpasset den som trenger ekstra støtte. Brukeren slipper å huske passord, og logger inn med QR-kode og PIN.',
+      status: modulMerke('jodabook', 'no'),
     },
     {
       title: 'For assistentene',
       description:
-        'Assistentene bruker Boka til kommunikasjon i teamet. Informasjonen er alltid oppdatert og alltid tilgjengelig.',
+        'Assistentene bruker Boka til kommunikasjon i teamet. Alle i teamet ser det samme.',
     },
     {
-      title: 'For koordinator og familie',
-      description: 'Koordinator og familie har full oversikt uten å måtte ringe rundt, og kan se hva som skjer, hvem som var der og hvordan det gikk.',
+      title: 'For familien',
+      description: 'Familien følger med i Boka uten å måtte ringe rundt.',
     },
   ],
   featuresTitle: 'Funksjoner som dekker hverdagen',
   features: [
     {
-      title: 'Jodabook for brukeren (kommer Q1 2027)',
+      title: 'Jodabook for brukeren',
       description:
         'Jodabook er en enkel app med store knapper, bilder og lyd, og støtter kognitiv tilpasning for utviklingshemming, autisme og demens.',
+      status: modulMerke('jodabook', 'no'),
     },
     {
-      title: 'Rutiner og sjekklister (kommer Q4 2026)',
+      title: 'Rutiner og sjekklister',
       description:
         'Du oppretter gjentakende eller engangs sjekklister, og assistentene avhuker steg for steg mens alt loggføres automatisk.',
+      status: modulMerke('sjekklister-og-rutiner', 'no'),
     },
     {
       title: 'Omsorgsteam-modell',
       description: 'Kun de som hører til i teamet ser brukeren, og personvern og rollebasert tilgang er bygget inn fra grunnen av.',
     },
     {
-      title: 'Hendelseslogg (kommer Q4 2026)',
+      title: 'Hendelseslogg',
       description:
         'Hendelsesloggen registrerer avvik, atferd, medisin og mer.',
+      status: modulMerke('hendelseslogg', 'no'),
     },
     {
       title: 'KAI-assistent',
-      description: 'KAI hjelper deg å finne frem i JodaCare og forklarer hvordan appen brukes.',
+      description: 'KAI skal hjelpe deg å finne frem i JodaCare.',
+      status: modulMerke('kai', 'no'),
     },
   ],
   referenceTitle: 'I bruk siden 2016',
   referenceBody:
-    'Horten kommune er betalende BPA-kunde og har brukt JodaCare siden oppstarten.',
-  statusBadge: getStatusVisning('bpa', 'no').tekst,
+    'Horten kommune er betalende BPA-kunde og har brukt dagens JodaCare siden oppstarten.',
+  statusBadge: modulMerke('bpa', 'no').tekst,
   statusTitle: 'Bli med fra starten',
   statusBody:
-    'Nye JodaCare lanseres høsten 2026 med Boka, kalender, beskjeder og team rundt hver bruker. Nye moduler kommer kvartal for kvartal, og kommunen velger selv hvilke den vil ha.',
+    'BPA i nye JodaCare starter som pilot. Kommuner og BPA-leverandører som vil være med i piloten, kan ta kontakt nå. Nye moduler kommer kvartal for kvartal, og kommunen velger selv hvilke den vil ha. Dette kommer senere:',
+  statusItems: [
+    { label: 'Kalender', status: modulMerke('kalender', 'no') },
+    { label: 'Rutiner og sjekklister', status: modulMerke('sjekklister-og-rutiner', 'no') },
+    { label: 'Hendelseslogg', status: modulMerke('hendelseslogg', 'no') },
+    { label: 'Jodabook', status: modulMerke('jodabook', 'no') },
+  ],
   priceNote:
     `${formaterPris(aar2())} per år for inntil ${priser.pakkeStorrelse} tjenestemottakere, pluss oppstart ${formaterPris(priser.oppstart)} én gang.`,
   priceLinkText: 'Se alle priser',
@@ -97,8 +111,9 @@ const no: BpaContent = {
   related: [
     {
       title: 'Omsorgsbolig og Hub',
-      description: 'Skjerm i leiligheten som kobler beboer, familie og ansatte.',
+      description: 'En skjerm i leiligheten skal koble beboer, familie og ansatte.',
       href: '/omsorgsbolig',
+      status: getStatusVisning('omsorgsbolig-hub', 'no'),
     },
     {
       title: 'Vi hjelper med implementeringen',
@@ -109,6 +124,7 @@ const no: BpaContent = {
       title: 'Avlastning for barn',
       description: 'Trygg kommunikasjon mellom foreldre og avlastningsbolig.',
       href: '/avlastning',
+      status: getStatusVisning('avlastning', 'no'),
     },
   ],
 };
@@ -116,7 +132,7 @@ const no: BpaContent = {
 const en: BpaContent = {
   heroTitle: 'The user keeps control, and assistants know what is expected.',
   heroSubtitle:
-    'JodaCare brings the whole care team around the user, with Boka for assistants and full overview for coordinator and family.',
+    'JodaCare brings the whole care team together around the user. Assistants and family write and read in Boka.',
   heroBadge: 'User-controlled personal assistance',
   primaryCta: 'Contact us',
   secondaryCta: 'See features',
@@ -127,50 +143,61 @@ const en: BpaContent = {
     {
       title: 'For the user',
       description:
-        'Jodabook is a simple app with large buttons and images for people who need extra support. No passwords to remember, just sign in with QR code and PIN. Jodabook arrives in Q1 2027.',
+        'Jodabook is a simple app with large buttons and images for people who need extra support. The user does not have to remember a password, and signs in with a QR code and PIN.',
+      status: modulMerke('jodabook', 'en'),
     },
     {
       title: 'For assistants',
       description:
-        'Assistants use Boka for team communication. The information is always up to date and always available.',
+        'Assistants use Boka for team communication. Everyone on the team sees the same thing.',
     },
     {
-      title: 'For coordinator and family',
-      description: 'Full overview without calling around. See what happened, who was there and how it went.',
+      title: 'For the family',
+      description: 'The family follows along in Boka without calling around.',
     },
   ],
   featuresTitle: 'Features for everyday life',
   features: [
     {
-      title: 'Jodabook for the user (coming Q1 2027)',
+      title: 'Jodabook for the user',
       description:
         'A simple app with large buttons, images and sound. Supports cognitive adaptations for intellectual disability, autism and dementia.',
+      status: modulMerke('jodabook', 'en'),
     },
     {
-      title: 'Routines and checklists (coming Q4 2026)',
+      title: 'Routines and checklists',
       description:
         'Create recurring or one-off checklists. Assistants tick off step by step. Everything is logged.',
+      status: modulMerke('sjekklister-og-rutiner', 'en'),
     },
     {
       title: 'Care team model',
       description: 'Only people in the team see the user. Privacy and role-based access built in.',
     },
     {
-      title: 'Event log (coming Q4 2026)',
-      description: 'Record incidents, behaviour, medication and more.',
+      title: 'Incident log',
+      description: 'The incident log records incidents, behaviour, medication and more.',
+      status: modulMerke('hendelseslogg', 'en'),
     },
     {
       title: 'KAI assistant',
-      description: 'KAI helps you find your way around JodaCare and explains how the app works.',
+      description: 'KAI will help you find your way around JodaCare.',
+      status: modulMerke('kai', 'en'),
     },
   ],
   referenceTitle: 'In use since 2016',
   referenceBody:
-    'Horten municipality is a paying BPA customer and has used JodaCare from the start.',
-  statusBadge: getStatusVisning('bpa', 'en').tekst,
+    'Horten municipality is a paying BPA customer and has used the current JodaCare from the start.',
+  statusBadge: modulMerke('bpa', 'en').tekst,
   statusTitle: 'Join from the start',
   statusBody:
-    'The new JodaCare launches in autumn 2026 with Boka, calendar, messages and a team around each user. New modules arrive quarter by quarter, and the municipality chooses which ones it wants.',
+    'BPA in the new JodaCare starts as a pilot. Municipalities and BPA providers that want to join the pilot can contact us now. New modules arrive quarter by quarter, and the municipality chooses which ones it wants. This comes later:',
+  statusItems: [
+    { label: 'Calendar', status: modulMerke('kalender', 'en') },
+    { label: 'Routines and checklists', status: modulMerke('sjekklister-og-rutiner', 'en') },
+    { label: 'Incident log', status: modulMerke('hendelseslogg', 'en') },
+    { label: 'Jodabook', status: modulMerke('jodabook', 'en') },
+  ],
   priceNote:
     `${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} one off.`,
   priceLinkText: 'See all prices',
@@ -180,8 +207,9 @@ const en: BpaContent = {
   related: [
     {
       title: 'Care home and Hub',
-      description: 'A screen in the flat connecting resident, family and staff.',
+      description: 'A screen in the flat will connect resident, family and staff.',
       href: '/omsorgsbolig',
+      status: getStatusVisning('omsorgsbolig-hub', 'en'),
     },
     {
       title: 'Implementation support',
@@ -192,6 +220,7 @@ const en: BpaContent = {
       title: 'Respite care for children',
       description: 'Secure communication between parents and the respite home.',
       href: '/avlastning',
+      status: getStatusVisning('avlastning', 'en'),
     },
   ],
 };

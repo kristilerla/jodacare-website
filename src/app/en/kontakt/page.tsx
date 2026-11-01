@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   alternates: sprakvarianter('/kontakt', 'en'),
   title: 'Contact',
   description:
-    'Contact jodacare. We are happy to help you get started whether you represent a municipality, an organisation or a private family.',
+    'Contact JodaCare. We are happy to help you get started whether you represent a municipality, an organisation or a private family.',
   openGraph: {
-    title: 'Contact jodacare',
-    description: 'Get in touch for an informal conversation about how jodacare can help you.',
+    title: 'Contact JodaCare',
+    description: 'Get in touch for an informal conversation about how JodaCare can help you.',
     locale: 'en_GB',
   },
 };

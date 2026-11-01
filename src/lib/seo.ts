@@ -5,7 +5,7 @@
  * ruter som skal i sitemap, og de strukturerte dataene (JSON-LD).
  *
  * Alle fakta i JSON-LD-en står også synlig på nettsiden. Ikke legg til
- * påstander her som ikke finnes der — strukturerte data er det Google og
+ * påstander her som ikke finnes der. Strukturerte data er det Google og
  * språkmodellene leser bokstavelig.
  */
 
@@ -112,19 +112,19 @@ export const plattformen = {
   name: 'JodaCare',
   applicationCategory: 'HealthApplication',
   applicationSubCategory: 'Samhandling i helse- og omsorgstjenesten',
-  operatingSystem: 'Web, iOS, Android',
+  operatingSystem: 'Web',
   url: SITE_URL,
   inLanguage: 'nb-NO',
   description:
     'Delt plattform der pårørende, helsepersonell og tjenestemottakeren selv ' +
-    'følger den samme hverdagen: meldinger, bilder, kalender og oppgaver, med ' +
-    'innlogging via ID-porten og data lagret i Europa.',
+    'følger den samme hverdagen i Boka, med innlegg, bilder, video og beskjeder. ' +
+    'Innlogging med ID-porten eller jobbkonto. Data lagres i Europa.',
   publisher: { '@id': `${SITE_URL}/#organisasjon` },
   featureList: [
     'Daglig dialog mellom pårørende og helsepersonell',
-    'Delt kalender og oppgaver rundt tjenestemottakeren',
-    'Jodabook — tilpasset visning for personer med demens eller kognitive utfordringer (kommer 2027)',
-    'Innlogging med ID-porten',
+    'Team rundt tjenestemottakeren med rollebasert tilgang',
+    'Beskjeder til teamet',
+    'Innlogging med ID-porten eller jobbkonto',
     'Data lagret i Europa, i tråd med GDPR',
   ],
 };

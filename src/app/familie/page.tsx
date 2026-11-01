@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import { sprakvarianter } from '@/lib/seo';
+import { familieromAar } from '@/i18n/messages/familie-page';
 import { FamiliePageView } from '@/components/pages/FamiliePageView';
 
 export const metadata: Metadata = {
   alternates: sprakvarianter('/familie', 'no'),
   title: 'For familier',
-  description:
-    'jodacare for private familier. Hold hele familien oppdatert på hverdagen til den dere er glad i, uansett hvor dere bor.',
+  description: `JodaCare for familier. Familierom kommer i ${familieromAar}.`,
   openGraph: {
-    title: 'jodacare for familier',
+    title: 'JodaCare for familier',
     description: 'Én felles plass for all informasjon om den du er glad i. Trygg og privat.',
   },
 };

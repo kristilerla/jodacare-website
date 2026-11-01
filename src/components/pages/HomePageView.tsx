@@ -10,11 +10,33 @@ import {
   BuildingOffice2Icon,
   HandRaisedIcon,
 } from '@heroicons/react/24/outline';
-import { getHomeMessages } from '@/i18n/messages/home';
+import { getHomeMessages, type HomePathCard } from '@/i18n/messages/home';
 import { withLocale } from '@/lib/i18n/paths';
 import type { Locale } from '@/lib/i18n/types';
 
 const pathIcons = [HeartIcon, BuildingOffice2Icon, HandRaisedIcon] as const;
+
+/**
+ * Beskrivelsen på et kort, med ett ord lenket når kortet har descriptionLink.
+ * Lenken ligger over kortets egen lenke (relative z-10), som pris-lenken.
+ */
+function Beskrivelse({ card, locale }: { card: HomePathCard; locale: Locale }) {
+  const lenke = card.descriptionLink;
+  const i = lenke ? card.description.indexOf(lenke.text) : -1;
+  if (!lenke || i < 0) return <>{card.description}</>;
+  return (
+    <>
+      {card.description.slice(0, i)}
+      <Link
+        href={withLocale(lenke.href, locale)}
+        className="relative z-10 text-primary underline underline-offset-2 hover:text-primary-dark"
+      >
+        {lenke.text}
+      </Link>
+      {card.description.slice(i + lenke.text.length)}
+    </>
+  );
+}
 
 type Props = {
   locale: Locale;
@@ -116,7 +138,7 @@ export function HomePageView({ locale }: Props) {
                     </div>
                     <h3 className="mt-4 font-serif text-xl font-semibold text-text">{card.title}</h3>
                     <p className="mt-3 text-text-light text-sm leading-relaxed flex-1">
-                      {card.description}
+                      <Beskrivelse card={card} locale={locale} />
                     </p>
                     {card.priceNote && card.priceLinkText && (
                       <p className="mt-4 text-sm text-text-light">

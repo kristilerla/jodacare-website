@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Container, Button } from '@/components/ui';
 import { FadeIn } from '@/components/animations';
+import { StatusMerke } from '@/components/ui/StatusMerke';
+import type { StatusVisning } from '@/i18n/messages/status';
 
 interface HeroImage {
   src: string;
@@ -30,6 +32,8 @@ interface HeroProps {
   variant?: 'home' | 'page';
   images?: HeroImage[];
   badge?: string;
+  /** Statusmerke ved siden av badge i page-varianten, fra status.ts. */
+  status?: StatusVisning;
   /**
    * Bilde ved siden av teksten på segmentsidene. Tekst til venstre, bilde til
    * høyre i 5/12 av bredden på desktop. På mobil ligger bildet over teksten.
@@ -49,6 +53,7 @@ export function Hero({
   variant = 'home',
   images = [],
   badge,
+  status,
   image,
 }: HeroProps) {
   const isHome = variant === 'home';
@@ -110,9 +115,12 @@ export function Hero({
           <div className={image ? 'order-2 lg:order-1 lg:col-span-7' : 'max-w-3xl'}>
             {badge && (
               <FadeIn>
-                <span className="inline-block px-4 py-1.5 bg-accent text-white text-sm font-medium rounded-full mb-6">
-                  {badge}
-                </span>
+                <div className="mb-6 flex flex-wrap items-center gap-2">
+                  <span className="inline-block px-4 py-1.5 bg-accent text-white text-sm font-medium rounded-full">
+                    {badge}
+                  </span>
+                  <StatusMerke merke={status} />
+                </div>
               </FadeIn>
             )}
             <FadeIn delay={badge ? 0.1 : 0}>

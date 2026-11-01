@@ -21,6 +21,7 @@ export type OmPageContent = {
   partnersIntro: string;
   companyCardTitle: string;
   companyCardBody: string;
+  orgNrLabel: string;
   ctaTitle: string;
   ctaSubtitle: string;
   ctaButton: string;
@@ -39,7 +40,7 @@ const no: OmPageContent = {
     { year: '2020', event: 'Videosamtaler lanseres under pandemien' },
     { year: '2022', event: 'Jodacare AS bytter navn til Jodatech AS' },
     { year: '2025', event: 'Jodatech AS går konkurs, og JodaCare AS overtar eierskapet av plattformen' },
-    { year: '2026', event: 'JodaCare 2.0 lanseres med ny arkitektur og AI-støtte' },
+    { year: '2026', event: 'Nye JodaCare lanseres med ny arkitektur' },
   ],
   heroTitle: 'Historien bak JodaCare',
   heroSubtitle:
@@ -52,7 +53,7 @@ const no: OmPageContent = {
   founderP2:
     'JodaCare ble til fordi jeg ønsket å gi mamma verdighet. Gjennom bilder og dialog kunne hun huske hvem som hadde vært på besøk, hva hun hadde gjort, og føle seg sett og ivaretatt.',
   founderP3:
-    'I dag brukes JodaCare av familier og kommuner som Horten, Lier og Oslo. Kjernen er den samme: å skape trygghet, verdighet og sammenheng for sårbare mennesker og de som bryr seg om dem.',
+    'JodaCare har vært brukt av Horten, Lier og Oslo kommune blant flere. Fyresdal er den første kommunen på nye JodaCare. Kjernen er den samme: å skape trygghet, verdighet og sammenheng for sårbare mennesker og de som bryr seg om dem.',
   storyQuote:
     'Vår visjon er å styrke menneskeverd til personer med demens, utviklingshemminger og deres relasjon til helsepersonell og egen familie. Ved å gi denne sårbare gruppen mennesker en sammenheng i tilværelsen ser vi at det skaper ro for alle.',
   storyAuthor: 'Kristil Erla Håland',
@@ -63,6 +64,7 @@ const no: OmPageContent = {
   companyCardTitle: 'JodaCare AS',
   companyCardBody:
     'JodaCare eies og utvikles av JodaCare AS, et norsk selskap med hovedkontor i Asker.',
+  orgNrLabel: 'Org.nr.',
   ctaTitle: 'Vil du vite mer?',
   ctaSubtitle: 'Ta kontakt for en uforpliktende prat om hvordan JodaCare kan hjelpe deg.',
   ctaButton: 'Kontakt oss',
@@ -81,7 +83,7 @@ const en: OmPageContent = {
     { year: '2020', event: 'Video calls launch during the pandemic' },
     { year: '2022', event: 'Jodacare AS changes its name to Jodatech AS' },
     { year: '2025', event: 'Jodatech AS enters bankruptcy, and JodaCare AS acquires the platform' },
-    { year: '2026', event: 'JodaCare 2.0 launches with a new architecture and AI support' },
+    { year: '2026', event: 'The new JodaCare launches with a new architecture' },
   ],
   heroTitle: 'The story behind JodaCare',
   heroSubtitle:
@@ -94,7 +96,7 @@ const en: OmPageContent = {
   founderP2:
     'JodaCare was created because I wanted to give my mother dignity. Through photos and dialogue she could remember who had visited, what she had done, and feel seen and cared for.',
   founderP3:
-    'Today JodaCare is used by families and municipalities such as Horten, Lier and Oslo. The core is the same: to create safety, dignity and continuity for vulnerable people and those who care for them.',
+    'JodaCare has been used by the municipalities of Horten, Lier and Oslo and others. Fyresdal is the first municipality on the new JodaCare. The core is the same: to create safety, dignity and continuity for vulnerable people and those who care for them.',
   storyQuote:
     'Our vision is to strengthen human dignity for people with dementia and intellectual disabilities, and their relationships with health professionals and their own families. By giving this vulnerable group coherence in life, we see that it brings calm for everyone involved.',
   storyAuthor: 'Kristil Erla Håland',
@@ -104,6 +106,7 @@ const en: OmPageContent = {
     'We work with leading research and technology environments to keep developing JodaCare.',
   companyCardTitle: 'JodaCare AS',
   companyCardBody: 'JodaCare is owned and developed by JodaCare AS, a Norwegian company headquartered in Asker.',
+  orgNrLabel: 'Org. no.',
   ctaTitle: 'Want to know more?',
   ctaSubtitle: 'Get in touch for an informal conversation about how JodaCare can help you.',
   ctaButton: 'Contact us',

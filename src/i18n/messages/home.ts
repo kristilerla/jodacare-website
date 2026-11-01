@@ -1,11 +1,12 @@
 import type { Locale } from '@/lib/i18n/types';
-import { segment, selskap } from '@/lib/fakta';
-import { getStatusVisning, loseMerke } from './status';
-import { formaterPris, formaterPrisEn, aar1, aar2, priser } from '@/lib/fakta';
+import { getStatusVisning, loseMerke, loseMerkeFarge } from './status';
+import { formaterPris, formaterPrisEn, aar2, priser } from '@/lib/fakta';
 
 export type HomePathCard = {
   title: string;
   description: string;
+  /** Et ord i beskrivelsen som lenkes, for eksempel hjemmesykepleie til /jodavisit. */
+  descriptionLink?: { text: string; href: string };
   badge: string;
   badgeColor: string;
   cta: string;
@@ -69,7 +70,7 @@ const no: HomeMessages = {
       description:
         'Hold deg oppdatert på hverdagen til den du er glad i, uansett avstand.',
       badge: getStatusVisning('familierom', 'no').tekst,
-      badgeColor: 'bg-secondary-light text-text-muted',
+      badgeColor: getStatusVisning('familierom', 'no').farge,
       cta: 'Meld interesse',
       href: '/familie',
       highlighted: false,
@@ -78,8 +79,9 @@ const no: HomeMessages = {
       title: 'JodaCare for kommuner',
       description:
         'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie møtes i én plattform med koordinert omsorg.',
+      descriptionLink: { text: 'hjemmesykepleie', href: '/jodavisit' },
       badge: loseMerke('kommune', 'no'),
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: loseMerkeFarge(),
       cta: 'Se alle tjenester',
       href: '/kommune',
       highlighted: true,
@@ -89,7 +91,7 @@ const no: HomeMessages = {
     {
       title: 'Vi hjelper med implementeringen',
       description:
-        'Vår Implementeringsansvarlig veileder din kommune steg for steg, fra første oppsett til systemet sitter.',
+        'Vår implementeringsansvarlige veileder kommunen steg for steg, fra første oppsett til systemet sitter.',
       badge: `Oppstart ${formaterPris(priser.oppstart)}`,
       badgeColor: 'bg-primary/10 text-primary',
       cta: 'Les mer',
@@ -99,7 +101,7 @@ const no: HomeMessages = {
   ],
   trustItems: [
     'Norske kommuner siden 2016',
-    'Innlogging med ID-porten',
+    'Innlogging med ID-porten eller jobbkonto',
     'GDPR · data i Europa',
   ],
   servicesTitle: 'Én plattform. Mange tjenester.',
@@ -109,42 +111,42 @@ const no: HomeMessages = {
       title: 'Familierom',
       subtitle: 'For pårørende og nær familie',
       badge: getStatusVisning('familierom', 'no').tekst,
-      badgeColor: 'bg-secondary-light text-text-muted',
+      badgeColor: getStatusVisning('familierom', 'no').farge,
       href: '/familie',
     },
     {
       title: 'Omsorgsbolig / Hub',
       subtitle: 'En skjerm i leiligheten for beboer, familie og ansatte',
       badge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
-      badgeColor: 'bg-primary/10 text-primary',
+      badgeColor: getStatusVisning('omsorgsbolig-hub', 'no').farge,
       href: '/omsorgsbolig',
     },
     {
       title: 'BPA',
       subtitle: 'Brukerstyrt personlig assistanse',
       badge: getStatusVisning('bpa', 'no').tekst,
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: getStatusVisning('bpa', 'no').farge,
       href: '/bpa',
     },
     {
       title: 'Avlastning',
       subtitle: 'For barn med utviklingshemming',
       badge: getStatusVisning('avlastning', 'no').tekst,
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: getStatusVisning('avlastning', 'no').farge,
       href: '/avlastning',
     },
     {
       title: 'Barnevern',
       subtitle: 'Samvær og dokumentasjon',
       badge: getStatusVisning('barnevern', 'no').tekst,
-      badgeColor: 'bg-secondary-light text-text-muted',
+      badgeColor: getStatusVisning('barnevern', 'no').farge,
       href: '/barnevern',
     },
     {
       title: 'JodaVisit',
       subtitle: 'Videobesøk for hjemmeboende',
       badge: getStatusVisning('jodavisit', 'no').tekst,
-      badgeColor: 'bg-secondary-light text-text-muted',
+      badgeColor: getStatusVisning('jodavisit', 'no').farge,
       href: '/jodavisit',
     },
   ],
@@ -174,7 +176,7 @@ const en: HomeMessages = {
       description:
         'Stay close to the everyday life of someone you love, wherever you live.',
       badge: getStatusVisning('familierom', 'en').tekst,
-      badgeColor: 'bg-secondary-light text-text-muted',
+      badgeColor: getStatusVisning('familierom', 'en').farge,
       cta: 'Register interest',
       href: '/familie',
       highlighted: true,
@@ -183,8 +185,9 @@ const en: HomeMessages = {
       title: 'JodaCare for municipalities',
       description:
         'Residential care, personal assistance, child welfare, respite and home nursing in one platform with coordinated care.',
+      descriptionLink: { text: 'home nursing', href: '/jodavisit' },
       badge: loseMerke('kommune', 'en'),
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: loseMerkeFarge(),
       cta: 'See all services',
       href: '/kommune',
       priceNote: `From ${formaterPrisEn(aar2())} per year.`,
@@ -204,7 +207,7 @@ const en: HomeMessages = {
   ],
   trustItems: [
     'Norwegian municipalities since 2016',
-    'Sign-in with ID-porten',
+    'Sign-in with ID-porten or work account',
     'GDPR · data in Europe',
   ],
   servicesTitle: 'One platform. Many services.',
@@ -214,42 +217,42 @@ const en: HomeMessages = {
       title: 'Family room',
       subtitle: 'For relatives and close family',
       badge: getStatusVisning('familierom', 'en').tekst,
-      badgeColor: 'bg-secondary-light text-text-muted',
+      badgeColor: getStatusVisning('familierom', 'en').farge,
       href: '/familie',
     },
     {
       title: 'Care home / Hub',
       subtitle: 'A screen in the flat for resident, family and staff',
       badge: getStatusVisning('omsorgsbolig-hub', 'en').tekst,
-      badgeColor: 'bg-primary/10 text-primary',
+      badgeColor: getStatusVisning('omsorgsbolig-hub', 'en').farge,
       href: '/omsorgsbolig',
     },
     {
       title: 'User-controlled personal assistance',
       subtitle: 'BPA-style coordinated care',
       badge: getStatusVisning('bpa', 'en').tekst,
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: getStatusVisning('bpa', 'en').farge,
       href: '/bpa',
     },
     {
       title: 'Respite care',
       subtitle: 'For children with intellectual disabilities',
       badge: getStatusVisning('avlastning', 'en').tekst,
-      badgeColor: 'bg-success/10 text-success',
+      badgeColor: getStatusVisning('avlastning', 'en').farge,
       href: '/avlastning',
     },
     {
       title: 'Child welfare',
       subtitle: 'Contact visits and documentation',
       badge: getStatusVisning('barnevern', 'en').tekst,
-      badgeColor: 'bg-secondary-light text-text-muted',
+      badgeColor: getStatusVisning('barnevern', 'en').farge,
       href: '/barnevern',
     },
     {
       title: 'JodaVisit',
       subtitle: 'Video visits for people living at home',
       badge: getStatusVisning('jodavisit', 'en').tekst,
-      badgeColor: 'bg-secondary-light text-text-muted',
+      badgeColor: getStatusVisning('jodavisit', 'en').farge,
       href: '/jodavisit',
     },
   ],

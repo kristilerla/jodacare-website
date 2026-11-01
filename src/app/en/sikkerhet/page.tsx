@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   alternates: sprakvarianter('/sikkerhet', 'en'),
   title: 'Security',
   description:
-    'jodacare takes security seriously. Read about ID-porten, GDPR, data processing and how we protect sensitive health information.',
+    'JodaCare takes security seriously. Read about ID-porten, GDPR, data processing and how we protect sensitive health information.',
   openGraph: {
-    title: 'Security in jodacare',
+    title: 'Security in JodaCare',
     description:
-      'Security level 4 with ID-porten, GDPR-aligned processing and data stored in Europe. Learn how we protect your information.',
+      'Sign-in with ID-porten at security level substantial. Developed in line with the GDPR. Data stored in Europe. Learn how we protect your information.',
     locale: 'en_GB',
   },
 };

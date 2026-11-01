@@ -4,11 +4,11 @@ import { ImplementeringPageView } from '@/components/pages/ImplementeringPageVie
 
 export const metadata: Metadata = {
   alternates: sprakvarianter('/implementering', 'no'),
-  title: 'JodaCare — Vi hjelper med implementeringen',
+  title: 'JodaCare: Vi hjelper med implementeringen',
   description:
     'JodaCare tildeler en egen Implementeringsansvarlig som veileder din kommune fra første oppsett til plattformen sitter i ryggmargen.',
   openGraph: {
-    title: 'JodaCare — Vi hjelper med implementeringen',
+    title: 'JodaCare: Vi hjelper med implementeringen',
     description:
       'JodaCare tildeler en egen Implementeringsansvarlig som veileder din kommune fra første oppsett til plattformen sitter i ryggmargen.',
   },

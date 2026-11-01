@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   alternates: sprakvarianter('/om', 'no'),
   title: 'Om oss',
   description:
-    'jodacare ble grunnlagt av Kristil Erla Håland basert på egne erfaringer med å koordinere omsorg for sin mor med demens. Les historien bak.',
+    'JodaCare ble grunnlagt av Kristil Erla Håland basert på egne erfaringer med å koordinere omsorg for sin mor med demens. Les historien bak.',
   openGraph: {
-    title: 'Om jodacare',
-    description: 'Historien bak jodacare — fra personlig erfaring til løsning for tusenvis av familier.',
+    title: 'Om JodaCare',
+    description: 'Historien bak JodaCare, fra personlig erfaring til en plattform for familier og kommuner.',
   },
 };
 

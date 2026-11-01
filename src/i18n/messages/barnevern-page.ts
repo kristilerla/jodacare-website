@@ -1,14 +1,17 @@
 import type { Locale } from '@/lib/i18n/types';
-import { getStatusVisning } from './status';
-import { formaterPris, formaterPrisEn, aar1, aar2, priser } from '@/lib/fakta';
+import { getStatusVisning, modulMerke, funksjonMerke } from './status';
+import type { StatusVisning } from './status';
+import { formaterPris, formaterPrisEn, aar2, priser } from '@/lib/fakta';
 
-export type BvCard = { title: string; description: string };
-export type BvRelated = { title: string; description: string; href: string };
+export type BvCard = { title: string; description: string; status?: StatusVisning };
+export type BvRelated = { title: string; description: string; href: string; status?: StatusVisning };
+export type BvStatusItem = { text: string; status?: StatusVisning };
 
 export type BarnevernContent = {
   heroImageAlt: string;
   // Hero
   heroBadge: string;
+  heroStatus: StatusVisning;
   heroTitle: string;
   heroSubtitle: string;
   primaryCta: string;
@@ -26,6 +29,7 @@ export type BarnevernContent = {
   // Seksjon 4 — Slik henger det sammen
   rolesTitle: string;
   rolesSubtitle: string;
+  rolesStatus: StatusVisning;
   roles: BvCard[];
   rolesFootnote: string;
 
@@ -49,8 +53,9 @@ export type BarnevernContent = {
   memoryTitle: string;
   memorySubtitle: string;
   memoryQuote: string;
+  memoryQuoteSourceLabel: string;
   memoryQuoteSource: string;
-  memoryParagraphs: { title: string; body: string }[];
+  memoryParagraphs: { title: string; body: string; status?: StatusVisning }[];
   memoryFootnote: string;
 
   // Seksjon 8 — Trygghet og lovgrunnlag
@@ -61,7 +66,7 @@ export type BarnevernContent = {
   // Seksjon 9 — Status
   statusTitle: string;
   statusSubtitle: string;
-  statusColumns: { title: string; items: string[] }[];
+  statusColumns: { title: string; items: BvStatusItem[] }[];
   priceNote: string;
   priceLinkText: string;
 
@@ -78,13 +83,17 @@ export type BarnevernContent = {
   related: BvRelated[];
 };
 
+const samvaerNo = modulMerke('barnevern-og-samvaer', 'no');
+const samvaerEn = modulMerke('barnevern-og-samvaer', 'en');
+
 const no: BarnevernContent = {
   heroImageAlt: 'Mor holder et spedbarn i skogen, svart-hvitt',
   // Hero
   heroBadge: 'Barnevern',
+  heroStatus: getStatusVisning('barnevern', 'no'),
   heroTitle: 'JodaCare følger barnet.',
   heroSubtitle:
-    'JodaCare samler hverdagen til barnet gjennom alle overganger, fra biologisk hjem til fosterhjem og samvær. Den informasjonen som skal beskyttes, holdes trygg i hver enkelt rolle.',
+    'JodaCare samler hverdagen til barnet gjennom alle overganger, fra biologisk hjem til fosterhjem og samvær.',
   primaryCta: 'Snakk med oss om pilot →',
   secondaryCta: 'Se hvordan det henger sammen',
 
@@ -101,7 +110,7 @@ const no: BarnevernContent = {
     {
       title: 'JodaCare tar vare på barnet',
       description:
-        'JodaCare samler det daglige samarbeidet rundt barnet, slik at saksbehandler, fosterforeldre, biologiske foreldre og støttepersoner møtes ett sted.',
+        `JodaCare samler samarbeidet rundt barnet i Boka og i teamet rundt barnet. Egne roller for biologiske foreldre og støttepersoner: ${samvaerNo.tekst}.`,
     },
   ],
 
@@ -133,11 +142,12 @@ const no: BarnevernContent = {
   // Seksjon 4 — Slik henger det sammen
   rolesTitle: 'Slik henger det sammen',
   rolesSubtitle: 'Barnet står i sentrum, og rundt det finnes fire roller med klart definerte grenser.',
+  rolesStatus: samvaerNo,
   roles: [
     {
       title: 'Saksbehandler',
       description:
-        'Har full oversikt over saken, oppretter og følger opp samværsplaner, og har tilgang til komplett audit trail.',
+        `Har full oversikt over saken, og oppretter og følger opp samværsplaner. Revisjonslogg: ${funksjonMerke('revisjonslogg', 'no').tekst}.`,
     },
     {
       title: 'Fosterforelder',
@@ -156,40 +166,43 @@ const no: BarnevernContent = {
     },
   ],
   rolesFootnote:
-    'Informasjonsbarrierene er teknisk håndhevet i selve databasen, slik at de ikke avhenger av rutiner alene.',
+    'De fire rollene og informasjonsbarrierene mellom dem kommer med modulen for barnevern og samvær.',
 
   // Seksjon 5 — Funksjoner
   featuresTitle: 'Funksjoner for det daglige arbeidet',
   features: [
     {
-      title: 'Samværsplaner med status-flyt (kommer Q2 2027)',
+      title: 'Samværsplaner med statusflyt',
       description:
-        'Samværsstatus følger en tydelig flyt fra planlagt til bekreftet og gjennomført, eller avlyst og ikke oppmøtt. Hver status får en begrunnelse, og alt er søkbart og dokumentert.',
+        'Samværsstatus skal følge en tydelig flyt fra planlagt til bekreftet og gjennomført, eller avlyst og ikke oppmøtt. Hver status skal få en begrunnelse. Alt skal være søkbart og dokumentert.',
+      status: samvaerNo,
     },
     {
-      title: 'Daglig logg fra fosterforeldre',
-      description:
-        'Fosterforeldre dokumenterer hverdagen med bilder, notater og hendelser.',
+      title: 'Boka fra fosterhjemmet',
+      description: 'Fosterforeldre skriver innlegg i Boka med tekst, bilder og video.',
+      status: modulMerke('boka', 'no'),
     },
     {
-      title: 'Hendelseslogg (kommer Q4 2026)',
+      title: 'Hendelseslogg',
       description:
-        'Strukturert registrering av søvn, humør, anfall, adferd og rutiner gir et mønster over tid gjennom en oversiktlig kalendervisning.',
+        'Fosterforeldre skal kunne registrere søvn, humør, anfall, adferd og rutiner på en strukturert måte.',
+      status: modulMerke('hendelseslogg', 'no'),
     },
     {
-      title: 'Jodabook for barn med særskilte behov (kommer Q1 2027)',
-      description:
-        'En egen app for barn med kognitive utfordringer, med forenklet grensesnitt, store knapper, rutiner og stemningssjekk.',
+      title: 'Jodabook for barn med særskilte behov',
+      description: 'En enkel visning for barn med kognitive utfordringer.',
+      status: modulMerke('jodabook', 'no'),
     },
     {
       title: 'Informasjonsbarrierer',
-      description:
-        'Biologisk forelder ser aldri fosterforelders notater, og barrierene er teknisk håndhevet i databasen slik at de ikke avhenger av rutiner alene.',
+      description: 'Biologisk forelder skal aldri se fosterforelders notater.',
+      status: samvaerNo,
     },
     {
-      title: 'Full audit trail',
+      title: 'Revisjonslogg',
       description:
-        'Alle handlinger loggføres med tidsstempel og bruker-ID, og er tilgjengelig for saksbehandler og forberedt både for tilsyn og eventuell rettssak.',
+        'Alle handlinger skal loggføres med tidsstempel og bruker. Loggen skal være tilgjengelig for saksbehandler ved tilsyn og eventuell rettssak.',
+      status: funksjonMerke('revisjonslogg', 'no'),
     },
   ],
 
@@ -202,12 +215,12 @@ const no: BarnevernContent = {
     {
       title: 'Horten kommune siden 2016',
       description:
-        'JodaCare brukes daglig for barn og unge med utviklingshemming i BPA-tjenesten. Det er mange voksne rundt hvert barn, mange overganger og høye krav til presisjon, som er den samme strukturen vi finner igjen i barnevernet.',
+        'Dagens JodaCare har vært i bruk for barn og unge med utviklingshemming i BPA-tjenesten. Det er mange voksne rundt hvert barn, mange overganger og høye krav til presisjon. Den samme strukturen finner vi igjen i barnevernet.',
     },
     {
       title: 'Avlastning og kognitive utfordringer',
       description:
-        'Vi har bygget hverdagsverktøy for barn der mange voksne deler ansvaret, fra fosterforeldre og avlastning til foreldre og kommune.',
+        'Dagens JodaCare har vært i bruk for barn der mange voksne deler ansvaret, fra fosterforeldre og avlastning til foreldre og kommune.',
     },
     {
       title: 'Bygget med faggruppene som bruker det',
@@ -252,6 +265,7 @@ const no: BarnevernContent = {
     'Mange voksne som har vokst opp med tiltak fra barnevernet, forteller at minnene fra barndommen er uklare. De husker ikke alltid hvor de var når, hvem de voksne rundt dem var, eller om de hadde ferier det året. JodaCare følger barnet, og samler samtidig en historie barnet kan eie selv.',
   memoryQuote:
     'Skriftlighet er sentralt for å sikre den enkeltes rettssikkerhet, men også viktig for å sikre barnets mulighet til å bli kjent med egen historie.',
+  memoryQuoteSourceLabel: 'Kilde',
   memoryQuoteSource: 'Helsetilsynet, veileder for landsomfattende tilsyn 2022–2023',
   memoryParagraphs: [
     {
@@ -260,7 +274,8 @@ const no: BarnevernContent = {
     },
     {
       title: 'En livshistorie barnet kan eie',
-      body: 'KAI, JodaCares norske AI-veiviser, kan skrive sammen hverdagens innhold til en sammenhengende livshistorie. Når barnet er klart, enten som ungdom eller som voksen, finnes det noe å lese seg gjennom og lene seg på.',
+      body: `Livshistorien skal samle hverdagens innhold til en sammenhengende fortelling. KAI, JodaCares norske KI-veiviser, skal kunne hjelpe med å skrive den. KAI: ${modulMerke('kai', 'no').tekst}. Når barnet er klart, enten som ungdom eller som voksen, skal det finnes noe å lese seg gjennom og lene seg på.`,
+      status: modulMerke('livshistorie', 'no'),
     },
     {
       title: 'Innsyn når barnet trenger det',
@@ -276,12 +291,12 @@ const no: BarnevernContent = {
     {
       title: 'ID-porten',
       description:
-        'Innlogging med BankID, Buypass eller Commfides gjennom ID-porten, godkjent av Digdir.',
+        'Innlogging gjennom ID-porten på sikkerhetsnivå betydelig, med MinID, BankID, Buypass eller Commfides.',
     },
     {
       title: 'All data i Europa',
       description:
-        'Databasen og hostingen kjøres i Stockholm, og AI-tjenestene er europeiske gjennom Mistral i Paris.',
+        'Databasen og tjenestene kjører i Stockholm. KI-funksjonene som kommer, skal bruke Mistral i Paris.',
     },
     {
       title: 'GDPR-compliant',
@@ -291,7 +306,7 @@ const no: BarnevernContent = {
     {
       title: 'Lovforankret',
       description:
-        'Barnevernsloven, forvaltningsloven og normen er bygget inn i selve arkitekturen fra grunnen av.',
+        'Barnevern og samvær utvikles med utgangspunkt i barnevernsloven, forvaltningsloven og normen.',
     },
   ],
   trustLink: 'Les mer om sikkerhet →',
@@ -304,27 +319,30 @@ const no: BarnevernContent = {
   priceLinkText: 'Se alle priser',
   statusColumns: [
     {
-      title: getStatusVisning('barnevern', 'no').tekst,
+      title: modulMerke('boka', 'no').tekst,
       items: [
-        'Boka, kalender og beskjeder',
-        'Team rundt hvert barn med rollebasert tilgang',
-        'ID-porten-innlogging',
+        { text: 'Boka og beskjeder' },
+        { text: 'Team rundt hvert barn med rollebasert tilgang' },
+        { text: 'Innlogging med ID-porten eller jobbkonto' },
       ],
     },
     {
-      title: 'Kommer 2026 og 2027',
+      title: 'Det som kommer',
       items: [
-        'Hendelseslogg (Q4 2026)',
-        'Jodabook (Q1 2027)',
-        'Samværsmodul med fire roller og informasjonsbarrierer (Q2 2027)',
+        { text: 'Hendelseslogg', status: modulMerke('hendelseslogg', 'no') },
+        { text: 'Jodabook', status: modulMerke('jodabook', 'no') },
+        { text: 'Bekymringsmelding', status: modulMerke('bekymringsmelding', 'no') },
+        { text: 'Samværsmodul med fire roller og informasjonsbarrierer', status: samvaerNo },
+        { text: 'Livshistorie', status: modulMerke('livshistorie', 'no') },
+        { text: 'Uten tidspunkt: kalender, revisjonslogg, KAI' },
       ],
     },
     {
       title: 'Etter første pilot',
       items: [
-        'Tilpasning til kommunens fagsystem',
-        'Integrasjoner mot Mai Life',
-        'Bredere utrulling i flere kommuner',
+        { text: 'Tilpasning til kommunens fagsystem' },
+        { text: 'Integrasjoner mot Mai Life' },
+        { text: 'Bredere utrulling i flere kommuner' },
       ],
     },
   ],
@@ -332,7 +350,7 @@ const no: BarnevernContent = {
   // Seksjon 10 — CTA-footer
   ctaTitle: 'Vi søker pilotkommuner i barnevern',
   ctaBody:
-    'JodaCare og Mai Life er klare. Vi søker en kommune som vil tenke sammen med oss om hvordan dette kan se ut i praksis hos dere. I en pilot er det vi som gjør jobben, og dere gir tilbakemeldingen som former plattformen videre.',
+    `Barnevern og samvær: ${samvaerNo.tekst}. Vi søker en kommune som vil tenke sammen med oss om hvordan dette kan se ut i praksis hos dere. I en pilot er det vi som gjør jobben, og dere gir tilbakemeldingen som former plattformen videre.`,
   ctaPrimary: 'Be om en samtale →',
   ctaSecondary: 'Se også: Slik henger Mai Life og JodaCare sammen',
 
@@ -350,8 +368,9 @@ const no: BarnevernContent = {
     {
       title: 'Omsorgsbolig og Hub',
       description:
-        'Koble beboer, familie og ansatte gjennom en skjerm i leiligheten.',
+        'En skjerm i leiligheten som skal koble beboer, familie og ansatte.',
       href: '/omsorgsbolig',
+      status: getStatusVisning('omsorgsbolig-hub', 'no'),
     },
     {
       title: 'Avlastning for barn',
@@ -359,21 +378,16 @@ const no: BarnevernContent = {
         'Trygg samhandling mellom avlastningsfamilie, foreldre og kommune.',
       href: '/avlastning',
     },
-    {
-      title: 'Sikkerhet og lovgrunnlag',
-      description:
-        'Detaljert dokumentasjon av hvordan JodaCare oppfyller GDPR, normen og barnevernsloven.',
-      href: '/sikkerhet',
-    },
   ],
 };
 
 const en: BarnevernContent = {
   heroImageAlt: 'Mother holding an infant in the woods, black and white',
   heroBadge: 'Child welfare',
+  heroStatus: getStatusVisning('barnevern', 'en'),
   heroTitle: 'JodaCare follows the child.',
   heroSubtitle:
-    'JodaCare brings together the child\'s everyday life across every transition, from birth home to foster home and contact visits. The information that needs protecting stays safe within each role.',
+    'JodaCare brings together the child\'s everyday life across every transition, from birth home to foster home and contact visits.',
   primaryCta: 'Talk to us about a pilot →',
   secondaryCta: 'See how it fits together',
 
@@ -389,7 +403,7 @@ const en: BarnevernContent = {
     {
       title: 'JodaCare takes care of the child',
       description:
-        'JodaCare brings together daily collaboration around the child, so that case workers, foster carers, birth parents and support persons all meet in one place.',
+        `JodaCare brings together the collaboration around the child in Boka and in the team around the child. Separate roles for birth parents and support persons: ${samvaerEn.tekst}.`,
     },
   ],
 
@@ -419,11 +433,12 @@ const en: BarnevernContent = {
 
   rolesTitle: 'How it fits together',
   rolesSubtitle: 'The child is at the centre, and around it are four roles with clearly defined boundaries.',
+  rolesStatus: samvaerEn,
   roles: [
     {
       title: 'Case worker',
       description:
-        'Has full overview of the case, creates and follows up contact plans, and has access to the complete audit trail.',
+        `Has full overview of the case, and creates and follows up contact plans. Audit log: ${funksjonMerke('revisjonslogg', 'en').tekst}.`,
     },
     {
       title: 'Foster carer',
@@ -442,39 +457,42 @@ const en: BarnevernContent = {
     },
   ],
   rolesFootnote:
-    'Information barriers are technically enforced in the database itself, so they do not depend on routines alone.',
+    'The four roles and the information barriers between them arrive with the child welfare and contact module.',
 
   featuresTitle: 'Features for the daily work',
   features: [
     {
-      title: 'Contact plans with status flow (coming Q2 2027)',
+      title: 'Contact plans with status flow',
       description:
-        'Contact status follows a clear flow from planned to confirmed and completed, or cancelled and no-show. Each status includes a reason, and everything is searchable and documented.',
+        'Contact status will follow a clear flow from planned to confirmed and completed, or cancelled and no-show. Each status will include a reason. Everything will be searchable and documented.',
+      status: samvaerEn,
     },
     {
-      title: 'Daily log from foster carers',
-      description:
-        'Foster carers document daily life with photos, notes and events.',
+      title: 'Boka from the foster home',
+      description: 'Foster carers write posts in Boka with text, photos and video.',
+      status: modulMerke('boka', 'en'),
     },
     {
-      title: 'Event log (coming Q4 2026)',
+      title: 'Event log',
       description:
-        'Structured recording of sleep, mood, seizures, behaviour and routines reveals patterns over time through a clear calendar view.',
+        'Foster carers will be able to record sleep, mood, seizures, behaviour and routines in a structured way.',
+      status: modulMerke('hendelseslogg', 'en'),
     },
     {
-      title: 'Jodabook for children with special needs (coming Q1 2027)',
-      description:
-        'A dedicated app for children with cognitive challenges, with a simplified interface, large buttons, routines and mood checks.',
+      title: 'Jodabook for children with special needs',
+      description: 'A simple view for children with cognitive challenges.',
+      status: modulMerke('jodabook', 'en'),
     },
     {
       title: 'Information barriers',
-      description:
-        'Birth parent never sees foster carer\'s notes, and the barriers are technically enforced in the database so they do not depend on routines alone.',
+      description: 'Birth parents will never see the foster carer\'s notes.',
+      status: samvaerEn,
     },
     {
-      title: 'Full audit trail',
+      title: 'Audit log',
       description:
-        'Every action is logged with timestamp and user ID, and is available to the case worker and prepared for both oversight and any court proceedings.',
+        'Every action will be logged with timestamp and user. The log will be available to the case worker for oversight and any court proceedings.',
+      status: funksjonMerke('revisjonslogg', 'en'),
     },
   ],
 
@@ -486,12 +504,12 @@ const en: BarnevernContent = {
     {
       title: 'Horten municipality since 2016',
       description:
-        'JodaCare is used daily for children and young people with developmental disabilities in the personal assistance service. There are many adults around each child, many transitions and high demands for precision, which is the same structure we find in child welfare.',
+        'The current JodaCare has been in use for children and young people with developmental disabilities in the personal assistance service. There are many adults around each child, many transitions and high demands for precision. We find the same structure in child welfare.',
     },
     {
       title: 'Respite care and cognitive challenges',
       description:
-        'We have built everyday tools for children where many adults share responsibility, from foster carers and respite carers to parents and the municipality.',
+        'The current JodaCare has been in use for children where many adults share responsibility, from foster carers and respite carers to parents and the municipality.',
     },
     {
       title: 'Built with the professional groups that use it',
@@ -534,6 +552,7 @@ const en: BarnevernContent = {
     'Many adults who grew up with child welfare interventions say their childhood memories are unclear. They do not always remember where they were when, who the adults around them were, or whether they had holidays that year. JodaCare follows the child, and at the same time gathers a story the child can own.',
   memoryQuote:
     'Written documentation is central to safeguarding the individual\'s legal rights, but also important for ensuring the child\'s opportunity to become familiar with their own history.',
+  memoryQuoteSourceLabel: 'Source',
   memoryQuoteSource: 'The Norwegian Board of Health Supervision, national audit guide 2022–2023',
   memoryParagraphs: [
     {
@@ -542,7 +561,8 @@ const en: BarnevernContent = {
     },
     {
       title: 'A life story the child can own',
-      body: 'KAI, JodaCare\'s Norwegian AI guide, can weave daily content into a coherent life story. When the child is ready, whether as a teenager or as an adult, there is something to read and lean on.',
+      body: `The life story will gather daily content into one coherent story. KAI, JodaCare's Norwegian AI guide, will be able to help write it. KAI: ${modulMerke('kai', 'en').tekst}. When the child is ready, whether as a teenager or as an adult, there will be something to read and lean on.`,
+      status: modulMerke('livshistorie', 'en'),
     },
     {
       title: 'Access when the child needs it',
@@ -557,12 +577,12 @@ const en: BarnevernContent = {
     {
       title: 'ID-porten',
       description:
-        'Sign-in with BankID, Buypass or Commfides through ID-porten, approved by Digdir.',
+        'Sign-in through ID-porten at security level substantial, with MinID, BankID, Buypass or Commfides.',
     },
     {
       title: 'All data in Europe',
       description:
-        'The database and hosting run in Stockholm, and AI services are European through Mistral in Paris.',
+        'The database and services run in Stockholm. The AI features that are coming will use Mistral in Paris.',
     },
     {
       title: 'GDPR compliant',
@@ -572,50 +592,53 @@ const en: BarnevernContent = {
     {
       title: 'Legally grounded',
       description:
-        'The Child Welfare Act, the Public Administration Act and the Norm are built into the architecture from the ground up.',
+        'Child welfare and contact is developed on the basis of the Child Welfare Act, the Public Administration Act and the Norm.',
     },
   ],
   trustLink: 'Read more about security →',
 
-  statusTitle: 'How far along are we',
+  statusTitle: 'How JodaCare for child welfare is being built',
   statusSubtitle: 'The child welfare module is built on the core module in the new JodaCare and is adopted in stages together with pilot municipalities.',
   priceNote:
     `${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} one off. The child welfare module is priced separately once it is finished.`,
   priceLinkText: 'See all prices',
   statusColumns: [
     {
-      title: getStatusVisning('barnevern', 'en').tekst,
+      title: modulMerke('boka', 'en').tekst,
       items: [
-        'Boka, calendar and messages',
-        'A team around each child with role-based access',
-        'ID-porten login',
+        { text: 'Boka and notices' },
+        { text: 'A team around each child with role-based access' },
+        { text: 'Sign-in with ID-porten or work account' },
       ],
     },
     {
-      title: 'Coming 2026 and 2027',
+      title: 'What is coming',
       items: [
-        'Event log (Q4 2026)',
-        'Jodabook (Q1 2027)',
-        'Contact module with four roles and information barriers (Q2 2027)',
+        { text: 'Event log', status: modulMerke('hendelseslogg', 'en') },
+        { text: 'Jodabook', status: modulMerke('jodabook', 'en') },
+        { text: 'Concern report', status: modulMerke('bekymringsmelding', 'en') },
+        { text: 'Contact module with four roles and information barriers', status: samvaerEn },
+        { text: 'Life story', status: modulMerke('livshistorie', 'en') },
+        { text: 'No date yet: calendar, audit log, KAI' },
       ],
     },
     {
       title: 'After first pilot',
       items: [
-        'Adaptation to the municipality\'s case system',
-        'Integrations with Mai Life',
-        'Broader rollout in more municipalities',
+        { text: 'Adaptation to the municipality\'s case system' },
+        { text: 'Integrations with Mai Life' },
+        { text: 'Broader rollout in more municipalities' },
       ],
     },
   ],
 
   ctaTitle: 'We are looking for pilot municipalities in child welfare',
   ctaBody:
-    'JodaCare and Mai Life are ready. We are looking for a municipality willing to think with us about how this could work in practice. In a pilot, we do the work, and you provide the feedback that shapes the platform going forward.',
+    `Child welfare and contact: ${samvaerEn.tekst}. We are looking for a municipality willing to think with us about how this could work in practice. In a pilot, we do the work, and you provide the feedback that shapes the platform going forward.`,
   ctaPrimary: 'Request a conversation →',
   ctaSecondary: 'See also: How Mai Life and JodaCare fit together',
 
-  relatedTitle: 'Goes well together with',
+  relatedTitle: 'Other parts of JodaCare that strengthen child welfare work',
   relatedSubtitle: 'The platform is built so that the modules strengthen each other. These are particularly relevant when you work with children and young people.',
   readMore: 'Read more',
   related: [
@@ -628,20 +651,15 @@ const en: BarnevernContent = {
     {
       title: 'Care home and Hub',
       description:
-        'Connect resident, family and staff through a screen in the flat.',
+        'A screen in the flat that will connect resident, family and staff.',
       href: '/omsorgsbolig',
+      status: getStatusVisning('omsorgsbolig-hub', 'en'),
     },
     {
       title: 'Respite care for children',
       description:
         'Secure collaboration between respite home, parents and municipality.',
       href: '/avlastning',
-    },
-    {
-      title: 'Security and legal basis',
-      description:
-        'Detailed documentation of how JodaCare meets GDPR, the Norm and the Child Welfare Act.',
-      href: '/sikkerhet',
     },
   ],
 };
