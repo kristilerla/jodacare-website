@@ -1,15 +1,18 @@
 import type { Metadata } from 'next';
 import { sprakvarianter } from '@/lib/seo';
+import { getStatusVisning } from '@/i18n/messages/status';
 import { JodavisitPageView } from '@/components/pages/JodavisitPageView';
+
+const title = 'JodaVisit: video visits for home nursing';
+const description = `JodaVisit will replace unnecessary physical visits with secure video visits. People will be able to stay at home longer, with family close. ${getStatusVisning('jodavisit', 'en').tekst}.`;
 
 export const metadata: Metadata = {
   alternates: sprakvarianter('/jodavisit', 'en'),
-  title: 'JodaVisit — video visits for home nursing',
-  description:
-    'JodaVisit replaces unnecessary physical visits with secure video visits. People stay at home longer with family close.',
+  title,
+  description,
   openGraph: {
-    title: 'JodaVisit — video visits',
-    description: 'Plan and run video visits from familiar devices, with documentation in JodaCare.',
+    title,
+    description,
     locale: 'en_GB',
   },
 };

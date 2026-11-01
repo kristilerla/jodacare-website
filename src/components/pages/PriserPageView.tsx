@@ -1,5 +1,6 @@
 import { Hero, CTA, BudsjettSitat } from '@/components/sections';
 import { Container, Card, Button } from '@/components/ui';
+import { StatusMerke } from '@/components/ui/StatusMerke';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import { getPriserContent } from '@/i18n/messages/priser-page';
@@ -131,13 +132,14 @@ export function PriserPageView({ locale }: Props) {
               {d.modulesTitle}
             </h2>
             <p className="mt-4 text-text-light">{d.modulesBody}</p>
-            <ul className="mt-8 flex flex-wrap gap-3">
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {d.modules.map((item) => (
                 <li
-                  key={item}
-                  className="rounded-full bg-accent-light/60 px-4 py-2 text-sm font-medium text-primary-dark"
+                  key={item.name}
+                  className="flex items-center justify-between gap-3 rounded-xl bg-accent-light/60 px-4 py-3"
                 >
-                  {item}
+                  <span className="text-sm font-medium text-primary-dark">{item.name}</span>
+                  <StatusMerke merke={item.status} className="flex-shrink-0" />
                 </li>
               ))}
             </ul>
@@ -160,12 +162,15 @@ export function PriserPageView({ locale }: Props) {
         <Container size="md">
           <FadeIn>
             <Card variant="bordered" padding="lg" className="bg-white">
-              <h2
-                id="familie-price-title"
-                className="font-serif text-3xl sm:text-4xl font-bold text-text"
-              >
-                {d.familieTitle}
-              </h2>
+              <div className="flex flex-wrap items-center gap-3">
+                <h2
+                  id="familie-price-title"
+                  className="font-serif text-3xl sm:text-4xl font-bold text-text"
+                >
+                  {d.familieTitle}
+                </h2>
+                <StatusMerke merke={d.familieStatus} />
+              </div>
               <p className="mt-6 flex flex-wrap items-baseline gap-x-2">
                 <span className="font-serif text-4xl sm:text-5xl font-bold text-primary">
                   {d.familiePrice}

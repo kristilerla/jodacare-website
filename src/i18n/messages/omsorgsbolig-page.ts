@@ -1,16 +1,18 @@
 import type { Locale } from '@/lib/i18n/types';
-import { getStatusVisning } from './status';
-import { formaterPris, formaterPrisEn, aar1, aar2, priser } from '@/lib/fakta';
+import { getStatusVisning, modulMerke, funksjonMerke } from './status';
+import type { StatusVisning } from './status';
+import { formaterPris, formaterPrisEn, aar2, priser } from '@/lib/fakta';
 
-export type HubCard = { title: string; description: string };
+export type HubCard = { title: string; description: string; status?: StatusVisning };
 export type HubStep = { step: string; title: string; description: string };
-export type HubRelated = { title: string; description: string; href: string };
+export type HubRelated = { title: string; description: string; href: string; status?: StatusVisning };
 
 export type OmsorgsboligContent = {
   heroImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
   heroBadge: string;
+  heroStatus: StatusVisning;
   /** Rolig informasjonsboks under hero, om hva som er klart når. */
   noticeBody: string;
   primaryCta: string;
@@ -19,6 +21,7 @@ export type OmsorgsboligContent = {
   scenarioP1: string;
   scenarioP2: string;
   hubSectionTitle: string;
+  hubSectionStatus: StatusVisning;
   hubPerspectives: HubCard[];
   featuresTitle: string;
   features: HubCard[];
@@ -40,10 +43,11 @@ const no: OmsorgsboligContent = {
   heroImageAlt: 'Eldre person leser på en benk under blomstrende trær',
   heroTitle: 'Beboeren er aldri alene. Familien er alltid nær.',
   heroSubtitle:
-    'JodaCare Hub kobler beboer, familie og ansatte i én sammenhengende flyt gjennom en skjerm i leiligheten som alltid er på.',
+    'JodaCare Hub skal koble beboer, familie og ansatte i én sammenhengende flyt gjennom en skjerm i leiligheten som alltid er på.',
   heroBadge: 'Omsorgsbolig og servicebolig',
+  heroStatus: getStatusVisning('omsorgsbolig-hub', 'no'),
   noticeBody:
-    'JodaCare Hub er under utvikling med pilot i 2027. Grunnmodulen med Boka, kalender og beskjeder lanseres for omsorgsbolig høsten 2026.',
+    `JodaCare Hub er under utvikling med pilot i 2027. Grunnmodulen med Boka, beskjeder og team lanseres for omsorgsbolig høsten 2026. Kalender: ${modulMerke('kalender', 'no').tekst}.`,
   primaryCta: 'Kontakt oss for pilotplass',
   secondaryCta: 'Se hvordan Hub fungerer',
   scenarioTitle: 'Kjenner du deg igjen?',
@@ -51,21 +55,22 @@ const no: OmsorgsboligContent = {
     'Beboerne dine har familier som vil følge med, men som ikke vet hvordan. Pårørende ringer til avdelingen fordi det er den eneste måten de kan holde kontakten på. Ansatte bruker tid på å koordinere og videreformidle informasjon i stedet for å gi omsorg.',
   scenarioP2: 'Resultatet er at beboere kan føle seg isolerte, selv om det er folk rundt dem hele dagen.',
   hubSectionTitle: 'En skjerm i leiligheten, alltid på',
+  hubSectionStatus: modulMerke('hub', 'no'),
   hubPerspectives: [
     {
       title: 'For beboeren',
       description:
-        'Bilder fra familien, kjente ansikter, kalender for dagen, musikk og enkle spill samles ett sted, slik at hverdagen får sammenheng.',
+        `Bilder fra familien, kjente ansikter, musikk og enkle spill skal samles ett sted, slik at hverdagen får sammenheng. Kalender for dagen: ${modulMerke('kalender', 'no').tekst}.`,
     },
     {
       title: 'For familien',
       description:
-        'Familien sender bilder og meldinger direkte til skjermen, ser hva som skjer i hverdagen, og kan starte videosamtale uten at noen trenger å hjelpe beboeren med teknologien.',
+        `Familien skriver i Boka og sender beskjeder, og innholdet vises på skjermen. Videosamtale: ${modulMerke('video', 'no').tekst}.`,
     },
     {
       title: 'For ansatte',
       description:
-        'Ansatte skriver i Boka der jobben skjer. Hendelseslogg og sjekklister kommer Q4 2026, bekymringsmelding Q1 2027.',
+        `Ansatte skriver i Boka der jobben skjer. Hendelseslogg: ${modulMerke('hendelseslogg', 'no').tekst}. Sjekklister: ${modulMerke('sjekklister-og-rutiner', 'no').tekst}. Bekymringsmelding: ${modulMerke('bekymringsmelding', 'no').tekst}.`,
     },
   ],
   featuresTitle: 'Funksjoner som dekker hverdagen',
@@ -73,31 +78,38 @@ const no: OmsorgsboligContent = {
     {
       title: 'Hub-skjerm per leilighet',
       description:
-        'Hub kjøres i nettleser på nettbrett, TV eller smart-display, slik at dere kan ta den i bruk på maskinvaren dere allerede har.',
+        'Hub skal kjøres i nettleser på nettbrett, TV eller smart-display, slik at dere kan bruke maskinvaren dere allerede har.',
+      status: modulMerke('hub', 'no'),
     },
     {
       title: 'Familien sender direkte til skjermen',
       description:
-        'Bilder og meldinger fra familien vises automatisk på skjermen, og beboeren slipper både passord og å laste ned en app.',
+        'Bilder og beskjeder fra familien skal vises automatisk på skjermen. Beboeren skal slippe både passord og å laste ned en app.',
+      status: modulMerke('hub', 'no'),
     },
     {
       title: 'Videosamtale med ett trykk',
       description:
-        'Beboeren trykker på et kjent ansikt, og videosamtalen starter automatisk. Familien på den andre siden svarer rett i nettleseren.',
+        'Beboeren skal kunne trykke på et kjent ansikt for å starte videosamtalen. Familien svarer rett i nettleseren.',
+      status: modulMerke('video', 'no'),
     },
     {
-      title: 'Velferdskoordinator-dashboard',
+      title: 'Oversikt for ansatte',
       description:
-        'Velferdskoordinator styrer aktiviteter, sender meldinger til alle beboere samtidig, og administrerer fellesrom og arrangementer fra ett sted.',
+        'Ansatte skal kunne sende beskjeder til alle beboere og ha oversikt over fellesrom og arrangementer.',
+      status: funksjonMerke('oversikt-ansatte', 'no'),
     },
     {
       title: 'Fellesarrangementer med påmelding',
       description:
-        'Beboere og familie kan melde seg på arrangementer og ta oppgaver, slik at det bygges fellesskap i boligen.',
+        'Beboere og familie skal kunne melde seg på arrangementer, slik at det bygges fellesskap i boligen.',
+      status: modulMerke('fellesarrangementer', 'no'),
     },
     {
-      title: 'IoT-sensorer, senere',
-      description: 'Sensorer for dør, bevegelse og røyk kan kobles til via gateway, og varslene går alltid til ansatte slik at familien skånes for unødig uro.',
+      title: 'IoT-sensorer',
+      description:
+        'Sensorer for dør, bevegelse og røyk skal kunne kobles til via gateway. Varslene skal alltid gå til ansatte, slik at familien skånes for unødig uro.',
+      status: funksjonMerke('iot', 'no'),
     },
   ],
   stepsSectionTitle: 'Enkelt å innføre. Vi hjelper hele veien.',
@@ -116,12 +128,12 @@ const no: OmsorgsboligContent = {
     {
       step: '3',
       title: 'Onboarding av familier',
-      description: 'Familier inviteres enkelt via lenke. De trenger ingen opplæring.',
+      description: 'Familien får invitasjon på e-post eller SMS. Lenken gjelder i sju dager. De logger inn med ID-porten.',
     },
     {
       step: '4',
       title: 'Drift',
-      description: 'Velferdskoordinator styrer hverdagen fra sitt dashboard, og vi er tilgjengelige hvis noe butter.',
+      description: 'Lederen for tjenestestedet følger opp i hverdagen. Vi er tilgjengelige hvis noe butter.',
     },
   ],
   statusBadge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
@@ -140,6 +152,7 @@ const no: OmsorgsboligContent = {
       title: 'Familierom for pårørende',
       description: 'Gi familien en felles plass for hverdagen til den de er glad i.',
       href: '/familie',
+      status: getStatusVisning('familierom', 'no'),
     },
     {
       title: 'Vi hjelper med implementeringen',
@@ -148,8 +161,9 @@ const no: OmsorgsboligContent = {
     },
     {
       title: 'JodaVisit for hjemmeboende',
-      description: 'Videobesøk som erstatter unødvendige fysiske besøk. Kommer snart.',
+      description: 'Videobesøk som skal erstatte unødvendige fysiske besøk.',
       href: '/jodavisit',
+      status: getStatusVisning('jodavisit', 'no'),
     },
   ],
 };
@@ -158,10 +172,11 @@ const en: OmsorgsboligContent = {
   heroImageAlt: 'Older person reading on a bench under blossoming trees',
   heroTitle: 'Residents are never alone. Family is always close.',
   heroSubtitle:
-    'JodaCare Hub connects resident, family and staff in one continuous flow through a screen in the flat that stays on.',
+    'JodaCare Hub will connect resident, family and staff in one continuous flow through a screen in the flat that stays on.',
   heroBadge: 'Sheltered housing and supported living',
+  heroStatus: getStatusVisning('omsorgsbolig-hub', 'en'),
   noticeBody:
-    'JodaCare Hub is under development with a pilot in 2027. The core module with Boka, calendar and messages launches for sheltered housing in autumn 2026.',
+    `JodaCare Hub is under development with a pilot in 2027. The core module with Boka, notices and team launches for sheltered housing in autumn 2026. Calendar: ${modulMerke('kalender', 'en').tekst}.`,
   primaryCta: 'Contact us for a pilot place',
   secondaryCta: 'See how Hub works',
   scenarioTitle: 'Does this sound familiar?',
@@ -169,21 +184,22 @@ const en: OmsorgsboligContent = {
     'Your residents have families who want to stay involved, but who do not know how. Relatives call the ward because it is the only way they can stay in touch. Staff spend time coordinating and relaying information instead of providing care.',
   scenarioP2: 'The result can be that residents feel isolated even when people are around all day.',
   hubSectionTitle: 'One screen in the flat, always on',
+  hubSectionStatus: modulMerke('hub', 'en'),
   hubPerspectives: [
     {
       title: 'For the resident',
       description:
-        'Photos from family, familiar faces, the day’s calendar, music and simple games. Everyday life gains continuity.',
+        `Photos from family, familiar faces, music and simple games will be gathered in one place, so everyday life gains continuity. Calendar for the day: ${modulMerke('kalender', 'en').tekst}.`,
     },
     {
       title: 'For the family',
       description:
-        'Send photos and messages straight to the screen. See what is happening. Video calls without someone having to assist.',
+        `The family writes in Boka and sends notices, and the content appears on the screen. Video call: ${modulMerke('video', 'en').tekst}.`,
     },
     {
       title: 'For staff',
       description:
-        'Staff write in Boka where the work happens. The event log and checklists arrive in Q4 2026, concern notifications in Q1 2027.',
+        `Staff write in Boka where the work happens. Event log: ${modulMerke('hendelseslogg', 'en').tekst}. Checklists: ${modulMerke('sjekklister-og-rutiner', 'en').tekst}. Concern report: ${modulMerke('bekymringsmelding', 'en').tekst}.`,
     },
   ],
   featuresTitle: 'Features for everyday life',
@@ -191,32 +207,38 @@ const en: OmsorgsboligContent = {
     {
       title: 'Hub screen per flat',
       description:
-        'Hub runs in the browser on tablet, TV or smart display, so you can use the hardware you already have.',
+        'Hub will run in the browser on tablet, TV or smart display, so you can use the hardware you already have.',
+      status: modulMerke('hub', 'en'),
     },
     {
       title: 'Family sends straight to the screen',
       description:
-        'Photos and messages from family appear automatically on the screen, and the resident needs no password or app download.',
+        'Photos and notices from family will appear automatically on the screen. The resident will need no password or app download.',
+      status: modulMerke('hub', 'en'),
     },
     {
       title: 'Video call in one tap',
       description:
-        'The resident taps a familiar face, and the video call starts automatically. Family answers in the browser on the other side.',
+        'The resident will be able to tap a familiar face to start the video call. Family answers in the browser.',
+      status: modulMerke('video', 'en'),
     },
     {
-      title: 'Welfare coordinator dashboard',
+      title: 'Overview for staff',
       description:
-        'The welfare coordinator manages activities, messages all residents at once, and administers common areas and events from one place.',
+        'Staff will be able to send notices to all residents and keep an overview of common areas and events.',
+      status: funksjonMerke('oversikt-ansatte', 'en'),
     },
     {
       title: 'Shared events with sign-up',
       description:
-        'Residents and family can sign up for events and take on tasks, helping to build community in the building.',
+        'Residents and family will be able to sign up for events, helping to build community in the building.',
+      status: modulMerke('fellesarrangementer', 'en'),
     },
     {
-      title: 'IoT sensors, later',
+      title: 'IoT sensors',
       description:
-        'Sensors for door, motion and smoke can connect via a gateway, and alerts always go to staff so the family is spared unnecessary worry.',
+        'Sensors for door, motion and smoke will be able to connect via a gateway. Alerts will always go to staff, so the family is spared unnecessary worry.',
+      status: funksjonMerke('iot', 'en'),
     },
   ],
   stepsSectionTitle: 'Straightforward to roll out. We support you all the way.',
@@ -235,12 +257,12 @@ const en: OmsorgsboligContent = {
     {
       step: '3',
       title: 'Onboarding families',
-      description: 'Families are invited with a simple link. No training required.',
+      description: 'The family gets an invitation by email or SMS. The link is valid for seven days. They sign in with ID-porten.',
     },
     {
       step: '4',
       title: 'Operations',
-      description: 'The welfare coordinator runs everyday life from the dashboard. We are available if anything sticks.',
+      description: 'The manager of the service location follows up in everyday life. We are available if anything sticks.',
     },
   ],
   statusBadge: getStatusVisning('omsorgsbolig-hub', 'en').tekst,
@@ -259,6 +281,7 @@ const en: OmsorgsboligContent = {
       title: 'Family room for relatives',
       description: 'Give the family one shared place for the everyday life of the person they love.',
       href: '/familie',
+      status: getStatusVisning('familierom', 'en'),
     },
     {
       title: 'Implementation support',
@@ -267,8 +290,9 @@ const en: OmsorgsboligContent = {
     },
     {
       title: 'JodaVisit for people at home',
-      description: 'Video visits replacing unnecessary physical visits. Coming soon.',
+      description: 'Video visits that will replace unnecessary physical visits.',
       href: '/jodavisit',
+      status: getStatusVisning('jodavisit', 'en'),
     },
   ],
 };

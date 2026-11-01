@@ -23,6 +23,7 @@ const UNNTAK = [
   // All statustekst skal bo her.
   'src/i18n/messages/status.ts',
   'src/components/ui/SegmentBadge.tsx',
+  'src/components/ui/StatusMerke.tsx',
   // Porten selv.
   'scripts/',
 ];
@@ -96,9 +97,15 @@ const STATUSTEKSTER = [
   'Pilot 2027',
   'Lanseres høst 2026',
   'Kommer Q2 2027',
+  'Kommer Q4 2026',
+  'Kommer Q1 2027',
+  'Kommer snart',
   'Coming 2027',
   'Launching autumn 2026',
   'Coming Q2 2027',
+  'Coming Q4 2026',
+  'Coming Q1 2027',
+  'Coming soon',
   'Tilgjengelig nå',
   'Available now',
 ];

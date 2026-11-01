@@ -1,50 +1,47 @@
 import { Hero, CTA } from '@/components/sections';
 import Image from 'next/image';
 import { Container, Card, CardTitle, CardContent, Badge } from '@/components/ui';
+import { StatusMerke } from '@/components/ui/StatusMerke';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
   GlobeAltIcon,
   DevicePhoneMobileIcon,
-  ArrowPathIcon,
   DeviceTabletIcon,
   CloudIcon,
   ServerIcon,
   CircleStackIcon,
   RocketLaunchIcon,
   UserGroupIcon,
-  FingerPrintIcon,
   DocumentCheckIcon,
   ClockIcon,
   ClipboardDocumentCheckIcon,
   KeyIcon,
   IdentificationIcon,
   BuildingOfficeIcon,
-  ArrowsRightLeftIcon,
   EnvelopeIcon,
   SparklesIcon,
-  MicrophoneIcon,
   DocumentTextIcon,
   ChartBarIcon,
   LinkIcon,
   CpuChipIcon,
   ShieldCheckIcon,
+  ComputerDesktopIcon,
 } from '@heroicons/react/24/outline';
 import { getTeknologiPageCopy, techBadges } from '@/i18n/messages/teknologi-page';
 import { withLocale } from '@/lib/i18n/paths';
 import type { Locale } from '@/lib/i18n/types';
 
-const platformIcons = [GlobeAltIcon, DevicePhoneMobileIcon, ArrowPathIcon, DeviceTabletIcon] as const;
+const platformIcons = [GlobeAltIcon, ComputerDesktopIcon, DevicePhoneMobileIcon, DeviceTabletIcon] as const;
 const archIcons = [CloudIcon, ServerIcon, CircleStackIcon, RocketLaunchIcon] as const;
 const securityIcons = [
   CircleStackIcon,
   UserGroupIcon,
-  FingerPrintIcon,
   DocumentCheckIcon,
   ClockIcon,
   ClipboardDocumentCheckIcon,
 ] as const;
-const authIcons = [KeyIcon, IdentificationIcon, BuildingOfficeIcon] as const;
-const integrationIcons = [ArrowsRightLeftIcon, LinkIcon, CpuChipIcon, EnvelopeIcon] as const;
+const authIcons = [KeyIcon, BuildingOfficeIcon, IdentificationIcon] as const;
+const integrationIcons = [LinkIcon, CpuChipIcon, EnvelopeIcon] as const;
 const aiIcons = [SparklesIcon, DocumentTextIcon] as const;
 
 type Props = { locale: Locale };
@@ -87,7 +84,10 @@ export function TeknologiPageView({ locale }: Props) {
                         <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-lg">{feature.title}</CardTitle>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <CardTitle className="text-lg">{feature.title}</CardTitle>
+                          <StatusMerke merke={feature.status} />
+                        </div>
                         <CardContent className="mt-2">{feature.description}</CardContent>
                       </div>
                     </div>
@@ -168,7 +168,10 @@ export function TeknologiPageView({ locale }: Props) {
                         <Icon className="w-5 h-5 text-success" aria-hidden="true" />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-base">{feature.title}</CardTitle>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <CardTitle className="text-base">{feature.title}</CardTitle>
+                          <StatusMerke merke={feature.status} />
+                        </div>
                         <CardContent className="mt-1 text-sm">{feature.description}</CardContent>
                       </div>
                     </div>
@@ -200,9 +203,7 @@ export function TeknologiPageView({ locale }: Props) {
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
-                    <Badge variant={method.badgeVariant} size="sm" className="mb-3">
-                      {method.badge}
-                    </Badge>
+                    <StatusMerke merke={method.status} className="mb-3" />
                     <CardTitle className="text-lg">{method.title}</CardTitle>
                     <CardContent className="mt-2 text-sm">{method.description}</CardContent>
                   </Card>
@@ -269,9 +270,7 @@ export function TeknologiPageView({ locale }: Props) {
                       <div className="flex-1">
                         <div className="flex items-center gap-2 flex-wrap">
                           <CardTitle className="text-lg">{item.title}</CardTitle>
-                          <Badge variant={item.badgeVariant} size="sm">
-                            {item.badge}
-                          </Badge>
+                          <StatusMerke merke={item.status} />
                         </div>
                         <CardContent className="mt-2">{item.description}</CardContent>
                       </div>
@@ -288,9 +287,10 @@ export function TeknologiPageView({ locale }: Props) {
         <Container>
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <Badge variant="warning" className="mb-4">
-                {d.aiBadge}
-              </Badge>
+              <div className="mb-4 flex items-center justify-center gap-2 flex-wrap">
+                <Badge variant="warning">{d.aiBadge}</Badge>
+                <StatusMerke merke={d.aiStatus} />
+              </div>
               <h2 id="ai-title" className="font-serif text-3xl sm:text-4xl font-bold text-text">
                 {d.aiTitle}
               </h2>
@@ -321,7 +321,10 @@ export function TeknologiPageView({ locale }: Props) {
                         <Icon className="w-6 h-6 text-warning" aria-hidden="true" />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-lg">{feature.title}</CardTitle>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <CardTitle className="text-lg">{feature.title}</CardTitle>
+                          <StatusMerke merke={feature.status} />
+                        </div>
                         <CardContent className="mt-2">{feature.description}</CardContent>
                       </div>
                     </div>
@@ -335,7 +338,7 @@ export function TeknologiPageView({ locale }: Props) {
             <FadeIn>
               <div className="mt-12 max-w-2xl mx-auto">
                 <div className="flex items-center gap-2 mb-4">
-                  <Badge variant="warning">{d.aiUpcomingTitle}</Badge>
+                  <StatusMerke merke={d.aiUpcomingStatus} />
                 </div>
                 {d.aiUpcoming.map((item) => (
                   <div

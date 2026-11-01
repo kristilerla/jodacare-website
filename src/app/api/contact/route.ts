@@ -57,7 +57,7 @@ export async function POST(request: Request) {
     }
 
     await resend.emails.send({
-      from: 'jodacare Kontaktskjema <noreply@jodacare.com>',
+      from: 'JodaCare Kontaktskjema <noreply@jodacare.com>',
       to: 'kristil@jodacare.com',
       replyTo: email,
       subject: `Ny henvendelse: ${typeLabels[type]}`,

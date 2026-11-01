@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { formaterPrisEn, aar2, priser } from '@/lib/fakta';
 import { sprakvarianter } from '@/lib/seo';
+import { getStatusVisning } from '@/i18n/messages/status';
 import { PriserPageView } from '@/components/pages/PriserPageView';
 
 const description =
-  `One price per year for municipalities. ${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, onboarding ${formaterPrisEn(priser.oppstart)}. Family Room ${formaterPrisEn(priser.familieromMnd)} per month.`;
+  `One price per year for municipalities. ${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, onboarding ${formaterPrisEn(priser.oppstart)}. Family Room ${formaterPrisEn(priser.familieromMnd)} per month (${getStatusVisning('familierom', 'en').tekst}).`;
 
 export const metadata: Metadata = {
   alternates: sprakvarianter('/priser', 'en'),

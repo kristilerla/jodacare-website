@@ -1,16 +1,18 @@
 import type { Metadata } from 'next';
 import { sprakvarianter } from '@/lib/seo';
+import { modulMerke } from '@/i18n/messages/status';
 import { BarnevernPageView } from '@/components/pages/BarnevernPageView';
+
+const title = 'JodaCare for barnevern: JodaCare følger barnet';
+const description = `JodaCare for barnevern samler hverdagen rundt barnet i Boka. Samvær og informasjonsbarrierer: ${modulMerke('barnevern-og-samvaer', 'no').tekst}.`;
 
 export const metadata: Metadata = {
   alternates: sprakvarianter('/barnevern', 'no'),
-  title: 'JodaCare for barnevern — JodaCare følger barnet',
-  description:
-    'Trygg digital plattform for samvær, fosterhjem og daglig kommunikasjon i barnevernet. Informasjonsbarrierer, audit trail og ID-porten-innlogging. Bygget for norsk forvaltning.',
+  title,
+  description,
   openGraph: {
-    title: 'JodaCare for barnevern — JodaCare følger barnet',
-    description:
-      'Trygg digital plattform for samvær, fosterhjem og daglig kommunikasjon i barnevernet. Informasjonsbarrierer, audit trail og ID-porten-innlogging. Bygget for norsk forvaltning.',
+    title,
+    description,
   },
 };
 

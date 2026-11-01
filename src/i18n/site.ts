@@ -134,7 +134,7 @@ export const site: Record<Locale, SiteCopy> = {
     banner: {
       title: 'JodaCare fra 2016 fungerer fortsatt!',
       body:
-        'Den eksisterende appen som ble utviklet i 2016 og oppgradert i 2018 er fortsatt i drift og fungerer som normalt mens vi bygger nye JodaCare 2.0.',
+        'Den eksisterende appen som ble utviklet i 2016 og oppgradert i 2018 er fortsatt i drift og fungerer som normalt mens vi bygger nye JodaCare.',
       cta: 'Gå til eksisterende app →',
       close: 'Lukk melding',
       imageAlt: 'JodaCare app',
@@ -229,7 +229,7 @@ export const site: Record<Locale, SiteCopy> = {
     banner: {
       title: 'The JodaCare app from 2016 is still running!',
       body:
-        'The original app, first released in 2016 and upgraded in 2018, remains in full operation while we build the new JodaCare 2.0.',
+        'The original app, first released in 2016 and upgraded in 2018, remains in full operation while we build the new JodaCare.',
       cta: 'Open the existing app →',
       close: 'Dismiss message',
       imageAlt: 'JodaCare app',

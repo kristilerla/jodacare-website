@@ -1,7 +1,9 @@
 import type { Locale } from '@/lib/i18n/types';
-import { formaterPris, formaterPrisEn, pakkeprisMnd, aar1, aar2, priser } from '@/lib/fakta';
+import { formaterPris, formaterPrisEn, priser } from '@/lib/fakta';
+import { getStatusVisning, modulMerke } from './status';
+import type { StatusVisning } from './status';
 
-export type ImplementeringRelated = { title: string; description: string; href: string };
+export type ImplementeringRelated = { title: string; description: string; href: string; status?: StatusVisning };
 
 export type ImplementeringContent = {
   heroTitle: string;
@@ -56,18 +58,21 @@ const no: ImplementeringContent = {
   related: [
     {
       title: 'Omsorgsbolig og Hub',
-      description: 'JodaCare Hub kobler beboer, familie og ansatte gjennom en skjerm i leiligheten.',
+      description: 'JodaCare Hub skal koble beboer, familie og ansatte gjennom en skjerm i leiligheten.',
       href: '/omsorgsbolig',
+      status: getStatusVisning('omsorgsbolig-hub', 'no'),
     },
     {
       title: 'BPA, brukerstyrt personlig assistanse',
       description: 'Verktøy for brukerstyrt personlig assistanse i kommunen.',
       href: '/bpa',
+      status: modulMerke('bpa', 'no'),
     },
     {
       title: 'Familierom for pårørende',
       description: 'Gi familien en felles plass for hverdagen til den de er glad i.',
       href: '/familie',
+      status: getStatusVisning('familierom', 'no'),
     },
   ],
 };
@@ -102,18 +107,21 @@ const en: ImplementeringContent = {
   related: [
     {
       title: 'Care home and Hub',
-      description: 'JodaCare Hub connects resident, family and staff through a screen in the flat.',
+      description: 'JodaCare Hub will connect resident, family and staff through a screen in the flat.',
       href: '/omsorgsbolig',
+      status: getStatusVisning('omsorgsbolig-hub', 'en'),
     },
     {
       title: 'User-controlled personal assistance (BPA)',
       description: 'Tools for user-controlled personal assistance in the municipality.',
       href: '/bpa',
+      status: modulMerke('bpa', 'en'),
     },
     {
-      title: 'Family room for relatives',
+      title: 'Family Room for relatives',
       description: 'Give the family one shared place for the everyday life of the person they love.',
       href: '/familie',
+      status: getStatusVisning('familierom', 'en'),
     },
   ],
 };

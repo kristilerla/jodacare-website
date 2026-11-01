@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   alternates: sprakvarianter('/om', 'en'),
   title: 'About',
   description:
-    'jodacare was founded by Kristil Erla Håland from her own experience coordinating care for her mother who lived with dementia. Read the story behind the platform.',
+    'JodaCare was founded by Kristil Erla Håland from her own experience coordinating care for her mother who lived with dementia. Read the story behind the platform.',
   openGraph: {
-    title: 'About jodacare',
-    description: 'The story of jodacare — from personal experience to a platform used by families across Norway.',
+    title: 'About JodaCare',
+    description: 'The story behind JodaCare, from personal experience to a platform for families and municipalities.',
     locale: 'en_GB',
   },
 };

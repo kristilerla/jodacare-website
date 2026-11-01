@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: sprakvarianter('/historier', 'no'),
   title: 'Historier',
   description:
-    'Historier fra hverdagen rundt de vi er glade i — fra pårørende, ansatte og menneskene i midten.',
+    'Historier fra hverdagen rundt de vi er glade i. De kommer fra pårørende, ansatte og menneskene i midten.',
   openGraph: {
     title: 'Historier fra JodaCare',
     description: 'Historier fra hverdagen rundt de vi er glade i.',

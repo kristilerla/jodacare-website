@@ -1,5 +1,5 @@
 import type { Locale } from '@/lib/i18n/types';
-import { getStatusVisning } from './status';
+import { getStatusVisning, modulMerke } from './status';
 import { formaterPris, formaterPrisEn, aar2, priser } from '@/lib/fakta';
 
 export type KommuneService = {
@@ -10,10 +10,14 @@ export type KommuneService = {
   href: string;
 };
 
+/** En bit av en setning. Biter med href blir lenker. */
+export type KommuneTekstbit = { text: string; href?: string };
+
 export type KommuneContent = {
   heroImageAlt: string;
   heroTitle: string;
   heroSubtitle: string;
+  servicesIntro: KommuneTekstbit[];
   primaryCta: string;
   trustItems: string[];
   servicesTitle: string;
@@ -33,23 +37,23 @@ const servicesNo: KommuneService[] = [
     description:
       'En skjerm i leiligheten kobler beboer, familie og ansatte i én sammenhengende flyt, slik at familien alltid er nær.',
     badge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
-    badgeColor: 'bg-primary/10 text-primary',
+    badgeColor: getStatusVisning('omsorgsbolig-hub', 'no').farge,
     href: '/omsorgsbolig',
   },
   {
     title: 'BPA, brukerstyrt personlig assistanse',
     description:
-      'Samle omsorgsteamet rundt brukeren med Jodabook, sjekklister og full oversikt for koordinator og familie.',
-    badge: getStatusVisning('bpa', 'no').tekst,
-    badgeColor: 'bg-success/10 text-success',
+      `Samle omsorgsteamet rundt brukeren i Boka, med beskjeder og team. Sjekklister: ${modulMerke('sjekklister-og-rutiner', 'no').tekst}. Jodabook: ${modulMerke('jodabook', 'no').tekst}.`,
+    badge: modulMerke('bpa', 'no').tekst,
+    badgeColor: modulMerke('bpa', 'no').farge,
     href: '/bpa',
   },
   {
     title: 'Avlastning',
     description:
       'Kontinuitet for barnet, med de samme rutinene og den samme tryggheten enten det er hjemme eller i avlastningen.',
-    badge: getStatusVisning('bpa', 'no').tekst,
-    badgeColor: 'bg-success/10 text-success',
+    badge: getStatusVisning('avlastning', 'no').tekst,
+    badgeColor: getStatusVisning('avlastning', 'no').farge,
     href: '/avlastning',
   },
   {
@@ -57,15 +61,15 @@ const servicesNo: KommuneService[] = [
     description:
       'JodaCare følger barnet gjennom hver overgang, med informasjonsbarrierer som beskytter hver enkelt rolle og full sporbarhet for kommunen.',
     badge: getStatusVisning('barnevern', 'no').tekst,
-    badgeColor: 'bg-secondary-light text-text-muted',
+    badgeColor: getStatusVisning('barnevern', 'no').farge,
     href: '/barnevern',
   },
   {
     title: 'JodaVisit, videobesøk',
     description:
       'Trygge videobesøk erstatter unødvendige fysiske besøk, slik at eldre kan bo hjemme lenger med familien nær.',
-    badge: getStatusVisning('familierom', 'no').tekst,
-    badgeColor: 'bg-secondary-light text-text-muted',
+    badge: getStatusVisning('jodavisit', 'no').tekst,
+    badgeColor: getStatusVisning('jodavisit', 'no').farge,
     href: '/jodavisit',
   },
   {
@@ -83,24 +87,24 @@ const servicesEn: KommuneService[] = [
     title: 'Care home / Hub',
     description:
       'A screen in the flat that connects resident, family and staff in one coherent flow. Family stays close.',
-    badge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
-    badgeColor: 'bg-primary/10 text-primary',
+    badge: getStatusVisning('omsorgsbolig-hub', 'en').tekst,
+    badgeColor: getStatusVisning('omsorgsbolig-hub', 'en').farge,
     href: '/omsorgsbolig',
   },
   {
     title: 'User-controlled personal assistance (BPA)',
     description:
-      'Bring the care team around the user with Jodabook, checklists and full overview for coordinator and family.',
-    badge: getStatusVisning('bpa', 'en').tekst,
-    badgeColor: 'bg-success/10 text-success',
+      `Bring the care team together around the user in Boka, with notices and a team. Checklists: ${modulMerke('sjekklister-og-rutiner', 'en').tekst}. Jodabook: ${modulMerke('jodabook', 'en').tekst}.`,
+    badge: modulMerke('bpa', 'en').tekst,
+    badgeColor: modulMerke('bpa', 'en').farge,
     href: '/bpa',
   },
   {
     title: 'Respite care',
     description:
       'Continuity for the child, with the same routines and the same sense of safety whether at home or in respite.',
-    badge: getStatusVisning('bpa', 'en').tekst,
-    badgeColor: 'bg-success/10 text-success',
+    badge: getStatusVisning('avlastning', 'en').tekst,
+    badgeColor: getStatusVisning('avlastning', 'en').farge,
     href: '/avlastning',
   },
   {
@@ -108,15 +112,15 @@ const servicesEn: KommuneService[] = [
     description:
       'Contact visits documented safely with information barriers that protect everyone and full traceability.',
     badge: getStatusVisning('barnevern', 'en').tekst,
-    badgeColor: 'bg-secondary-light text-text-muted',
+    badgeColor: getStatusVisning('barnevern', 'en').farge,
     href: '/barnevern',
   },
   {
     title: 'JodaVisit, video visits',
     description:
       'Replace unnecessary physical visits with secure video visits. People stay at home longer with family near.',
-    badge: getStatusVisning('familierom', 'en').tekst,
-    badgeColor: 'bg-secondary-light text-text-muted',
+    badge: getStatusVisning('jodavisit', 'en').tekst,
+    badgeColor: getStatusVisning('jodavisit', 'en').farge,
     href: '/jodavisit',
   },
   {
@@ -133,11 +137,23 @@ const no: KommuneContent = {
   heroImageAlt: 'Ung mann står i en åker under blå himmel',
   heroTitle: 'JodaCare for kommuner',
   heroSubtitle:
-    'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie møtes i én plattform med koordinert omsorg. Velg tjenesten som passer for din kommune.',
+    'JodaCare samler tjenestene rundt tjenestemottakeren i én plattform. Velg tjenesten som passer for din kommune.',
+  servicesIntro: [
+    { text: 'Omsorgsboliger', href: '/omsorgsbolig' },
+    { text: ', ' },
+    { text: 'BPA', href: '/bpa' },
+    { text: ', ' },
+    { text: 'barnevern', href: '/barnevern' },
+    { text: ', ' },
+    { text: 'avlastning', href: '/avlastning' },
+    { text: ' og ' },
+    { text: 'hjemmesykepleie', href: '/jodavisit' },
+    { text: ' møtes i én plattform med koordinert omsorg.' },
+  ],
   primaryCta: 'Kontakt oss',
   trustItems: [
     'Norske kommuner siden 2016',
-    'Innlogging med ID-porten',
+    'Innlogging med ID-porten eller jobbkonto',
     'GDPR · data i Europa',
   ],
   servicesTitle: 'Alle tjenester',
@@ -157,11 +173,23 @@ const en: KommuneContent = {
   heroImageAlt: 'Young man standing in a field under a blue sky',
   heroTitle: 'JodaCare for municipalities',
   heroSubtitle:
-    'Residential care, personal assistance, child welfare, respite and home nursing in one platform with coordinated care. Choose the service that fits your municipality.',
+    'JodaCare brings the services around the service recipient together in one platform. Choose the service that fits your municipality.',
+  servicesIntro: [
+    { text: 'Residential care', href: '/omsorgsbolig' },
+    { text: ', ' },
+    { text: 'personal assistance', href: '/bpa' },
+    { text: ', ' },
+    { text: 'child welfare', href: '/barnevern' },
+    { text: ', ' },
+    { text: 'respite', href: '/avlastning' },
+    { text: ' and ' },
+    { text: 'home nursing', href: '/jodavisit' },
+    { text: ' come together in one platform with coordinated care.' },
+  ],
   primaryCta: 'Contact us',
   trustItems: [
     'Norwegian municipalities since 2016',
-    'Sign-in with ID-porten',
+    'Sign-in with ID-porten or work account',
     'GDPR · data in Europe',
   ],
   servicesTitle: 'All services',

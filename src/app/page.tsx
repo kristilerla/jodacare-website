@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { HomePageView } from '@/components/pages/HomePageView';
 import { jsonLd, plattformen, sprakvarianter } from '@/lib/seo';
 
-// Tittel og beskrivelse arves fra root-layouten — den er skrevet for forsiden.
+// Tittel og beskrivelse arves fra root-layouten. Den er skrevet for forsiden.
 // Her settes bare kanonisk adresse og språkvarianter.
 export const metadata: Metadata = {
   alternates: sprakvarianter('/', 'no'),

@@ -4,12 +4,12 @@ import { HomePageView } from '@/components/pages/HomePageView';
 
 export const metadata: Metadata = {
   alternates: sprakvarianter('/', 'en'),
-  title: 'jodacare — Secure communication around vulnerable people',
+  title: { absolute: 'JodaCare: Secure communication around vulnerable people' },
   description:
-    'jodacare is a secure digital platform that supports dignity and peace of mind through communication between relatives, health professionals and the person receiving care.',
+    'JodaCare is a secure digital platform that supports dignity and peace of mind through communication between relatives, health professionals and the person receiving care.',
   openGraph: {
     locale: 'en_GB',
-    title: 'jodacare — Secure communication around vulnerable people',
+    title: 'JodaCare: Secure communication around vulnerable people',
     description:
       'A secure digital platform for communication between relatives, health professionals and the person receiving care.',
   },

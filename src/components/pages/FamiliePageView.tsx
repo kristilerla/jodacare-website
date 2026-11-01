@@ -1,6 +1,7 @@
 import { Hero, Pricing, CTA } from '@/components/sections';
 import Image from 'next/image';
 import { Container, Card, CardTitle, CardContent } from '@/components/ui';
+import { StatusMerke } from '@/components/ui/StatusMerke';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
   PhotoIcon,
@@ -15,13 +16,8 @@ import { getFamilieContent } from '@/i18n/messages/familie-page';
 import { withLocale } from '@/lib/i18n/paths';
 import type { Locale } from '@/lib/i18n/types';
 
-const featureIcons = [
-  PhotoIcon,
-  CalendarDaysIcon,
-  SparklesIcon,
-  UsersIcon,
-  HeartIcon,
-] as const;
+// Boka, kalender, hele familien, kommunens helseteam.
+const featureIcons = [PhotoIcon, CalendarDaysIcon, UsersIcon, HeartIcon] as const;
 
 const scenarioIcons = [HeartIcon, SparklesIcon, MapPinIcon, ChatBubbleLeftRightIcon] as const;
 
@@ -104,6 +100,7 @@ export function FamiliePageView({ locale }: Props) {
                       </div>
                       <div>
                         <CardTitle className="text-xl">{feature.title}</CardTitle>
+                        <StatusMerke merke={feature.status} className="mt-2" />
                         <CardContent className="mt-2">{feature.description}</CardContent>
                       </div>
                     </div>

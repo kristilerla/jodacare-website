@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Hero, CTA } from '@/components/sections';
 import { Container, Card, CardTitle, CardContent } from '@/components/ui';
+import { StatusMerke } from '@/components/ui/StatusMerke';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import { HomeModernIcon, HeartIcon, UsersIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { getImplementeringContent } from '@/i18n/messages/implementering-page';
@@ -110,6 +111,7 @@ export function ImplementeringPageView({ locale }: Props) {
                         <Icon className="w-6 h-6 text-primary" aria-hidden="true" />
                       </div>
                       <CardTitle className="text-lg">{page.title}</CardTitle>
+                      <StatusMerke merke={page.status} className="mt-2" />
                       <CardContent className="mt-2 text-sm">{page.description}</CardContent>
                       <span className="inline-flex items-center gap-1 mt-4 text-primary text-sm font-medium group-hover:gap-2 transition-all">
                         {d.readMore} <ArrowRightIcon className="w-4 h-4" />

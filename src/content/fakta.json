@@ -1,132 +1,205 @@
 {
   "_generert": "GENERERT FIL. Ikke rediger for hånd. Kjør npm run bygg i jodacare-kunnskap.",
-  "kilde_commit": "2409d94",
-  "bygget": "2026-09-20",
-  "sha256": "11402924f01524f41c3ef496a172bf21028cdf271d62b33a0f93c493e9768ff1",
+  "kilde_commit": "23aad6f",
+  "bygget": "2026-11-01",
+  "sha256": "fbb570f8b8e81ee4123caa153ed4ca7690329ceed95fe370984aeaf4c3dfb51c",
   "fakta": {
     "innlogging": {
       "bekreftet_av": "Kristil Erla Håland",
-      "bekreftet_dato": "2026-09-20",
-      "metoder": {
-        "id_porten": {
-          "navn": "ID-porten",
-          "omfatter": [
-            "BankID",
-            "Buypass",
-            "Commfides",
-            "MinID"
-          ],
-          "plattform": [
-            "web",
-            "mobil"
-          ],
-          "gjelder_for": [
-            "hp",
-            "parorende",
-            "pasient",
-            "admin"
-          ],
-          "hovedvei": true,
-          "merknad": "Hovedveien inn, for både pårørende og helsepersonell. Øverste valg på innloggingssiden.\n"
+      "bekreftet_dato": "2026-11-01",
+      "ny": {
+        "versjon": "ny",
+        "kilde": {
+          "repo": "jodacare/jodacare2-backend",
+          "commit": "f44e90c",
+          "fil": "docs/backend-api.md",
+          "del": "2. Autentisering"
         },
-        "helseid": {
-          "navn": "HelseID",
-          "plattform": [
-            "web"
-          ],
-          "gjelder_for": [
-            "hp"
-          ],
-          "merknad_bruk": "Kommer i tillegg til ID-porten, ikke i stedet for.",
-          "status_i_prod": "ubekreftet",
-          "merknad": "Knappen vises alltid og har ingen feature flag. Den avhenger av at HELSEID_CLIENT_ID, HELSEID_ISSUER, HELSEID_PRIVATE_KEY og HELSEID_REDIRECT_URI er satt. Lokal .env.local peker på NHNs testmiljø, mens docs/auth/login-methods-2026-05.md fører den som aktiv i produksjon. KAI omtaler ikke HelseID før dette er avklart.\n"
+        "metoder": {
+          "id_porten": {
+            "navn": "ID-porten",
+            "omfatter": [
+              "BankID",
+              "Buypass",
+              "Commfides",
+              "MinID"
+            ],
+            "plattform": [
+              "web"
+            ],
+            "status": "tilgjengelig",
+            "gjelder_for": [
+              "parorende",
+              "direkte_relasjon",
+              "hp",
+              "bpa"
+            ],
+            "merknad": "Krever sikkerhetsnivå betydelig eller høyt. En person som ikke finnes i JodaCare fra før, blir bare opprettet når hen logger inn fra en åpen invitasjon. Innloggingen gir ingen tilgang alene. Tilgangen kommer fra teammedlemskapet.\n"
+          },
+          "entra_id": {
+            "navn": "Jobbkonto (Entra ID)",
+            "plattform": [
+              "web"
+            ],
+            "status": "tilgjengelig",
+            "gjelder_for": [
+              "hp",
+              "bpa",
+              "admin"
+            ],
+            "merknad": "For ansatte som logger inn med jobbkontoen sin fra Microsoft. Krever at organisasjonens e-postdomene er aktivert i JodaCare. Etter første innlogging er personen knyttet til jobbkontoen, og e-postadressen leses ikke på nytt.\n"
+          },
+          "helseid": {
+            "navn": "HelseID",
+            "plattform": [
+              "web"
+            ],
+            "status": "kommer",
+            "kommer_nar": "2027",
+            "gjelder_for": [
+              "hp"
+            ]
+          },
+          "vipps": {
+            "navn": "Vipps",
+            "status": "kommer",
+            "gjelder_for": [
+              "parorende"
+            ],
+            "kun_for": "Familierom.",
+            "merknad": "Vipps hører til Familierom. Det brukes ikke for innlogging i JodaCare for tjenestesteder."
+          }
         },
-        "vipps": {
-          "navn": "Vipps",
-          "plattform": [
-            "web",
-            "mobil"
-          ],
-          "gjelder_for": [
-            "parorende"
-          ],
-          "kun_for": "Familier som ikke samhandler med helsepersonell. Er det et tjenestested inne i bildet, brukes ID-porten.\n"
-        },
-        "epost_passord": {
-          "navn": "E-post og passord",
-          "plattform": [
-            "web",
-            "mobil"
-          ],
-          "gjelder_for": [
-            "hp",
-            "parorende",
-            "pasient",
-            "admin"
-          ],
-          "merknad": "Egen lenke nederst på innloggingssiden. Glemt passord ligger i samme skjema."
-        },
-        "biometri": {
-          "navn": "Biometri",
-          "omfatter": [
-            "Face ID",
-            "fingeravtrykk"
-          ],
-          "plattform": [
-            "mobil",
-            "jodabook"
-          ],
-          "gjelder_for": [
-            "hp",
-            "parorende",
-            "pasient"
-          ],
-          "forutsetning": "Kan slås på etter første innlogging."
-        },
-        "jodabook_qr": {
-          "navn": "QR-aktivering av Jodabook",
-          "plattform": [
-            "jodabook"
-          ],
-          "gjelder_for": [
-            "pasient"
-          ],
-          "gyldighet_minutter": 15,
-          "kan_lages_av": [
-            "ansatt",
-            "parorende",
-            "teamadmin",
-            "avdelingsleder",
-            "superadmin"
-          ],
-          "merknad": "Etter skanning velger brukeren en PIN-kode på fire siffer.",
-          "kilde_kode": "apps/web/src/app/api/admin/jodabook-activation/[patientId]/route.ts"
-        },
-        "jodabook_pin": {
-          "navn": "PIN-kode",
-          "siffer": 4,
-          "plattform": [
-            "jodabook"
-          ],
-          "gjelder_for": [
-            "pasient"
-          ]
-        }
+        "ikke_omtalt": [
+          {
+            "metode": "Demo-innlogging",
+            "forklaring": "Finnes i backend for demo og test, og er av som standard. Skal ikke stå på i nytt prod. KAI og nettsiden omtaler den ikke.\n"
+          }
+        ]
       },
-      "droppet": [
-        {
-          "metode": "Engangskode på e-post",
-          "besluttet": "2026-09-20",
-          "av": "produkteier",
-          "forklaring": "Skal ikke være en del av innloggingsmodellen. Endepunktet /api/auth/otp/send finnes fortsatt i 2.0 og krever role = relative og idporten_verified. Det skal ikke omtales av KAI eller på nettsiden.\n"
-        }
-      ],
-      "ikke_naabar": [
-        {
-          "metode": "PIN-innlogging på web",
-          "forklaring": "login/page.tsx har en modus for PIN, men ingen knapp setter den. Den nås ikke fra grensesnittet.\n"
-        }
-      ]
+      "2.0": {
+        "versjon": "2.0",
+        "metoder": {
+          "id_porten": {
+            "navn": "ID-porten",
+            "omfatter": [
+              "BankID",
+              "Buypass",
+              "Commfides",
+              "MinID"
+            ],
+            "plattform": [
+              "web",
+              "mobil"
+            ],
+            "gjelder_for": [
+              "hp",
+              "parorende",
+              "pasient",
+              "admin"
+            ],
+            "hovedvei": true,
+            "merknad": "Hovedveien inn, for både pårørende og helsepersonell. Øverste valg på innloggingssiden.\n"
+          },
+          "helseid": {
+            "navn": "HelseID",
+            "plattform": [
+              "web"
+            ],
+            "gjelder_for": [
+              "hp"
+            ],
+            "merknad_bruk": "Kommer i tillegg til ID-porten, ikke i stedet for.",
+            "status_i_prod": "ubekreftet",
+            "merknad": "Knappen vises alltid og har ingen feature flag. Den avhenger av at HELSEID_CLIENT_ID, HELSEID_ISSUER, HELSEID_PRIVATE_KEY og HELSEID_REDIRECT_URI er satt. Lokal .env.local peker på NHNs testmiljø, mens docs/auth/login-methods-2026-05.md fører den som aktiv i produksjon. KAI omtaler ikke HelseID før dette er avklart.\n"
+          },
+          "vipps": {
+            "navn": "Vipps",
+            "plattform": [
+              "web",
+              "mobil"
+            ],
+            "gjelder_for": [
+              "parorende"
+            ],
+            "kun_for": "Familier som ikke samhandler med helsepersonell. Er det et tjenestested inne i bildet, brukes ID-porten.\n"
+          },
+          "epost_passord": {
+            "navn": "E-post og passord",
+            "plattform": [
+              "web",
+              "mobil"
+            ],
+            "gjelder_for": [
+              "hp",
+              "parorende",
+              "pasient",
+              "admin"
+            ],
+            "merknad": "Egen lenke nederst på innloggingssiden. Glemt passord ligger i samme skjema."
+          },
+          "biometri": {
+            "navn": "Biometri",
+            "omfatter": [
+              "Face ID",
+              "fingeravtrykk"
+            ],
+            "plattform": [
+              "mobil",
+              "jodabook"
+            ],
+            "gjelder_for": [
+              "hp",
+              "parorende",
+              "pasient"
+            ],
+            "forutsetning": "Kan slås på etter første innlogging."
+          },
+          "jodabook_qr": {
+            "navn": "QR-aktivering av Jodabook",
+            "plattform": [
+              "jodabook"
+            ],
+            "gjelder_for": [
+              "pasient"
+            ],
+            "gyldighet_minutter": 15,
+            "kan_lages_av": [
+              "ansatt",
+              "parorende",
+              "teamadmin",
+              "avdelingsleder",
+              "superadmin"
+            ],
+            "merknad": "Etter skanning velger brukeren en PIN-kode på fire siffer.",
+            "kilde_kode": "apps/web/src/app/api/admin/jodabook-activation/[patientId]/route.ts"
+          },
+          "jodabook_pin": {
+            "navn": "PIN-kode",
+            "siffer": 4,
+            "plattform": [
+              "jodabook"
+            ],
+            "gjelder_for": [
+              "pasient"
+            ]
+          }
+        },
+        "droppet": [
+          {
+            "metode": "Engangskode på e-post",
+            "besluttet": "2026-09-20",
+            "av": "produkteier",
+            "forklaring": "Skal ikke være en del av innloggingsmodellen. Endepunktet /api/auth/otp/send finnes fortsatt i 2.0 og krever role = relative og idporten_verified. Det skal ikke omtales av KAI eller på nettsiden.\n"
+          }
+        ],
+        "ikke_naabar": [
+          {
+            "metode": "PIN-innlogging på web",
+            "forklaring": "login/page.tsx har en modus for PIN, men ingen knapp setter den. Den nås ikke fra grensesnittet.\n"
+          }
+        ]
+      }
     },
     "kontakt": {
       "bekreftet_av": "Kristil Erla Håland",
@@ -138,12 +211,28 @@
     },
     "moduler": {
       "bekreftet_av": "Kristil Erla Håland",
-      "bekreftet_dato": "2026-09-20",
+      "bekreftet_dato": "2026-11-01",
+      "kilde_ny": {
+        "lest": "2026-11-01",
+        "backend": {
+          "repo": "jodacare/jodacare2-backend",
+          "gren": "main",
+          "commit": "f44e90c"
+        },
+        "web": {
+          "repo": "jodacare/jodacare2-web",
+          "gren": "main",
+          "commit": "db16a1e"
+        }
+      },
       "moduler": [
         {
           "id": "feed",
-          "navn": "Feed",
-          "beskrivelse": "Startsiden i nye JodaCare. Viser Bøker og beskjeder brukeren har tilgang til.",
+          "navn": "Startsiden",
+          "vises_i_lisenstekst": true,
+          "lisenstekst_rekkefolge": 1,
+          "navn_i_lisenstekst": "en felles feed",
+          "beskrivelse": "Det brukeren ser først etter innlogging. En felles feed med innlegg fra Boka og beskjeder brukeren har tilgang til, og senere nytt fra tjenestestedet.\n",
           "inngar_i": "grunnmodul",
           "handhevet_2_0": false,
           "status": {
@@ -157,7 +246,10 @@
         {
           "id": "beskjeder",
           "navn": "Beskjeder",
-          "beskrivelse": "En beskjed går til et team og handler om tjenestemottakeren. Saklig informasjon teamet trenger, ofte av det mer alvorlige slaget.\n",
+          "vises_i_lisenstekst": true,
+          "lisenstekst_rekkefolge": 3,
+          "navn_i_lisenstekst": "beskjeder",
+          "beskrivelse": "En beskjed går til et team og handler om tjenestemottakeren. Saklig informasjon teamet trenger, ofte av det mer alvorlige slaget. Beskjeden er synlig for teamet den er skrevet i, og for navet når den er delt.\n",
           "inngar_i": "grunnmodul",
           "handhevet_2_0": false,
           "status": {
@@ -171,7 +263,7 @@
         {
           "id": "innlogging",
           "navn": "Innlogging",
-          "beskrivelse": "ID-porten som hovedvei, HelseID for helsepersonell, Vipps for familier uten tjenestested.",
+          "beskrivelse": "I nye JodaCare logger man inn med ID-porten eller jobbkonto. HelseID kommer i 2027. Se fakta/innlogging.yaml for hver versjon.\n",
           "inngar_i": "grunnmodul",
           "handhevet_2_0": false,
           "status": {
@@ -185,7 +277,10 @@
         {
           "id": "boka",
           "navn": "Boka",
-          "beskrivelse": "Felles informasjonsflyt rundt én tjenestemottaker, med innlegg, bilder og kommentarer.",
+          "vises_i_lisenstekst": true,
+          "lisenstekst_rekkefolge": 2,
+          "navn_i_lisenstekst": "Bøker",
+          "beskrivelse": "Felles informasjonsflyt rundt én tjenestemottaker, med innlegg, kommentarer, bilder og video. Video i Boka er filer som legges ved et innlegg. Videosamtale er en egen modul.\n",
           "inngar_i": "grunnmodul",
           "handhevet_2_0": false,
           "status": {
@@ -199,6 +294,9 @@
         {
           "id": "kalender",
           "navn": "Kalender",
+          "vises_i_lisenstekst": true,
+          "lisenstekst_rekkefolge": 5,
+          "navn_i_lisenstekst": "kalender",
           "beskrivelse": "Avtaler, aktiviteter og hendelser. Dag, uke og måned på desktop. Dag og agenda på mobil.",
           "inngar_i": "grunnmodul",
           "handhevet_2_0": false,
@@ -216,7 +314,7 @@
           "id": "meldinger",
           "navn": "Meldinger",
           "beskrivelse": "Direkte meldinger mellom personer, i et panel nederst på skjermen.",
-          "inngar_i": "grunnmodul",
+          "inngar_i": null,
           "handhevet_2_0": false,
           "status": {
             "v1": "tilgjengelig",
@@ -230,6 +328,9 @@
         {
           "id": "tilgang-og-roller",
           "navn": "Rollebasert tilgang",
+          "vises_i_lisenstekst": true,
+          "lisenstekst_rekkefolge": 4,
+          "navn_i_lisenstekst": "rollebasert tilgang",
           "beskrivelse": "Hvem som ser hva, styrt av rolle, team og tjenestested.",
           "inngar_i": "grunnmodul",
           "handhevet_2_0": true,
@@ -239,6 +340,76 @@
             "ny": "tilgjengelig"
           },
           "svar_nar_utilgjengelig": "Tilgangsstyring følger alltid med. Ser du ikke noe du venter å se, ta kontakt med tjenestestedet.",
+          "svar_status": "utkast"
+        },
+        {
+          "id": "team",
+          "navn": "Team rundt tjenestemottakeren",
+          "beskrivelse": "Familieteam, BPA-team og Arbeidsplass Team som jobber med én tjenestemottaker. Medlemmene av teamene er med i teamet rundt henne, og det er medlemskapet som gir tilgang til Boka.\n",
+          "inngar_i": "grunnmodul",
+          "handhevet_2_0": false,
+          "status": {
+            "v1": "tilgjengelig",
+            "2.0": "tilgjengelig",
+            "ny": "tilgjengelig"
+          },
+          "svar_nar_utilgjengelig": "Ta kontakt med tjenestestedet ditt hvis du mangler et team.",
+          "svar_status": "utkast"
+        },
+        {
+          "id": "invitasjon",
+          "navn": "Invitasjon",
+          "beskrivelse": "Forvalteren av et team inviterer nye medlemmer. Invitasjonen kommer på e-post eller SMS. Den inviterte logger inn med ID-porten eller jobbkonto. Lenken gjelder i sju dager.\n",
+          "inngar_i": "grunnmodul",
+          "handhevet_2_0": false,
+          "status": {
+            "v1": "tilgjengelig",
+            "2.0": "tilgjengelig",
+            "ny": "tilgjengelig"
+          },
+          "svar_nar_utilgjengelig": "Har lenken gått ut, kan den som inviterte deg sende en ny.",
+          "svar_status": "utkast"
+        },
+        {
+          "id": "profil",
+          "navn": "Profil",
+          "beskrivelse": "Egen profil for alle brukere, med navn, bilde og kontaktinformasjon.",
+          "inngar_i": null,
+          "handhevet_2_0": false,
+          "status": {
+            "v1": "tilgjengelig",
+            "2.0": "tilgjengelig",
+            "ny": "kommer"
+          },
+          "svar_nar_utilgjengelig": "Profil finnes ikke i JodaCare ennå.",
+          "svar_status": "utkast"
+        },
+        {
+          "id": "varsler",
+          "navn": "Varsler",
+          "beskrivelse": "Varsel til brukeren når noe nytt skjer, i appen og på e-post.",
+          "inngar_i": null,
+          "handhevet_2_0": false,
+          "status": {
+            "v1": "finnes_ikke",
+            "2.0": "tilgjengelig",
+            "ny": "kommer"
+          },
+          "svar_nar_utilgjengelig": "Varsler finnes ikke i JodaCare ennå. Startsiden viser det som er nytt.",
+          "svar_status": "utkast"
+        },
+        {
+          "id": "kai",
+          "navn": "KAI",
+          "beskrivelse": "KI-assistenten i JodaCare, som svarer på spørsmål om hvordan JodaCare brukes.",
+          "inngar_i": null,
+          "handhevet_2_0": false,
+          "status": {
+            "v1": "finnes_ikke",
+            "2.0": "tilgjengelig",
+            "ny": "kommer"
+          },
+          "svar_nar_utilgjengelig": "KAI finnes ikke i JodaCare ennå.",
           "svar_status": "utkast"
         },
         {
@@ -283,6 +454,7 @@
             "2.0": "tilgjengelig",
             "ny": "kommer"
           },
+          "kvartal": "Q4 2026",
           "svar_nar_utilgjengelig": "Hendelseslogg er ikke slått på hos dere. Tjenestestedet ditt kan bestille det.",
           "svar_status": "utkast"
         },
@@ -297,6 +469,7 @@
             "2.0": "tilgjengelig",
             "ny": "kommer"
           },
+          "kvartal": "Q4 2026",
           "svar_nar_utilgjengelig": "Sjekklister er ikke slått på hos dere. Tjenestestedet ditt kan bestille det.",
           "svar_status": "utkast"
         },
@@ -311,6 +484,7 @@
             "2.0": "tilgjengelig",
             "ny": "kommer"
           },
+          "kvartal": "Q2 2027",
           "svar_nar_utilgjengelig": "Livshistorie er ikke slått på hos dere. Tjenestestedet ditt kan bestille det.",
           "svar_status": "utkast"
         },
@@ -325,6 +499,7 @@
             "2.0": "beta",
             "ny": "kommer"
           },
+          "kvartal": "Q1 2027",
           "svar_nar_utilgjengelig": "Bekymringsmelding er ikke tilgjengelig for deg. Ta kontakt med tjenestestedet ditt.",
           "svar_status": "utkast"
         },
@@ -339,6 +514,7 @@
             "2.0": "tilgjengelig",
             "ny": "kommer"
           },
+          "kvartal": "Q1 2027",
           "svar_nar_utilgjengelig": "Videosamtale er ikke slått på hos dere. Tjenestestedet ditt kan bestille det.",
           "svar_status": "utkast"
         },
@@ -353,6 +529,7 @@
             "2.0": "tilgjengelig",
             "ny": "kommer"
           },
+          "kvartal": "Q1 2027",
           "svar_nar_utilgjengelig": "Jodabook er ikke slått på hos dere. Tjenestestedet ditt kan bestille det.",
           "svar_status": "utkast"
         },
@@ -367,6 +544,7 @@
             "2.0": "kommer",
             "ny": "kommer"
           },
+          "kvartal": "2027",
           "svar_nar_utilgjengelig": "Familierom er ikke tilgjengelig her. Se jodacare.no for hvordan familier kommer i gang.",
           "svar_status": "utkast"
         },
@@ -381,7 +559,24 @@
             "2.0": "beta",
             "ny": "kommer"
           },
+          "kvartal": "Pilot 2027",
           "svar_nar_utilgjengelig": "BPA er ikke slått på hos dere. Ta kontakt med tjenestestedet ditt.",
+          "svar_status": "utkast"
+        },
+        {
+          "id": "jodavisit",
+          "navn": "JodaVisit",
+          "beskrivelse": "Videobesøk for hjemmeboende, som erstatter kjøreturer.",
+          "inngar_i": "tilleggsmodul",
+          "egen_pris": true,
+          "handhevet_2_0": false,
+          "status": {
+            "v1": "finnes_ikke",
+            "2.0": "finnes_ikke",
+            "ny": "kommer"
+          },
+          "kvartal": "2027",
+          "svar_nar_utilgjengelig": "JodaVisit finnes ikke i JodaCare ennå.",
           "svar_status": "utkast"
         },
         {
@@ -395,6 +590,7 @@
             "2.0": "beta",
             "ny": "kommer"
           },
+          "kvartal": "Pilot 2027",
           "svar_nar_utilgjengelig": "Hub er ikke slått på hos dere. Ta kontakt med tjenestestedet ditt.",
           "svar_status": "utkast"
         },
@@ -409,6 +605,7 @@
             "2.0": "beta",
             "ny": "kommer"
           },
+          "kvartal": "Q2 2027",
           "svar_nar_utilgjengelig": "Barnevernmodulen er ikke slått på hos dere. Ta kontakt med tjenestestedet ditt.",
           "svar_status": "utkast"
         },
@@ -518,639 +715,823 @@
       "oppsigelse_maneder": 3
     },
     "roller": {
-      "bekreftet_av": "generert fra rolesConfig.ts",
-      "bekreftet_dato": "2026-09-20",
+      "bekreftet_av": "Kristil Erla Håland",
+      "bekreftet_dato": "2026-11-01",
       "grupper": {
         "hp": {
           "navn": "Helsepersonell",
-          "tekniske_roller": [
-            "nurse",
-            "doctor",
-            "healthcare_staff",
-            "unskilled",
-            "welfare_coordinator",
-            "video_host",
-            "implementation_manager"
-          ]
+          "ny": {
+            "i_bruk": true,
+            "team": [
+              {
+                "type": "ARBEIDSPLASS",
+                "roller": [
+                  "healthcare_staff"
+                ]
+              }
+            ],
+            "organisasjon": [
+              "ANSATT"
+            ],
+            "beskrivelse": "Ansatt i en organisasjon og valgt inn i et Arbeidsplass Team som jobber med tjenestemottakeren. Å være ansatt gir ingen tilgang alene."
+          },
+          "2.0": {
+            "tekniske_roller": [
+              "nurse",
+              "doctor",
+              "healthcare_staff",
+              "unskilled",
+              "welfare_coordinator",
+              "video_host",
+              "implementation_manager"
+            ]
+          }
         },
         "parorende": {
           "navn": "Pårørende",
-          "tekniske_roller": [
-            "relative",
-            "foster_parent",
-            "biological_parent",
-            "support_person"
-          ]
+          "ny": {
+            "i_bruk": true,
+            "team": [
+              {
+                "type": "FAMILY",
+                "roller": [
+                  "relative"
+                ],
+                "relasjonsnivaa": [
+                  "NAERMESTE",
+                  "OVRIG_NETTVERK"
+                ]
+              }
+            ],
+            "beskrivelse": "Medlem av familieteamet til tjenestemottakeren, som nærmeste pårørende eller øvrig nettverk.",
+            "merknad": "Hvem i familien som ser beskjeder, er til avklaring med techlead. Se modell_ny.beskjeder. KAI skal ikke love noe om det."
+          },
+          "2.0": {
+            "tekniske_roller": [
+              "relative",
+              "foster_parent",
+              "biological_parent",
+              "support_person"
+            ]
+          }
         },
         "pasient": {
           "navn": "Tjenestemottaker",
-          "tekniske_roller": [
-            "patient"
-          ]
+          "ny": {
+            "i_bruk": false,
+            "merknad": "Ikke i bruk ennå. Tjenestemottakeren har ikke egen innlogging i første versjon.",
+            "navet": {
+              "kilde": "TJENESTEMOTTAKER",
+              "relasjon": "TJENESTEMOTTAKER"
+            },
+            "beskrivelse": "Tjenestemottakerens eget medlemskap i navet. Modellen har det, men det tas ikke i bruk ved lansering."
+          },
+          "2.0": {
+            "tekniske_roller": [
+              "patient"
+            ]
+          }
         },
         "admin": {
           "navn": "Administrator",
-          "tekniske_roller": [
-            "org_admin",
-            "department_admin",
-            "department_manager",
-            "superadmin",
-            "caseworker"
-          ]
+          "ny": {
+            "i_bruk": true,
+            "organisasjon": [
+              "ORG_ADMIN"
+            ],
+            "beskrivelse": "Organisasjonsadmin. Styrer tjenestesteder, ansatte og team i organisasjonen. Har ikke innsyn i Boka uten å være medlem av navet."
+          },
+          "2.0": {
+            "tekniske_roller": [
+              "org_admin",
+              "department_admin",
+              "department_manager",
+              "superadmin",
+              "caseworker"
+            ]
+          }
         },
         "bpa": {
           "navn": "BPA",
-          "tekniske_roller": [
-            "work_leader",
-            "assistant"
-          ]
+          "ny": {
+            "i_bruk": true,
+            "team": [
+              {
+                "type": "BPA",
+                "roller": [
+                  "work_leader",
+                  "assistant"
+                ]
+              }
+            ],
+            "beskrivelse": "Medlem av et BPA-team som arbeidsleder eller assistent."
+          },
+          "2.0": {
+            "tekniske_roller": [
+              "work_leader",
+              "assistant"
+            ]
+          }
+        },
+        "direkte_relasjon": {
+          "navn": "Direkte relasjon",
+          "ny": {
+            "i_bruk": true,
+            "navet": {
+              "kilde": "INDIVIDUELL_INVITASJON"
+            },
+            "eksempler": [
+              "lege",
+              "koordinator",
+              "støttekontakt"
+            ],
+            "beskrivelse": "Invitert direkte inn i navet, uten å være med i et fagteam. Ser Boka.",
+            "merknad": "I backend i dag ser gruppen også beskjeder som er delt til navet. Produkteier har besluttet at direkte relasjoner bare ser Boka (24. september 2026). Det er til avklaring med techlead. Se modell_ny.beskjeder."
+          },
+          "2.0": {
+            "tekniske_roller": []
+          }
         }
       },
-      "tekniske": {
-        "patient": {
-          "gruppe": "pasient",
-          "landingsside": "/patient",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/patient"
-            },
-            {
-              "etikett": "Grupper",
-              "sti": "/groups"
-            },
-            {
-              "etikett": "Hjemme hos meg",
-              "sti": "/hub"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Rundt meg",
-              "sti": "/patient/friends"
-            },
-            {
-              "etikett": "Mine behov",
-              "sti": "/patient/needs"
-            },
-            {
-              "etikett": "Dokumenter",
-              "sti": "/documents"
-            },
-            {
-              "etikett": "Galleri",
-              "sti": "/gallery"
-            },
-            {
-              "etikett": "Livshistorie",
-              "sti": "/life-history"
-            },
-            {
-              "etikett": "Videobesøk",
-              "sti": "/patient/video-appointments"
-            },
-            {
-              "etikett": "Arrangementer",
-              "sti": "/community-events"
-            }
+      "modell_ny": {
+        "versjon": "ny",
+        "kilde": {
+          "repo": "jodacare/jodacare2-backend",
+          "commit": "f44e90c",
+          "filer": [
+            "docs/domainmodel/forretningsregler.md",
+            "src/main/resources/db/migration/V1 til V24"
           ]
         },
-        "relative": {
-          "gruppe": "parorende",
-          "landingsside": "/team-feed",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Grupper",
-              "sti": "/groups"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Galleri",
-              "sti": "/gallery"
-            },
-            {
-              "etikett": "Livshistorie",
-              "sti": "/life-history"
-            },
-            {
-              "etikett": "Bekymringsmelding",
-              "sti": "/concern-reports"
-            },
-            {
-              "etikett": "Rundt oss",
-              "sti": "/relative"
-            },
-            {
-              "etikett": "Arrangementer",
-              "sti": "/community-events"
-            }
+        "prinsipp": "Teammedlemskap avgjør tilgang. Rollen gjør det ikke. Tilgang avgjøres i backend og aldri i klienten.",
+        "navet": {
+          "navn": "Tjenestemottaker Team",
+          "beskrivelse": "Ett nav per tjenestemottaker. Medlemmene utledes fra fagteamene som jobber med henne. I tillegg kommer individuelle invitasjoner og tjenestemottakerens eget medlemskap.",
+          "kilder": [
+            "FAGTEAM",
+            "INDIVIDUELL_INVITASJON",
+            "TJENESTEMOTTAKER"
           ]
         },
-        "unskilled": {
-          "gruppe": "hp",
-          "landingsside": "/min-cv",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Tjenestemottakere",
-              "sti": "/healthstaff"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Oppgaver",
-              "sti": "/tasks"
-            },
-            {
-              "etikett": "Grupper",
-              "sti": "/groups"
-            },
-            {
-              "etikett": "Team",
-              "sti": "/teams"
-            },
-            {
-              "etikett": "Kvalitet",
-              "sti": "/kvalitet"
-            },
-            {
-              "etikett": "Arrangementer",
-              "sti": "/community-events"
-            }
-          ]
+        "teamtyper": {
+          "FAMILY": {
+            "navn": "Familieteam",
+            "roller": [
+              "relative"
+            ],
+            "relasjonsnivaa": [
+              "NAERMESTE",
+              "OVRIG_NETTVERK"
+            ],
+            "organisasjon": false
+          },
+          "BPA": {
+            "navn": "BPA-team",
+            "roller": [
+              "work_leader",
+              "assistant"
+            ],
+            "organisasjon": true
+          },
+          "ARBEIDSPLASS": {
+            "navn": "Arbeidsplass Team",
+            "roller": [
+              "healthcare_staff"
+            ],
+            "organisasjon": true,
+            "merknad": "Medlemmene velges fra Organisasjons Team, som er alle med et løpende arbeidsforhold."
+          },
+          "merknad": "BPA-team og Arbeidsplass Team er ulike team og skal ikke blandes. En kunde kan ha begge. Backend tillater i dag alle tre rollene assistant, work_leader og healthcare_staff i begge teamtypene (CARE_TEAM_ROLES i MembershipAdminService). Det er til avklaring med techlead."
         },
-        "nurse": {
-          "gruppe": "hp",
-          "landingsside": "/team-feed",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Tjenestemottakere",
-              "sti": "/healthstaff"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Oppgaver",
-              "sti": "/tasks"
-            },
-            {
-              "etikett": "Grupper",
-              "sti": "/groups"
-            },
-            {
-              "etikett": "Team",
-              "sti": "/teams"
-            },
-            {
-              "etikett": "Livshistorie",
-              "sti": "/life-history"
-            },
-            {
-              "etikett": "Moderator",
-              "sti": "/moderator"
-            },
-            {
-              "etikett": "Kvalitet",
-              "sti": "/kvalitet"
-            },
-            {
-              "etikett": "Arrangementer",
-              "sti": "/community-events"
-            }
-          ]
+        "beskjeder": {
+          "regel": "En beskjed er synlig for medlemmene av teamet den er skrevet i. Når den er delt til navet, er den også synlig for medlemmene av navet.",
+          "backend_i_dag": "En beskjed som er delt til navet, er synlig for alle i navet. Det gjelder også hele familieteamet og direkte relasjoner.",
+          "merknad": "Produkteier har besluttet noe annet. I familien er det bare nærmeste pårørende som ser beskjeder (8. oktober 2026, bekreftet 1. november 2026). Direkte relasjoner ser bare Boka (24. september 2026). Dette er til avklaring med techlead. KAI skal ikke love noe om hvem i familien som ser beskjeder."
         },
-        "doctor": {
-          "gruppe": "hp",
-          "landingsside": "/team-feed",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Tjenestemottakere",
-              "sti": "/healthstaff"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Oppgaver",
-              "sti": "/tasks"
-            },
-            {
-              "etikett": "Grupper",
-              "sti": "/groups"
-            },
-            {
-              "etikett": "Team",
-              "sti": "/teams"
-            },
-            {
-              "etikett": "Arrangementer",
-              "sti": "/community-events"
-            }
-          ]
+        "relasjonsnivaa": {
+          "NAERMESTE": "Nærmeste pårørende.",
+          "OVRIG_NETTVERK": "Øvrig nettverk.",
+          "merknad": "Relasjonsnivået er fortsatt en tilgangsakse. Nærmeste pårørende ser sensitive Boka-innlegg på tvers av team (regel R4). Gjelder fram til runde 3."
         },
-        "healthcare_staff": {
-          "gruppe": "hp",
-          "landingsside": "/team-feed",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Tjenestemottakere",
-              "sti": "/healthstaff"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Oppgaver",
-              "sti": "/tasks"
-            },
-            {
-              "etikett": "Grupper",
-              "sti": "/groups"
-            },
-            {
-              "etikett": "Team",
-              "sti": "/teams"
-            },
-            {
-              "etikett": "Livshistorie",
-              "sti": "/life-history"
-            },
-            {
-              "etikett": "Dokumenter",
-              "sti": "/documents"
-            },
-            {
-              "etikett": "Arrangementer",
-              "sti": "/community-events"
-            }
-          ]
+        "relasjon": {
+          "beskrivelse": "Hvert medlemskap har en relasjon, som Mor, Søster, Nærmeste pårørende, BPA eller Støttekontakt. Relasjonen er metadata. Den gir ingen tilgang.",
+          "kilde": "Tabellen relasjon i basen, V11."
         },
-        "department_admin": {
-          "gruppe": "admin",
-          "landingsside": "/team-feed",
-          "menypunkter": []
+        "organisasjon": {
+          "roller": {
+            "ANSATT": "Løpende arbeidsforhold. Gjør personen valgbar til et Arbeidsplass Team. Gir ingen tilgang alene.",
+            "ORG_ADMIN": "Organisasjonsadmin. Mandatet er et arbeidsforhold med denne rollen."
+          }
         },
-        "department_manager": {
-          "gruppe": "admin",
-          "landingsside": "/team-feed",
-          "menypunkter": []
+        "mandater": {
+          "systemadmin": {
+            "beskrivelse": "JodaCares egen administrator. Oppretter organisasjoner, utpeker organisasjonsadmin og administratoren av navet. Har ikke innsyn i Boka.",
+            "kai_gruppe": false
+          },
+          "teamforvalter": {
+            "beskrivelse": "Teamets egen administrator, eller organisasjonsadmin i organisasjonen som driver teamet. Legger til og fjerner medlemmer og inviterer.",
+            "kai_gruppe": false
+          },
+          "navets_forvalter": {
+            "beskrivelse": "Utpekes av systemadmin. Ser medlemslista og inviterer inn i navet. Forvaltningsmandatet gir ikke innsyn i Boka.",
+            "kai_gruppe": false
+          }
+        }
+      },
+      "versjon_2_0": {
+        "versjon": "2.0",
+        "kilde": {
+          "repo": "JodaSkills/joda-clean",
+          "gren": "fix/kai-innloggingsmodell",
+          "commit": "e4306c70",
+          "fil": "apps/web/src/config/rolesConfig.ts"
         },
-        "org_admin": {
-          "gruppe": "admin",
-          "landingsside": "/team-feed",
-          "menypunkter": []
-        },
-        "welfare_coordinator": {
-          "gruppe": "hp",
-          "landingsside": "/hub-welfare",
-          "menypunkter": [
-            {
-              "etikett": "Dashboard",
-              "sti": "/hub-welfare"
-            },
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Arrangementer",
-              "sti": "/hub-welfare/activities"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Beboere",
-              "sti": "/hub-welfare/residents"
-            },
-            {
-              "etikett": "Meldinger",
-              "sti": "/hub-welfare/broadcasts"
-            },
-            {
-              "etikett": "Fellesrom",
-              "sti": "/hub-welfare/rooms"
-            },
-            {
-              "etikett": "Videobesøk",
-              "sti": "/patient/video-appointments"
-            }
-          ]
-        },
-        "video_host": {
-          "gruppe": "hp",
-          "landingsside": "/jodavisit",
-          "menypunkter": [
-            {
-              "etikett": "JodaVisit",
-              "sti": "/jodavisit"
-            },
-            {
-              "etikett": "Planlegger",
-              "sti": "/jodavisit/schedule"
-            },
-            {
-              "etikett": "Ring meg-ko",
-              "sti": "/jodavisit/queue"
-            },
-            {
-              "etikett": "Statistikk",
-              "sti": "/jodavisit/stats"
-            },
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Tjenestemottakere",
-              "sti": "/healthstaff"
-            }
-          ]
-        },
-        "implementation_manager": {
-          "gruppe": "hp",
-          "landingsside": "/implementation",
-          "menypunkter": [
-            {
-              "etikett": "Dashboard",
-              "sti": "/implementation"
-            },
-            {
-              "etikett": "Sjekkliste",
-              "sti": "/implementation/checklist"
-            },
-            {
-              "etikett": "Brukere",
-              "sti": "/implementation/users"
-            },
-            {
-              "etikett": "Kurs",
-              "sti": "/implementation/training"
-            },
-            {
-              "etikett": "Samtykker",
-              "sti": "/implementation/consents"
-            },
-            {
-              "etikett": "Verifisering",
-              "sti": "/implementation/verification"
-            },
-            {
-              "etikett": "Overlevering",
-              "sti": "/implementation/handover"
-            }
-          ]
-        },
-        "superadmin": {
-          "gruppe": "admin",
-          "landingsside": "/superadmin",
-          "menypunkter": [
-            {
-              "etikett": "Dashboard",
-              "sti": "/superadmin"
-            },
-            {
-              "etikett": "Brukere",
-              "sti": "/superadmin/users"
-            },
-            {
-              "etikett": "Organisasjon",
-              "sti": "/superadmin/organization"
-            },
-            {
-              "etikett": "Brukerorganisering",
-              "sti": "/admin/user-organizer"
-            },
-            {
-              "etikett": "Behandlingsrelasjoner",
-              "sti": "/superadmin/relationships"
-            },
-            {
-              "etikett": "API-status",
-              "sti": "/admin/api-monitoring"
-            },
-            {
-              "etikett": "Hub",
-              "sti": "/superadmin/hub"
-            },
-            {
-              "etikett": "Sikkerhet",
-              "sti": "/admin/security"
-            },
-            {
-              "etikett": "Rollekart",
-              "sti": "/superadmin/rbac"
-            },
-            {
-              "etikett": "Brand Manual",
-              "sti": "/superadmin/brand-manual"
-            },
-            {
-              "etikett": "Mer",
-              "sti": "/more"
-            }
-          ]
-        },
-        "caseworker": {
-          "gruppe": "admin",
-          "landingsside": "/team-feed",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Samvær",
-              "sti": "/visitation"
-            },
-            {
-              "etikett": "Barn",
-              "sti": "/healthstaff"
-            },
-            {
-              "etikett": "Oppgaver",
-              "sti": "/tasks"
-            },
-            {
-              "etikett": "Team",
-              "sti": "/teams"
-            },
-            {
-              "etikett": "Administrasjon",
-              "sti": "/admin/tjenestesteder/__DEPT__"
-            }
-          ]
-        },
-        "foster_parent": {
-          "gruppe": "parorende",
-          "landingsside": "/team-feed",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Samvær",
-              "sti": "/visitation"
-            },
-            {
-              "etikett": "Barn",
-              "sti": "/healthstaff"
-            },
-            {
-              "etikett": "Dokumenter",
-              "sti": "/documents"
-            }
-          ]
-        },
-        "biological_parent": {
-          "gruppe": "parorende",
-          "landingsside": "/visitation",
-          "menypunkter": [
-            {
-              "etikett": "Samvær",
-              "sti": "/visitation"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Meldinger",
-              "sti": "/team-feed"
-            }
-          ]
-        },
-        "support_person": {
-          "gruppe": "parorende",
-          "landingsside": "/team-feed",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Barn",
-              "sti": "/healthstaff"
-            }
-          ]
-        },
-        "work_leader": {
-          "gruppe": "bpa",
-          "landingsside": "/team-feed",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Grupper",
-              "sti": "/groups"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Oppgaver",
-              "sti": "/tasks"
-            },
-            {
-              "etikett": "Team",
-              "sti": "/teams"
-            },
-            {
-              "etikett": "Administrasjon",
-              "sti": "/admin/tjenestesteder/__DEPT__"
-            },
-            {
-              "etikett": "Bruker",
-              "sti": "/healthstaff"
-            },
-            {
-              "etikett": "Dokumenter",
-              "sti": "/documents"
-            }
-          ]
-        },
-        "assistant": {
-          "gruppe": "bpa",
-          "landingsside": "/team-feed",
-          "menypunkter": [
-            {
-              "etikett": "Boka",
-              "sti": "/team-feed"
-            },
-            {
-              "etikett": "Kalender",
-              "sti": "/calendar"
-            },
-            {
-              "etikett": "Oppgaver",
-              "sti": "/tasks"
-            },
-            {
-              "etikett": "Bruker",
-              "sti": "/healthstaff"
-            },
-            {
-              "etikett": "Dokumenter",
-              "sti": "/documents"
-            }
-          ]
+        "tekniske": {
+          "patient": {
+            "gruppe": "pasient",
+            "landingsside": "/patient",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/patient"
+              },
+              {
+                "etikett": "Grupper",
+                "sti": "/groups"
+              },
+              {
+                "etikett": "Hjemme hos meg",
+                "sti": "/hub"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Rundt meg",
+                "sti": "/patient/friends"
+              },
+              {
+                "etikett": "Mine behov",
+                "sti": "/patient/needs"
+              },
+              {
+                "etikett": "Dokumenter",
+                "sti": "/documents"
+              },
+              {
+                "etikett": "Galleri",
+                "sti": "/gallery"
+              },
+              {
+                "etikett": "Livshistorie",
+                "sti": "/life-history"
+              },
+              {
+                "etikett": "Videobesøk",
+                "sti": "/patient/video-appointments"
+              },
+              {
+                "etikett": "Arrangementer",
+                "sti": "/community-events"
+              }
+            ]
+          },
+          "relative": {
+            "gruppe": "parorende",
+            "landingsside": "/team-feed",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Grupper",
+                "sti": "/groups"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Galleri",
+                "sti": "/gallery"
+              },
+              {
+                "etikett": "Livshistorie",
+                "sti": "/life-history"
+              },
+              {
+                "etikett": "Bekymringsmelding",
+                "sti": "/concern-reports"
+              },
+              {
+                "etikett": "Rundt oss",
+                "sti": "/relative"
+              },
+              {
+                "etikett": "Arrangementer",
+                "sti": "/community-events"
+              }
+            ]
+          },
+          "unskilled": {
+            "gruppe": "hp",
+            "landingsside": "/min-cv",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Tjenestemottakere",
+                "sti": "/healthstaff"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Oppgaver",
+                "sti": "/tasks"
+              },
+              {
+                "etikett": "Grupper",
+                "sti": "/groups"
+              },
+              {
+                "etikett": "Team",
+                "sti": "/teams"
+              },
+              {
+                "etikett": "Kvalitet",
+                "sti": "/kvalitet"
+              },
+              {
+                "etikett": "Arrangementer",
+                "sti": "/community-events"
+              }
+            ]
+          },
+          "nurse": {
+            "gruppe": "hp",
+            "landingsside": "/team-feed",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Tjenestemottakere",
+                "sti": "/healthstaff"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Oppgaver",
+                "sti": "/tasks"
+              },
+              {
+                "etikett": "Grupper",
+                "sti": "/groups"
+              },
+              {
+                "etikett": "Team",
+                "sti": "/teams"
+              },
+              {
+                "etikett": "Livshistorie",
+                "sti": "/life-history"
+              },
+              {
+                "etikett": "Moderator",
+                "sti": "/moderator"
+              },
+              {
+                "etikett": "Kvalitet",
+                "sti": "/kvalitet"
+              },
+              {
+                "etikett": "Arrangementer",
+                "sti": "/community-events"
+              }
+            ]
+          },
+          "doctor": {
+            "gruppe": "hp",
+            "landingsside": "/team-feed",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Tjenestemottakere",
+                "sti": "/healthstaff"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Oppgaver",
+                "sti": "/tasks"
+              },
+              {
+                "etikett": "Grupper",
+                "sti": "/groups"
+              },
+              {
+                "etikett": "Team",
+                "sti": "/teams"
+              },
+              {
+                "etikett": "Arrangementer",
+                "sti": "/community-events"
+              }
+            ]
+          },
+          "healthcare_staff": {
+            "gruppe": "hp",
+            "landingsside": "/team-feed",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Tjenestemottakere",
+                "sti": "/healthstaff"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Oppgaver",
+                "sti": "/tasks"
+              },
+              {
+                "etikett": "Grupper",
+                "sti": "/groups"
+              },
+              {
+                "etikett": "Team",
+                "sti": "/teams"
+              },
+              {
+                "etikett": "Livshistorie",
+                "sti": "/life-history"
+              },
+              {
+                "etikett": "Dokumenter",
+                "sti": "/documents"
+              },
+              {
+                "etikett": "Arrangementer",
+                "sti": "/community-events"
+              }
+            ]
+          },
+          "department_admin": {
+            "gruppe": "admin",
+            "landingsside": "/team-feed",
+            "menypunkter": []
+          },
+          "department_manager": {
+            "gruppe": "admin",
+            "landingsside": "/team-feed",
+            "menypunkter": []
+          },
+          "org_admin": {
+            "gruppe": "admin",
+            "landingsside": "/team-feed",
+            "menypunkter": []
+          },
+          "welfare_coordinator": {
+            "gruppe": "hp",
+            "landingsside": "/hub-welfare",
+            "menypunkter": [
+              {
+                "etikett": "Dashboard",
+                "sti": "/hub-welfare"
+              },
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Arrangementer",
+                "sti": "/hub-welfare/activities"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Beboere",
+                "sti": "/hub-welfare/residents"
+              },
+              {
+                "etikett": "Meldinger",
+                "sti": "/hub-welfare/broadcasts"
+              },
+              {
+                "etikett": "Fellesrom",
+                "sti": "/hub-welfare/rooms"
+              },
+              {
+                "etikett": "Videobesøk",
+                "sti": "/patient/video-appointments"
+              }
+            ]
+          },
+          "video_host": {
+            "gruppe": "hp",
+            "landingsside": "/jodavisit",
+            "menypunkter": [
+              {
+                "etikett": "JodaVisit",
+                "sti": "/jodavisit"
+              },
+              {
+                "etikett": "Planlegger",
+                "sti": "/jodavisit/schedule"
+              },
+              {
+                "etikett": "Ring meg-ko",
+                "sti": "/jodavisit/queue"
+              },
+              {
+                "etikett": "Statistikk",
+                "sti": "/jodavisit/stats"
+              },
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Tjenestemottakere",
+                "sti": "/healthstaff"
+              }
+            ]
+          },
+          "implementation_manager": {
+            "gruppe": "hp",
+            "landingsside": "/implementation",
+            "menypunkter": [
+              {
+                "etikett": "Dashboard",
+                "sti": "/implementation"
+              },
+              {
+                "etikett": "Sjekkliste",
+                "sti": "/implementation/checklist"
+              },
+              {
+                "etikett": "Brukere",
+                "sti": "/implementation/users"
+              },
+              {
+                "etikett": "Kurs",
+                "sti": "/implementation/training"
+              },
+              {
+                "etikett": "Samtykker",
+                "sti": "/implementation/consents"
+              },
+              {
+                "etikett": "Verifisering",
+                "sti": "/implementation/verification"
+              },
+              {
+                "etikett": "Overlevering",
+                "sti": "/implementation/handover"
+              }
+            ]
+          },
+          "superadmin": {
+            "gruppe": "admin",
+            "landingsside": "/superadmin",
+            "menypunkter": [
+              {
+                "etikett": "Dashboard",
+                "sti": "/superadmin"
+              },
+              {
+                "etikett": "Brukere",
+                "sti": "/superadmin/users"
+              },
+              {
+                "etikett": "Organisasjon",
+                "sti": "/superadmin/organization"
+              },
+              {
+                "etikett": "Brukerorganisering",
+                "sti": "/admin/user-organizer"
+              },
+              {
+                "etikett": "Behandlingsrelasjoner",
+                "sti": "/superadmin/relationships"
+              },
+              {
+                "etikett": "API-status",
+                "sti": "/admin/api-monitoring"
+              },
+              {
+                "etikett": "Hub",
+                "sti": "/superadmin/hub"
+              },
+              {
+                "etikett": "Sikkerhet",
+                "sti": "/admin/security"
+              },
+              {
+                "etikett": "Rollekart",
+                "sti": "/superadmin/rbac"
+              },
+              {
+                "etikett": "Brand Manual",
+                "sti": "/superadmin/brand-manual"
+              },
+              {
+                "etikett": "Mer",
+                "sti": "/more"
+              }
+            ]
+          },
+          "caseworker": {
+            "gruppe": "admin",
+            "landingsside": "/team-feed",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Samvær",
+                "sti": "/visitation"
+              },
+              {
+                "etikett": "Barn",
+                "sti": "/healthstaff"
+              },
+              {
+                "etikett": "Oppgaver",
+                "sti": "/tasks"
+              },
+              {
+                "etikett": "Team",
+                "sti": "/teams"
+              },
+              {
+                "etikett": "Administrasjon",
+                "sti": "/admin/tjenestesteder/__DEPT__"
+              }
+            ]
+          },
+          "foster_parent": {
+            "gruppe": "parorende",
+            "landingsside": "/team-feed",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Samvær",
+                "sti": "/visitation"
+              },
+              {
+                "etikett": "Barn",
+                "sti": "/healthstaff"
+              },
+              {
+                "etikett": "Dokumenter",
+                "sti": "/documents"
+              }
+            ]
+          },
+          "biological_parent": {
+            "gruppe": "parorende",
+            "landingsside": "/visitation",
+            "menypunkter": [
+              {
+                "etikett": "Samvær",
+                "sti": "/visitation"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Meldinger",
+                "sti": "/team-feed"
+              }
+            ]
+          },
+          "support_person": {
+            "gruppe": "parorende",
+            "landingsside": "/team-feed",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Barn",
+                "sti": "/healthstaff"
+              }
+            ]
+          },
+          "work_leader": {
+            "gruppe": "bpa",
+            "landingsside": "/team-feed",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Grupper",
+                "sti": "/groups"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Oppgaver",
+                "sti": "/tasks"
+              },
+              {
+                "etikett": "Team",
+                "sti": "/teams"
+              },
+              {
+                "etikett": "Administrasjon",
+                "sti": "/admin/tjenestesteder/__DEPT__"
+              },
+              {
+                "etikett": "Bruker",
+                "sti": "/healthstaff"
+              },
+              {
+                "etikett": "Dokumenter",
+                "sti": "/documents"
+              }
+            ]
+          },
+          "assistant": {
+            "gruppe": "bpa",
+            "landingsside": "/team-feed",
+            "menypunkter": [
+              {
+                "etikett": "Boka",
+                "sti": "/team-feed"
+              },
+              {
+                "etikett": "Kalender",
+                "sti": "/calendar"
+              },
+              {
+                "etikett": "Oppgaver",
+                "sti": "/tasks"
+              },
+              {
+                "etikett": "Bruker",
+                "sti": "/healthstaff"
+              },
+              {
+                "etikett": "Dokumenter",
+                "sti": "/documents"
+              }
+            ]
+          }
         }
       }
     },
     "segmenter": {
-      "bekreftet_av": "hentet fra jodacare.no, bekreftes av produkteier",
-      "bekreftet_dato": "2026-09-20",
+      "bekreftet_av": "Kristil Erla Håland",
+      "bekreftet_dato": "2026-11-01",
       "segmenter": [
         {
           "id": "familierom",
@@ -1179,7 +1560,7 @@
           "id": "bpa",
           "navn": "BPA",
           "status": "kommer",
-          "merke_pa_nettsiden": "Lanseres høst 2026",
+          "merke_pa_nettsiden": "Pilot 2027",
           "side": "/bpa",
           "primar_cta": "Kontakt oss",
           "krever_moduler": [
@@ -1195,7 +1576,8 @@
           "primar_cta": "Kontakt oss",
           "krever_moduler": [
             "boka",
-            "kalender"
+            "beskjeder",
+            "team"
           ]
         },
         {

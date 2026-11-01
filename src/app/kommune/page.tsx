@@ -4,9 +4,9 @@ import { KommunePageView } from '@/components/pages/KommunePageView';
 
 export const metadata: Metadata = {
   alternates: sprakvarianter('/kommune', 'no'),
-  title: 'JodaCare for kommuner — alle tjenester',
+  title: 'JodaCare for kommuner: alle tjenester',
   description:
-    'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie — koordinert omsorg i én plattform. Se alle tjenester fra JodaCare.',
+    'Omsorgsboliger, BPA, barnevern, avlastning og hjemmesykepleie møtes i én plattform med koordinert omsorg. Se alle tjenester fra JodaCare.',
   openGraph: {
     title: 'JodaCare for kommuner',
     description: 'Koordinert omsorg i én plattform. Se alle tjenester fra JodaCare for norske kommuner.',

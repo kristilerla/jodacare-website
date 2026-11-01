@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Hero } from '@/components/sections';
-import { Container, Card, CardTitle, CardContent, Button } from '@/components/ui';
+import { Container, Card, CardTitle, CardContent } from '@/components/ui';
+import { StatusMerke } from '@/components/ui/StatusMerke';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import {
   ScaleIcon,
@@ -92,6 +92,7 @@ export function BarnevernPageView({ locale }: Props) {
           portrait: true,
         }}
         badge={d.heroBadge}
+        status={d.heroStatus}
       />
 
       {/* Seksjon 2 — Mai Life + JodaCare */}
@@ -191,6 +192,7 @@ export function BarnevernPageView({ locale }: Props) {
               >
                 {d.rolesTitle}
               </h2>
+              <StatusMerke merke={d.rolesStatus} className="mt-4" />
               <p className="mt-4 text-lg text-text-light">{d.rolesSubtitle}</p>
             </div>
           </FadeIn>
@@ -253,6 +255,7 @@ export function BarnevernPageView({ locale }: Props) {
                       </div>
                       <div>
                         <CardTitle className="text-xl">{feature.title}</CardTitle>
+                        <StatusMerke merke={feature.status} className="mt-2" />
                         <CardContent className="mt-2">
                           {feature.description}
                         </CardContent>
@@ -369,7 +372,7 @@ export function BarnevernPageView({ locale }: Props) {
             >
               <p>&ldquo;{d.memoryQuote}&rdquo;</p>
               <footer className="mt-4 text-base not-italic text-text-muted">
-                — {d.memoryQuoteSource}
+                {d.memoryQuoteSourceLabel}: {d.memoryQuoteSource}
               </footer>
             </blockquote>
           </FadeIn>
@@ -379,6 +382,7 @@ export function BarnevernPageView({ locale }: Props) {
               <FadeIn key={p.title}>
                 <h3 className="font-serif text-lg font-semibold text-text mb-2">
                   {p.title}
+                  <StatusMerke merke={p.status} className="ml-2 align-middle" />
                 </h3>
                 <p className="text-text-light text-lg" style={{ lineHeight: 1.7 }}>
                   {p.body}
@@ -495,11 +499,14 @@ export function BarnevernPageView({ locale }: Props) {
                     </div>
                     <ul className="space-y-3">
                       {col.items.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
+                        <li key={item.text} className="flex items-start gap-3">
                           <span
                             className={`flex-shrink-0 w-2 h-2 rounded-full mt-2 ${statusDotColors[i]}`}
                           />
-                          <span className="text-text-light">{item}</span>
+                          <span className="text-text-light">
+                            {item.text}
+                            <StatusMerke merke={item.status} className="ml-2" />
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -588,6 +595,7 @@ export function BarnevernPageView({ locale }: Props) {
                         />
                       </div>
                       <CardTitle className="text-lg">{page.title}</CardTitle>
+                      <StatusMerke merke={page.status} className="mt-2" />
                       <CardContent className="mt-2 text-sm">
                         {page.description}
                       </CardContent>

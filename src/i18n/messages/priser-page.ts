@@ -1,4 +1,6 @@
 import type { Locale } from '@/lib/i18n/types';
+import type { StatusVisning } from '@/i18n/messages/status';
+import { modulMerke, getStatusVisning } from '@/i18n/messages/status';
 import {
   formaterPris,
   formaterPrisEn,
@@ -25,6 +27,8 @@ export type PriserTableRow = { label: string; year1: string; year2: string };
 
 export type PriserFaqItem = { question: string; answer: string };
 
+export type PriserModul = { name: string; status: StatusVisning };
+
 export type PriserContent = {
   heroTitle: string;
   heroSubtitle: string;
@@ -47,12 +51,13 @@ export type PriserContent = {
 
   modulesTitle: string;
   modulesBody: string;
-  modules: string[];
+  modules: PriserModul[];
 
   termsTitle: string;
   termsBody: string;
 
   familieTitle: string;
+  familieStatus: StatusVisning;
   familiePrice: string;
   familiePeriod: string;
   familieBody: string;
@@ -80,9 +85,11 @@ const no: PriserContent = {
       body: `Ubegrenset antall ansatte og pårørende rundt hver tjenestemottaker. Trenger kommunen plass til flere enn ${priser.pakkeStorrelse}, legges det til en pakke til.`,
       includesLabel: 'Lisensen dekker grunnmodulen',
       includes: [
-        'Boka, den delte boken rundt hver tjenestemottaker',
-        'Kalender',
-        'Meldinger',
+        'Startsiden, en felles feed',
+        'Boka, med bilder og video',
+        'Beskjeder til teamet',
+        'Team rundt tjenestemottakeren',
+        'Invitasjon på e-post eller SMS',
         'Rollebasert tilgang',
       ],
     },
@@ -124,18 +131,23 @@ const no: PriserContent = {
   modulesBody:
     'Nye JodaCare bygges modul for modul. Hver ny modul får sin egen pris når den er ferdig utviklet, og kommunen velger selv om den vil legge modulen til. Prisen på grunnmodulen endres ikke av at nye moduler kommer.',
   modules: [
-    'Sjekklister og rutiner',
-    'Hendelseslogg',
-    'Hub for omsorgsbolig',
-    'Jodabook',
-    'Barnevern og samvær',
-    'JodaVisit',
+    { name: 'Sjekklister og rutiner', status: modulMerke('sjekklister-og-rutiner', 'no') },
+    { name: 'Hendelseslogg', status: modulMerke('hendelseslogg', 'no') },
+    { name: 'Bekymringsmelding', status: modulMerke('bekymringsmelding', 'no') },
+    { name: 'Videosamtale', status: modulMerke('video', 'no') },
+    { name: 'Jodabook', status: modulMerke('jodabook', 'no') },
+    { name: 'Livshistorie', status: modulMerke('livshistorie', 'no') },
+    { name: 'Barnevern og samvær', status: modulMerke('barnevern-og-samvaer', 'no') },
+    { name: 'Hub for omsorgsbolig', status: modulMerke('hub', 'no') },
+    { name: 'JodaVisit', status: modulMerke('jodavisit', 'no') },
+    { name: 'Kalender', status: modulMerke('kalender', 'no') },
   ],
 
   termsTitle: 'Avtalevilkår',
   termsBody: `${priser.avtaleManeder} måneders avtale med automatisk fornyelse og ${priser.oppsigelseManeder} måneders skriftlig oppsigelse. Oppstart faktureres ved avtaleinngåelse. Lisensen faktureres kvartalsvis på forskudd med 14 dagers betalingsfrist. Databehandleravtale inngås før oppstart. JodaCare stiller med forslag, kommunen kan bruke egen mal.`,
 
   familieTitle: 'Pris for familier',
+  familieStatus: getStatusVisning('familierom', 'no'),
   familiePrice: formaterPris(priser.familieromMnd),
   familiePeriod: 'per måned',
   familieBody: `${priser.proveperiodeDager} dager gratis. Ingen binding. Betaling med Vipps.`,
@@ -158,9 +170,9 @@ const no: PriserContent = {
         'Ja, en pakke er den minste enheten. Pakken følger boligen, så nye barn kan legges til uten ny avtale.',
     },
     {
-      question: 'Hva skjer når nye JodaCare er klar?',
+      question: 'Hvilken versjon av JodaCare får vi?',
       answer:
-        'Kunder som starter på dagens løsning flyttes over uten ekstra kostnad. Prisen er den samme.',
+        'Nye kommuner starter på nye JodaCare.',
     },
     {
       question: 'Må vi ut på anbud?',
@@ -194,9 +206,11 @@ const en: PriserContent = {
       body: `An unlimited number of staff and relatives around each service recipient. If the municipality needs room for more than ${priser.pakkeStorrelse}, another package is added.`,
       includesLabel: 'The licence covers the core module',
       includes: [
-        'Boka, the shared book around each service recipient',
-        'Calendar',
-        'Messages',
+        'The home page, a shared feed',
+        'Boka, with photos and video',
+        'Notices to the team',
+        'A team around the service recipient',
+        'Invitations by email or text message',
         'Role-based access',
       ],
     },
@@ -238,18 +252,23 @@ const en: PriserContent = {
   modulesBody:
     'The new JodaCare is built module by module. Each new module gets its own price once it is finished, and the municipality decides whether to add it. The price of the core module does not change as new modules arrive.',
   modules: [
-    'Checklists and routines',
-    'Incident log',
-    'Hub for sheltered housing',
-    'Jodabook',
-    'Child welfare and contact sessions',
-    'JodaVisit',
+    { name: 'Checklists and routines', status: modulMerke('sjekklister-og-rutiner', 'en') },
+    { name: 'Incident log', status: modulMerke('hendelseslogg', 'en') },
+    { name: 'Concern notification', status: modulMerke('bekymringsmelding', 'en') },
+    { name: 'Video call', status: modulMerke('video', 'en') },
+    { name: 'Jodabook', status: modulMerke('jodabook', 'en') },
+    { name: 'Life story', status: modulMerke('livshistorie', 'en') },
+    { name: 'Child welfare and contact sessions', status: modulMerke('barnevern-og-samvaer', 'en') },
+    { name: 'Hub for sheltered housing', status: modulMerke('hub', 'en') },
+    { name: 'JodaVisit', status: modulMerke('jodavisit', 'en') },
+    { name: 'Calendar', status: modulMerke('kalender', 'en') },
   ],
 
   termsTitle: 'Agreement terms',
   termsBody: `A ${priser.avtaleManeder} month agreement with automatic renewal and ${priser.oppsigelseManeder} months written notice. Onboarding is invoiced when the agreement is signed. The licence is invoiced quarterly in advance with 14 days payment terms. A data processing agreement is signed before onboarding. JodaCare provides a proposal, and the municipality may use its own template.`,
 
   familieTitle: 'Pricing for families',
+  familieStatus: getStatusVisning('familierom', 'en'),
   familiePrice: formaterPrisEn(priser.familieromMnd),
   familiePeriod: 'per month',
   familieBody: `${priser.proveperiodeDager} days free. No commitment. Payment by Vipps.`,
@@ -272,9 +291,9 @@ const en: PriserContent = {
         'Yes, a package is the smallest unit. The package follows the home, so new children can be added without a new agreement.',
     },
     {
-      question: 'What happens when the new JodaCare is ready?',
+      question: 'Which version of JodaCare do we get?',
       answer:
-        'Customers who start on the current solution are moved over at no extra cost. The price stays the same.',
+        'New municipalities start on the new JodaCare.',
     },
     {
       question: 'Do we have to run a tender?',

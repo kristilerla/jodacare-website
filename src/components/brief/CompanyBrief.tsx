@@ -3,7 +3,23 @@
 import { useEffect, useRef, useState } from 'react';
 import { formaterTall, aar1, aar2, priser, selskap } from '@/lib/fakta';
 import Image from 'next/image';
+import { StatusMerke } from '@/components/ui/StatusMerke';
+import { modulMerke, funksjonMerke, getStatusVisning } from '@/i18n/messages/status';
 import './brief.css';
+
+type FunksjonId = Parameters<typeof funksjonMerke>[0];
+
+/** Merker fra status.ts. Briefen er bare på norsk. */
+const merkeKlasse = 'ml-1 align-middle';
+const Modul = ({ id }: { id: string }) => (
+  <StatusMerke merke={modulMerke(id, 'no')} className={merkeKlasse} />
+);
+const Funksjon = ({ id }: { id: FunksjonId }) => (
+  <StatusMerke merke={funksjonMerke(id, 'no')} className={merkeKlasse} />
+);
+const Segment = ({ id }: { id: string }) => (
+  <StatusMerke merke={getStatusVisning(id, 'no')} className={merkeKlasse} />
+);
 
 /**
  * Company brief.
@@ -11,7 +27,7 @@ import './brief.css';
  * Innholdet er utkastet Kristil laget i Claude (september 2026), portert inn
  * i nettstedet. Markupen er hennes. Det som er endret: utkastets egen
  * toppmeny og bunntekst er tatt ut, fordi root-layouten har dem allerede, og
- * one-pageren — som var et lite skript med getElementById — er nå React-state.
+ * one-pageren, som var et lite skript med getElementById, er nå React-state.
  *
  * Stilen ligger i ./brief.css, prefikset med .company-brief, så den ikke
  * lekker ut på resten av nettstedet.
@@ -104,7 +120,7 @@ export function CompanyBrief() {
           <h2>Hva JodaCare er.</h2>
           <div className="prose">
             <p>JodaCare er en sikker kommunikasjonsplattform for helse- og omsorgstjenesten. Den kobler tre grupper som tradisjonelt har levd hver for seg: helsepersonellet som leverer omsorgen, de pårørende som er glade i mottakeren, og mottakeren selv.</p>
-            <p>Kjernen er Boka. Det er teamets felles feed rundt én person. Hjemmesykepleieren skriver hva som skjedde i dag. Datteren leser det samme kvelden. Neste vakt leser det før hun går inn døra. Rundt Boka ligger kalender, meldinger og rollebasert tilgang.</p>
+            <p>Kjernen er Boka. Det er teamets felles feed rundt én person. Hjemmesykepleieren skriver hva som skjedde i dag. Datteren leser det samme kvelden. Neste vakt leser det før hun går inn døra. Rundt Boka ligger beskjeder, team og rollebasert tilgang. Kalender legges til senere.<Modul id="kalender" /></p>
             <p>Plattformen er bygd for at en kommune skal kunne bruke samme verktøy på tvers av tjenester:</p>
           </div>
           <ul className="plain">
@@ -116,7 +132,7 @@ export function CompanyBrief() {
             <li>Familier som koordinerer omsorg på egen hånd</li>
           </ul>
           <div className="prose">
-            <p>Hver rolle får sitt eget grensesnitt og sitt eget språk. Helsepersonellet ser fagtermer og strukturert dokumentasjon. Pårørende ser dagen i hverdagsspråk. Mottakere med kognitive utfordringer får en egen forenklet inngang gjennom Jodabook.</p>
+            <p>Hver rolle får sitt eget grensesnitt og sitt eget språk. Helsepersonellet ser fagtermer og strukturert dokumentasjon. Pårørende ser dagen i hverdagsspråk. Mottakere med kognitive utfordringer skal få en egen forenklet inngang gjennom Jodabook.<Modul id="jodabook" /></p>
             <p>JodaCare er ikke en journal. Det er samtalen mellom alle som bryr seg om et menneske som trenger hjelp.</p>
           </div>
         </div>
@@ -131,11 +147,11 @@ export function CompanyBrief() {
           <div className="cols" style={{ marginTop: '1.5rem' }}>
             <div className="block">
               <h3>Slik fungerer det i dag</h3>
-              <p>Kommunen oppretter et team rundt den eldre. Hjemmetjenesten skriver i Boka etter besøk. Familien leser og skriver tilbake. Kalenderen viser hvem som kommer når. Den eldre kan selv lese, eller få det lest opp, gjennom Jodabook.</p>
+              <p>Kommunen oppretter et team rundt den eldre. Hjemmetjenesten skriver i Boka etter besøk. Familien leser og skriver tilbake.</p>
             </div>
             <div className="block">
               <h3>Slik blir det</h3>
-              <p>JodaVisit er under utvikling: videobesøk fra hjemmetjenesten som erstatter unødvendige kjøreturer, med dokumentasjon rett i Boka etterpå. Familierom med Vipps kommer i 2027: en datter skal kunne opprette rommet selv og invitere kommunen inn når behovet oppstår.</p>
+              <p>Kalenderen<Modul id="kalender" /> skal vise hvem som kommer når. Gjennom Jodabook<Modul id="jodabook" /> skal den eldre kunne lese selv, eller få det lest opp. JodaVisit<Modul id="jodavisit" /> skal gi videobesøk fra hjemmetjenesten i stedet for unødvendige kjøreturer, med dokumentasjon rett i Boka etterpå. Med Familierom<Segment id="familierom" /> skal en datter kunne opprette rommet selv, med Vipps, og invitere kommunen inn når behovet oppstår.</p>
             </div>
           </div>
           <div className="prose" style={{ marginTop: '1.5rem' }}>
@@ -153,11 +169,11 @@ export function CompanyBrief() {
           <div className="cols" style={{ marginTop: '1.5rem' }}>
             <div className="block">
               <h3>Slik fungerer det i dag</h3>
-              <p>Boka per beboer gir hver vakt umiddelbar oversikt. Pårørende leser samme dag på hverdagsspråk. Livshistorien gir nye ansatte et bilde av hvem beboeren er, ikke bare hva hun trenger. Jodabook gir beboere med demens en enkel inngang med store knapper, bilder fra familien og opplesing.</p>
+              <p>Boka per beboer gir hver vakt umiddelbar oversikt. Pårørende leser samme dag på hverdagsspråk.</p>
             </div>
             <div className="block">
               <h3>Slik blir det</h3>
-              <p>Hendelseslogg med konfigurerbare hendelsestyper (fall, ernæring, søvn, humør, medisin) og sjekklister for daglige rutiner er bygd i testplattformen og kommer som egne moduler etter lansering. Kvalitetssjekklister og avviksmeldinger følger samme løp.</p>
+              <p>Livshistorien<Modul id="livshistorie" /> skal gi nye ansatte et bilde av hvem beboeren er. Jodabook<Modul id="jodabook" /> skal gi beboere med demens en enkel inngang med store knapper, bilder fra familien og opplesing. Hendelseslogg<Modul id="hendelseslogg" /> for fall, ernæring, søvn, humør og medisin og sjekklister for daglige rutiner<Modul id="sjekklister-og-rutiner" /> er bygd i testplattformen og kommer som egne moduler. Kvalitet og avvik<Modul id="kvalitet-og-avvik" /> følger samme løp.</p>
             </div>
           </div>
           <div className="prose" style={{ marginTop: '1.5rem' }}>
@@ -178,7 +194,7 @@ export function CompanyBrief() {
             <div className="tl"><div className="yr">Februar 2026. JodaCare AS</div><p>JodaCare AS etableres med Kristil Erla Haland som grunnlegger og CEO. Plattformens IP ligger i selskapet.</p></div>
             <div className="tl"><div className="yr">Vår 2026. Nye JodaCare tar form</div><p>Ny plattform bygges: web, mobil, Jodabook og KAI på Mistral AI i Paris. Familierom, barnevern-modul, hendelseslogg og sjekklister prøves ut.</p></div>
             <div className="tl"><div className="yr">August 2026. Teamet styrkes</div><p>Kristil får med seg backend-arkitekt Bård Lind som medgründer. Han bygger backenden i Java og PostgreSQL på AWS i Stockholm, med datamodell og tilgangsmodell definert gjennom 30 tilgangsvektorer.</p></div>
-            <div className="tl"><div className="yr">Høst 2026. Lansering</div><p>Nye JodaCare lanseres med ID-porten-innlogging. Eksisterende kunder migreres. Offentlige priser publiseres på jodacare.no.</p></div>
+            <div className="tl"><div className="yr">Høst 2026. Lansering</div><p>Nye JodaCare lanseres med innlogging med ID-porten og jobbkonto. HelseID for helsepersonell<Funksjon id="helseid" />. Eksisterende kunder migreres. Offentlige priser publiseres på jodacare.no.</p></div>
           </div>
         </div>
       </section>
@@ -203,10 +219,10 @@ export function CompanyBrief() {
             <p>Nye JodaCare er ikke en oppdatering. Det er en plattform bygd om fra bunnen for å tåle alt vi har lært gjennom ti år, og for å tåle et sikkerhetskrav som er strengere enn det vi hadde i 2018.</p>
           </div>
           <div className="cols" style={{ marginTop: '1.5rem' }}>
-            <div className="block"><h3>Første versjon</h3><p>Grunnmodulen: Boka, kalender, meldinger og rollebasert tilgang. Det er det kundene bruker mest, og det er det vi vet fungerer. Innlogging skjer med ID-porten.</p></div>
-            <div className="block"><h3>Modulene som kommer</h3><p>Hver får sin pris når den er ferdig, og kommunen velger selv om den vil legge den til: sjekklister og rutiner, hendelseslogg, Hub for omsorgsbolig, Jodabook, barnevern og samvær, JodaVisit.</p></div>
+            <div className="block"><h3>Første versjon</h3><p>Grunnmodulen: Startsiden, Boka, beskjeder, team, invitasjon og rollebasert tilgang. Det er det kundene bruker mest, og det er det vi vet fungerer. Innlogging skjer med ID-porten eller jobbkonto.</p></div>
+            <div className="block"><h3>Modulene som kommer</h3><p>Hver får sin pris når den er ferdig, og kommunen velger selv om den vil legge den til: sjekklister og rutiner<Modul id="sjekklister-og-rutiner" />, hendelseslogg<Modul id="hendelseslogg" />, Hub for omsorgsbolig<Modul id="hub" />, Jodabook<Modul id="jodabook" />, barnevern og samvær<Modul id="barnevern-og-samvaer" />, JodaVisit<Modul id="jodavisit" />.</p></div>
             <div className="block"><h3>Hvorfor modul for modul</h3><p>Vi lanserer det som er sikkert og testet, og legger til resten i takt med at tilgangsmodellen er verifisert for hver ny funksjon. Kundene betaler for det de bruker. Vi slipper å love noe vi ikke har levert.</p></div>
-            <div className="block"><h3>Teknologien</h3><p>Web i Next.js, mobil i React Native, backend i Java og PostgreSQL på AWS i Stockholm. KAI, vår AI-assistent, kjører på Mistral AI i Paris. Ingen amerikanske AI-avhengigheter. Ingen sensitive helsedata som forlater Europa.</p></div>
+            <div className="block"><h3>Teknologien</h3><p>Web i Next.js. JodaCare brukes i nettleseren, også på mobil, og kan legges på hjemskjermen. Egen app i App Store og Google Play<Funksjon id="egen-app" />. Backend i Java og PostgreSQL på AWS i Stockholm. KAI, vår AI-assistent<Modul id="kai" />, skal kjøre på Mistral AI i Paris. Ingen amerikanske AI-avhengigheter. Ingen sensitive helsedata som forlater Europa.</p></div>
           </div>
         </div>
       </section>
@@ -221,13 +237,13 @@ export function CompanyBrief() {
           </div>
           <div className="callout"><p>Hver regel for hvem som ser hva, håndheves av systemet selv.</p></div>
           <div className="sec-grid">
-            <div className="block"><h3>Normen, GDPR og KI-forordningen</h3><p>Tilgangsstyring, revisjonsspor og dataminimering etter Normen. Databehandleravtale og DPIA inngås før oppstart hos hver kommune. KAI kjører på Mistral AI i Paris, og bruken av KI er dokumentert og avgrenset slik KI-forordningen krever.</p></div>
+            <div className="block"><h3>Normen, GDPR og KI-forordningen</h3><p>Tilgangsstyring og dataminimering etter Normen. En revisjonslogg over hvem som har sett og endret hva<Funksjon id="revisjonslogg" />. Databehandleravtale og DPIA inngås før oppstart hos hver kommune. KAI<Modul id="kai" /> skal kjøre på Mistral AI i Paris. Bruken av KI dokumenteres og avgrenses slik KI-forordningen krever.</p></div>
             <div className="block"><h3>Bare teammedlemskap åpner en Boka</h3><p>Verken ansettelse i kommunen eller tilhørighet til et tjenestested gir innsyn i seg selv. En vikar må settes inn i teamet rundt den eldre. En avdelingsleder ser ikke Bøkene på eget sykehjem uten å være med i de enkelte teamene.</p></div>
             <div className="block"><h3>To administratorer, ikke én rangstige</h3><p>Kommunens egen administrator oppretter team og plasserer ansatte, men har ikke pasientinnsyn. Leverandørens systemadministrator oppretter organisasjoner på tvers av kunder, men har ikke innsyn i Boka. De to kan revideres hver for seg.</p></div>
             <div className="block"><h3>Tretti tilgangsvektorer</h3><p>Hver kombinasjon av rolle og data er beskrevet som en testbar vektor. Hele settet verifiseres mot ny backend før noen bruker flyttes over. Automatiserte sikkerhetstester kjører ved hver kodeendring.</p></div>
-            <div className="block"><h3>Datamodell for virkeligheten</h3><p>Én person kan være ansatt i to kommuner og samtidig være pårørende til sin egen mor. Ett team kan jobbe rundt flere tjenestemottakere. Koblinger har gyldighetsperiode og revisjonsspor.</p></div>
-            <div className="block"><h3>Innlogging og drift i Europa</h3><p>ID-porten for alle brukere ved lansering. HelseID for helsepersonell kommer. Data lagres kryptert på AWS i Stockholm. Ingen amerikanske KI-avhengigheter. Ingen sensitive helsedata som forlater Europa.</p></div>
-            <div className="block"><h3>Universell utforming</h3><p>Nye JodaCare kartlegges systematisk mot WCAG. Kontrast, skjermleser og tastaturnavigasjon sjekkes automatisk i kodegjennomgangen. Det er et lovkrav for kommunale anskaffelser, og en forutsetning for at eldre og mennesker med nedsatt syn faktisk kan bruke appen.</p></div>
+            <div className="block"><h3>Datamodell for virkeligheten</h3><p>Én person kan være ansatt i to kommuner og samtidig være pårørende til sin egen mor. Ett team kan jobbe rundt flere tjenestemottakere. Koblinger har gyldighetsperiode.</p></div>
+            <div className="block"><h3>Innlogging og drift i Europa</h3><p>ID-porten og jobbkonto ved lansering. HelseID for helsepersonell<Funksjon id="helseid" />. Data lagres kryptert på AWS i Stockholm. Ingen amerikanske KI-avhengigheter. Ingen sensitive helsedata som forlater Europa.</p></div>
+            <div className="block"><h3>Universell utforming</h3><p>Nye JodaCare kartlegges systematisk mot WCAG. Kontrast, skjermleser og tastaturnavigasjon sjekkes automatisk i kodegjennomgangen. Det er et lovkrav for kommunale anskaffelser, og en forutsetning for at eldre og mennesker med nedsatt syn faktisk kan bruke JodaCare.</p></div>
             <div className="block"><h3>Dokumentert</h3><p>DPIA, behandlingsprotokoll, beredskapsplan, risikovurdering og sikkerhetsrevisjon ligger klare i DD-rommet.</p></div>
           </div>
         </div>
@@ -238,10 +254,10 @@ export function CompanyBrief() {
           <span className="label">Porteføljen</span>
           <h2>Fire produkter, én plattform.</h2>
           <div className="cols">
-            <div className="block"><h3>JodaCare</h3><p>Hovedapp i nettleser og mobil, for helsepersonell, pårørende og tjenestemottakere. Boka, meldinger, kalender og rollebasert tilgang i første versjon. Hendelseslogg, sjekklister, kvalitet og avvik som moduler.</p></div>
-            <div className="block"><h3>Jodabook</h3><p>Egen app i App Store og Google Play for mennesker med kognitive utfordringer som demens, utviklingshemming eller autisme. Store knapper, mye luft, tydelige bilder, oppleste meldinger. Innlogging via QR-kode fra administrator, deretter PIN eller biometri. Første versjon på nye JodaCare inneholder Boka og Tidslinjen, en kronologisk livshistorie med bilder og hendelser. Bak ligger samme database som JodaCare. Det familien skriver, kan personen selv lese.</p></div>
-            <div className="block"><h3>JodaCare Hub</h3><p>Programvare for omsorgsboliger som kjører på fullskjerm i beboerens leilighet. Viser dagens program, bilder fra familien, kalender og videosamtaler. Hardware-agnostisk, med åpen Device Integration API mot skjermer og sensorer (fall, bevegelse, dør, røyk). Egen vekstvei mot eiendomsutviklere som bygger eller oppgraderer omsorgsboliger.</p></div>
-            <div className="block"><h3>KAI</h3><p>AI-assistent i JodaCare. Forklarer funksjonalitet i klart språk og tilpasser seg rollen til den som spør. Driver dagboks-oppsummering og livshistorie. Bygd på Mistral AI i Paris.</p></div>
+            <div className="block"><h3>JodaCare</h3><p>Hovedappen i nettleseren, også på mobil, for helsepersonell, pårørende og tjenestemottakere. Startsiden, Boka, beskjeder, team og rollebasert tilgang i første versjon. Hendelseslogg<Modul id="hendelseslogg" />, sjekklister<Modul id="sjekklister-og-rutiner" /> og kvalitet og avvik<Modul id="kvalitet-og-avvik" /> kommer som moduler.</p></div>
+            <div className="block"><h3>Jodabook<Modul id="jodabook" /></h3><p>En egen inngang for mennesker med kognitive utfordringer som demens, utviklingshemming eller autisme. Store knapper, mye luft, tydelige bilder og opplesing. Første versjon på nye JodaCare skal inneholde Boka. Tidslinjen, en kronologisk livshistorie med bilder og hendelser, kommer med livshistorie.<Modul id="livshistorie" /> Bak ligger samme database som JodaCare. Det familien skriver, kan personen selv lese.</p></div>
+            <div className="block"><h3>JodaCare Hub<Modul id="hub" /></h3><p>Programvare for omsorgsboliger som skal kjøre på fullskjerm i beboerens leilighet. Den skal vise dagens program, bilder fra familien, kalender og videosamtaler. Hardware-agnostisk, med et enhets-API<Funksjon id="enhets-api" /> mot skjermer og sensorer for fall, bevegelse, dør og røyk<Funksjon id="iot" />. Egen vekstvei mot eiendomsutviklere som bygger eller oppgraderer omsorgsboliger.</p></div>
+            <div className="block"><h3>KAI<Modul id="kai" /></h3><p>AI-assistent i JodaCare. KAI skal forklare funksjonalitet i klart språk og tilpasse seg rollen til den som spør. KAI skal kjøre på Mistral AI i Paris.</p></div>
           </div>
         </div>
       </section>
@@ -252,8 +268,8 @@ export function CompanyBrief() {
           <h2>Fem ting ingen andre har.</h2>
           <div className="numbered">
             <div className="num"><b>1.</b><div><h3>Tre rollegrupper i én plattform.</h3><p>Helsepersonellet, de pårørende og mottakeren selv leser samme historie, hver på sitt eget språk. De fleste systemer i markedet er bygd for én rolle.</p></div></div>
-            <div className="num"><b>2.</b><div><h3>Multi-segment på samme plattform.</h3><p>En kommune kan bruke JodaCare fra hjemmetjeneste til sykehjem, fra BPA til barnevern. Én lisens, én læringskurve, én leverandør.</p></div></div>
-            <div className="num"><b>3.</b><div><h3>Bygd for tilgjengelighet, ikke som tilpasning.</h3><p>Jodabook er en egen app for mennesker med kognitive utfordringer, med eget grensesnitt og egen innlogging. Mottakeren er med i samtalen.</p></div></div>
+            <div className="num"><b>2.</b><div><h3>Multi-segment på samme plattform.</h3><p>En kommune skal kunne bruke JodaCare fra hjemmetjeneste til sykehjem, fra BPA<Modul id="bpa" /> til barnevern<Modul id="barnevern-og-samvaer" />. Én lisens, én læringskurve, én leverandør.</p></div></div>
+            <div className="num"><b>3.</b><div><h3>Bygd for tilgjengelighet, ikke som tilpasning.</h3><p>Jodabook<Modul id="jodabook" /> skal gi mennesker med kognitive utfordringer et eget grensesnitt. Mottakeren er med i samtalen.</p></div></div>
             <div className="num"><b>4.</b><div><h3>Tilgangskontroll som håndheves.</h3><p>Bare teammedlemskap gir innsyn. Leverandøren selv nektes innsyn i pasientdata. Tretti testbare tilgangsvektorer. Normen, GDPR og KI-forordningen ligger til grunn for arkitekturen.</p></div></div>
             <div className="num"><b>5.</b><div><h3>Offentlig pris under anbudsgrensen.</h3><p>{formaterTall(aar2())} kroner per år per pakke og {formaterTall(priser.oppstart)} kroner i oppstart står på nettsiden. En avdeling kan vedta kjøpet selv. Ingen anbudsprosess. Ingen «ta kontakt for pris».</p></div></div>
           </div>
@@ -275,8 +291,8 @@ export function CompanyBrief() {
             <p>Avtaler løper {priser.avtaleManeder} måneder med automatisk fornyelse og tre måneders oppsigelse. Lisens faktureres kvartalsvis på forskudd. Alle priser eks. mva. Nye moduler får egen pris når de er ferdige. Prisen på grunnmodulen endres ikke av at nye moduler kommer.</p>
           </div>
           <div className="cols" style={{ marginTop: '1.5rem' }}>
-            <div className="block"><h3>For familier</h3><p>Familierom for private via Vipps kommer i 2027: {priser.proveperiodeDager} dagers gratis prøveperiode, deretter {priser.familieromMnd} kroner per måned per familierom, ingen binding. Det blir den første tjenesten i Norge der en datter kan opprette et omsorgsrom selv og invitere kommunen inn.</p></div>
-            <div className="block"><h3>For omsorgsboliger</h3><p>JodaCare Hub prises per enhet med engangsbeløp for oppsett og månedlig lisens per leilighet. Prisstruktur oppgis på forespørsel.</p></div>
+            <div className="block"><h3>For familier</h3><p>Familierom for private via Vipps<Segment id="familierom" />. {priser.proveperiodeDager} dagers gratis prøveperiode, deretter {priser.familieromMnd} kroner per måned per familierom, ingen binding. Det blir den første tjenesten i Norge der en datter kan opprette et omsorgsrom selv og invitere kommunen inn.</p></div>
+            <div className="block"><h3>For omsorgsboliger</h3><p>JodaCare Hub<Modul id="hub" /> prises per enhet med engangsbeløp for oppsett og månedlig lisens per leilighet. Prisstruktur oppgis på forespørsel.</p></div>
           </div>
         </div>
       </section>
@@ -288,13 +304,13 @@ export function CompanyBrief() {
           <div className="prose"><p>Norge har 357 kommuner. Alle er pliktige til å levere forsvarlig kommunikasjon, pårørendestøtte, dokumentasjon og brukermedvirkning. JodaCare er bygd for å oppfylle disse pliktene.</p></div>
           <div className="numbered" style={{ marginTop: '1.5rem' }}>
             <div className="num"><b>1.</b><div><h3>Direktekjøp.</h3><p>Fra 1. juli 2026 er terskelen for direkte anskaffelse 500 000 kroner. En avdeling, et sykehjem eller en hjemmetjenestesone kan kjøpe JodaCare uten anbud. Prisen står på nettsiden. Avtaleforslag og databehandleravtale ligger klare.</p></div></div>
-            <div className="num"><b>2.</b><div><h3>Integrasjon med Aidn.</h3><p>Aidn er en ny norsk leverandør av elektronisk pasientjournal med avtaler i 180 kommuner. Aidn er åpen for integrasjon med systemene kommunene bruker i hverdagen, og JodaCare er et slikt system. Vi bygger integrasjonen slik at Boka og journalen henger sammen der kommunen ønsker det. Det gir en naturlig vei inn til kommuner som allerede har valgt en moderne journalplattform.</p></div></div>
+            <div className="num"><b>2.</b><div><h3>Integrasjon med Aidn.<Funksjon id="aidn" /></h3><p>Aidn er en ny norsk leverandør av elektronisk pasientjournal med avtaler i 180 kommuner. Aidn er åpen for integrasjon med systemene kommunene bruker i hverdagen, og JodaCare er et slikt system. Vi planlegger integrasjonen slik at Boka og journalen kan henge sammen der kommunen ønsker det. Det gir en naturlig vei inn til kommuner som allerede har valgt en moderne journalplattform.</p></div></div>
             <div className="num"><b>3.</b><div><h3>Anbud og rammeavtaler.</h3><p>For kommuner som krever anbud, stiller vi med Normen, GDPR-compliance siden 2018, ID-porten, håndhevet tilgangsmodell, sikkerhetsrevisjon og ti år i drift i norske kommuner.</p></div></div>
-            <div className="num"><b>4.</b><div><h3>Eiendomsutviklere.</h3><p>For omsorgsboliger jobber vi direkte med utbyggere gjennom JodaCare Hub. Tre modeller: nybygg, etterinstallering og pilot.</p></div></div>
+            <div className="num"><b>4.</b><div><h3>Eiendomsutviklere.</h3><p>For omsorgsboliger jobber vi direkte med utbyggere gjennom JodaCare Hub.<Modul id="hub" /> Tre modeller: nybygg, etterinstallering og pilot.</p></div></div>
             <div className="num"><b>5.</b><div><h3>Familier.</h3><p>Når Familierom med Vipps lanseres, får pårørende en vei inn som ikke går gjennom kommunens innkjøp. Familien starter, kommunen inviteres.</p></div></div>
           </div>
           <div className="prose" style={{ marginTop: '1.75rem' }}>
-            <p><strong>Utenfor Norge.</strong> Plattformen er klargjort for flerspråk. Det britiske markedet utforskes gjennom NHS Pathfinder CIC, der JodaCare ble representert på NHS Englands Digital Summit 2026. Internasjonal vekst er ikke en del av første kapitalrunde.</p>
+            <p><strong>Utenfor Norge.</strong> Det britiske markedet utforskes gjennom NHS Pathfinder CIC, der JodaCare ble representert på NHS Englands Digital Summit 2026. Internasjonal vekst er ikke en del av første kapitalrunde.</p>
           </div>
         </div>
       </section>
@@ -305,9 +321,9 @@ export function CompanyBrief() {
           <h2>Hvor vi står i markedet.</h2>
           <div className="prose"><p>Det finnes mange gode verktøy i kommunal helse. Vi konkurrerer ikke med dem alle. Vi dekker det de ikke dekker.</p></div>
           <div className="cols" style={{ marginTop: '1.5rem' }}>
-            <div className="block"><h3>Journalsystemer</h3><p>Visma, Tietoevry, Helseplattformen og Aidn er bygd for helsepersonell. De er sterke på fagdokumentasjon. De er ikke bygd for å snakke med pårørende eller mottakeren selv. JodaCare integrerer med journalsystemer der det gir mening. Vi erstatter dem ikke.</p></div>
+            <div className="block"><h3>Journalsystemer</h3><p>Visma, Tietoevry, Helseplattformen og Aidn er bygd for helsepersonell. De er sterke på fagdokumentasjon. De er ikke bygd for å snakke med pårørende eller mottakeren selv. JodaCare skal kunne integreres med journalsystemer der det gir mening.<Funksjon id="epj" /> Vi erstatter dem ikke.</p></div>
             <div className="block"><h3>Familieapper og pårørendeløsninger</h3><p>Finnes i flere varianter. De er gode for familien. De gir ingen verdi til helsepersonellet, og de gjør ingenting for personen med kognitiv utfordring.</p></div>
-            <div className="block"><h3>Generelle kommunikasjonsplattformer</h3><p>Microsoft Teams og lignende er ikke bygd for helse. De mangler tilgangskontroll for omsorgsteam, revisjonsspor på helseopplysninger, ID-porten og informasjonsbarrierer for sensitive segmenter. Mange kommuner har brukt dem likevel, fordi alternativene har manglet.</p></div>
+            <div className="block"><h3>Generelle kommunikasjonsplattformer</h3><p>Microsoft Teams og lignende er ikke bygd for helse. De mangler tilgangskontroll for omsorgsteam, ID-porten og informasjonsbarrierer for sensitive segmenter. Mange kommuner har brukt dem likevel, fordi alternativene har manglet.</p></div>
             <div className="block"><h3>Internasjonale spesialister</h3><p>Dekker enkelte segmenter, men mangler norsk regulatorisk forankring, ID-porten og norsk språk.</p></div>
           </div>
           <div className="prose" style={{ marginTop: '1.5rem' }}><p>Vår posisjon er ikke «bedre enn alle andre». Den er den eneste plattformen som dekker alle tre rollegrupper, alle relevante tjenestesteder og hele compliance-stakken i ett system.</p></div>
@@ -336,7 +352,7 @@ export function CompanyBrief() {
           <div className="prose"><p>JodaCare AS henter en første kapitalrunde som konvertibelt lån. Vilkår gis på forespørsel. Midlene går til tre ting:</p></div>
           <div className="cols" style={{ marginTop: '1.5rem', gridTemplateColumns: 'repeat(auto-fit,minmax(16rem,1fr))' }}>
             <div className="block"><h3>Salg og implementering mot kommuner</h3><p>Direktekjøp-vinduet er åpent. Prisen er offentlig. Det som mangler er kapasitet til å møte kommunene, kjøre igangsettelseskurs og følge opp de første 90 dagene.</p></div>
-            <div className="block"><h3>Ferdigstilling av moduler</h3><p>Hendelseslogg, sjekklister, JodaVisit og Hub er bygd i prototypen og skal over på ny backend med verifisert tilgangsmodell. Hver ferdig modul er en ny inntektslinje.</p></div>
+            <div className="block"><h3>Ferdigstilling av moduler</h3><p>Hendelseslogg<Modul id="hendelseslogg" />, sjekklister<Modul id="sjekklister-og-rutiner" /> og Hub<Modul id="hub" /> er bygd i prototypen og skal over på ny backend med verifisert tilgangsmodell. JodaVisit<Modul id="jodavisit" /> bygges i tillegg. Hver ferdig modul er en ny inntektslinje.</p></div>
             <div className="block"><h3>Migrering av eksisterende kunder</h3><p>Dagens kunder skal over på nye JodaCare uten avbrudd. Det er inntekter vi allerede har, som skal sikres på en plattform vi kan bygge videre på.</p></div>
           </div>
           <div className="prose" style={{ marginTop: '1.5rem' }}><p>Plattformens IP ligger i JodaCare AS og skal forbli der.</p></div>
@@ -406,8 +422,8 @@ export function CompanyBrief() {
           aria-modal="true"
           aria-labelledby="op-title"
         >
-          {/* Klikk utenfor lukker. Som en ekte knapp, ikke en klikkbar div —
-              da virker den også med tastatur og blir lest opp av skjermleser. */}
+          {/* Klikk utenfor lukker. Som en ekte knapp, ikke en klikkbar div.
+              Da virker den også med tastatur og blir lest opp av skjermleser. */}
           <button
             type="button"
             className="op-dismiss"
@@ -428,11 +444,11 @@ export function CompanyBrief() {
               <p className="lede">JodaCare samler helsepersonell, pårørende og tjenestemottakeren selv i ett felles sted for hverdagen. I bruk i norske kommuner siden 2016. Nye JodaCare lanseres høsten 2026.</p>
               <div className="op-grid">
                 <div><h3>Problemet</h3><p>Rundt hver eldre som får hjelp står et lag som sjelden møtes. Ingen har ett sted å se hva som skjedde i dag. Kommunikasjonen går på telefon, SMS og gule lapper. Alle kommuner er lovpålagt å sikre kommunikasjon, pårørendestøtte, dokumentasjon og brukermedvirkning.</p></div>
-                <div><h3>Løsningen</h3><p>Boka er teamets felles feed rundt én person. Helsepersonell skriver med fagspråk, pårørende leser i hverdagsspråk, og den det gjelder får en forenklet inngang gjennom Jodabook. Rundt Boka: kalender, meldinger og rollebasert tilgang.</p></div>
+                <div><h3>Løsningen</h3><p>Boka er teamets felles feed rundt én person. Helsepersonell skriver med fagspråk, pårørende leser i hverdagsspråk, og den det gjelder skal få en forenklet inngang gjennom Jodabook.<Modul id="jodabook" /> Rundt Boka: beskjeder, team og rollebasert tilgang. Kalender legges til senere.<Modul id="kalender" /></p></div>
                 <div><h3>Markedet</h3><p>302 676 personer mottar kommunale omsorgstjenester (SSB 2025). 200 000 av dem får hjelp hjemme, 37 000 bor på sykehjem. Gruppen over 80 år vokser fra 270 000 til 463 000 innen 2040. Fokus fremover: eldre som bor hjemme og eldre på sykehjem.</p></div>
-                <div><h3>Forretningsmodellen</h3><p>SaaS. Kommuner: {formaterTall(aar2())} kr per år per pakke à {priser.pakkeStorrelse} tjenestemottakere, pluss {formaterTall(priser.oppstart)} kr i oppstart. Offentlig pris, under terskelen for direkte anskaffelse (500 000 kr fra 1. juli 2026). Familierom for private via Vipps kommer i 2027, {priser.familieromMnd} kr per måned.</p></div>
-                <div><h3>Distribusjon</h3><p>Direktekjøp, integrasjon med journalleverandøren Aidn (avtaler i 180 kommuner), anbud og rammeavtaler, eiendomsutviklere gjennom JodaCare Hub.</p></div>
-                <div><h3>Sikkerhet</h3><p>Normen, GDPR siden 2018 og forberedt på KI-forordningen. Backend i Java og PostgreSQL på AWS i Stockholm. KAI på Mistral AI i Paris. ID-porten-innlogging. Bare teammedlemskap gir innsyn. Tretti testbare tilgangsvektorer.</p></div>
+                <div><h3>Forretningsmodellen</h3><p>SaaS. Kommuner: {formaterTall(aar2())} kr per år per pakke à {priser.pakkeStorrelse} tjenestemottakere, pluss {formaterTall(priser.oppstart)} kr i oppstart. Offentlig pris, under terskelen for direkte anskaffelse (500 000 kr fra 1. juli 2026). Familierom for private via Vipps<Segment id="familierom" />, {priser.familieromMnd} kr per måned.</p></div>
+                <div><h3>Distribusjon</h3><p>Direktekjøp, integrasjon med journalleverandøren Aidn<Funksjon id="aidn" /> (avtaler i 180 kommuner), anbud og rammeavtaler, eiendomsutviklere gjennom JodaCare Hub.<Modul id="hub" /></p></div>
+                <div><h3>Sikkerhet</h3><p>Normen, GDPR siden 2018 og forberedt på KI-forordningen. Backend i Java og PostgreSQL på AWS i Stockholm. KAI<Modul id="kai" /> skal kjøre på Mistral AI i Paris. Innlogging med ID-porten og jobbkonto. HelseID<Funksjon id="helseid" />. Bare teammedlemskap gir innsyn. Tretti testbare tilgangsvektorer.</p></div>
                 <div><h3>Teamet</h3><p>Kristil Erla Haland, grunnlegger og CEO, har bygd JodaCare siden 2016. Bård Lind, medgründer og backend-arkitekt, kom inn i 2026 for å styrke teamet på teknologi og sikkerhet.</p></div>
                 <div><h3>Kapital</h3><p>Første kapitalrunde som konvertibelt lån. Midlene går til salg og implementering mot kommuner, ferdigstilling av moduler og migrering av eksisterende kunder. Vilkår gis på forespørsel.</p></div>
               </div>
