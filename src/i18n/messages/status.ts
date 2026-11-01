@@ -52,10 +52,11 @@ export function loseMerke(id: string, locale: Locale): string {
 
 /**
  * Fargen på de løse merkene. Kommunekortet har ingen egen status i fakta.
- * Det følger segmentene det samler, som står som kommer til de lanseres.
+ * Det er grønt fordi Fyresdal er første kommune på nye JodaCare og går live
+ * 2. november 2026. Besluttet av produkteier 1. november 2026.
  */
 export function loseMerkeFarge(): string {
-  return FARGE.kommer;
+  return FARGE.tilgjengelig;
 }
 
 export function getStatusVisning(segmentId: string, locale: Locale): StatusVisning {
