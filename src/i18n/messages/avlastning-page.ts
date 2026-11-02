@@ -111,7 +111,7 @@ const no: AvlastningContent = {
   priceNote:
     `${formaterPris(aar2())} per år for inntil ${priser.pakkeStorrelse} tjenestemottakere, pluss oppstart ${formaterPris(priser.oppstart)} én gang.`,
   priceLinkText: 'Se alle priser',
-  statusCta: 'Meld interesse',
+  statusCta: 'Ta kontakt',
   relatedTitle: 'Andre deler av JodaCare som styrker avlastningen',
   readMore: 'Les mer',
   related: [
@@ -215,7 +215,7 @@ const en: AvlastningContent = {
   priceNote:
     `${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} one off.`,
   priceLinkText: 'See all prices',
-  statusCta: 'Register interest',
+  statusCta: 'Contact us',
   relatedTitle: 'Other parts of JodaCare that strengthen respite care',
   readMore: 'Read more',
   related: [
