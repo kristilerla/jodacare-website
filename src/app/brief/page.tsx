@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/brief' },
   title: 'Company Brief',
   description:
-    'JodaCare samler helsepersonell, pårørende og den det gjelder i én felles samtale. Brukt i kommuner siden 2016. Nye JodaCare lanseres høsten 2026.',
+    'JodaCare samler helsepersonell, pårørende og den det gjelder i én felles samtale. Brukt i kommuner siden 2016. Nye JodaCare ble tatt i bruk i november 2026.',
   openGraph: {
     title: 'JodaCare: Company Brief',
     description:

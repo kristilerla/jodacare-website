@@ -47,7 +47,7 @@ const no: OmsorgsboligContent = {
   heroBadge: 'Omsorgsbolig og servicebolig',
   heroStatus: getStatusVisning('omsorgsbolig-hub', 'no'),
   noticeBody:
-    `JodaCare Hub er under utvikling med pilot i 2027. Grunnmodulen med Boka, beskjeder og team lanseres for omsorgsbolig høsten 2026. Kalender: ${modulMerke('kalender', 'no').tekst}.`,
+    `Grunnmodulen med Boka, beskjeder og team er tilgjengelig for omsorgsbolig. JodaCare Hub er under utvikling med pilot i 2027. Kalender: ${modulMerke('kalender', 'no').tekst}.`,
   primaryCta: 'Kontakt oss for pilotplass',
   secondaryCta: 'Se hvordan Hub fungerer',
   scenarioTitle: 'Kjenner du deg igjen?',
@@ -65,7 +65,7 @@ const no: OmsorgsboligContent = {
     {
       title: 'For familien',
       description:
-        `Familien skriver i Boka og sender beskjeder, og innholdet vises på skjermen. Videosamtale: ${modulMerke('video', 'no').tekst}.`,
+        `Familien skriver i Boka og sender beskjeder. Med Hub skal innholdet vises på skjermen. Videosamtale: ${modulMerke('video', 'no').tekst}.`,
     },
     {
       title: 'For ansatte',
@@ -176,7 +176,7 @@ const en: OmsorgsboligContent = {
   heroBadge: 'Sheltered housing and supported living',
   heroStatus: getStatusVisning('omsorgsbolig-hub', 'en'),
   noticeBody:
-    `JodaCare Hub is under development with a pilot in 2027. The core module with Boka, notices and team launches for sheltered housing in autumn 2026. Calendar: ${modulMerke('kalender', 'en').tekst}.`,
+    `The core module with Boka, notices and team is available for sheltered housing. JodaCare Hub is under development with a pilot in 2027. Calendar: ${modulMerke('kalender', 'en').tekst}.`,
   primaryCta: 'Contact us for a pilot place',
   secondaryCta: 'See how Hub works',
   scenarioTitle: 'Does this sound familiar?',
@@ -194,7 +194,7 @@ const en: OmsorgsboligContent = {
     {
       title: 'For the family',
       description:
-        `The family writes in Boka and sends notices, and the content appears on the screen. Video call: ${modulMerke('video', 'en').tekst}.`,
+        `The family writes in Boka and sends notices. With Hub, the content will appear on the screen. Video call: ${modulMerke('video', 'en').tekst}.`,
     },
     {
       title: 'For staff',
@@ -252,7 +252,7 @@ const en: OmsorgsboligContent = {
       step: '2',
       title: 'Setup',
       description:
-        'JodaCare’s implementation lead helps configure Hub, flats and users.',
+        'JodaCare’s implementation lead helps set up the complex, flats and users.',
     },
     {
       step: '3',

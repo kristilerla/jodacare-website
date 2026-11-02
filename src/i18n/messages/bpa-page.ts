@@ -75,7 +75,7 @@ const no: BpaContent = {
     },
     {
       title: 'Omsorgsteam-modell',
-      description: 'Kun de som hører til i teamet ser brukeren, og personvern og rollebasert tilgang er bygget inn fra grunnen av.',
+      description: 'Teamet rundt brukeren kan ha med familien, assistentene og skolen eller dagtilbudet. Kun de som hører til i teamet ser brukeren, og personvern og rollebasert tilgang er bygget inn fra grunnen av.',
     },
     {
       title: 'Hendelseslogg',
@@ -172,7 +172,7 @@ const en: BpaContent = {
     },
     {
       title: 'Care team model',
-      description: 'Only people in the team see the user. Privacy and role-based access built in.',
+      description: 'The team around the user can include the family, the assistants and the school or day service. Only people in the team see the user. Privacy and role-based access built in.',
     },
     {
       title: 'Incident log',

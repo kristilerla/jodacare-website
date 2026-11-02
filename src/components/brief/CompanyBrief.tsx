@@ -64,7 +64,7 @@ export function CompanyBrief() {
         <div className="container">
           <span className="pill">Company Brief</span>
           <h1>For alle som er rundt et menneske som trenger hjelp.</h1>
-          <p style={{ marginTop: '1.25rem' }}>JodaCare er en norsk plattform som samler helsepersonell, pårørende og den det gjelder i én felles samtale om hverdagen. Brukt i kommuner siden 2016. Nye JodaCare lanseres høsten 2026, bygd etter Normen og GDPR og forberedt på KI-forordningen.</p>
+          <p style={{ marginTop: '1.25rem' }}>JodaCare er en norsk plattform som samler helsepersonell, pårørende og den det gjelder i én felles samtale om hverdagen. Brukt i kommuner siden 2016. Nye JodaCare ble tatt i bruk i november 2026. Den er bygd etter Normen og GDPR og forberedt på KI-forordningen.</p>
           <div className="hero-cta">
             <a className="btn btn-primary btn-lg" href="#kontakt">Snakk med Kristil</a>
             <button className="btn btn-outline btn-lg" type="button" onClick={() => setOnePager(true)}>
@@ -194,7 +194,8 @@ export function CompanyBrief() {
             <div className="tl"><div className="yr">Februar 2026. JodaCare AS</div><p>JodaCare AS etableres med Kristil Erla Haland som grunnlegger og CEO. Plattformens IP ligger i selskapet.</p></div>
             <div className="tl"><div className="yr">Vår 2026. Nye JodaCare tar form</div><p>Ny plattform bygges: web, mobil, Jodabook og KAI på Mistral AI i Paris. Familierom, barnevern-modul, hendelseslogg og sjekklister prøves ut.</p></div>
             <div className="tl"><div className="yr">August 2026. Teamet styrkes</div><p>Kristil får med seg backend-arkitekt Bård Lind som medgründer. Han bygger backenden i Java og PostgreSQL på AWS i Stockholm, med datamodell og tilgangsmodell definert gjennom 30 tilgangsvektorer.</p></div>
-            <div className="tl"><div className="yr">Høst 2026. Lansering</div><p>Nye JodaCare lanseres med innlogging med ID-porten og jobbkonto. HelseID for helsepersonell<Funksjon id="helseid" />. Eksisterende kunder migreres. Offentlige priser publiseres på jodacare.no.</p></div>
+            <div className="tl"><div className="yr">November 2026. Lansering</div><p>Nye JodaCare tas i bruk med innlogging med ID-porten og jobbkonto. HelseID for helsepersonell<Funksjon id="helseid" />. Offentlige priser publiseres på jodacare.no.</p></div>
+            <div className="tl"><div className="yr">Senere. Migrering</div><p>Eksisterende kunder migreres til nye JodaCare.</p></div>
           </div>
         </div>
       </section>
@@ -441,7 +442,7 @@ export function CompanyBrief() {
               </div>
               <span className="label">One-pager · september 2026</span>
               <h2 id="op-title">JodaCare. Én samtale rundt den som trenger hjelp.</h2>
-              <p className="lede">JodaCare samler helsepersonell, pårørende og tjenestemottakeren selv i ett felles sted for hverdagen. I bruk i norske kommuner siden 2016. Nye JodaCare lanseres høsten 2026.</p>
+              <p className="lede">JodaCare samler helsepersonell, pårørende og tjenestemottakeren selv i ett felles sted for hverdagen. I bruk i norske kommuner siden 2016. Nye JodaCare ble tatt i bruk i november 2026.</p>
               <div className="op-grid">
                 <div><h3>Problemet</h3><p>Rundt hver eldre som får hjelp står et lag som sjelden møtes. Ingen har ett sted å se hva som skjedde i dag. Kommunikasjonen går på telefon, SMS og gule lapper. Alle kommuner er lovpålagt å sikre kommunikasjon, pårørendestøtte, dokumentasjon og brukermedvirkning.</p></div>
                 <div><h3>Løsningen</h3><p>Boka er teamets felles feed rundt én person. Helsepersonell skriver med fagspråk, pårørende leser i hverdagsspråk, og den det gjelder skal få en forenklet inngang gjennom Jodabook.<Modul id="jodabook" /> Rundt Boka: beskjeder, team og rollebasert tilgang. Kalender legges til senere.<Modul id="kalender" /></p></div>
