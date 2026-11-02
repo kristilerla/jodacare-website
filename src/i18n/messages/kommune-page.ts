@@ -33,7 +33,7 @@ export type KommuneContent = {
 
 const servicesNo: KommuneService[] = [
   {
-    title: 'Hub',
+    title: 'Hub i bolig',
     description:
       'En skjerm i leiligheten skal koble beboer, familie og ansatte i én sammenhengende flyt, slik at familien alltid er nær.',
     badge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
@@ -84,7 +84,7 @@ const servicesNo: KommuneService[] = [
 
 const servicesEn: KommuneService[] = [
   {
-    title: 'Hub',
+    title: 'Hub in the home',
     description:
       'A screen in the flat will connect resident, family and staff in one coherent flow, so the family is always close.',
     badge: getStatusVisning('omsorgsbolig-hub', 'en').tekst,

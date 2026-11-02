@@ -90,7 +90,7 @@ const no: JodavisitContent = {
   readMore: 'Les mer',
   related: [
     {
-      title: 'Omsorgsbolig og Hub',
+      title: 'Hub i bolig',
       description: 'En skjerm i leiligheten som skal koble beboer, familie og ansatte.',
       href: '/omsorgsbolig',
       status: getStatusVisning('omsorgsbolig-hub', 'no'),
@@ -171,7 +171,7 @@ const en: JodavisitContent = {
   readMore: 'Read more',
   related: [
     {
-      title: 'Care home and Hub',
+      title: 'Hub in the home',
       description: 'A screen in the flat that will connect resident, family and staff.',
       href: '/omsorgsbolig',
       status: getStatusVisning('omsorgsbolig-hub', 'en'),

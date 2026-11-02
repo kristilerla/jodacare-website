@@ -115,7 +115,7 @@ const no: HomeMessages = {
       href: '/familie',
     },
     {
-      title: 'Hub',
+      title: 'Hub i bolig',
       subtitle: 'En skjerm i leiligheten for beboer, familie og ansatte',
       badge: getStatusVisning('omsorgsbolig-hub', 'no').tekst,
       badgeColor: getStatusVisning('omsorgsbolig-hub', 'no').farge,
@@ -221,7 +221,7 @@ const en: HomeMessages = {
       href: '/familie',
     },
     {
-      title: 'Hub',
+      title: 'Hub in the home',
       subtitle: 'A screen in the flat for resident, family and staff',
       badge: getStatusVisning('omsorgsbolig-hub', 'en').tekst,
       badgeColor: getStatusVisning('omsorgsbolig-hub', 'en').farge,

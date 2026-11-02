@@ -127,7 +127,7 @@ const no: AvlastningContent = {
       href: '/implementering',
     },
     {
-      title: 'Omsorgsbolig og Hub',
+      title: 'Hub i bolig',
       description: 'JodaCare Hub skal koble beboer, familie og ansatte gjennom en skjerm i leiligheten.',
       href: '/omsorgsbolig',
       status: getStatusVisning('omsorgsbolig-hub', 'no'),
@@ -231,7 +231,7 @@ const en: AvlastningContent = {
       href: '/implementering',
     },
     {
-      title: 'Care home and Hub',
+      title: 'Hub in the home',
       description: 'JodaCare Hub will connect resident, family and staff through a screen in the flat.',
       href: '/omsorgsbolig',
       status: getStatusVisning('omsorgsbolig-hub', 'en'),
