@@ -65,8 +65,8 @@ const no: AvlastningContent = {
         'Barnet er hjemme, på avlastning og på skole eller i dagtilbud. Lærere og ansatte i dagtilbudet kan være med i teamet rundt barnet, sammen med familien og avlastningen. De skriver og leser i Boka sammen med resten av teamet.',
     },
     {
-      title: 'For lederen for tjenestestedet',
-      description: 'Lederen for tjenestestedet setter opp team og ser hvem som har tilgang til hva.',
+      title: 'For den som forvalter teamet',
+      description: 'Den som forvalter teamet, bestemmer hvem som er med i det.',
     },
   ],
   featuresTitle: 'Funksjoner som dekker hverdagen',
@@ -74,7 +74,7 @@ const no: AvlastningContent = {
     {
       title: 'Boka: hverdagen delt mellom hjem og avlastning',
       description:
-        'Ansatte skriver, foreldrene leser og svarer. Bilder og korte videoer følger med. Bare teamet rundt barnet ser innholdet.',
+        'Ansatte skriver, foreldrene leser og svarer. Bilder og korte videoer følger med.',
     },
     {
       title: 'Delte rutiner mellom hjem og avlastning',
@@ -169,8 +169,8 @@ const en: AvlastningContent = {
         'The child is at home, in respite and at school or a day service. Teachers and day-service staff can be part of the team around the child, together with the family and respite staff. They write and read in Boka with the rest of the team.',
     },
     {
-      title: 'For the service location manager',
-      description: 'The service location manager sets up teams and sees who has access to what.',
+      title: 'For the team administrator',
+      description: 'The person who manages the team decides who is in it.',
     },
   ],
   featuresTitle: 'Features for everyday life',
@@ -178,7 +178,7 @@ const en: AvlastningContent = {
     {
       title: 'Boka: everyday life shared between home and respite',
       description:
-        'Staff write, parents read and reply. Photos and short videos come along. Only the team around the child sees the content.',
+        'Staff write, parents read and reply. Photos and short videos come along.',
     },
     {
       title: 'Shared routines between home and respite',

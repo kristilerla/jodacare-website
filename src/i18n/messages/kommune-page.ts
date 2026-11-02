@@ -59,7 +59,7 @@ const servicesNo: KommuneService[] = [
   {
     title: 'Barnevern og samvær',
     description:
-      'JodaCare følger barnet gjennom hver overgang, med informasjonsbarrierer som beskytter hver enkelt rolle og full sporbarhet for kommunen.',
+      'JodaCare følger barnet gjennom hver overgang, med informasjonsbarrierer som beskytter hver enkelt rolle.',
     badge: getStatusVisning('barnevern', 'no').tekst,
     badgeColor: getStatusVisning('barnevern', 'no').farge,
     href: '/barnevern',
@@ -110,7 +110,7 @@ const servicesEn: KommuneService[] = [
   {
     title: 'Child welfare and contact visits',
     description:
-      'Contact visits documented safely with information barriers that protect everyone and full traceability.',
+      'Contact visits documented safely with information barriers that protect everyone.',
     badge: getStatusVisning('barnevern', 'en').tekst,
     badgeColor: getStatusVisning('barnevern', 'en').farge,
     href: '/barnevern',

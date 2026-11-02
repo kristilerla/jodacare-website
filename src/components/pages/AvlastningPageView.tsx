@@ -21,7 +21,7 @@ import { getAvlastningContent } from '@/i18n/messages/avlastning-page';
 import { withLocale } from '@/lib/i18n/paths';
 import type { Locale } from '@/lib/i18n/types';
 
-// Barnet, foreldrene, ansatte, lederen for tjenestestedet.
+// Barnet, foreldrene, ansatte, den som forvalter teamet.
 const perspectiveIcons = [HeartIcon, HomeIcon, ClipboardDocumentListIcon, UserGroupIcon] as const;
 // Boka, rutiner, Jodabook, hendelseslogg, bekymringsmelding.
 const featureIcons = [

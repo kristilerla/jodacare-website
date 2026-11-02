@@ -105,12 +105,6 @@ const no: OmsorgsboligContent = {
         'Beboere og familie skal kunne melde seg på arrangementer, slik at det bygges fellesskap i boligen.',
       status: modulMerke('fellesarrangementer', 'no'),
     },
-    {
-      title: 'IoT-sensorer',
-      description:
-        'Sensorer for dør, bevegelse og røyk skal kunne kobles til via gateway. Varslene skal alltid gå til ansatte, slik at familien skånes for unødig uro.',
-      status: funksjonMerke('iot', 'no'),
-    },
   ],
   stepsSectionTitle: 'Enkelt å innføre. Vi hjelper hele veien.',
   steps: [
@@ -233,12 +227,6 @@ const en: OmsorgsboligContent = {
       description:
         'Residents and family will be able to sign up for events, helping to build community in the building.',
       status: modulMerke('fellesarrangementer', 'en'),
-    },
-    {
-      title: 'IoT sensors',
-      description:
-        'Sensors for door, motion and smoke will be able to connect via a gateway. Alerts will always go to staff, so the family is spared unnecessary worry.',
-      status: funksjonMerke('iot', 'en'),
     },
   ],
   stepsSectionTitle: 'Straightforward to roll out. We support you all the way.',

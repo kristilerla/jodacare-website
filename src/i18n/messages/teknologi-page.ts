@@ -178,7 +178,7 @@ const no: TeknologiPageCopy = {
       step: 2,
       title: 'Inviter teamet',
       description:
-        'Lederen for tjenestestedet sender invitasjon på e-post eller SMS. Lenken gjelder i sju dager. Den inviterte logger inn med ID-porten eller jobbkonto.',
+        'Den som forvalter teamet, sender invitasjon på e-post eller SMS. Lenken gjelder i sju dager. Den inviterte logger inn med ID-porten eller jobbkonto.',
     },
     {
       step: 3,
@@ -357,7 +357,7 @@ const en: TeknologiPageCopy = {
       step: 2,
       title: 'Invite the team',
       description:
-        'The service location manager sends an invitation by email or text message. The link is valid for seven days. The invited person signs in with ID-porten or a work account.',
+        'The person who manages the team sends an invitation by email or text message. The link is valid for seven days. The invited person signs in with ID-porten or a work account.',
     },
     {
       step: 3,
