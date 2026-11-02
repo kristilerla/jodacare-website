@@ -111,7 +111,7 @@ const no: AvlastningContent = {
   priceNote:
     `${formaterPris(aar2())} per år for inntil ${priser.pakkeStorrelse} tjenestemottakere, pluss oppstart ${formaterPris(priser.oppstart)} én gang.`,
   priceLinkText: 'Se alle priser',
-  statusCta: 'Meld interesse',
+  statusCta: 'Ta kontakt',
   relatedTitle: 'Andre deler av JodaCare som styrker avlastningen',
   readMore: 'Les mer',
   related: [
@@ -127,7 +127,7 @@ const no: AvlastningContent = {
       href: '/implementering',
     },
     {
-      title: 'Omsorgsbolig og Hub',
+      title: 'Hub i bolig',
       description: 'JodaCare Hub skal koble beboer, familie og ansatte gjennom en skjerm i leiligheten.',
       href: '/omsorgsbolig',
       status: getStatusVisning('omsorgsbolig-hub', 'no'),
@@ -215,7 +215,7 @@ const en: AvlastningContent = {
   priceNote:
     `${formaterPrisEn(aar2())} per year for up to ${priser.pakkeStorrelse} service recipients, plus onboarding ${formaterPrisEn(priser.oppstart)} one off.`,
   priceLinkText: 'See all prices',
-  statusCta: 'Register interest',
+  statusCta: 'Contact us',
   relatedTitle: 'Other parts of JodaCare that strengthen respite care',
   readMore: 'Read more',
   related: [
@@ -231,7 +231,7 @@ const en: AvlastningContent = {
       href: '/implementering',
     },
     {
-      title: 'Care home and Hub',
+      title: 'Hub in the home',
       description: 'JodaCare Hub will connect resident, family and staff through a screen in the flat.',
       href: '/omsorgsbolig',
       status: getStatusVisning('omsorgsbolig-hub', 'en'),

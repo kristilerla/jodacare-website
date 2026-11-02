@@ -366,7 +366,7 @@ const no: BarnevernContent = {
       href: '/implementering',
     },
     {
-      title: 'Omsorgsbolig og Hub',
+      title: 'Hub i bolig',
       description:
         'En skjerm i leiligheten som skal koble beboer, familie og ansatte.',
       href: '/omsorgsbolig',
@@ -649,7 +649,7 @@ const en: BarnevernContent = {
       href: '/implementering',
     },
     {
-      title: 'Care home and Hub',
+      title: 'Hub in the home',
       description:
         'A screen in the flat that will connect resident, family and staff.',
       href: '/omsorgsbolig',

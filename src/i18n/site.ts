@@ -83,7 +83,7 @@ export const site: Record<Locale, SiteCopy> = {
       readMore: 'Les mer',
     },
     kommuneLinks: [
-      { name: 'Omsorgsbolig / Hub', href: '/omsorgsbolig' },
+      { name: 'Hub i bolig', href: '/omsorgsbolig' },
       { name: 'BPA', href: '/bpa' },
       { name: 'Avlastning', href: '/avlastning' },
       { name: 'Barnevern', href: '/barnevern' },
@@ -104,7 +104,7 @@ export const site: Record<Locale, SiteCopy> = {
       items: {
         produkt: [
           { name: 'For familier', href: '/familie' },
-          { name: 'Omsorgsbolig / Hub', href: '/omsorgsbolig' },
+          { name: 'Hub i bolig', href: '/omsorgsbolig' },
           { name: 'BPA', href: '/bpa' },
           { name: 'Avlastning', href: '/avlastning' },
           { name: 'Barnevern', href: '/barnevern' },
@@ -179,7 +179,7 @@ export const site: Record<Locale, SiteCopy> = {
       readMore: 'Read more',
     },
     kommuneLinks: [
-      { name: 'Care home / Hub', href: '/omsorgsbolig' },
+      { name: 'Hub in the home', href: '/omsorgsbolig' },
       { name: 'PA (BPA)', href: '/bpa' },
       { name: 'Respite care', href: '/avlastning' },
       { name: 'Child welfare', href: '/barnevern' },
@@ -199,7 +199,7 @@ export const site: Record<Locale, SiteCopy> = {
       items: {
         produkt: [
           { name: 'For families', href: '/familie' },
-          { name: 'Care home / Hub', href: '/omsorgsbolig' },
+          { name: 'Hub in the home', href: '/omsorgsbolig' },
           { name: 'PA (BPA)', href: '/bpa' },
           { name: 'Respite care', href: '/avlastning' },
           { name: 'Child welfare', href: '/barnevern' },

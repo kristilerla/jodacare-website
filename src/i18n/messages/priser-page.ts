@@ -141,7 +141,7 @@ const no: PriserContent = {
     { name: 'Jodabook', status: modulMerke('jodabook', 'no') },
     { name: 'Livshistorie', status: modulMerke('livshistorie', 'no') },
     { name: 'Barnevern og samvær', status: modulMerke('barnevern-og-samvaer', 'no') },
-    { name: 'Hub for omsorgsbolig', status: modulMerke('hub', 'no') },
+    { name: 'Hub i bolig', status: modulMerke('hub', 'no') },
     { name: 'JodaVisit', status: modulMerke('jodavisit', 'no') },
   ],
 
@@ -262,7 +262,7 @@ const en: PriserContent = {
     { name: 'Jodabook', status: modulMerke('jodabook', 'en') },
     { name: 'Life story', status: modulMerke('livshistorie', 'en') },
     { name: 'Child welfare and contact sessions', status: modulMerke('barnevern-og-samvaer', 'en') },
-    { name: 'Hub for sheltered housing', status: modulMerke('hub', 'en') },
+    { name: 'Hub in the home', status: modulMerke('hub', 'en') },
     { name: 'JodaVisit', status: modulMerke('jodavisit', 'en') },
   ],
 
