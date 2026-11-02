@@ -60,6 +60,11 @@ const no: AvlastningContent = {
         `Ansatte skriver i Boka der jobben skjer, og foreldrene ser det samme dagen. Hendelseslogg: ${modulMerke('hendelseslogg', 'no').tekst}.`,
     },
     {
+      title: 'For skolen og dagtilbudet',
+      description:
+        'Barnet er hjemme, på avlastning og på skole eller i dagtilbud. Lærere og ansatte i dagtilbudet kan være med i teamet rundt barnet, sammen med familien og avlastningen. De skriver og leser i Boka sammen med resten av teamet.',
+    },
+    {
       title: 'For lederen for tjenestestedet',
       description: 'Lederen for tjenestestedet setter opp team og ser hvem som har tilgang til hva.',
     },
@@ -95,7 +100,7 @@ const no: AvlastningContent = {
   statusBadge: getStatusVisning('avlastning', 'no').tekst,
   statusTitle: 'Slik bygges JodaCare for avlastning',
   statusBody:
-    'Nye JodaCare lanseres høsten 2026 med Boka, beskjeder og team rundt hvert barn. Dette kommer senere:',
+    'Nye JodaCare er i bruk med Boka, beskjeder og team rundt hvert barn. Dette kommer senere:',
   statusItems: [
     { label: 'Kalender', status: modulMerke('kalender', 'no') },
     { label: 'Rutiner', status: modulMerke('sjekklister-og-rutiner', 'no') },
@@ -159,6 +164,11 @@ const en: AvlastningContent = {
         `Staff write in Boka where the work happens, and parents see it the same day. Incident log: ${modulMerke('hendelseslogg', 'en').tekst}.`,
     },
     {
+      title: 'For school and day services',
+      description:
+        'The child is at home, in respite and at school or a day service. Teachers and day-service staff can be part of the team around the child, together with the family and respite staff. They write and read in Boka with the rest of the team.',
+    },
+    {
       title: 'For the service location manager',
       description: 'The service location manager sets up teams and sees who has access to what.',
     },
@@ -194,7 +204,7 @@ const en: AvlastningContent = {
   statusBadge: getStatusVisning('avlastning', 'en').tekst,
   statusTitle: 'How JodaCare for respite is being built',
   statusBody:
-    'The new JodaCare launches in autumn 2026 with Boka, notices and a team around each child. This comes later:',
+    'The new JodaCare is in use with Boka, notices and a team around each child. This comes later:',
   statusItems: [
     { label: 'Calendar', status: modulMerke('kalender', 'en') },
     { label: 'Routines', status: modulMerke('sjekklister-og-rutiner', 'en') },

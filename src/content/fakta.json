@@ -1,8 +1,8 @@
 {
   "_generert": "GENERERT FIL. Ikke rediger for hånd. Kjør npm run bygg i jodacare-kunnskap.",
-  "kilde_commit": "8aeac3f",
-  "bygget": "2026-11-01",
-  "sha256": "fbb570f8b8e81ee4123caa153ed4ca7690329ceed95fe370984aeaf4c3dfb51c",
+  "kilde_commit": "1a0567b",
+  "bygget": "2026-11-02",
+  "sha256": "bde1843030fef7fc108bf9db4bb5b07ff96a1526ef83a6a10481d22d10d7698a",
   "fakta": {
     "innlogging": {
       "bekreftet_av": "Kristil Erla Håland",
@@ -1531,7 +1531,7 @@
     },
     "segmenter": {
       "bekreftet_av": "Kristil Erla Håland",
-      "bekreftet_dato": "2026-11-01",
+      "bekreftet_dato": "2026-11-02",
       "segmenter": [
         {
           "id": "familierom",
@@ -1570,8 +1570,8 @@
         {
           "id": "avlastning",
           "navn": "Avlastning",
-          "status": "kommer",
-          "merke_pa_nettsiden": "Lanseres høst 2026",
+          "status": "tilgjengelig",
+          "merke_pa_nettsiden": "Tilgjengelig nå",
           "side": "/avlastning",
           "primar_cta": "Kontakt oss",
           "krever_moduler": [

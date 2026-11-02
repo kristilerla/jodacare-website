@@ -31,7 +31,7 @@ const ENGELSK_PER_SEGMENT: Record<string, string> = {
   familierom: 'Coming 2027',
   'omsorgsbolig-hub': 'Pilot 2027',
   bpa: 'Pilot 2027',
-  avlastning: 'Launching autumn 2026',
+  avlastning: 'Available now',
   barnevern: 'Coming Q2 2027',
   jodavisit: 'Coming 2027',
 };
@@ -42,8 +42,8 @@ const ENGELSK_PER_SEGMENT: Record<string, string> = {
  * i denne filen, også disse.
  */
 const LOSE_MERKER: Record<Locale, Record<string, string>> = {
-  no: { kommune: 'Lanseres høst 2026' },
-  en: { kommune: 'Launching autumn 2026' },
+  no: { kommune: 'Tilgjengelig nå' },
+  en: { kommune: 'Available now' },
 };
 
 export function loseMerke(id: string, locale: Locale): string {
@@ -52,8 +52,8 @@ export function loseMerke(id: string, locale: Locale): string {
 
 /**
  * Fargen på de løse merkene. Kommunekortet har ingen egen status i fakta.
- * Det er grønt fordi Fyresdal er første kommune på nye JodaCare og går live
- * 2. november 2026. Besluttet av produkteier 1. november 2026.
+ * Det er grønt fordi nye JodaCare er tatt i bruk i kommunene fra november
+ * 2026. Besluttet av produkteier 2. november 2026.
  */
 export function loseMerkeFarge(): string {
   return FARGE.tilgjengelig;
