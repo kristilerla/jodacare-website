@@ -128,7 +128,7 @@ const no: TeknologiPageCopy = {
     {
       title: 'Rollebasert tilgang (RBAC)',
       description:
-        'Bare teamet rundt en tjenestemottaker ser innholdet. Rollen bestemmer hva hver person kan gjøre.',
+        'Rollen bestemmer hva hver person kan gjøre.',
     },
     {
       title: 'GDPR og Normen',
@@ -307,7 +307,7 @@ const en: TeknologiPageCopy = {
     {
       title: 'Role-based access (RBAC)',
       description:
-        'Only the team around a service recipient can see the content. The role decides what each person can do.',
+        'The role decides what each person can do.',
     },
     {
       title: 'GDPR and “Normen”',

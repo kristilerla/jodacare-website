@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Teknologi i nye JodaCare',
     description:
-      'Moderne teknologi bygget for omsorg. JodaCare brukes i nettleseren og kan legges på hjemskjermen. Bare teamet rundt tjenestemottakeren ser innholdet.',
+      'Moderne teknologi bygget for omsorg. JodaCare brukes i nettleseren og kan legges på hjemskjermen.',
   },
 };
 
