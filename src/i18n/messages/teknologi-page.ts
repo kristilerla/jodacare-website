@@ -128,7 +128,7 @@ const no: TeknologiPageCopy = {
     {
       title: 'Rollebasert tilgang (RBAC)',
       description:
-        'Bare teamet rundt en tjenestemottaker ser innholdet. Rollen bestemmer hva hver person kan gjøre.',
+        'Rollen bestemmer hva hver person kan gjøre.',
     },
     {
       title: 'GDPR og Normen',
@@ -178,7 +178,7 @@ const no: TeknologiPageCopy = {
       step: 2,
       title: 'Inviter teamet',
       description:
-        'Lederen for tjenestestedet sender invitasjon på e-post eller SMS. Lenken gjelder i sju dager. Den inviterte logger inn med ID-porten eller jobbkonto.',
+        'Den som forvalter teamet, sender invitasjon på e-post eller SMS. Lenken gjelder i sju dager. Den inviterte logger inn med ID-porten eller jobbkonto.',
     },
     {
       step: 3,
@@ -307,7 +307,7 @@ const en: TeknologiPageCopy = {
     {
       title: 'Role-based access (RBAC)',
       description:
-        'Only the team around a service recipient can see the content. The role decides what each person can do.',
+        'The role decides what each person can do.',
     },
     {
       title: 'GDPR and “Normen”',
@@ -357,7 +357,7 @@ const en: TeknologiPageCopy = {
       step: 2,
       title: 'Invite the team',
       description:
-        'The service location manager sends an invitation by email or text message. The link is valid for seven days. The invited person signs in with ID-porten or a work account.',
+        'The person who manages the team sends an invitation by email or text message. The link is valid for seven days. The invited person signs in with ID-porten or a work account.',
     },
     {
       step: 3,

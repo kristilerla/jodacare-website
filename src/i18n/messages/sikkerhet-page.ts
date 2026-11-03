@@ -67,7 +67,7 @@ const securityNo: SikkerhetFeature[] = [
   {
     title: 'Deling bare i teamet',
     description:
-      'Bare teamet rundt tjenestemottakeren ser innholdet. Lederen for tjenestestedet bestemmer hvem som er med i teamet.',
+      'Den som forvalter teamet, bestemmer hvem som er med i det.',
   },
   {
     title: 'Personvern i AI-behandling',
@@ -115,7 +115,7 @@ const securityEn: SikkerhetFeature[] = [
   {
     title: 'Shared only within the team',
     description:
-      'Only the team around the service recipient can see the content. The service location manager decides who is in the team.',
+      'The person who manages the team decides who is in it.',
   },
   {
     title: 'Privacy in AI processing',
@@ -177,7 +177,7 @@ const no: SikkerhetContent = {
     {
       title: 'Helsepersonelloven',
       body:
-        'JodaCare er bygget for å støtte samhandlingen mellom helsepersonell, pårørende og andre samarbeidspartnere. Bare teamet rundt tjenestemottakeren ser innholdet. Lederen for tjenestestedet bestemmer hvem som er med i teamet.',
+        'JodaCare er bygget for å støtte samhandlingen mellom helsepersonell, pårørende og andre samarbeidspartnere. Den som forvalter teamet, bestemmer hvem som er med i det.',
     },
     {
       title: 'Personopplysningsloven og GDPR',
@@ -220,7 +220,7 @@ const en: SikkerhetContent = {
     {
       title: 'Norwegian Health Personnel Act',
       body:
-        'JodaCare is built to support collaboration between health professionals, relatives and partners. Only the team around the service recipient can see the content. The service location manager decides who is in the team.',
+        'JodaCare is built to support collaboration between health professionals, relatives and partners. The person who manages the team decides who is in it.',
     },
     {
       title: 'Personal Data Act and GDPR',
