@@ -7,6 +7,14 @@ import { withLocale } from '@/lib/i18n/paths';
 import { selskap } from '@/lib/fakta';
 import type { Locale } from '@/lib/i18n/types';
 
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+    </svg>
+  );
+}
+
 type Props = { locale: Locale };
 
 export function OmPageView({ locale }: Props) {
@@ -48,6 +56,67 @@ export function OmPageView({ locale }: Props) {
         </Container>
       </section>
 
+      <section className="py-20 lg:py-28 bg-background-alt" aria-labelledby="team-title">
+        <Container>
+          <FadeIn>
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <h2 id="team-title" className="font-serif text-3xl sm:text-4xl font-bold text-text">
+                {d.teamTitle}
+              </h2>
+              <p className="mt-4 text-lg text-text-light">{d.teamIntro}</p>
+            </div>
+          </FadeIn>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {d.team.map((person) => (
+              <StaggerItem key={person.name} className="h-full">
+                <article className="h-full flex flex-col bg-white rounded-2xl shadow-md p-8">
+                  <div className="flex items-center gap-5 mb-6">
+                    {person.image ? (
+                      <Image
+                        src={person.image}
+                        alt={person.imageAlt ?? person.name}
+                        width={96}
+                        height={96}
+                        className="w-24 h-24 rounded-full object-cover object-top shrink-0"
+                      />
+                    ) : (
+                      <div
+                        className="w-24 h-24 rounded-full bg-accent-light text-primary-dark flex items-center justify-center font-serif text-2xl font-bold shrink-0"
+                        aria-hidden="true"
+                      >
+                        {person.initials}
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="font-serif text-2xl font-bold text-text">{person.name}</h3>
+                      <p className="text-sm text-accent font-medium mt-1">{person.role}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4 text-text-light flex-1">
+                    {person.paragraphs.map((p) => (
+                      <p key={p}>{p}</p>
+                    ))}
+                  </div>
+                  {person.linkedin ? (
+                    <a
+                      href={person.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${d.linkedinLabel} ${person.name}`}
+                      className="mt-6 inline-flex items-center gap-2 self-start rounded-full border border-primary px-4 py-2 text-sm font-medium text-primary hover:bg-primary hover:text-white transition-colors"
+                    >
+                      <LinkedInIcon className="w-4 h-4" />
+                      LinkedIn
+                    </a>
+                  ) : null}
+                </article>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </Container>
+      </section>
+
       <Story quote={d.storyQuote} author={d.storyAuthor} variant="featured" />
 
       <section className="py-20 lg:py-28" aria-labelledby="timeline-title">
@@ -69,7 +138,7 @@ export function OmPageView({ locale }: Props) {
 
             <StaggerContainer className="space-y-12">
               {d.timeline.map((item, index) => (
-                <StaggerItem key={item.year}>
+                <StaggerItem key={`${item.year}-${index}`}>
                   <div
                     className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                   >
